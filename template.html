@@ -342,7 +342,7 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
 
-const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm"]);
+const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm", "jianiao-garden", "xingbao-scallion-farm", "guangxing-farm"]);
 const OUTDOORISH = new Set(["taipei-zoo", "taipei-childrens-amusement-park"]);
 const CAT = v => FARM.has(v.id) ? "farm" : (OUTDOORISH.has(v.id) || v.type === "戶外公園") ? "park" : (v.type === "親子咖啡" || v.type === "親子餐廳") ? "cafe" : "indoor";
 

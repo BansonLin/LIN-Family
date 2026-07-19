@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家親子時光手冊 v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EC; --card:#FFFFFF;
+    --ink:#33302A; --ink-soft:#6F675C; --line:#E6DED0;
+    --sis:#2E7D74; --sis-bg:#E2EFEC; --sis-deep:#1F5B54;
+    --bro:#D9932A; --bro-bg:#FBEDD6; --bro-deep:#8A5A10;
+    --fam:#8C5B33; --fam-bg:#F0E4D6; --fam-deep:#6B4322;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;padding-bottom:64px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+  header{padding:26px 0 10px;animation:fadeUp .5s ease both}
+  .eyebrow{font-size:12px;letter-spacing:.35em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .ver{background:var(--ink);color:#fff;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+  h1{font-family:'LXGW WenKai TC',serif;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.3}
+  .today{font-size:13px;color:var(--ink-soft);margin-top:2px}
+
+  .kids{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .kid{flex:1;min-width:150px;border-radius:var(--radius);padding:12px 14px;display:flex;flex-direction:column;gap:2px;border:1.5px solid transparent}
+  .kid.sis{background:var(--sis-bg);border-color:#CBE0DB}
+  .kid.bro{background:var(--bro-bg);border-color:#F0DCB6}
+  .kid .who{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px}
+  .kid.sis .who{color:var(--sis-deep)} .kid.bro .who{color:var(--bro-deep)}
+  .kid .age{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:20px;line-height:1.2}
+  .kid .note{font-size:12px;color:var(--ink-soft)}
+  .school-chip{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:3px 10px;border-radius:999px;background:var(--sis);color:#fff;font-size:12px;font-weight:700;align-self:flex-start}
+  .school-chip b{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:14px}
+
+  /* 抽卡 */
+  .draw{margin-top:20px;background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px 16px 20px;box-shadow:0 6px 18px rgba(80,60,30,.06);animation:fadeUp .5s .08s ease both}
+  .draw h2{font-family:'LXGW WenKai TC',serif;font-size:22px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .draw h2 small{font-family:'Noto Sans TC';font-size:12px;color:var(--ink-soft);font-weight:400}
+  .filters{display:flex;flex-direction:column;gap:8px;margin:12px 0 14px}
+  .fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .flabel{font-size:12px;color:var(--ink-soft);width:34px;flex-shrink:0}
+  .chip{border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s ease;font-family:inherit}
+  .chip:hover{border-color:#C9BFAC}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip.sis[aria-pressed="true"]{background:var(--sis);border-color:var(--sis)}
+  .chip.bro[aria-pressed="true"]{background:var(--bro);border-color:var(--bro)}
+  .chip.fam[aria-pressed="true"]{background:var(--fam);border-color:var(--fam)}
+  .draw-stage{min-height:172px;position:relative}
+  .draw-card{border-radius:16px;padding:16px 16px 18px;border:1.5px solid var(--line);background:#FDFBF6}
+  .draw-card.enter{animation:pop .38s cubic-bezier(.2,.9,.3,1.2) both}
+  .draw-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+  .tag{font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px}
+  .tag.sis{background:var(--sis-bg);color:var(--sis-deep)}
+  .tag.bro{background:var(--bro-bg);color:var(--bro-deep)}
+  .tag.fam{background:var(--fam-bg);color:var(--fam-deep)}
+  .tag.meta{background:#EFEAE0;color:var(--ink-soft)}
+  .draw-card .name{font-family:'LXGW WenKai TC',serif;font-size:26px;font-weight:700;line-height:1.35}
+  .draw-card .how{font-size:14.5px;color:#4A443B;margin-top:6px}
+  .draw-empty{display:flex;align-items:center;justify-content:center;min-height:150px;color:var(--ink-soft);font-size:14px;border:1.5px dashed var(--line);border-radius:16px;text-align:center;padding:0 20px}
+  .draw-btn{width:100%;margin-top:14px;background:var(--ink);color:#fff;border:none;border-radius:14px;font-family:'LXGW WenKai TC',serif;font-size:19px;font-weight:700;letter-spacing:.15em;padding:13px;cursor:pointer;transition:transform .12s ease,background .15s ease}
+  .draw-btn:hover{background:#221F1A}
+  .draw-btn:active{transform:scale(.98)}
+  .principle-line{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-soft)}
+  .principle-line b{color:var(--ink)}
+
+  /* Tabs */
+  nav.tabs{position:sticky;top:0;z-index:20;background:linear-gradient(var(--paper) 88%,rgba(247,243,236,0));padding:12px 0 10px;margin-top:22px}
+  .tabs-inner{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab-btn{flex-shrink:0;border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s ease}
+  .tab-btn[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tab-btn:focus-visible,.chip:focus-visible,.draw-btn:focus-visible{outline:2.5px solid var(--sis);outline-offset:2px}
+  .panel{display:none;animation:fadeUp .35s ease both}
+  .panel.active{display:block}
+
+  /* 共用 */
+  .section-title{font-family:'LXGW WenKai TC',serif;font-size:21px;font-weight:700;margin:22px 0 4px;display:flex;align-items:center;gap:10px}
+  .section-title::after{content:"";flex:1;height:1.5px;background:var(--line)}
+  .section-title .cnt{font-family:'M PLUS Rounded 1c',sans-serif;font-size:13px;color:var(--ink-soft);font-weight:800}
+  .section-sub{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+  .cards{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:560px){.cards.two{grid-template-columns:1fr 1fr}}
+  .act{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:13px 15px}
+  .act .head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .act .name{font-weight:700;font-size:15.5px}
+  .act .how{font-size:13.5px;color:#575145;margin-top:4px}
+  .act.sis{border-left:4px solid var(--sis)}
+  .act.bro{border-left:4px solid var(--bro)}
+  .act.fam{border-left:4px solid var(--fam)}
+  .badge{font-size:11px;font-weight:700;border-radius:999px;padding:1.5px 9px;background:#EFEAE0;color:var(--ink-soft);flex-shrink:0}
+  .callout{border-radius:var(--radius);padding:14px 16px;margin-top:12px;font-size:14px}
+  .callout.sis{background:var(--sis-bg);color:var(--sis-deep)}
+  .callout.bro{background:var(--bro-bg);color:var(--bro-deep)}
+  .callout.fam{background:var(--fam-bg);color:var(--fam-deep)}
+  .callout b{display:block;font-family:'LXGW WenKai TC',serif;font-size:16px;margin-bottom:3px}
+
+  /* timeline */
+  .timeline{margin-top:14px;position:relative;padding-left:6px}
+  .t-item{display:flex;gap:14px;padding:0 0 20px;position:relative}
+  .t-item::before{content:"";position:absolute;left:44px;top:26px;bottom:-2px;width:1.5px;background:var(--line)}
+  .t-item:last-child::before{display:none}
+  .t-time{width:44px;flex-shrink:0;text-align:right;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;color:var(--ink-soft);padding-top:3px;line-height:1.3}
+  .t-dot{width:13px;height:13px;border-radius:4px;flex-shrink:0;margin-top:6px;transform:rotate(8deg);position:relative;z-index:1}
+  .t-dot.sis{background:var(--sis)} .t-dot.bro{background:var(--bro)} .t-dot.fam{background:var(--fam)}
+  .t-body{flex:1;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:11px 14px}
+  .t-body .t-name{font-weight:700;font-size:15px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .t-body .t-how{font-size:13.5px;color:#575145;margin-top:3px}
+  .legend{display:flex;gap:14px;margin-top:14px;font-size:12.5px;color:var(--ink-soft);flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:11px;height:11px;border-radius:3px;transform:rotate(8deg)}
+  .legend .sis{background:var(--sis)} .legend .bro{background:var(--bro)} .legend .fam{background:var(--fam)}
+
+  /* 小一準備 */
+  .count-hero{background:var(--sis);color:#fff;border-radius:18px;padding:18px 20px;margin-top:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .count-hero .num{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:44px;line-height:1}
+  .count-hero .lbl{font-size:13px;opacity:.92;line-height:1.5}
+  .check-row{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:13px 15px;display:flex;gap:12px;align-items:flex-start;margin-top:10px}
+  .check-row input[type=checkbox]{width:21px;height:21px;margin-top:3px;accent-color:var(--sis);flex-shrink:0;cursor:pointer}
+  .check-row .c-title{font-weight:700;font-size:15px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .check-row .c-how{font-size:13.5px;color:#575145;margin-top:3px}
+  .check-row.done .c-title,.check-row.done .c-how{opacity:.45;text-decoration:line-through}
+  .week{display:flex;gap:12px;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-top:10px}
+  .week .w-no{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;color:#fff;background:var(--sis);border-radius:8px;padding:4px 8px;height:fit-content;flex-shrink:0;white-space:nowrap}
+  .week .w-t{font-weight:700;font-size:14.5px}
+  .week .w-d{font-size:13.5px;color:#575145;margin-top:2px}
+
+  /* 桌遊與繪本 */
+  .uno-hero{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:18px 16px;margin-top:14px}
+  .uno-hero h3{font-family:'LXGW WenKai TC',serif;font-size:24px;font-weight:700;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .uno-hero h3 .badge{background:var(--sis);color:#fff}
+  .uno-sub-t{font-weight:700;font-size:15px;margin:16px 0 6px;color:var(--sis-deep)}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+  .tbl th{background:#EFEAE0;text-align:left;padding:6px 9px;font-size:12px;color:var(--ink-soft)}
+  .tbl td{border-bottom:1px solid var(--line);padding:7px 9px;vertical-align:top}
+  .tbl td:first-child{white-space:nowrap;font-weight:700}
+  .tbl.wf td:first-child{white-space:normal;min-width:5.5em}
+  ol.steps{padding-left:22px;font-size:14px}
+  ol.steps li{padding:3px 0}
+  .game-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:13px 15px}
+  .game-card .g-head{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .game-card .g-name{font-weight:700;font-size:15.5px}
+  .game-card .g-learn{font-size:12px;color:var(--sis-deep);font-weight:700;margin-top:3px}
+  .game-card .g-how{font-size:13.5px;color:#575145;margin-top:2px}
+  .book{background:var(--card);border:1.5px solid var(--line);border-left:4px solid var(--fam);border-radius:var(--radius);padding:11px 14px}
+  .book .b-t{font-weight:700;font-size:14.5px}
+  .book .b-d{font-size:13px;color:#575145;margin-top:2px}
+
+  /* 制度心法 */
+  .rule-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:15px 16px;margin-top:10px}
+  .rule-card h3{font-family:'LXGW WenKai TC',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+  .rule-card ul{list-style:none}
+  .rule-card li{font-size:14px;padding:5px 0 5px 20px;position:relative;color:#4A443B}
+  .rule-card li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:2.5px;background:var(--fam);transform:rotate(8deg)}
+  .rule-card li b{color:var(--ink)}
+  .iron{margin-top:8px;background:#332F29;color:#F3EEE3;border-radius:10px;padding:9px 14px;font-size:13.5px}
+  .warn-list li::before{background:var(--bro)}
+  .three{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  @media(min-width:560px){.three{grid-template-columns:repeat(3,1fr)}}
+  .p-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:14px 15px}
+  .p-card .no{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;color:var(--fam);letter-spacing:.1em}
+  .p-card .p-t{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px;margin:2px 0 4px}
+  .p-card .p-d{font-size:13px;color:#575145}
+
+  footer{margin-top:40px;padding-top:16px;border-top:1.5px solid var(--line);font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.9}
+  footer .fam-name{font-family:'LXGW WenKai TC',serif;font-size:14px;color:var(--ink)}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.96)}100%{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">V3 心法版</span><a href="index.html" style="margin-left:auto;background:var(--sis);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700">🚗 週末出遊</a></div>
+    <h1>林家親子時光手冊</h1>
+    <div class="today" id="todayLine">—</div>
+    <div class="kids">
+      <div class="kid sis">
+        <span class="who">姊姊</span>
+        <span class="age" id="sisAge">—</span>
+        <span class="note">2020.08.23 生 · 規則遊戲黃金期</span>
+        <span class="school-chip">小一開學倒數 <b id="schoolDays">—</b> 天</span>
+      </div>
+      <div class="kid bro">
+        <span class="who">弟弟</span>
+        <span class="age" id="broAge">—</span>
+        <span class="note">2023.03.10 生 · 扮演遊戲黃金期</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 抽卡 -->
+  <section class="draw" aria-label="今天玩什麼">
+    <h2>今天玩什麼？<small id="libStats">—</small></h2>
+    <div class="filters">
+      <div class="fgroup" role="group" aria-label="選擇對象">
+        <span class="flabel">對象</span>
+        <button class="chip" data-group="who" data-val="any" aria-pressed="true">隨機</button>
+        <button class="chip sis" data-group="who" data-val="sis" aria-pressed="false">姊姊</button>
+        <button class="chip bro" data-group="who" data-val="bro" aria-pressed="false">弟弟</button>
+        <button class="chip fam" data-group="who" data-val="fam" aria-pressed="false">一起玩</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="選擇場景">
+        <span class="flabel">場景</span>
+        <button class="chip" data-group="place" data-val="any" aria-pressed="true">不限</button>
+        <button class="chip" data-group="place" data-val="in" aria-pressed="false">室內</button>
+        <button class="chip" data-group="place" data-val="out" aria-pressed="false">戶外</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="選擇時間">
+        <span class="flabel">時間</span>
+        <button class="chip" data-group="time" data-val="any" aria-pressed="true">不限</button>
+        <button class="chip" data-group="time" data-val="short" aria-pressed="false">20分內</button>
+        <button class="chip" data-group="time" data-val="mid" aria-pressed="false">半小時左右</button>
+        <button class="chip" data-group="time" data-val="long" aria-pressed="false">一小時以上</button>
+      </div>
+    </div>
+    <div class="draw-stage" id="drawStage">
+      <div class="draw-empty">按下面的按鈕，抽出這個時段的遊戲。<br>週六早上打開手機，一鍵出計畫。</div>
+    </div>
+    <button class="draw-btn" id="drawBtn">抽 一 個 遊 戲</button>
+    <div class="principle-line">原則：<b>15 分鐘全開機</b> ＞ 2 小時半開機 · 手機放另一個房間</div>
+  </section>
+
+  <!-- Tabs -->
+  <nav class="tabs" aria-label="手冊分頁">
+    <div class="tabs-inner" role="tablist">
+      <button class="tab-btn" role="tab" aria-selected="true" data-panel="p-day">一日範本</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-sis">姊姊</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-bro">弟弟</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-fam">一起玩</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-games">桌遊·繪本</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-school">小一準備</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-rules">制度與心法</button>
+    </div>
+  </nav>
+
+  <!-- ===== 一日範本 ===== -->
+  <section class="panel active" id="p-day" role="tabpanel">
+    <div class="section-title">假日一日範本</div>
+    <div class="section-sub">結構解：弟弟午睡＝姊姊 1 對 1 黃金時段，這是整天最重要的排程。</div>
+    <div class="timeline">
+      <div class="t-item"><div class="t-time">09:00<br>11:00</div><div class="t-dot fam"></div>
+        <div class="t-body"><div class="t-name">戶外共同放電</div><div class="t-how">公園＋騎車：姊姊腳踏車、弟弟滑步車。上午放電，下午整天好帶。</div></div></div>
+      <div class="t-item"><div class="t-time">11:30</div><div class="t-dot fam"></div>
+        <div class="t-body"><div class="t-name">兩寶分工備午餐</div><div class="t-how">姊姊擺盤列菜單、弟弟洗菜遞東西。慢和亂是必要成本，生活即遊戲。</div></div></div>
+      <div class="t-item"><div class="t-time">13:00<br>15:00</div><div class="t-dot sis"></div>
+        <div class="t-body"><div class="t-name">姊姊專屬時光 <span class="badge">優先級最高</span></div><div class="t-how">弟弟午睡＝天然 1 對 1。桌遊或樂高，讓她不必永遠當「配合弟弟的人」。</div></div></div>
+      <div class="t-item"><div class="t-time">15:30<br>17:00</div><div class="t-dot fam"></div>
+        <div class="t-body"><div class="t-name">共同主活動</div><div class="t-how">尋寶／做點心／開店，每週輪換一種。姊姊掛「隊長」職，把教弟弟變成她的成就。</div></div></div>
+      <div class="t-item"><div class="t-time">17:00<br>17:20</div><div class="t-dot bro"></div>
+        <div class="t-body"><div class="t-name">弟弟專屬 15 分鐘</div><div class="t-how">他主導的扮演或積木，你只跟隨、不指導、不糾正。</div></div></div>
+      <div class="t-item"><div class="t-time">20:00</div><div class="t-dot fam"></div>
+        <div class="t-body"><div class="t-name">睡前儀式</div><div class="t-how">各自 2 本繪本＋聊「今天最好玩的事、最不開心的事」各一件。</div></div></div>
+    </div>
+    <div class="legend">
+      <span><i class="sis"></i>姊姊時段</span><span><i class="bro"></i>弟弟時段</span><span><i class="fam"></i>全家時段</span>
+    </div>
+
+    <div class="section-title">變化版</div>
+    <div class="cards two">
+      <div class="act fam"><div class="head"><span class="name">半日版（只有下午）</span></div><div class="how">15:00 共同主活動一場 → 16:30 每人 15 分鐘專屬時光 → 睡前儀式照常。核心不砍：專屬時光與睡前聊天。</div></div>
+      <div class="act fam"><div class="head"><span class="name">雨天版</span></div><div class="how">上午戶外放電改「家庭運動會＋客廳障礙賽」；下午主活動直接抽卡：對象選「一起玩」、場景選「室內」。</div></div>
+    </div>
+  </section>
+
+  <!-- ===== 姊姊 ===== -->
+  <section class="panel" id="p-sis" role="tabpanel">
+    <div id="list-sis"></div>
+    <div class="callout sis"><b>她的空間：讀寫角</b>面牆小桌＋她自己選的檯燈＋作品展示軟木板。開學前完工，讓「上小一」變成一次值得期待的空間升級儀式。</div>
+    <div class="callout sis"><b>爸爸約會日點子</b>書店選一本書＋喝飲料、看電影、DIY 手作——三選一，決定權在她。</div>
+  </section>
+
+  <!-- ===== 弟弟 ===== -->
+  <section class="panel" id="p-bro" role="tabpanel">
+    <div id="list-bro"></div>
+    <div class="callout bro"><b>他的空間：扮演角</b>低矮開放層架＋道具箱——拿得到，才玩得起來。</div>
+    <div class="callout bro"><b>爸爸約會日點子</b>看火車、參觀消防局、跟爸爸去看完工的案場——三選一，他自己選。</div>
+  </section>
+
+  <!-- ===== 一起玩 ===== -->
+  <section class="panel" id="p-fam" role="tabpanel">
+    <div id="list-fam"></div>
+    <div class="callout fam"><b>手足衝突的結構解</b>姊姊要贏、弟弟破壞規則，是這個年齡差的必然。解法只有兩條：①給姊姊「隊長／小老師」職位，把教弟弟變成成就感；②每人每天 15 分鐘專屬時光，防爭寵——比共同活動更關鍵。</div>
+    <div class="callout fam"><b>共同空間：可以亂區</b>客廳劃出一塊可以亂的區域，收納架貼照片標籤——收玩具變成歸位配對遊戲，不是戰爭。</div>
+  </section>
+
+  <!-- ===== 桌遊·繪本 ===== -->
+  <section class="panel" id="p-games" role="tabpanel">
+
+    <div class="uno-hero">
+      <h3>UNO 完整玩法 <span class="badge">姊姊主力桌遊</span></h3>
+      <div class="section-sub" style="margin-top:4px">官方適齡 7+，但用下面的三階段導入法，5 歲半就能玩得起來。</div>
+
+      <div class="uno-sub-t">牌組結構（共 108 張）</div>
+      <table class="tbl">
+        <tr><th>卡片</th><th>數量</th><th>效果</th></tr>
+        <tr><td>數字卡 0–9</td><td>76 張（四色；0 每色 1 張、1–9 每色 2 張）</td><td>基本牌，比對顏色或數字出牌</td></tr>
+        <tr><td>禁止 ⊘</td><td>每色 2 張，共 8 張</td><td>下一位玩家跳過一輪</td></tr>
+        <tr><td>迴轉 ⇄</td><td>每色 2 張，共 8 張</td><td>出牌方向反轉（兩人對戰時等同禁止）</td></tr>
+        <tr><td>＋2</td><td>每色 2 張，共 8 張</td><td>下一位抽 2 張並跳過該輪</td></tr>
+        <tr><td>換色（黑）</td><td>4 張</td><td>任何時候可出，指定接下來的顏色</td></tr>
+        <tr><td>＋4 換色（黑）</td><td>4 張</td><td>下一位抽 4 張＋跳過＋你指定顏色；規則上限「手中沒有同色牌」時才能出</td></tr>
+      </table>
+
+      <div class="uno-sub-t">遊戲流程</div>
+      <ol class="steps">
+        <li>每人發 7 張，其餘牌面朝下當牌庫，翻開最上面一張作「起始牌」。</li>
+        <li>順時針輪流出牌：出的牌必須與檯面那張<b>同顏色、同數字或同功能</b>；黑卡任何時候都能出。</li>
+        <li>沒牌可出就從牌庫抽 1 張——抽到能出可立刻出，不能出就換下一位。</li>
+        <li>手牌剩最後 1 張時必須喊「UNO！」；被別人抓到沒喊，罰抽 2 張。</li>
+        <li>最先出完手牌的人獲勝。</li>
+      </ol>
+
+      <div class="uno-sub-t">正式計分（想玩積分賽再用）</div>
+      <div style="font-size:13.5px;color:#575145">贏家獲得其他玩家手牌的總分：數字卡＝面值、功能卡 20 分、黑卡 50 分，先累積 500 分者為總冠軍。家庭日常玩單局制就好。</div>
+
+      <div class="uno-sub-t">5–6 歲三階段導入法</div>
+      <table class="tbl">
+        <tr><th>階段</th><th>用哪些牌</th><th>練什麼</th></tr>
+        <tr><td>第 1–2 週</td><td>只用數字卡（76 張）</td><td>「同色或同數字」的配對直覺——這是整個遊戲的核心</td></tr>
+        <tr><td>第 3–4 週</td><td>加入禁止、迴轉</td><td>第一次體驗「被跳過」的挫折，正是輸贏練習的素材</td></tr>
+        <tr><td>1 個月後</td><td>加入＋2 與換色卡</td><td>完整版；＋4 的「沒同色才能出」與質疑規則先省略，小一後再教</td></tr>
+      </table>
+
+      <div class="uno-sub-t">常見判例（開局前先講好，避免吵架）</div>
+      <table class="tbl">
+        <tr><th>爭議</th><th>裁定</th></tr>
+        <tr><td>＋2 可以疊＋2 嗎？</td><td>官方規則：不行，被＋2 就抽牌。（很多家庭玩可疊加——用哪一版開局前先約定）</td></tr>
+        <tr><td>抽到的牌能馬上出嗎？</td><td>可以，僅限剛抽的那一張。</td></tr>
+        <tr><td>忘喊 UNO 何時抓有效？</td><td>下一位玩家出牌前抓到才算，之後失效。</td></tr>
+        <tr><td>最後一張是功能卡能贏嗎？</td><td>可以，效果照常發動。</td></tr>
+      </table>
+
+      <div class="uno-sub-t">陪玩心法</div>
+      <ol class="steps">
+        <li>發牌工作交給她——數 7 張牌本身就是練習。</li>
+        <li>你可以「策略性失誤」，但別明顯放水，她看得出來。</li>
+        <li>開局前全家一起唸口號：「輸了就說——再來一局！」</li>
+      </ol>
+    </div>
+
+    <div id="list-games"></div>
+    <div id="list-books"></div>
+  </section>
+
+  <!-- ===== 小一準備 ===== -->
+  <section class="panel" id="p-school" role="tabpanel">
+    <div class="count-hero">
+      <div class="num" id="schoolDays2">—</div>
+      <div class="lbl">距離姊姊上小一（預計 9/1 開學）<br>8 月生＝全班最小之一，這個暑假是銜接期</div>
+    </div>
+
+    <div class="section-title">遊戲化銜接清單</div>
+    <div class="section-sub">只練三件事：自理、輪流等待、情緒表達。全部用遊戲練，不用坐書桌。</div>
+    <label class="check-row"><input type="checkbox"><div><div class="c-title">自理 <span class="badge">每天</span></div><div class="c-how">書包整理計時賽、自己挑明天的衣服、擺碗筷任務。</div></div></label>
+    <label class="check-row"><input type="checkbox"><div><div class="c-title">專注與規則 <span class="badge">每週 2–3 次</span></div><div class="c-how">「老師說」、拼圖 48 片→100 片、桌遊練輪流。</div></div></label>
+    <label class="check-row"><input type="checkbox"><div><div class="c-title">情緒與社交 <span class="badge">每週 1–2 次</span></div><div class="c-how">角色扮演「上學第一天」（你演同學）；繪本《小阿力的大學校》《魔法親親》。</div></div></label>
+    <label class="check-row"><input type="checkbox"><div><div class="c-title">讀寫預備 <span class="badge">順勢即可</span></div><div class="c-how">路上招牌找字、她口述故事你代筆寫下、練寫自己的名字。</div></div></label>
+    <label class="check-row"><input type="checkbox"><div><div class="c-title">作息調整 <span class="badge">8 月啟動</span></div><div class="c-how">每 3 天提早 15 分鐘睡，逐步調到小學節奏。</div></div></label>
+
+    <div class="section-title">8 週倒數計畫</div>
+    <div class="section-sub">一週一主題，每項都藏在遊戲裡。</div>
+    <div class="week"><span class="w-no">W1–2</span><div><div class="w-t">生活自理</div><div class="w-d">書包整理計時賽、自己挑衣服穿衣服、餐後自己收碗到水槽。</div></div></div>
+    <div class="week"><span class="w-no">W3–4</span><div><div class="w-t">專注與規則</div><div class="w-d">每週 3 場桌遊、拼圖從 48 片升級 100 片、家庭版「舉手再說話」練習。</div></div></div>
+    <div class="week"><span class="w-no">W5</span><div><div class="w-t">情緒與社交</div><div class="w-d">「上學第一天」扮演、讀銜接繪本、約未來同學或朋友公園見面。</div></div></div>
+    <div class="week"><span class="w-no">W6</span><div><div class="w-t">認識學校</div><div class="w-d">全家散步到學校走一圈、認上學路線與廁所位置；文具採購約會日——她自己選。</div></div></div>
+    <div class="week"><span class="w-no">W7</span><div><div class="w-t">作息切換</div><div class="w-d">每 3 天提早 15 分鐘睡、練習鬧鐘自己起床、早餐時間收斂到 30 分內。</div></div></div>
+    <div class="week"><span class="w-no">W8</span><div><div class="w-t">總彩排</div><div class="w-d">揹書包實際走一次上學路、讀寫角完工啟用儀式、開學前全家慶祝晚餐。</div></div></div>
+
+    <div class="section-title">開學第一週・爸爸守則</div>
+    <div class="rule-card">
+      <ul>
+        <li>放學第一句問「<b>今天最好玩的事是什麼？</b>」——不問「有沒有乖、老師有沒有罵你」。</li>
+        <li>前兩週特別累、特別歡是<b>正常的適應反應</b>，不是退步，不用緊張。</li>
+        <li>回家先給 15 分鐘放電或發呆，再談功課與聯絡簿。</li>
+        <li>聯絡簿讓她<b>唸給你聽</b>——她是負責人，你是聽眾。</li>
+      </ul>
+    </div>
+
+    <div class="callout sis"><b>提醒：暑假不是超前班</b>全班最小 ≠ 要先學注音寫字。坐得住、會等待、敢舉手，比會寫字重要——上面每一項都在遊戲裡練完了。</div>
+  </section>
+
+  <!-- ===== 制度與心法 ===== -->
+  <section class="panel" id="p-rules" role="tabpanel">
+    <div class="section-title">陪玩三原則（CEO 版）</div>
+    <div class="three">
+      <div class="p-card"><div class="no">01</div><div class="p-t">全開機</div><div class="p-d">15 分鐘全神貫注 ＞ 2 小時人在心不在。手機放另一個房間。</div></div>
+      <div class="p-card"><div class="no">02</div><div class="p-t">孩子主導</div><div class="p-d">他決定玩什麼、怎麼玩。你只跟隨、不指導、不糾正玩法。</div></div>
+      <div class="p-card"><div class="no">03</div><div class="p-t">轉播代替考試</div><div class="p-d">說「你把紅色疊上去了」，而不是「這是什麼顏色？」——連環提問會讓孩子關機。</div></div>
+    </div>
+
+    <div class="section-title">每月爸爸約會日</div>
+    <div class="rule-card">
+      <ul>
+        <li><b>頻率</b>：每個孩子每月各一次，單獨出門半天。</li>
+        <li><b>選擇權</b>：你給 3 個選項，孩子自己選——決定權就是儀式感的核心。</li>
+        <li><b>姊姊範例</b>：書店選書＋喝飲料、看電影、DIY 手作。</li>
+        <li><b>弟弟範例</b>：看火車、消防局、跟你去看完工的案場。</li>
+      </ul>
+      <div class="iron">鐵律：全程無手機 · 不帶另一個孩子 · 風雨無阻</div>
+    </div>
+
+    <div class="section-title">情緒風暴：先懂原理，再出手</div>
+    <div class="three">
+      <div class="p-card"><div class="no">弟弟 3 歲</div><div class="p-t">崩潰是生理現象</div><div class="p-d">大腦的煞車系統（前額葉）還在施工，情緒一來就是全面斷電——當下講道理，等於對斷線的電話喊話。</div></div>
+      <div class="p-card"><div class="no">姊姊 5–6 歲</div><div class="p-t">不服從是工程驗收</div><div class="p-d">她在測試規則是不是真的。你的一致性，就是她安全感的地基——驗收通過，挑戰自然變少。</div></div>
+      <div class="p-card"><div class="no">共同前提</div><div class="p-t">大人先調頻</div><div class="p-d">口訣：停 → 三口呼吸 → 再開口。你無法用失控教會冷靜；快爆炸就換手——「換媽媽上場」不是輸，是團隊防守。</div></div>
+    </div>
+    <div class="rule-card">
+      <h3>出手前四查（HALT）</h3>
+      <ul>
+        <li><b>餓了嗎？</b>血糖低的孩子沒有理智可言，先給食物再談規矩。</li>
+        <li><b>累了嗎？</b>沒睡飽的失控是生理問題，解方是睡覺不是教育。</li>
+        <li><b>孤單嗎？</b>今天被好好陪的存款夠嗎？討罵常常是討關注的變形。</li>
+        <li><b>過載了嗎？</b>人多、聲音大、玩太嗨——先帶離現場降刺激，再處理行為。</li>
+      </ul>
+      <div class="iron">四項中一項，先解決生理與狀態——行為問題常常自動消失一半。</div>
+    </div>
+
+    <div class="section-title">弟弟篇（3 歲）鬧脾氣引導手冊</div>
+    <div class="section-sub">核心：崩潰當下不教學，安全與陪伴優先；教學全部放在風暴過後。</div>
+    <table class="tbl wf">
+      <tr><th>狀況</th><th>當下這樣做</th><th>事後這樣收</th></tr>
+      <tr><td>崩潰大哭打滾</td><td>不講道理。確保安全、蹲下、低聲陪著，等浪頭過（通常 3–5 分鐘），只說：「爸爸在。」</td><td>平靜後一句話複盤：「剛剛積木倒了，你好生氣。」教命名，不教訓。</td></tr>
+      <tr><td>什麼都說「不要！」</td><td>這是自主期不是叛逆。給二選一：「紅杯子還是藍杯子？」——喝水沒得選，杯子可以。</td><td>把「不要」翻譯成需求：他要的是「我決定」的感覺，日常多發小決定權。</td></tr>
+      <tr><td>不肯離開公園</td><td>預告倒數「再溜 3 次」＋交接儀式「跟溜滑梯說掰掰」＋賦予任務「你負責按電梯」。</td><td>做到就具體稱讚：「你今天自己跟公園說掰掰，超帥。」</td></tr>
+      <tr><td>不肯穿衣、刷牙</td><td>變成遊戲：「衣服怪獸要吃手手了」「牙刷火車進山洞囉」——跟他比賽永遠有效。</td><td>固定順序畫成儀式圖卡貼牆上，照著走，減少每日談判。</td></tr>
+      <tr><td>打人、丟東西</td><td>立刻握住手、眼神平視：「我不會讓你打人。」再幫他說出需求：「你想要那個，對嗎？」</td><td>給替代出口：「生氣可以捶枕頭、可以用說的。」你先示範一次。</td></tr>
+      <tr><td>搶姊姊東西被拒後爆炸</td><td>先顧情緒不判案：「拿不到，好急對嗎？」再啟動輪流計時器。</td><td>平時多玩「交換遊戲」，讓輪流變成熟悉的規則，而不是懲罰。</td></tr>
+      <tr><td>堅持「我自己來」弄很久</td><td>不趕時間、不危險就讓他弄——這是能力長出來的現場。</td><td>趕時間的日子，前一晚先讓他「自己做」一部分（自己選襪子），當天你來。</td></tr>
+    </table>
+
+    <div class="section-title">姊姊篇（5–6 歲）不服從引導手冊</div>
+    <div class="section-sub">核心：分開「內容」與「態度」，內容可以談、態度要重來；規則的改法只有一種——家庭會議，不是當場吵贏。</div>
+    <table class="tbl wf">
+      <tr><th>狀況</th><th>當下這樣做</th><th>事後這樣收</th></tr>
+      <tr><td>頂嘴、討價還價</td><td>「你可以不同意，但要好好說。重新說一次。」內容合理可以談，態度不對先重來。</td><td>開「談判窗口」：列出「可以談的」與「不能談的」兩張清單，貼出來。</td></tr>
+      <tr><td>叫不動、拖延</td><td>指令具體＋有時限：「計時器 5 分鐘，響之前玩具回家。」讓計時器當壞人，你當隊友。</td><td>拖延成功一次，規則就死一次——講好的後果要溫和但確實執行。</td></tr>
+      <tr><td>故意違規、挑戰底線</td><td>不上鉤、不動怒（她在測試你穩不穩）。平靜執行講好的後果，一句話就好，不加羞辱。</td><td>複盤：「你其實想跟我說什麼？」故意犯規常常是討關注的變形。</td></tr>
+      <tr><td>輸了翻臉、耍賴</td><td>同理不讓步：「你好想贏。想贏的人才會這麼難過。」不因哭鬧改結果。</td><td>賽前預演輸的台詞＋你示範輸得漂亮：「哇我輸了！再來一局！」</td></tr>
+      <tr><td>「不公平！為什麼弟弟可以」</td><td>一句定調：「公平不是每個人拿到一樣的，是每個人拿到需要的。」</td><td>把姊姊專屬特權可視化：晚睡 15 分鐘、專屬時光、隊長職——讓她看見大孩子的帳戶。</td></tr>
+      <tr><td>在外人面前失控</td><td>不當眾教。帶離現場一對一處理，給她台階，也給自己台階。</td><td>回家後才複盤——當眾羞辱換來的不是聽話，是記恨。</td></tr>
+      <tr><td>不承認、推給弟弟</td><td>降低說實話的成本：「說實話不會被罵得更慘。」問「怎麼補救」，不逼問「是不是你」。</td><td>她誠實時放大處理：「謝謝你跟我說實話」要比處罰本身更大聲。</td></tr>
+    </table>
+
+    <div class="section-title">手足衝突話術庫</div>
+    <div class="section-sub">先接情緒，再談規則；把問題還給孩子。</div>
+    <table class="tbl">
+      <tr><th>場景</th><th>你可以說</th></tr>
+      <tr><td>搶玩具</td><td>「這個玩具現在很搶手！計時器 5 分鐘輪流，誰先？」——用工具取代裁判。</td></tr>
+      <tr><td>姊姊：弟弟好煩！</td><td>「他弄壞你的作品，你很生氣對嗎？」——先接情緒，再談怎麼辦。</td></tr>
+      <tr><td>弟弟崩潰大哭</td><td>蹲下平視：「你在生氣，因為積木倒了。」——幫他把情緒說出名字。</td></tr>
+      <tr><td>輸了大哭</td><td>「你好想贏。想贏的人才會這麼難過。我們再來一局？」</td></tr>
+      <tr><td>互相告狀</td><td>「你們兩個一起想一個辦法，想到來告訴我。」——把問題還給他們。</td></tr>
+      <tr><td>不收玩具</td><td>「你要先收車車區，還是積木區？」——給選項，不給命令。</td></tr>
+    </table>
+
+    <div class="section-title">情緒急救三步</div>
+    <div class="three">
+      <div class="p-card"><div class="no">STEP 1</div><div class="p-t">蹲下平視</div><div class="p-d">視線同高，情緒先降一半。</div></div>
+      <div class="p-card"><div class="no">STEP 2</div><div class="p-t">命名情緒</div><div class="p-d">「你很生氣／難過／失望。」說得出名字的情緒，才管得住。</div></div>
+      <div class="p-card"><div class="no">STEP 3</div><div class="p-t">給兩個選項</div><div class="p-d">「要抱抱，還是自己冷靜一下？」選項給孩子控制感。</div></div>
+    </div>
+
+    <div class="section-title">稱讚公式</div>
+    <div class="rule-card">
+      <ul>
+        <li>讚美<b>過程</b>，不讚美天分：「你剛剛試了三次都沒放棄」＞「你好聰明」。</li>
+        <li>具體描述＞空泛評價：「你自己把顏色分好類了」＞「你好棒」。</li>
+        <li>當著別人的面讚美，效果 ×2；當著別人的面批評，傷害 ×2。</li>
+      </ul>
+    </div>
+
+    <div class="section-title">規則金字塔</div>
+    <div class="section-sub">不服從問題的一半，來自規則本身沒分層——什麼都管，等於什麼都管不動。</div>
+    <div class="three">
+      <div class="p-card"><div class="no" style="color:#B0483A">紅線</div><div class="p-t">安全與尊重</div><div class="p-d">傷害自己、傷害別人、危險行為——零談判，立即制止。全家只有這一層是絕對的。</div></div>
+      <div class="p-card"><div class="no" style="color:#B8860B">黃線</div><div class="p-t">家規</div><div class="p-d">作息、3C、收玩具——可以討論，但只能在家庭會議改，不能在當場吵贏。</div></div>
+      <div class="p-card"><div class="no" style="color:#4E7A52">綠線</div><div class="p-t">彈性區</div><div class="p-d">穿什麼、玩什麼、先做哪件——盡量讓孩子決定。這一層是自主感的糧倉，給得越多，紅黃線越好守。</div></div>
+    </div>
+    <div class="rule-card">
+      <h3>執行三律</h3>
+      <ul>
+        <li><b>少而明確。</b>同時執法的規則不超過 5 條——規則超載，孩子只學會「反正都會被唸」。</li>
+        <li><b>預告勝過突襲。</b>轉場前 5 分鐘倒數，孩子的大腦需要煞車距離。</li>
+        <li><b>爸媽同一陣線。</b>意見不同私下對齊，孩子面前一致——教養能量不能互相抵銷。</li>
+      </ul>
+    </div>
+
+    <div class="section-title">特殊狀態：降標模式</div>
+    <div class="rule-card">
+      <ul class="warn-list">
+        <li><b>生病、沒睡飽</b>：只守紅線，其他全放。跟生理狀態硬碰，兩敗俱傷。</li>
+        <li><b>開學適應期（9 月）</b>：黏人、易怒、行為倒退是正常的神經系統重整——標準自動降一階，專屬時光加碼。</li>
+        <li><b>公共場合崩潰</b>：先撤離再處理。面子留給孩子，也留給自己。</li>
+        <li><b>親友聚會</b>：事前打預防針（會遇到誰、規則是什麼），現場只提醒、不開課。</li>
+        <li><b>爭寵高峰期</b>：解方是加碼專屬時光，不是講道理。</li>
+      </ul>
+    </div>
+
+    <div class="uno-hero" style="margin-top:26px">
+      <h3>心成能量學 × 親子互動 <span class="badge">給爸爸的內功篇</span></h3>
+      <div class="section-sub" style="margin-top:4px">能量學把人生分成事、財、情、家、體、心六運——「家運」的起點不在孩子身上，在大人的能量狀態。這一區把能量學的核心心法，翻譯成每天用得上的親子操作。</div>
+      <div class="three">
+        <div class="p-card"><div class="no">01</div><div class="p-t">冰山法則</div><div class="p-d">行為是冰山上的一角，冰山下才是真相：崩潰的下面是累、頂嘴的下面是想被當大人、搗蛋的下面是想被看見。管行為之前，先讀冰山下。</div></div>
+        <div class="p-card"><div class="no">02</div><div class="p-t">先調頻，再開口</div><div class="p-d">你是家裡最大的能量源——孩子讀的是你的狀態，不是你的道理。進家門前，在車上坐 30 秒，把公司的頻率留在車上。</div></div>
+        <div class="p-card"><div class="no">03</div><div class="p-t">高頻共振</div><div class="p-d">孩子暴走時你更大聲，是同頻共振、互相放大。你把音量降兩成、語速砍半，他的系統才有一個更穩的頻率可以跟。</div></div>
+        <div class="p-card"><div class="no">04</div><div class="p-t">九倍法則</div><div class="p-d">向下的力量是向上的九倍——一句重話，要許多次肯定才拉得回來。稱讚要超額存款，責備要精準節約。</div></div>
+        <div class="p-card"><div class="no">05</div><div class="p-t">能量帳戶</div><div class="p-d">全開機的陪伴是存款；吼叫、敷衍、邊滑手機邊陪是提款。管教的信用額度取決於帳戶餘額——15 分鐘專屬時光＝每日定額存款。</div></div>
+        <div class="p-card"><div class="no">06</div><div class="p-t">家的氣場靠行為</div><div class="p-d">好家運不靠擺設，靠這個屋子裡反覆發生的事：一起下廚、一起共讀、睡前三件好事——這本手冊整本都在幫你養氣場。</div></div>
+        <div class="p-card"><div class="no">07</div><div class="p-t">孩子是你的老師</div><div class="p-d">他最踩你雷的那個點，往往是你自己的功課。發火前問一句：我氣的是他，還是當年的自己？</div></div>
+        <div class="p-card"><div class="no">08</div><div class="p-t">親證法則</div><div class="p-d">心法不是拿來知道的，是拿來做的。每週只親證一條，在生活裡驗證有效，才算真的學會——這一頁請慢慢用。</div></div>
+      </div>
+      <div class="iron">使用邊界：能量學的語言是給大人的內功，不是給孩子的標籤——永遠不對孩子說「你能量太低」。調整的對象只有一個人：自己。</div>
+    </div>
+
+    <div class="section-title">週間微連結</div>
+    <div class="rule-card">
+      <ul>
+        <li>早餐 10 分鐘，手機不上桌。</li>
+        <li>睡前一問：「今天最好玩＋最不開心的各一件。」</li>
+        <li>出差日固定時間視訊唸一本繪本。</li>
+      </ul>
+    </div>
+
+    <div class="section-title">給爸爸的四個提醒</div>
+    <div class="rule-card">
+      <ul class="warn-list">
+        <li><b>一次只上一個制度。</b>系統化一次到位在親子領域必陣亡——本週只啟動約會日，穩一個月再加下一項。</li>
+        <li><b>嘉倩不是後勤。</b>媽媽同樣需要她的 1 對 1 時段與完全放假的半天，兩人輪替這套才撐得過一季。</li>
+        <li><b>唯一 KPI 是「在場感」。</b>精心設計的遊戲 5 分鐘被棄玩很正常——孩子轉向，你就跟著轉。</li>
+        <li><b>別讓姊姊永遠配合弟弟。</b>午睡專屬時光是大寶委屈的解方，優先級最高。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span class="fam-name">林家 · 姊姊 × 弟弟</span><br>
+    週末的唯一目標：讓孩子感覺到，你整個人都在場。
+  </footer>
+</div>
+
+<script>
+/* ---------- 日期與年齡 ---------- */
+const now = new Date();
+const WD = ['日','一','二','三','四','五','六'];
+document.getElementById('todayLine').textContent =
+  '今天是 ' + now.getFullYear() + ' 年 ' + (now.getMonth()+1) + ' 月 ' + now.getDate() + ' 日（週' + WD[now.getDay()] + '）';
+function ageOf(y,m,d){
+  let months=(now.getFullYear()-y)*12+(now.getMonth()+1-m);
+  if(now.getDate()<d) months--;
+  return Math.floor(months/12)+' 歲 '+(months%12)+' 個月';
+}
+document.getElementById('sisAge').textContent = ageOf(2020,8,23);
+document.getElementById('broAge').textContent = ageOf(2023,3,10);
+const school = new Date(2026,8,1);
+let dd = Math.ceil((school-now)/86400000);
+const ddText = dd>0 ? dd : (dd>-120 ? '已開學' : '—');
+document.getElementById('schoolDays').textContent = ddText;
+document.getElementById('schoolDays2').textContent = ddText;
+
+/* ---------- 遊戲資料庫（w: sis|bro|fam　p: in|out|both　min: 分鐘） ---------- */
+const ACT=[
+/* ===== 弟弟・扮演遊戲 ===== */
+{n:'開店結帳',w:'bro',p:'in',min:20,c:'扮演遊戲',h:'零食排上架，計算機當收銀機，你當客人排隊買東西。'},
+{n:'工具箱巡工地',w:'bro',p:'in',min:20,c:'扮演遊戲',h:'玩具工具箱在手，全家找「壞掉的東西」，他敲敲鎖鎖驗收。'},
+{n:'看醫生',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'他當醫生你當病人：聽診、打針、貼 OK 繃，記得演很痛。'},
+{n:'小小消防員',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'紅色貼紙當火苗貼牆上，他拿噴水瓶逐一「滅火」救全家。'},
+{n:'垃圾車來了',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'紙箱當垃圾車沿路收「垃圾」（紙球），記得放垃圾車音樂。'},
+{n:'開公車',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'椅子排一排當公車，他當司機喊站名，娃娃全家當乘客上下車。'},
+{n:'動物園管理員',w:'bro',p:'in',min:20,c:'扮演遊戲',h:'動物玩偶分區擺好：餵食、洗澡、看診，你當來參觀的遊客。'},
+{n:'洗車場老闆',w:'bro',p:'out',min:20,c:'扮演遊戲',h:'滑步車＝待洗車輛：泡泡水、海綿、抹布一條龍，順便洗真的車。'},
+{n:'郵差送信',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'畫幾張「信」，全家房門當信箱，他揹小包包逐一投遞。'},
+{n:'照顧小寶寶',w:'bro',p:'in',min:15,c:'扮演遊戲',h:'娃娃當寶寶：餵奶、拍嗝、換尿布、哄睡——同理心從這裡長出來。'},
+{n:'超市採買任務',w:'bro',p:'both',min:20,c:'扮演遊戲',h:'給他 3 樣物品的圖片購物清單，在家或真超市找齊打勾。'},
+{n:'小老闆開餐廳',w:'bro',p:'in',min:20,c:'扮演遊戲',h:'黏土做菜、畫菜單（姊姊可幫寫字），你點餐他上菜。'},
+/* ===== 弟弟・建構遊戲 ===== */
+{n:'磁力片蓋房子',w:'bro',p:'in',min:30,c:'建構遊戲',h:'你畫超簡單平面圖讓他照著蓋，蓋好取名、讓小玩偶入住。'},
+{n:'大積木高塔賽',w:'bro',p:'in',min:15,c:'建構遊戲',h:'比誰疊得高，倒塌時一起倒數大笑——重蓋比蓋好重要。'},
+{n:'骨牌推推樂',w:'bro',p:'in',min:20,c:'建構遊戲',h:'積木排長龍推第一張，練排列與延遲滿足。'},
+{n:'紙杯金字塔',w:'bro',p:'in',min:15,c:'建構遊戲',h:'紙杯疊金字塔再一顆球轟倒，重複一百次也笑一百次。'},
+{n:'積木保齡球',w:'bro',p:'in',min:15,c:'建構遊戲',h:'積木排成瓶、軟球滾地攻擊，倒幾個就一起數幾個。'},
+{n:'軌道拼接',w:'bro',p:'in',min:30,c:'建構遊戲',h:'火車或滾珠軌道讓他主導路線，你只負責遞零件。'},
+{n:'停車塔工程',w:'bro',p:'in',min:20,c:'建構遊戲',h:'積木蓋停車塔，小車一台台入庫，練空間與分類。'},
+{n:'得寶說故事',w:'bro',p:'in',min:20,c:'建構遊戲',h:'用大顆粒積木蓋場景，邊蓋邊編故事：這是誰的家？'},
+/* ===== 弟弟・感官遊戲 ===== */
+{n:'黏土時間',w:'bro',p:'in',min:25,c:'感官遊戲',h:'主題式：今天只捏「食物」，捏完開餐廳賣給全家。'},
+{n:'麵粉挖挖樂',w:'bro',p:'in',min:25,c:'感官遊戲',h:'大盆麵粉藏小玩具讓他挖寶，地上先鋪野餐墊。'},
+{n:'刮鬍泡塗鴉',w:'bro',p:'in',min:20,c:'感官遊戲',h:'浴室磁磚擠刮鬍泡讓他畫，畫完蓮蓬頭一沖搞定。'},
+{n:'冰塊救援隊',w:'bro',p:'in',min:20,c:'感官遊戲',h:'前晚把小玩具冰進製冰盒，給他溫水滴管慢慢「救援」。'},
+{n:'豆豆倒倒樂',w:'bro',p:'in',min:20,c:'感官遊戲',h:'綠豆＋各種杯匙漏斗倒來倒去，就是最好的專注訓練。'},
+{n:'清水畫牆',w:'bro',p:'out',min:15,c:'感官遊戲',h:'一桶清水＋油漆刷在圍牆地板「畫畫」，太陽會自動擦掉。'},
+{n:'神秘觸摸袋',w:'bro',p:'in',min:10,c:'感官遊戲',h:'布袋放熟悉小物，摸一摸猜是什麼，猜對全家歡呼。'},
+{n:'米箱小世界',w:'bro',p:'in',min:25,c:'感官遊戲',h:'白米倒收納箱，加小車小動物，就是室內沙坑。'},
+{n:'果凍考古',w:'bro',p:'in',min:20,c:'感官遊戲',h:'果凍裡藏小玩具，用湯匙慢慢挖出來，黏黏的超療癒。'},
+{n:'追泡泡',w:'bro',p:'out',min:15,c:'感官遊戲',h:'你吹他追，戳破一個數一個——最便宜的放電神器。'},
+/* ===== 弟弟・放電時間 ===== */
+{n:'公園滑梯＋滑步車',w:'bro',p:'out',min:90,c:'放電時間',h:'排上午第一件事，放完電下午整天好帶。'},
+{n:'沙發枕頭山',w:'bro',p:'in',min:20,c:'放電時間',h:'枕頭棉被堆成山讓他爬與跳，你當裁判大聲喊分數。'},
+{n:'丟接大球',w:'bro',p:'both',min:15,c:'放電時間',h:'大顆軟球近距離丟接，接到就一起大聲數數。'},
+{n:'報紙雪球大戰',w:'bro',p:'in',min:15,c:'放電時間',h:'舊報紙揉成球互丟，打完比賽誰撿得多丟回箱子。'},
+{n:'動物模仿走',w:'bro',p:'in',min:10,c:'放電時間',h:'螃蟹橫走、青蛙跳、大象甩鼻子過客廳，你喊題目他變身。'},
+{n:'膠帶跳格子',w:'bro',p:'in',min:15,c:'放電時間',h:'紙膠帶在地上貼格子與線條：單腳跳、走鋼索、跳遠。'},
+{n:'氣球不落地',w:'bro',p:'in',min:15,c:'放電時間',h:'全家輪流拍氣球不讓它落地，一起數能撐幾下。'},
+{n:'棉被隧道',w:'bro',p:'in',min:10,c:'放電時間',h:'椅子＋棉被搭隧道讓他鑽爬，盡頭放小獎品。'},
+{n:'你追我跑',w:'bro',p:'out',min:15,c:'放電時間',h:'最原始最有效：「爸爸鬼來了！」笑聲保證。'},
+{n:'樓梯搬運任務',w:'bro',p:'in',min:10,c:'放電時間',h:'樓梯上下搬運玩具任務（你全程在側），雨天放電替代方案。'},
+/* ===== 弟弟・生活參與 ===== */
+{n:'一起做早餐',w:'bro',p:'in',min:30,c:'生活參與',h:'打蛋、壓吐司模、洗菜。慢和亂是必要成本。'},
+{n:'澆花小隊長',w:'bro',p:'out',min:15,c:'生活參與',h:'專屬小澆水壺，固定負責幾盆「他的花」。'},
+{n:'洗菜小幫手',w:'bro',p:'in',min:15,c:'生活參與',h:'一盆水一把青菜，洗完瀝乾他全包，順便玩水。'},
+{n:'曬衣夾配對',w:'bro',p:'in',min:15,c:'生活參與',h:'襪子配對＋夾夾子，小手肌肉最佳訓練。'},
+{n:'掃地小隊',w:'bro',p:'in',min:10,c:'生活參與',h:'迷你掃把畚箕，你掃大區他掃小區，垃圾集合點會師。'},
+{n:'擦桌子比賽',w:'bro',p:'in',min:10,c:'生活參與',h:'一人一條抹布分區擦，計時完成蓋章。'},
+{n:'收玩具配對賽',w:'bro',p:'in',min:10,c:'生活參與',h:'收納箱貼照片標籤，一首歌放完前全部歸位。'},
+{n:'幫忙拿快遞',w:'bro',p:'in',min:5,c:'生活參與',h:'小包裹讓他抱進門、幫忙拆（你開刀口），儀式感滿分。'},
+/* ===== 弟弟・語言認知 ===== */
+{n:'繪本共讀',w:'bro',p:'in',min:15,c:'語言認知',h:'一天 2 本，同一本重複 100 次也照唸——重複就是學習。'},
+{n:'指物命名',w:'bro',p:'in',min:10,c:'語言認知',h:'「眼睛在哪裡？」升級版：情緒、動作、位置都能問。'},
+{n:'動物聲音猜謎',w:'bro',p:'in',min:10,c:'語言認知',h:'你學叫聲他猜動物，再交換——他學的通常更像。'},
+{n:'顏色偵探',w:'bro',p:'in',min:10,c:'語言認知',h:'「找出家裡 5 個紅色的東西！」跑著找，認知＋放電二合一。'},
+{n:'大小分類站',w:'bro',p:'in',min:15,c:'語言認知',h:'玩具分大中小三堆，再依顏色重分——分類是數學的起點。'},
+{n:'形狀餅乾工廠',w:'bro',p:'in',min:20,c:'語言認知',h:'黏土＋形狀模，做完辨認：三角形給爸爸、圓形給姊姊。'},
+{n:'手指謠時間',w:'bro',p:'in',min:10,c:'語言認知',h:'五隻猴子、大拇哥二拇弟，唱加動作，語感節奏一起練。'},
+{n:'情緒臉譜卡',w:'bro',p:'in',min:10,c:'語言認知',h:'開心／生氣／難過臉譜卡：猜表情、照鏡子模仿。'},
+/* ===== 弟弟・音樂律動 ===== */
+{n:'鍋碗瓢盆樂團',w:'bro',p:'in',min:15,c:'音樂律動',h:'鍋子湯匙就是鼓組，跟著音樂盡情敲，鄰居請見諒。'},
+{n:'音樂木頭人',w:'bro',p:'in',min:15,c:'音樂律動',h:'音樂停就定格，動的人被搔癢。'},
+{n:'絲巾飛舞',w:'bro',p:'in',min:10,c:'音樂律動',h:'紗巾拋接、當翅膀當波浪，跟音樂快慢變速度。'},
+{n:'節奏拍拍',w:'bro',p:'in',min:10,c:'音樂律動',h:'你拍一段節奏他複製，從 2 拍到 4 拍慢慢加難。'},
+{n:'自製沙鈴',w:'bro',p:'in',min:20,c:'音樂律動',h:'空瓶裝綠豆封緊＋貼紙裝飾，做完立刻開演唱會。'},
+{n:'搖擺舞會',w:'bro',p:'in',min:10,c:'音樂律動',h:'一首快歌一首慢歌輪流，練聽音樂調整身體。'},
+/* ===== 姊姊・規則桌遊 ===== */
+{n:'UNO（三階段導入）',w:'sis',p:'in',min:25,c:'規則桌遊',h:'先只用數字卡練配對，再逐週加功能卡。完整規則見「桌遊·繪本」分頁。'},
+{n:'德國心臟病',w:'sis',p:'in',min:20,c:'規則桌遊',h:'湊滿 5 個同種水果搶按鈴，練反應與數量感。'},
+{n:'記憶配對',w:'sis',p:'in',min:15,c:'規則桌遊',h:'從 12 張開始慢慢加量；她贏你，不用放水放得太明顯。'},
+{n:'疊疊樂',w:'sis',p:'in',min:15,c:'規則桌遊',h:'練手穩與等待，倒了全家一起大笑就對了。'},
+{n:'動物疊疊樂',w:'sis',p:'in',min:15,c:'規則桌遊',h:'擲骰決定疊哪隻木頭動物，倒了自己收回。'},
+{n:'嗒寶 Dobble',w:'sis',p:'in',min:10,c:'規則桌遊',h:'兩張牌必有一個相同圖案，先找到先喊——視覺搜尋神器。'},
+{n:'睡皇后（簡化）',w:'sis',p:'in',min:20,c:'規則桌遊',h:'用國王喚醒皇后，順便偷渡加法練習。'},
+{n:'自製賓果',w:'sis',p:'in',min:15,c:'規則桌遊',h:'注音或數字賓果卡，小一預習包裝成遊戲。'},
+/* ===== 姊姊・大肢體 ===== */
+{n:'腳踏車拆輔助輪',w:'sis',p:'out',min:45,c:'大肢體',h:'暑假大目標：先練滑行找平衡再練踩踏，學會那天拍照記錄。'},
+{n:'跳繩',w:'sis',p:'out',min:15,c:'大肢體',h:'從「跳過搖晃的繩」開始，每多一下就慶祝。'},
+{n:'直排輪入門',w:'sis',p:'out',min:40,c:'大肢體',h:'護具戴好平地練站與安全跌倒，先玩「企鵝走路」。'},
+{n:'任務卡探險',w:'sis',p:'out',min:30,c:'大肢體',h:'出門前發卡：找 5 片不同形狀的葉子、3 種顏色的花。'},
+{n:'羽球初體驗',w:'sis',p:'out',min:20,c:'大肢體',h:'先練「氣球羽球」再換真球——成功率決定興趣。'},
+{n:'跳格子',w:'sis',p:'both',min:15,c:'大肢體',h:'經典跳房子，順便練寫數字 1–10 當格子編號。'},
+{n:'一二三木頭人',w:'sis',p:'out',min:15,c:'大肢體',h:'全家一起玩，練衝刺與急停控制。'},
+{n:'踢球射門',w:'sis',p:'out',min:20,c:'大肢體',h:'兩個水瓶當球門輪流當守門員，進球歡呼要浮誇。'},
+{n:'花圃平衡木',w:'sis',p:'out',min:10,c:'大肢體',h:'散步時走花圃邊緣練平衡，你在旁牽手護航。'},
+{n:'游泳玩水',w:'sis',p:'out',min:90,c:'大肢體',h:'憋氣吐泡泡、打水花——暑假每週一次的固定放電。'},
+/* ===== 姊姊・建構創作 ===== */
+{n:'小顆粒樂高',w:'sis',p:'in',min:45,c:'建構創作',h:'照說明書拼一小盒，練專注與挫折忍受；卡關你只出一張嘴。'},
+{n:'我們家的設計圖',w:'sis',p:'in',min:30,c:'建構創作',h:'方格紙畫夢想房間，你用設計師身分認真給圖面回饋。'},
+{n:'摺紙入門',w:'sis',p:'in',min:20,c:'建構創作',h:'紙飛機、小船、愛心起步，摺完寫上名字送人。'},
+{n:'串珠手鍊',w:'sis',p:'in',min:25,c:'建構創作',h:'照色卡順序串，練序列與精細動作，成品送媽媽。'},
+{n:'紙飛機大賽',w:'sis',p:'in',min:20,c:'建構創作',h:'摺 3 種機型試飛，貼膠帶記錄最遠距離——工程思維入門。'},
+{n:'拼豆創作',w:'sis',p:'in',min:40,c:'建構創作',h:'照圖排拼豆（熨燙你來），專注力馬拉松。'},
+{n:'萬花尺',w:'sis',p:'in',min:15,c:'建構創作',h:'轉出停不下來的幾何花紋，順便認識圓規概念。'},
+{n:'剪貼拼畫',w:'sis',p:'in',min:30,c:'建構創作',h:'舊雜誌剪圖拼一幅「我的暑假」，剪刀技升級。'},
+{n:'立體卡片',w:'sis',p:'in',min:30,c:'建構創作',h:'摺出彈跳機關做生日卡，存起來給下一個壽星。'},
+{n:'石頭彩繪',w:'sis',p:'both',min:30,c:'建構創作',h:'散步撿石頭回家畫成動物，排在讀寫角當作品展。'},
+/* ===== 姊姊・語言讀寫 ===== */
+{n:'招牌找字',w:'sis',p:'out',min:15,c:'語言讀寫',h:'路上找出「大」「小」「一」等認識的字，找到就得一分。'},
+{n:'口述故事代筆',w:'sis',p:'in',min:20,c:'語言讀寫',h:'她說你寫，寫完唸給全家聽——作者署名她的名字。'},
+{n:'名字練寫',w:'sis',p:'in',min:10,c:'語言讀寫',h:'自己的名字是第一組要會寫的字，簽在作品上最有動機。'},
+{n:'注音賓果',w:'sis',p:'in',min:15,c:'語言讀寫',h:'自製ㄅㄆㄇ賓果卡，唸音找符號，小一預習不像預習。'},
+{n:'故事接龍',w:'sis',p:'both',min:15,c:'語言讀寫',h:'一人一句接故事，越荒謬越好笑，睡前車上都能玩。'},
+{n:'猜謎語時間',w:'sis',p:'in',min:10,c:'語言讀寫',h:'「白白的、冰冰的、會融化」——猜完換她出題考你。'},
+{n:'相反詞大戰',w:'sis',p:'both',min:10,c:'語言讀寫',h:'你說「大」她答「小」，快問快答升級到「快樂→？」。'},
+{n:'字卡尋寶',w:'sis',p:'in',min:15,c:'語言讀寫',h:'常見字卡藏家裡，找到＋唸對才算得分。'},
+{n:'今日小記者',w:'sis',p:'in',min:15,c:'語言讀寫',h:'讓她「採訪」家人今天做了什麼，你幫忙記錄成新聞。'},
+{n:'寫信給阿公阿嬤',w:'sis',p:'in',min:25,c:'語言讀寫',h:'畫圖＋幾個字＋簽名，真的寄出去——文字的意義感。'},
+/* ===== 姊姊・數學邏輯 ===== */
+{n:'撲克比大小',w:'sis',p:'in',min:15,c:'數學邏輯',h:'一人翻一張比大小，贏的收牌——數感最快入門。'},
+{n:'錢幣小超市',w:'sis',p:'in',min:20,c:'數學邏輯',h:'認 1、5、10 元硬幣，標價買賣，練付錢與找錢概念。'},
+{n:'骰子加法賽',w:'sis',p:'in',min:15,c:'數學邏輯',h:'擲兩顆骰子搶答總和，答對得分——加法變搶答遊戲。'},
+{n:'量身高紀錄',w:'sis',p:'in',min:10,c:'數學邏輯',h:'門框貼身高尺，每月量一次寫日期，數據意識從小養。'},
+{n:'廚房小秤手',w:'sis',p:'in',min:15,c:'數學邏輯',h:'做點心時她負責秤重：「幫我秤 200 克麵粉。」'},
+{n:'日曆小管家',w:'sis',p:'in',min:5,c:'數學邏輯',h:'每天翻日曆唸「今天 7 月 11 日星期六」，認日期星期。'},
+{n:'七巧板',w:'sis',p:'in',min:20,c:'數學邏輯',h:'從 2 片拼圖開始到全 7 片，空間邏輯安靜練。'},
+{n:'四宮格數獨',w:'sis',p:'in',min:15,c:'數學邏輯',h:'兒童版數獨，1–4 不重複，邏輯推理入門。'},
+{n:'玩具普查員',w:'sis',p:'in',min:20,c:'數學邏輯',h:'統計車車幾台、娃娃幾隻，畫成長條圖——資料視覺化啟蒙。'},
+{n:'時鐘遊戲',w:'sis',p:'in',min:15,c:'數學邏輯',h:'玩具時鐘撥整點：「7 點要做什麼？」連結生活作息。'},
+/* ===== 姊姊・科學探索 ===== */
+{n:'小蘇打火山',w:'sis',p:'in',min:20,c:'科學探索',h:'小蘇打＋醋＋幾滴洗碗精，廚房就能爆發的經典。'},
+{n:'彩虹牛奶',w:'sis',p:'in',min:15,c:'科學探索',h:'牛奶滴色素，棉花棒沾洗碗精一點——顏色炸開的瞬間。'},
+{n:'沉浮實驗室',w:'sis',p:'in',min:20,c:'科學探索',h:'猜猜哪些東西會浮？先預測再丟水盆驗證——科學方法起手式。'},
+{n:'種豆芽日記',w:'sis',p:'in',min:10,c:'科學探索',h:'濕棉花種綠豆，每天畫觀察日記，一週看見生命。'},
+{n:'磁鐵尋寶',w:'sis',p:'in',min:15,c:'科學探索',h:'拿磁鐵測試家裡什麼吸得住，分「吸／不吸」兩堆。'},
+{n:'影子描畫',w:'sis',p:'out',min:20,c:'科學探索',h:'太陽下描彼此影子，早上畫一次下午再畫——影子搬家了！'},
+{n:'彩冰融化賽',w:'sis',p:'out',min:15,c:'科學探索',h:'色素冰塊放太陽下與陰影下，猜誰先融化。'},
+{n:'靜電氣球',w:'sis',p:'in',min:10,c:'科學探索',h:'氣球摩擦頭髮吸紙屑、讓頭髮站起來，哈哈大笑的物理課。'},
+{n:'放大鏡觀察家',w:'sis',p:'out',min:20,c:'科學探索',h:'帶放大鏡看螞蟻、葉脈、石頭紋路——觀察力就是專注力。'},
+{n:'天氣記錄員',w:'sis',p:'in',min:5,c:'科學探索',h:'每天在月曆畫太陽或雨滴，月底統計晴天幾天。'},
+/* ===== 姊姊・藝術手作 ===== */
+{n:'水彩暈染',w:'sis',p:'in',min:25,c:'藝術手作',h:'濕紙上滴水彩看顏色自己跑，成品當卡片底圖。'},
+{n:'蔬菜印章',w:'sis',p:'in',min:20,c:'藝術手作',h:'秋葵、蓮藕切面沾顏料蓋印，青椒切面是玫瑰花。'},
+{n:'自畫像',w:'sis',p:'in',min:20,c:'藝術手作',h:'鏡子前觀察自己再畫下來，每半年畫一張存檔比對。'},
+{n:'葉子拓印',w:'sis',p:'both',min:20,c:'藝術手作',h:'撿葉子墊紙下蠟筆平塗，葉脈浮出來的魔法。'},
+{n:'設計自己的 T 恤',w:'sis',p:'in',min:40,c:'藝術手作',h:'布用蠟筆畫素 T，熨燙定色（你操作），穿出門的成就感。'},
+{n:'黏土捏我們家',w:'sis',p:'in',min:30,c:'藝術手作',h:'全家每人捏一個自己，合體成「黏土全家福」。'},
+{n:'摺紙＋畫延伸',w:'sis',p:'in',min:25,c:'藝術手作',h:'摺一隻船再畫出海洋與船長，摺紙變場景。'},
+{n:'廢材機器人',w:'sis',p:'in',min:40,c:'藝術手作',h:'瓶蓋紙盒膠帶組機器人，環保＋工程＋美感三合一。'},
+/* ===== 姊姊・情緒社交 ===== */
+{n:'上學第一天扮演',w:'sis',p:'in',min:20,c:'情緒社交',h:'你演同學或老師，演練自我介紹、想上廁所怎麼舉手。'},
+{n:'情緒溫度計',w:'sis',p:'in',min:10,c:'情緒社交',h:'畫 1–5 分溫度計，睡前指「今天心情幾分？為什麼？」'},
+{n:'如果怎麼辦情境卡',w:'sis',p:'in',min:15,c:'情緒社交',h:'「同學搶你玩具怎麼辦？」演出來比說教有效十倍。'},
+{n:'讚美輪流說',w:'sis',p:'in',min:10,c:'情緒社交',h:'晚餐時每人說一個今天想讚美誰、為什麼。'},
+{n:'冷靜角演練',w:'sis',p:'in',min:10,c:'情緒社交',h:'佈置生氣時的冷靜角，不生氣時先「演習」怎麼用。'},
+{n:'輸贏練習賽',w:'sis',p:'in',min:15,c:'情緒社交',h:'桌遊前約定「輸了說：再來一局！」——輸得起是練出來的。'},
+/* ===== 一起・經典共玩 ===== */
+{n:'家庭尋寶',w:'fam',p:'in',min:40,c:'經典共玩',h:'你藏 3–5 個寶物＋畫藏寶圖。姊姊讀提示當隊長、弟弟負責翻找。'},
+{n:'一起做點心',w:'fam',p:'in',min:50,c:'經典共玩',h:'姊姊量秤打蛋、弟弟壓模攪拌，成品配爸爸的下午茶。'},
+{n:'開店扮演',w:'fam',p:'in',min:25,c:'經典共玩',h:'姊姊當老闆、弟弟當客人、你當供應商送貨兼奧客。'},
+{n:'同場騎車',w:'fam',p:'out',min:60,c:'經典共玩',h:'姊姊腳踏車、弟弟滑步車，同一個公園各騎各的。'},
+{n:'客廳障礙賽',w:'fam',p:'in',min:25,c:'經典共玩',h:'枕頭椅子膠帶線排關卡，姊姊先示範、弟弟跑簡化版。'},
+{n:'音樂舞會',w:'fam',p:'in',min:15,c:'經典共玩',h:'放歌全家亂跳，音樂停就定格，動的人出局。'},
+{n:'室內露營夜',w:'fam',p:'in',min:120,c:'經典共玩',h:'客廳搭帳篷、手電筒說故事、睡袋過夜——雨天最強王牌。'},
+{n:'手電筒尋寶',w:'fam',p:'in',min:20,c:'經典共玩',h:'關燈用手電筒找你藏的螢光貼紙或小玩具。'},
+{n:'紙箱工程',w:'fam',p:'in',min:90,c:'經典共玩',h:'大紙箱蓋一間店或城堡：你出工法、他們出裝潢。'},
+{n:'圖書館兒童區',w:'fam',p:'out',min:90,c:'經典共玩',h:'各選 3 本書；回家由姊姊「唸」一本給弟弟。'},
+{n:'觀光工廠 DIY',w:'fam',p:'out',min:240,t:'半天',c:'經典共玩',h:'挑有 DIY 課程的場館，成品當週末紀念。'},
+{n:'野餐日',w:'fam',p:'out',min:240,t:'半天',c:'經典共玩',h:'兩寶一起備餐盒：姊姊列清單、弟弟裝袋。'},
+/* ===== 一起・室內同樂 ===== */
+{n:'枕頭堡壘攻防',w:'fam',p:'in',min:25,c:'室內同樂',h:'沙發墊築牆分兩隊丟報紙球，爸爸永遠是被攻擊方。'},
+{n:'家庭電影院',w:'fam',p:'in',min:120,c:'室內同樂',h:'姊姊畫電影票、弟弟撕票驗票，爆米花＋關燈儀式感全開。'},
+{n:'你比我猜',w:'fam',p:'in',min:20,c:'室內同樂',h:'動物職業卡：弟弟用演的、姊姊用猜的，笑到不行。'},
+{n:'寶特瓶保齡球',w:'fam',p:'in',min:20,c:'室內同樂',h:'6 支瓶＋皮球，姊姊記分、弟弟撿瓶排瓶。'},
+{n:'磁鐵釣魚賽',w:'fam',p:'in',min:15,c:'室內同樂',h:'自製或現成釣魚組，計時比誰釣得多。'},
+{n:'家庭運動會',w:'fam',p:'in',min:40,c:'室內同樂',h:'三關：跳遠、丟襪球進籃、單腳站——頒獎典禮不能省。'},
+{n:'角色互換日',w:'fam',p:'in',min:60,c:'室內同樂',h:'孩子當爸媽、你當小孩鬧脾氣——他們安撫你的方式，就是你平常的樣子。'},
+{n:'傳話遊戲',w:'fam',p:'in',min:10,c:'室內同樂',h:'悄悄話傳一圈看走樣多少，三個人也能笑翻。'},
+{n:'猜猜我是誰',w:'fam',p:'in',min:15,c:'室內同樂',h:'頭上貼動物卡問問題猜自己是誰，姊姊主答、弟弟亂入。'},
+{n:'毛毛蟲競賽',w:'fam',p:'in',min:10,c:'室內同樂',h:'棉被捲身體當毛毛蟲，客廳兩端爬行競速。'},
+{n:'黑暗迷宮',w:'fam',p:'in',min:15,c:'室內同樂',h:'關燈後椅子擺陣，牽手摸黑通過，膽量訓練。'},
+{n:'全家拼圖夜',w:'fam',p:'in',min:40,c:'室內同樂',h:'100 片拼圖分工：姊姊拼邊框、弟弟找顏色、你負責被指揮。'},
+/* ===== 一起・戶外探索 ===== */
+{n:'溪邊玩水',w:'fam',p:'out',min:180,t:'半天',c:'戶外探索',h:'淺水處踩水撈石頭，救生衣穿好、你全程一臂距離內。'},
+{n:'沙灘挖沙',w:'fam',p:'out',min:180,t:'半天',c:'戶外探索',h:'挖水道、蓋城堡、埋爸爸——海邊是天然感統教室。'},
+{n:'夜間散步',w:'fam',p:'out',min:30,c:'戶外探索',h:'睡前全家散步找月亮星星，聊天品質最好的 20 分鐘。'},
+{n:'放風箏',w:'fam',p:'out',min:60,c:'戶外探索',h:'姊姊放線、弟弟追風箏，空曠處安全第一。'},
+{n:'農場餵動物',w:'fam',p:'out',min:180,t:'半天',c:'戶外探索',h:'餵羊餵兔近距離接觸，生命教育現場版。'},
+{n:'採果體驗',w:'fam',p:'out',min:180,t:'半天',c:'戶外探索',h:'當季水果現採現吃，順便教「食物從哪裡來」。'},
+{n:'家庭露營',w:'fam',p:'out',min:1440,t:'一晚',c:'戶外探索',h:'從自家院子或營地一夜開始——裝備控爸爸的新坑。'},
+{n:'雨鞋踩水日',w:'fam',p:'out',min:30,c:'戶外探索',h:'下雨不是敵人：雨鞋雨衣全副武裝，專門出門踩水窪。'},
+{n:'撿寶散步',w:'fam',p:'out',min:30,c:'戶外探索',h:'帶小袋子撿石頭、葉子、種子，回家變美勞材料。'},
+{n:'巷口小旅行',w:'fam',p:'out',min:40,c:'戶外探索',h:'姊姊當導遊拿地圖決定路線，弟弟負責按紅綠燈按鈕。'},
+/* ===== 一起・小廚師系列 ===== */
+{n:'手工披薩日',w:'fam',p:'in',min:60,c:'小廚師系列',h:'市售餅皮＋自選配料，一人一片自己的口味。'},
+{n:'飯糰捏捏樂',w:'fam',p:'in',min:30,c:'小廚師系列',h:'保鮮膜包飯自由捏形，海苔剪貼五官。'},
+{n:'餅乾壓模大隊',w:'fam',p:'in',min:60,c:'小廚師系列',h:'姊姊擀麵團、弟弟壓模，烤箱前全家守著看膨脹。'},
+{n:'水果串串',w:'fam',p:'in',min:20,c:'小廚師系列',h:'切好的水果自由串籤（弟弟用粗吸管），擺盤比創意。'},
+{n:'果汁實驗室',w:'fam',p:'in',min:20,c:'小廚師系列',h:'自選兩種水果打成汁，幫成品取名字寫菜單。'},
+{n:'蛋糕裝飾師',w:'fam',p:'in',min:40,c:'小廚師系列',h:'現成蛋糕體＋鮮奶油糖珠，醜沒關係，好吃就好。'},
+{n:'包水餃小工廠',w:'fam',p:'in',min:60,c:'小廚師系列',h:'姊姊包標準款、弟弟包「創意款」，煮完猜哪顆是誰包的。'},
+{n:'刨冰 DIY',w:'fam',p:'in',min:30,c:'小廚師系列',h:'夏日限定：刨冰機＋自選配料，成本比外面買低一半。'},
+/* ===== 一起・節慶季節 ===== */
+{n:'夏日玩水趴',w:'fam',p:'out',min:90,c:'節慶季節',h:'庭院或浴室：水槍、水球、灑水器輪番上陣。（夏）'},
+{n:'中秋柚帽烤肉',w:'fam',p:'out',min:120,c:'節慶季節',h:'柚子帽拍照＋孩子當「串料小工」。（秋）'},
+{n:'萬聖節變裝',w:'fam',p:'in',min:60,c:'節慶季節',h:'舊衣＋紙板自製裝扮，家裡輪流敲門討糖。（秋）'},
+{n:'聖誕倒數月曆',w:'fam',p:'in',min:30,c:'節慶季節',h:'24 個小袋自製倒數月曆，每天開一格。（冬）'},
+{n:'過年春聯隊',w:'fam',p:'in',min:40,c:'節慶季節',h:'姊姊寫「春」「福」、弟弟負責貼（你扶梯子）。（冬）'},
+{n:'元宵自製燈籠',w:'fam',p:'in',min:40,c:'節慶季節',h:'紅包袋或牛奶盒做燈籠，提著夜間散步。（冬）'},
+{n:'端午立蛋日',w:'fam',p:'in',min:30,c:'節慶季節',h:'中午立蛋挑戰＋當阿嬤包粽的小助手。（夏）'},
+{n:'生日佈置隊',w:'fam',p:'in',min:40,c:'節慶季節',h:'家人生日前夜偷偷佈置，氣球彩帶全員出動。'},
+{n:'冬至搓湯圓',w:'fam',p:'in',min:40,c:'節慶季節',h:'糯米糰搓圓，紅白之外加「創意色」，煮完全家吃。（冬）'},
+{n:'跨年回顧牆',w:'fam',p:'in',min:30,c:'節慶季節',h:'洗出今年照片貼成一面牆，每人選「年度最愛一張」。（冬）'},
+/* ===== 一起・睡前系列 ===== */
+{n:'繪本劇場',w:'fam',p:'in',min:20,c:'睡前系列',h:'一本繪本分角色演：姊姊唸旁白、弟弟演主角、你配音。'},
+{n:'手影遊戲',w:'fam',p:'in',min:10,c:'睡前系列',h:'手電筒照牆變出小狗兔子，教完換他們創作新動物。'},
+{n:'今日三件好事',w:'fam',p:'in',min:10,c:'睡前系列',h:'關燈前每人說三件今天的好事——感恩練習兼聊天。'},
+{n:'編故事接龍',w:'fam',p:'in',min:15,c:'睡前系列',h:'「從前有一隻…」一人一句，主角常常是放屁的恐龍。'},
+{n:'晚安按摩',w:'fam',p:'in',min:10,c:'睡前系列',h:'背上「種花」：畫圈是澆水、輕敲是下雨，安撫入睡神器。'},
+{n:'星空投影',w:'fam',p:'in',min:15,c:'睡前系列',h:'紙杯戳洞＋手電筒＝天花板星空，聊星星聊到睡著。'}
+];
+
+/* ---------- 桌遊圖鑑 ---------- */
+const GAMES=[
+{g:'starter',n:'果園遊戲（HABA）',age:'3+',pl:'2–4 人',tm:'15 分',learn:'合作 · 顏色配對',how:'全家同隊在烏鴉抵達前採完水果——沒有輸家，姊弟同隊首選。'},
+{g:'starter',n:'糖果樂園',age:'3+',pl:'2–4 人',tm:'20 分',learn:'顏色認知 · 輪流',how:'抽色卡前進，純運氣制——弟弟也有機會贏姊姊。'},
+{g:'starter',n:'記憶配對',age:'3+',pl:'2–4 人',tm:'15 分',learn:'記憶力',how:'翻兩張找一樣，從 12 張開始加量。'},
+{g:'starter',n:'磁鐵釣魚',age:'3+',pl:'1–4 人',tm:'10 分',learn:'手眼協調',how:'計時釣魚比多，弟弟的第一款「桌遊」。'},
+{g:'starter',n:'蛇梯棋',age:'4+',pl:'2–4 人',tm:'15 分',learn:'數數 · 點數對應',how:'擲骰前進，練 1–6 的點數與格子對應。'},
+{g:'starter',n:'動物疊疊樂',age:'4+',pl:'2–4 人',tm:'15 分',learn:'手穩 · 輪流',how:'擲骰把木頭動物往上疊，倒了自己收回。'},
+{g:'main',n:'UNO',age:'官方 7+／簡化 5+',pl:'2–10 人',tm:'20–30 分',learn:'配對 · 輪流 · 策略',how:'姊姊主力，用上方三階段導入法。完整規則見本頁最上方。'},
+{g:'main',n:'德國心臟病',age:'6+（5 歲可）',pl:'2–6 人',tm:'15 分',learn:'反應 · 數量感',how:'看到湊滿 5 個同種水果就搶按鈴。'},
+{g:'main',n:'嗒寶 Dobble',age:'6+（5 歲可）',pl:'2–8 人',tm:'10 分',learn:'視覺搜尋 · 反應',how:'任兩張牌必有一個相同圖案，先找到先贏。'},
+{g:'main',n:'犀牛英雄',age:'5+',pl:'2–5 人',tm:'15 分',learn:'手穩 · 空間',how:'用紙牌往上蓋高樓，輪流加蓋不讓它倒。'},
+{g:'main',n:'拔毛運動會',age:'4+',pl:'2–4 人',tm:'20 分',learn:'記憶 · 競速',how:'記圖案位置讓小雞追尾拔毛，記憶遊戲的天花板級趣味。'},
+{g:'main',n:'睡皇后',age:'8+（5 歲簡化）',pl:'2–5 人',tm:'20 分',learn:'加法 · 策略',how:'用國王喚醒皇后；數字牌可湊加法出牌，數學偷渡首選。'},
+{g:'main',n:'疊疊樂 Jenga',age:'6+',pl:'2–6 人',tm:'15 分',learn:'手穩 · 專注',how:'抽積木往上疊，練屏息的專注。'},
+{g:'main',n:'跳棋',age:'6+',pl:'2–6 人',tm:'20 分',learn:'路徑規劃',how:'用連跳把棋子走到對面，小一後的進階選項。'},
+{g:'main',n:'五子棋',age:'6+',pl:'2 人',tm:'10 分',learn:'邏輯 · 攻防',how:'先連成五子，父女對弈的長期保留節目。'},
+{g:'main',n:'迷宮尋寶 Labyrinth',age:'7+（可簡化）',pl:'2–4 人',tm:'25 分',learn:'空間推理',how:'推動迷宮板開路收集寶物，小一後解鎖。'},
+{g:'family',n:'你比我猜（自製卡）',age:'4+',pl:'3 人以上',tm:'15 分',learn:'表達 · 肢體',how:'動物與職業卡：弟弟用演的、姊姊用猜的。'},
+{g:'family',n:'自製賓果',age:'4+',pl:'2 人以上',tm:'15 分',learn:'數字 · 注音認讀',how:'自製注音賓果卡＝小一預習神器，弟弟玩圖案版。'}
+];
+
+/* ---------- 繪本書單 ---------- */
+const BOOKS={
+'小一銜接（姊姊）':[
+ {t:'小阿力的大學校',d:'對「學校好大我好小」的擔心，最經典的一本。'},
+ {t:'魔法親親',d:'分離焦慮特效藥：手心的吻，想媽媽時按一下。'},
+ {t:'我好擔心',d:'給容易緊張的孩子——小莉擔心一切，後來交到朋友。'},
+ {t:'大衛上學去',d:'用大笑認識學校規則：規則不是處罰，是大家的約定。'},
+ {t:'小雞逛超市／小雞上學（工藤紀子）',d:'姊弟都愛的系列，畫面細節多到可以玩找找看。'}],
+'情緒力（兩人共用）':[
+ {t:'生氣王子（賴馬）',d:'生氣的時候可以怎麼辦——台灣家庭必備。'},
+ {t:'愛哭公主（賴馬）',d:'挫折容忍的入門磚，唸完聊「妳上次哭是因為…」。'},
+ {t:'我變成一隻噴火龍了！（賴馬）',d:'把「暴怒」畫成噴火，孩子秒懂情緒失控。'},
+ {t:'菲菲生氣了',d:'情緒的爆發、離開現場與自我平復，畫面張力極強。'},
+ {t:'彩色怪獸',d:'把情緒分顏色裝罐子——情緒溫度計遊戲的最佳搭配。'}],
+'弟弟啟蒙（3 歲）':[
+ {t:'好餓的毛毛蟲',d:'數數、星期、食物一次到位的百年經典。'},
+ {t:'棕色的熊、棕色的熊，你在看什麼？',d:'顏色＋動物＋句型重複，唸三次他就會背。'},
+ {t:'小金魚逃走了',d:'每頁找金魚，專注力遊戲書。'},
+ {t:'月亮晚安',d:'睡前儀式最後一本的固定班底。'},
+ {t:'親愛的動物園',d:'翻翻書機關＋動物特質，3 歲的心頭好。'}],
+'爸爸共讀經典':[
+ {t:'我爸爸（安東尼布朗）',d:'唸這本時你就是主角——「我爸爸什麼都不怕」。'},
+ {t:'猜猜我有多愛你',d:'睡前把愛量化的遊戲：「我愛你到月亮再回來。」'},
+ {t:'逃家小兔',d:'不管你變成什麼我都會找到你——安全感的原型故事。'},
+ {t:'彼得的椅子',d:'手足主題首選：大寶面對二寶的心情，姊姊會很有感。'}]
+};
+
+/* ---------- 渲染：分齡清單 ---------- */
+const CAT_SUB={
+'扮演遊戲':'3 歲是扮演黃金期。他當主角、你當配角，演什麼都要投入。',
+'規則桌遊':'這年齡開始愛規則、想贏——輸了會哭很正常，陪她練「再來一局」。',
+'經典共玩':'分工設計是核心：姊姊出腦、弟弟出力，衝突自然減半。'
+};
+function renderKid(whoKey, mountId){
+  const items = ACT.filter(a=>a.w===whoKey);
+  const cats = [];
+  items.forEach(a=>{ if(!cats.includes(a.c)) cats.push(a.c); });
+  let html='';
+  cats.forEach(cat=>{
+    const list = items.filter(a=>a.c===cat);
+    html += '<div class="section-title">'+cat+' <span class="cnt">'+list.length+'</span></div>';
+    if(CAT_SUB[cat]) html += '<div class="section-sub">'+CAT_SUB[cat]+'</div>';
+    html += '<div class="cards two">';
+    list.forEach(a=>{
+      const tLabel = a.t || (a.min+'分');
+      const pLabel = a.p==='in'?'室內':(a.p==='out'?'戶外':'皆可');
+      html += '<div class="act '+a.w+'"><div class="head"><span class="name">'+a.n+'</span><span class="badge">'+pLabel+' · '+tLabel+'</span></div><div class="how">'+a.h+'</div></div>';
+    });
+    html += '</div>';
+  });
+  document.getElementById(mountId).innerHTML = html;
+}
+renderKid('sis','list-sis');
+renderKid('bro','list-bro');
+renderKid('fam','list-fam');
+
+/* ---------- 渲染：桌遊圖鑑 ---------- */
+const GAME_GROUPS=[
+ {key:'starter',title:'入門級（3–4 歲起，弟弟也能玩）'},
+ {key:'main',title:'姊姊主場（5–6 歲）'},
+ {key:'family',title:'全家派對'}
+];
+let ghtml='';
+GAME_GROUPS.forEach(gr=>{
+  const list = GAMES.filter(g=>g.g===gr.key);
+  ghtml += '<div class="section-title">'+gr.title+' <span class="cnt">'+list.length+'</span></div><div class="cards two">';
+  list.forEach(g=>{
+    ghtml += '<div class="game-card"><div class="g-head"><span class="g-name">'+g.n+'</span><span class="badge">'+g.age+'</span><span class="badge">'+g.pl+'</span><span class="badge">'+g.tm+'</span></div><div class="g-learn">練：'+g.learn+'</div><div class="g-how">'+g.how+'</div></div>';
+  });
+  ghtml += '</div>';
+});
+document.getElementById('list-games').innerHTML = ghtml;
+
+/* ---------- 渲染：繪本 ---------- */
+let bhtml='';
+Object.keys(BOOKS).forEach(theme=>{
+  bhtml += '<div class="section-title">繪本書單・'+theme+' <span class="cnt">'+BOOKS[theme].length+'</span></div><div class="cards two">';
+  BOOKS[theme].forEach(b=>{
+    bhtml += '<div class="book"><div class="b-t">《'+b.t+'》</div><div class="b-d">'+b.d+'</div></div>';
+  });
+  bhtml += '</div>';
+});
+document.getElementById('list-books').innerHTML = bhtml;
+
+/* ---------- 統計 ---------- */
+const cS=ACT.filter(a=>a.w==='sis').length, cB=ACT.filter(a=>a.w==='bro').length, cF=ACT.filter(a=>a.w==='fam').length;
+document.getElementById('libStats').textContent = '全庫 '+ACT.length+' 個遊戲｜姊姊 '+cS+' · 弟弟 '+cB+' · 一起 '+cF+'｜另有 '+GAMES.length+' 款桌遊圖鑑';
+
+/* ---------- 篩選 chips ---------- */
+const state={who:'any',place:'any',time:'any'};
+document.querySelectorAll('.chip').forEach(c=>{
+  c.addEventListener('click',()=>{
+    const g=c.dataset.group;
+    state[g]=c.dataset.val;
+    document.querySelectorAll('.chip[data-group="'+g+'"]').forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
+  });
+});
+
+/* ---------- 抽卡 ---------- */
+const WHO_LABEL={sis:'姊姊',bro:'弟弟',fam:'一起玩'};
+const PLACE_LABEL={in:'室內',out:'戶外',both:'室內外皆可'};
+let lastPick=null;
+document.getElementById('drawBtn').addEventListener('click',()=>{
+  let pool=ACT.filter(a=>{
+    const okWho = state.who==='any'||a.w===state.who;
+    const okPlace = state.place==='any'||a.p===state.place||a.p==='both';
+    let okTime=true;
+    if(state.time==='short') okTime=a.min<=20;
+    else if(state.time==='mid') okTime=a.min>20&&a.min<=45;
+    else if(state.time==='long') okTime=a.min>45;
+    return okWho&&okPlace&&okTime;
+  });
+  const stage=document.getElementById('drawStage');
+  if(pool.length===0){
+    stage.innerHTML='<div class="draw-empty">這個組合目前沒有遊戲，放寬一個條件試試。</div>';
+    return;
+  }
+  if(pool.length>1) pool=pool.filter(a=>a!==lastPick);
+  const pick=pool[Math.floor(Math.random()*pool.length)];
+  lastPick=pick;
+  const tLabel=pick.t||(pick.min+'分');
+  stage.innerHTML=
+    '<div class="draw-card enter"><div class="tags">'
+    +'<span class="tag '+pick.w+'">'+WHO_LABEL[pick.w]+'</span>'
+    +'<span class="tag meta">'+PLACE_LABEL[pick.p]+'</span>'
+    +'<span class="tag meta">'+tLabel+'</span>'
+    +'<span class="tag meta">'+pick.c+'</span>'
+    +'</div><div class="name">'+pick.n+'</div><div class="how">'+pick.h+'</div></div>';
+  document.getElementById('drawBtn').textContent='換 一 個';
+});
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.setAttribute('aria-selected','false'));
+    btn.setAttribute('aria-selected','true');
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById(btn.dataset.panel).classList.add('active');
+  });
+});
+
+/* ---------- Checklist（僅本次瀏覽有效） ---------- */
+document.querySelectorAll('.check-row input').forEach(cb=>{
+  cb.addEventListener('change',()=>cb.closest('.check-row').classList.toggle('done',cb.checked));
+});
+</script>
+</body>
+</html>

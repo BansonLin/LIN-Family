@@ -10,9 +10,10 @@
         --park:#3a8f5f;--cafe:#a5722a;--indoor:#3d6fa8}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);padding:env(safe-area-inset-top) 14px 40px}
-  header{padding:18px 2px 10px}
+  header{padding:18px 2px 10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
   h1{font-size:1.25rem;color:var(--g)}
   #kidline{font-size:.8rem;color:var(--sub);margin-top:2px}
+  #timelink{flex-shrink:0;background:var(--g);color:#fff;font-size:.72rem;letter-spacing:.06em;padding:6px 12px;border-radius:999px;text-decoration:none;font-weight:700}
   .btnrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:8px 0 10px}
   .scen{font-size:1.05rem;padding:15px 4px;border:2px solid var(--line);border-radius:14px;background:var(--card);text-align:center;line-height:1.5}
   .scen small{display:block;font-size:.72rem;color:var(--sub)}
@@ -53,7 +54,8 @@
 </head>
 <body>
 <header>
-  <h1>林家出遊手冊</h1><div id="kidline"></div>
+  <div><h1>林家出遊手冊</h1><div id="kidline"></div></div>
+  <a id="timelink" href="time.html">⏳ 時光手冊</a>
 </header>
 
 <div class="btnrow">

@@ -6,6 +6,7 @@
 - **頁面層旗標 free/meal/coffee**:「免費優先/要有餐/要有咖啡」篩選所需,依 Phase 2 研究之費用/餐飲情報推導後內嵌於頁面;schema v1 尚無 fee 欄位,結構化仍待 v2 核准。
 - **資料清理**:移除 age_fit 理由中 12 處寫死年齡與暱稱的字句(違反「禁止寫死年齡」與原則 3),改為年齡帶通用表述。
 - **產生方式**:index.html 由 data/venues.json 產生(內嵌決策所需精簡欄位,不含 evidence);venues.json 更新後需重新產生 index.html(已知限制)。
+- **V1.1(2026-07-19,應使用者要求豐富介面)**:卡片增加費用短摘要(頁面層濃縮,結構化 fee 欄位仍待 schema v2)、設施列(尿布台/兒童椅/哺乳室/停車/廁所 ✓✗?—)、滑步車標示、兩個孩子各自年齡帶分數、Google Maps 導航連結、「詳細」展開(四情境天氣分、全年齡帶理由、遮蔭/聲量依據、地址);新增「📚 全部景點」依類別瀏覽模式與類別色彩。互動以 headless Chromium 實測通過。
 
 ## 2026-07-19|schema v1(data/venues.json)
 - 單筆欄位依 CLAUDE.md「data/venues.json schema」定義:id / name / type / location / weather_fit / shade_score / ride_ok / noise_tolerance / age_fit / facilities / rain_backup_id / evidence / family_log / last_verified / status。

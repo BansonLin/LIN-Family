@@ -73,7 +73,10 @@ const FEE_SHORT = {
   "brick-museum-yilan": "約 200–250 元含 3 項 DIY",
   "doctor-duck": "100 元可全折・DIY 需預約",
   "happiness-farm-20": "100 元可全折(100cm 以下免)",
-  "lanyang-creative": "免費入園・餐飲/DIY 另計"
+  "lanyang-creative": "免費入園・餐飲/DIY 另計",
+  "changpi-lake": "免費・24 小時開放(付費樂園區另計)",
+  "dongyue-spring": "免費・季節限定 6–10 月開放",
+  "tiansongpi-station": "免費入園・五分仔小火車 50 元"
 };
 const FEE_FULL = {
   "luodong-sports-park": "免門票;附設停車場收費時間08:00–21:00,小客車平日30元/次、假日50元/次(官方收費辦法);17:00後僅設籍宜蘭縣民眾憑國民身分證免費停車,部落格所稱「每次計3小時、17時後免費」以現場公告為準",
@@ -137,9 +140,12 @@ const FEE_FULL = {
   "brick-museum-yilan": "全票原價 250 元(重新開幕/開幕優惠約 200–230 元;部分來源列平日 220/假日 250)、愛心票約 125–150 元(來源不一,funtime 與樂色山資料多列 125);未滿 3 歲或未滿 90cm 之幼兒及 75 歲以上長者免費;門票含 3 項積木 DIY 與一份(約 20 元)飲料兌換/折抵。實際票價以官網/官方 FB 最新公告為準(來源數字略有出入)。",
   "doctor-duck": "入館全票100元(原價120,3歲以下及身障免費),可全額折抵館內消費;DIY另計並多需3天前預約:彩繪鴨180、古早味鹹鴨蛋180、鴨賞便利包/鴨賞DIY約220-280、櫻桃鴨御飯糰180等",
   "happiness-farm-20": "入園門票100元/人(可全額折抵園內低消),100公分以下幼兒免費;空中樹梢體驗200元起;DIY 180元起",
-  "lanyang-creative": "免費入園(免門票);園內餐飲、選品購物、DIY手作體驗等另行付費。"
+  "lanyang-creative": "免費入園(免門票);園內餐飲、選品購物、DIY手作體驗等另行付費。",
+  "changpi-lake": "長埤湖風景區本體免門票、免費停車、24小時開放(2026 三星鄉公所官網及多篇部落格確認)。園內付費樂園區(原精靈村/現水行俠主題樂園)於2025改版後費用有變動:食尚玩家報導樂園區約50元入園賞湖景步道;動物區/精靈村全票約200元(可折抵消費,部分方案附100元兌換券)、半票約100元(65歲以上及國小生)、幼稚園以下免費;水上活動與和服體驗另計。樂園區營業時間各來源約 9:30–17:30(部分標 9:30–16:10)不一。實際票價與時間以官網 sanshingyolo.com 為準,標『待確認以官網最新公告』。",
+  "dongyue-spring": "免門票(免費);對面停車場免費停車。僅需自負交通費,園內有美食文創市集攤販另計",
+  "tiansongpi-station": "入園免費;五分仔小火車票$50(身高110cm以下兒童免費、6歲以下需大人陪同);園區消費滿額贈小火車票一張(2025–2026 多數部落格為消費/點餐滿$100送一張,另有滿$200一說,以官方價目表現場公告為準);伐木星空低/高空體驗約$350(7關卡一次$350)–$500(KKday高空方案約$500含小火車票+拍貼)。"
 };
-const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei","annong-river-park","luodong-forestry-culture-park","lanyang-creative"]);
+const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei","annong-river-park","luodong-forestry-culture-park","lanyang-creative","changpi-lake","dongyue-spring","tiansongpi-station"]);
 const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan","jianiao-garden","luwu-japanese-garden","herbelle","toucheng-leisure-farm","shengyang-water-plant-farm","lanyang-creative"]);
 const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch","chung-hsing-cultural-park","juzhixiang","jianiao-garden","xingbao-scallion-farm","herbelle","luwu-japanese-garden"]);
 

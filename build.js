@@ -76,7 +76,17 @@ const FEE_SHORT = {
   "lanyang-creative": "免費入園・餐飲/DIY 另計",
   "changpi-lake": "免費・24 小時開放(付費樂園區另計)",
   "dongyue-spring": "免費・季節限定 6–10 月開放",
-  "tiansongpi-station": "免費入園・五分仔小火車 50 元"
+  "tiansongpi-station": "免費入園・五分仔小火車 50 元",
+  "shilin-residence": "庭園免費・正館 100 元(學齡前免)",
+  "ntm-taipei": "30 元(未滿 6 歲免)・四館聯票 130",
+  "beitou-hotspring-museum": "免費",
+  "taipei-water-park": "水鄉庭園 80 元(6 歲以下免)・親水樂園另購",
+  "huashan-1914": "免費入園・展覽另購",
+  "rongxing-garden": "免費・24 小時(整建中)",
+  "maokong-gondola": "單程 180 元(未滿 6 歲免)・一日票 300",
+  "tfam-kids": "兒藝中心免費・主館 30 元",
+  "youth-park-taipei": "免費・游泳池另收",
+  "dahu-park": "免費・24 小時開放"
 };
 const FEE_FULL = {
   "luodong-sports-park": "免門票;附設停車場收費時間08:00–21:00,小客車平日30元/次、假日50元/次(官方收費辦法);17:00後僅設籍宜蘭縣民眾憑國民身分證免費停車,部落格所稱「每次計3小時、17時後免費」以現場公告為準",
@@ -143,11 +153,21 @@ const FEE_FULL = {
   "lanyang-creative": "免費入園(免門票);園內餐飲、選品購物、DIY手作體驗等另行付費。",
   "changpi-lake": "長埤湖風景區本體免門票、免費停車、24小時開放(2026 三星鄉公所官網及多篇部落格確認)。園內付費樂園區(原精靈村/現水行俠主題樂園)於2025改版後費用有變動:食尚玩家報導樂園區約50元入園賞湖景步道;動物區/精靈村全票約200元(可折抵消費,部分方案附100元兌換券)、半票約100元(65歲以上及國小生)、幼稚園以下免費;水上活動與和服體驗另計。樂園區營業時間各來源約 9:30–17:30(部分標 9:30–16:10)不一。實際票價與時間以官網 sanshingyolo.com 為準,標『待確認以官網最新公告』。",
   "dongyue-spring": "免門票(免費);對面停車場免費停車。僅需自負交通費,園內有美食文創市集攤販另計",
-  "tiansongpi-station": "入園免費;五分仔小火車票$50(身高110cm以下兒童免費、6歲以下需大人陪同);園區消費滿額贈小火車票一張(2025–2026 多數部落格為消費/點餐滿$100送一張,另有滿$200一說,以官方價目表現場公告為準);伐木星空低/高空體驗約$350(7關卡一次$350)–$500(KKday高空方案約$500含小火車票+拍貼)。"
+  "tiansongpi-station": "入園免費;五分仔小火車票$50(身高110cm以下兒童免費、6歲以下需大人陪同);園區消費滿額贈小火車票一張(2025–2026 多數部落格為消費/點餐滿$100送一張,另有滿$200一說,以官方價目表現場公告為準);伐木星空低/高空體驗約$350(7關卡一次$350)–$500(KKday高空方案約$500含小火車票+拍貼)。",
+  "shilin-residence": "戶外庭園公園免費入園;僅『正館』室內導覽收門票:全票100元、團體票80元、優待票50元,學齡前兒童與身心障礙者及陪伴者一名免費。停車須另付費(福林公園60元/小時、台灣聯通士林官邸等鄰近收費停車場)",
+  "ntm-taipei": "全票30元、半票15元;未滿6歲學齡前兒童免費;65歲以上平日免費、假日半票;四館聯票全票130元/半票65元。本館與古生物館(土銀展示館)可一票或聯票參觀",
+  "beitou-hotspring-museum": "免費(門票與定時導覽皆免費)",
+  "taipei-water-park": "自來水園區(含水鄉庭園戲水區):夏季(7-8月)全票80/優待40元、非夏季(5、6、9月)全票50/優待25元,6歲以下與65歲以上免費;玩水期間2026/7/4~8/30。注意:園區內2026新開的『親水樂園』(9米雙螺旋滑水道、漂漂河)與水鄉庭園分開售票、門票不共用,暑假平日全票160/假日180、學生票平日130/假日160、3歲以上未滿6歲幼童平日80/假日90(7/4開幕日均一價100元)。置物櫃投幣(小格20/中格30元)、吹風機投幣10元;水岸停車場平日30/假日50元每小時。",
+  "huashan-1914": "園區入場免費;特定大型/沉浸式展覽與IP快閃店另行售票(依各展於KKTIX或官網購票)。停車收費(交通部觀光署頁面/園區公告):機車每小時25元、汽車平日每小時40元(單日上限約280元)、假日每小時60元(單日上限約540元);部分部落格另載每半小時25元、單日上限250元等舊資訊,兩者有出入,實際以現場公告為準",
+  "rongxing-garden": "免費(24小時開放公園);園區地下停車場另計:小型車約40元/時(半小時計)、機車約10元/時、當日上限約20元(來源:parks/janice.life)",
+  "maokong-gondola": "單程單次:全票NT$180/優待NT$50;一日票:全票NT$300/優待NT$100;水晶車廂『貓纜之眼』每趟次每人加NT$50;官方售票資訊:0~5歲(未滿6歲)幼童由購票成人陪同免費(每位成人限帶2名),6~12歲兒童適用優待票NT$50。WebSearch 複驗票價與免費年齡與官方一致",
+  "tfam-kids": "兒藝中心(B1)本身免票入場(多篇2025-2026部落格與新聞標示『免門票/免費親子景點』);進入主館常設/特展需全票NT$30、台北市民及6-12歲兒童/學生15,未滿6歲、65歲以上、身障者及必要陪伴者1人免費,週六17:00後停止售票、免費參觀;館方停車場平日NT$30/時、假日40/時。註:各來源對『兒藝中心是否需併購主館票』略有出入(官網票價頁列全票制,部分親子部落格稱免費),實際以現場公告為準",
+  "youth-park-taipei": "公園/飛行探索遊戲場/交通公園教學區:免費;萬華親子館:免費(時段制,每場限 80 對)。游泳池另收費(2026 夏季全票 120 元、僅戶外泳池+戲水池 60 元、身心障礙持證免費、公益時段 08:00–10:00 提供 65 歲以上與 55 歲以上原住民持證免費)。停車另計:地下停車場小型車 30 元/半小時、機車 20 元/次(停車費率為部落格轉述,建議現場再確認)",
+  "dahu-park": "免費入園、全天開放。開車可停大湖公園地下停車場(計時收費,實際費率待確認);園內另設臺北市立大湖公園游泳池為使用者付費之獨立設施,非本公園免費範圍。"
 };
-const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei","annong-river-park","luodong-forestry-culture-park","lanyang-creative","changpi-lake","dongyue-spring","tiansongpi-station"]);
-const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan","jianiao-garden","luwu-japanese-garden","herbelle","toucheng-leisure-farm","shengyang-water-plant-farm","lanyang-creative"]);
-const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch","chung-hsing-cultural-park","juzhixiang","jianiao-garden","xingbao-scallion-farm","herbelle","luwu-japanese-garden"]);
+const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei","annong-river-park","luodong-forestry-culture-park","lanyang-creative","changpi-lake","dongyue-spring","tiansongpi-station","shilin-residence","beitou-hotspring-museum","huashan-1914","rongxing-garden","youth-park-taipei","dahu-park"]);
+const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan","jianiao-garden","luwu-japanese-garden","herbelle","toucheng-leisure-farm","shengyang-water-plant-farm","lanyang-creative","huashan-1914","maokong-gondola"]);
+const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch","chung-hsing-cultural-park","juzhixiang","jianiao-garden","xingbao-scallion-farm","herbelle","luwu-japanese-garden","huashan-1914","maokong-gondola"]);
 
 const slim = venues.map(v => ({
   id: v.id, name: v.name, type: v.type,

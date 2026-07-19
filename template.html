@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家出遊手冊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="出遊手冊">
+<style>
+  :root{
+    --paper:#F7F3EC; --card:#FFFFFF;
+    --ink:#33302A; --ink-soft:#6F675C; --line:#E6DED0;
+    --park:#2E7D74; --park-bg:#E2EFEC; --park-deep:#1F5B54;
+    --cafe:#D9932A; --cafe-bg:#FBEDD6; --cafe-deep:#8A5A10;
+    --indoor:#3D6FA8; --indoor-bg:#E4EBF5; --indoor-deep:#31517A;
+    --farm:#8C5B33; --farm-bg:#F0E4D6; --farm-deep:#6B4322;
+    --warn:#B0483A;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;padding-bottom:64px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+  header{padding:26px 0 10px;animation:fadeUp .5s ease both}
+  .eyebrow{font-size:12px;letter-spacing:.35em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .ver{background:var(--ink);color:#fff;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+  .xlink{margin-left:auto;background:var(--park);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700}
+  h1{font-family:'LXGW WenKai TC',serif;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.3}
+  .today{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .kids{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .kid{flex:1;min-width:150px;border-radius:var(--radius);padding:12px 14px;display:flex;flex-direction:column;gap:2px;border:1.5px solid transparent}
+  .kid.k0{background:var(--park-bg);border-color:#CBE0DB}
+  .kid.k1{background:var(--cafe-bg);border-color:#F0DCB6}
+  .kid .who{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px}
+  .kid.k0 .who{color:var(--park-deep)} .kid.k1 .who{color:var(--cafe-deep)}
+  .kid .age{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:20px;line-height:1.2}
+  .kid .note{font-size:12px;color:var(--ink-soft)}
+
+  /* 推薦引擎(仿抽卡) */
+  .draw{margin-top:20px;background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px 16px 20px;box-shadow:0 6px 18px rgba(80,60,30,.06);animation:fadeUp .5s .08s ease both}
+  .draw h2{font-family:'LXGW WenKai TC',serif;font-size:22px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .draw h2 small{font-family:'Noto Sans TC';font-size:12px;color:var(--ink-soft);font-weight:400}
+  .filters{display:flex;flex-direction:column;gap:8px;margin:12px 0 14px}
+  .fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .flabel{font-size:12px;color:var(--ink-soft);width:34px;flex-shrink:0}
+  .chip{border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s ease;font-family:inherit}
+  .chip:hover{border-color:#C9BFAC}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .scenrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 2px}
+  .scard{border:1.5px solid var(--line);background:#FDFBF7;border-radius:12px;padding:9px 4px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s ease}
+  .scard .si{font-size:17px;line-height:1.2}
+  .scard .st{font-size:12px;font-weight:700;color:var(--ink);margin-top:2px}
+  .scard[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+  .scard[aria-pressed="true"] .st{color:#fff}
+  .note2{font-size:12.5px;color:var(--warn);margin-top:4px}
+  .gamesrow{font-size:12.5px;margin-top:8px;color:var(--ink-soft)}
+  .gtag{display:inline-block;background:#EFEAE0;border-radius:999px;padding:2px 10px;margin:1px 2px;color:var(--indoor-deep);font-weight:700;text-decoration:none;font-size:11.5px}
+  .three{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  @media(min-width:560px){.three{grid-template-columns:repeat(3,1fr)}}
+  .p-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:14px 15px}
+  .p-card .no{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;color:var(--indoor);letter-spacing:.1em}
+  .p-card .p-t{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px;margin:2px 0 4px}
+  .p-card .p-d{font-size:13px;color:#575145}
+  .rule-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:15px 16px;margin-top:10px}
+  .rule-card h3{font-family:'LXGW WenKai TC',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+  .rule-card ul{list-style:none}
+  .rule-card li{font-size:14px;padding:5px 0 5px 20px;position:relative;color:#4A443B}
+  .rule-card li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:2.5px;background:var(--indoor);transform:rotate(8deg)}
+  .rule-card li b{color:var(--ink)}
+  .warn-list li::before{background:var(--cafe)}
+  .draw-stage{min-height:120px;position:relative}
+  .draw-empty{display:flex;align-items:center;justify-content:center;min-height:110px;color:var(--ink-soft);font-size:14px;border:1.5px dashed var(--line);border-radius:16px;text-align:center;padding:0 20px}
+  .principle-line{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-soft)}
+  .principle-line b{color:var(--ink)}
+
+  /* 景點卡 */
+  .vcard{border-radius:16px;padding:15px 16px 14px;border:1.5px solid var(--line);background:#FDFBF6;margin-bottom:10px}
+  .vcard.enter{animation:pop .38s cubic-bezier(.2,.9,.3,1.2) both}
+  .vcard.park{border-left:4px solid var(--park)}
+  .vcard.cafe{border-left:4px solid var(--cafe)}
+  .vcard.indoor{border-left:4px solid var(--indoor)}
+  .vcard.farm{border-left:4px solid var(--farm)}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+  .tag{font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px}
+  .tag.park{background:var(--park-bg);color:var(--park-deep)}
+  .tag.cafe{background:var(--cafe-bg);color:var(--cafe-deep)}
+  .tag.indoor{background:var(--indoor-bg);color:var(--indoor-deep)}
+  .tag.farm{background:var(--farm-bg);color:var(--farm-deep)}
+  .tag.meta{background:#EFEAE0;color:var(--ink-soft)}
+  .tag.warn{background:#F6E3E0;color:var(--warn)}
+  .vcard .name{font-family:'LXGW WenKai TC',serif;font-size:23px;font-weight:700;line-height:1.35}
+  .vcard .how{font-size:14px;color:#4A443B;margin-top:5px}
+  .scoreline{display:flex;gap:12px 16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+  .scoreline b{color:var(--ink);letter-spacing:1px}
+  .kfit{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .kfit span{font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px}
+  .kfit .f0{background:var(--park-bg);color:var(--park-deep)}
+  .kfit .f1{background:var(--cafe-bg);color:var(--cafe-deep)}
+  .rainline{font-size:13px;background:#E9EFF7;color:#31517A;border-radius:10px;padding:7px 11px;margin-top:9px}
+  .vfoot{font-size:12px;color:var(--ink-soft);margin-top:8px}
+  .actrow{display:flex;gap:8px;margin-top:10px}
+  .abtn{flex:1;text-align:center;font-size:13px;font-weight:700;padding:9px 4px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer;font-family:inherit}
+  .abtn.nav{border-color:var(--park);color:var(--park-deep)}
+  .exp{display:none;margin-top:11px;border-top:1.5px dashed var(--line);padding-top:10px;font-size:13px;line-height:1.7}
+  .vcard.open .exp{display:block}
+  .exp h4{font-size:12.5px;color:var(--ink-soft);margin:9px 0 3px;font-weight:700;letter-spacing:.05em}
+  .wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+  .wgrid div{background:#F2EEE5;border-radius:9px;padding:6px 2px;font-size:12px;color:var(--ink-soft)}
+  .wgrid b{display:block;color:var(--ink);font-family:'M PLUS Rounded 1c',sans-serif;font-size:15px}
+  .facrow{font-size:12.5px;color:var(--ink-soft);line-height:1.9}
+  .srcitem{border-top:1px solid var(--line);padding:7px 0 6px;font-size:12.5px}
+  .srcitem:first-of-type{border-top:none}
+  .srcitem a{color:var(--park-deep);font-weight:700;text-decoration:none;word-break:break-all}
+  .srcitem .sd{color:var(--ink-soft)}
+
+  /* Tabs */
+  nav.tabs{position:sticky;top:0;z-index:20;background:linear-gradient(var(--paper) 88%,rgba(247,243,236,0));padding:12px 0 10px;margin-top:22px}
+  .tabs-inner{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tab-btn{flex-shrink:0;border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s ease}
+  .tab-btn[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .tab-btn:focus-visible,.chip:focus-visible{outline:2.5px solid var(--park);outline-offset:2px}
+  .panel{display:none;animation:fadeUp .35s ease both}
+  .panel.active{display:block}
+
+  .section-title{font-family:'LXGW WenKai TC',serif;font-size:21px;font-weight:700;margin:22px 0 4px;display:flex;align-items:center;gap:10px}
+  .section-title::after{content:"";flex:1;height:1.5px;background:var(--line)}
+  .section-title .cnt{font-family:'M PLUS Rounded 1c',sans-serif;font-size:13px;color:var(--ink-soft);font-weight:800}
+  .section-sub{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+  .callout{border-radius:var(--radius);padding:14px 16px;margin-top:12px;font-size:14px}
+  .callout.park{background:var(--park-bg);color:var(--park-deep)}
+  .callout.cafe{background:var(--cafe-bg);color:var(--cafe-deep)}
+  .callout.indoor{background:var(--indoor-bg);color:var(--indoor-deep)}
+  .callout.farm{background:var(--farm-bg);color:var(--farm-deep)}
+  .callout b{display:block;font-family:'LXGW WenKai TC',serif;font-size:16px;margin-bottom:3px}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+  .tbl th{background:#EFEAE0;text-align:left;padding:6px 9px;font-size:12px;color:var(--ink-soft)}
+  .tbl td{border-bottom:1px solid var(--line);padding:7px 9px;vertical-align:top}
+  details.srcbox{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:11px 14px;margin-top:10px}
+  details.srcbox summary{font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  details.srcbox summary::-webkit-details-marker{display:none}
+  details.srcbox summary::after{content:"▾";margin-left:auto;color:var(--ink-soft)}
+  details[open].srcbox summary::after{content:"▴"}
+  .badge{font-size:11px;font-weight:700;border-radius:999px;padding:1.5px 9px;background:#EFEAE0;color:var(--ink-soft);flex-shrink:0}
+
+  footer{margin-top:40px;padding-top:16px;border-top:1.5px solid var(--line);font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.9}
+  footer .fam-name{font-family:'LXGW WenKai TC',serif;font-size:14px;color:var(--ink)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.96)}100%{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">出遊版</span><a class="xlink" href="time.html">⏳ 時光手冊</a></div>
+    <h1>林家出遊手冊</h1>
+    <div class="today" id="todayLine">—</div>
+    <div class="kids" id="kidsRow"></div>
+  </header>
+
+  <section class="draw" aria-label="今天去哪裡">
+    <h2>今天去哪裡？<small id="libStats">—</small></h2>
+    <div class="scenrow" role="group" aria-label="情境卡">
+      <button class="scard" data-scen="nap"><div class="si">😴⚡</div><div class="st">午睡後快閃</div></button>
+      <button class="scard" data-scen="rainplay"><div class="si">🌧🔋</div><div class="st">雨天放電</div></button>
+      <button class="scard" data-scen="rest"><div class="si">☕🧘</div><div class="st">大人也要休息</div></button>
+      <button class="scard" data-scen="grand"><div class="si">👴👵</div><div class="st">祖孫同行</div></button>
+      <button class="scard" data-scen="trip"><div class="si">🚗🌄</div><div class="st">整日遠征</div></button>
+      <button class="scard" data-scen="eatplay"><div class="si">🍽🎪</div><div class="st">吃飯順便玩</div></button>
+    </div>
+    <div class="filters">
+      <div class="fgroup" role="group" aria-label="天氣">
+        <span class="flabel">天氣</span>
+        <button class="chip" data-group="weather" data-val="hot" aria-pressed="false">☀️ 晴熱</button>
+        <button class="chip" data-group="weather" data-val="rain" aria-pressed="false">🌧 下雨</button>
+        <button class="chip" data-group="weather" data-val="cool" aria-pressed="false">🍃 舒服</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="條件">
+        <span class="flabel">條件</span>
+        <button class="chip" data-flag="free" aria-pressed="false">💰 免費優先</button>
+        <button class="chip" data-flag="meal" aria-pressed="false">🍽 要有餐</button>
+        <button class="chip" data-flag="coffee" aria-pressed="false">☕ 要有咖啡</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="車程">
+        <span class="flabel">車程</span>
+        <button class="chip" data-group="drive" data-val="any" aria-pressed="true">不限</button>
+        <button class="chip" data-group="drive" data-val="15" aria-pressed="false">15 分內</button>
+        <button class="chip" data-group="drive" data-val="30" aria-pressed="false">30 分內</button>
+      </div>
+    </div>
+    <div class="draw-stage" id="stage">
+      <div class="draw-empty">點一個天氣,馬上給你 3 個答案。<br>週末早上打開手機,10 秒出發。</div>
+    </div>
+    <div class="principle-line">排序:<b>天氣適性 × 孩子適齡 × 資料新鮮度</b> · 晴熱日優先遮蔭 ≥ 2</div>
+  </section>
+
+  <nav class="tabs" aria-label="手冊分頁">
+    <div class="tabs-inner" role="tablist">
+      <button class="tab-btn" role="tab" aria-selected="true" data-panel="p-park">🌳 戶外公園</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-cafe">☕ 咖啡餐廳</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-farm">🐑 農場動物</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-indoor">🏠 室內雨天</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-rain">🌧 雨天攻略</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-mind">🧡 陪伴心法</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="p-src">📚 資料來源</button>
+    </div>
+  </nav>
+
+  <section class="panel active" id="p-park" role="tabpanel">
+    <div class="section-title">戶外公園 <span class="cnt" id="cnt-park"></span></div>
+    <div class="section-sub">放電首選。每一個都配好 15 分鐘內的雨天備案,天氣變臉不慌。</div>
+    <div id="list-park"></div>
+  </section>
+
+  <section class="panel" id="p-cafe" role="tabpanel">
+    <div class="section-title">親子咖啡・餐廳 <span class="cnt" id="cnt-cafe"></span></div>
+    <div class="section-sub">全部都是不怕孩子吵的店(聲量容忍 3/3),吃飯配放風。</div>
+    <div id="list-cafe"></div>
+  </section>
+
+  <section class="panel" id="p-farm" role="tabpanel">
+    <div class="section-title">農場動物 <span class="cnt" id="cnt-farm"></span></div>
+    <div class="section-sub">餵動物系。互動區多禁推車(現場可寄放),背巾比推車好用;雨後地面易泥濘。</div>
+    <div id="list-farm"></div>
+  </section>
+
+  <section class="panel" id="p-indoor" role="tabpanel">
+    <div class="section-title">室內雨天點 <span class="cnt" id="cnt-indoor"></span></div>
+    <div class="section-sub">全室內冷氣,大雨天也能待 2 小時以上。</div>
+    <div id="list-indoor"></div>
+  </section>
+
+  <section class="panel" id="p-rain" role="tabpanel">
+    <div class="section-title">雨天攻略</div>
+    <div class="section-sub">宜蘭多雨,這一頁是 Plan B 的完整地圖。</div>
+    <div class="callout indoor"><b>決策順序</b>小雨:先看戶外卡的「小雨」分數,武淵大碗公主遊戲區在高架橋下、小雨照玩;中雨以上:直接從下表挑室內,不用猶豫。</div>
+    <div class="section-title">戶外 → 備案配對表</div>
+    <table class="tbl" id="rainTbl"><tr><th>戶外景點</th><th>雨天備案</th><th>備案車程(從家)</th></tr></table>
+    <div class="section-title">大雨直接去(大雨分數 3/3)</div>
+    <div id="list-heavyrain"></div>
+  </section>
+
+  <section class="panel" id="p-mind" role="tabpanel">
+    <div class="section-title">出遊三原則</div>
+    <div class="three">
+      <div class="p-card"><div class="no">01</div><div class="p-t">在場感是唯一 KPI</div><div class="p-d">踩點數不是成績。十年後孩子不記得去過幾個景點,記得的是你有沒有跟他一起瘋。</div></div>
+      <div class="p-card"><div class="no">02</div><div class="p-t">減半原則</div><div class="p-d">把想去的點砍一半,餘裕才是品質。標配=一天一個主場+一個備援,不排第三個。</div></div>
+      <div class="p-card"><div class="no">03</div><div class="p-t">孩子的節奏 > 大人的清單</div><div class="p-d">在一個點玩瘋了,就取消下一個點——行程為人服務,不是人為行程服務。</div></div>
+    </div>
+
+    <div class="section-title">出門前・中・後 SOP</div>
+    <div class="rule-card">
+      <h3>前一晚</h3>
+      <ul>
+        <li><b>姊姊參與選點</b>(2 選 1 決定權);預告明天流程「先去○○、中午吃△△、下午回家」——預告是 3 歲轉場崩潰的最強疫苗。</li>
+        <li><b>備品固定清單貼門後</b>:水壺 ×2、換洗衣、小毛巾、防蚊、濕紙巾、野餐墊、姊姊自背小背包。</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h3>出門中</h3>
+      <ul>
+        <li>每 90 分鐘<b>留白 15 分</b>。</li>
+        <li><b>C 位輪替</b>——這一站姊姊當導遊、下一站弟弟二選一。</li>
+        <li><b>先玩再拍</b>、不擺拍。</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h3>回程</h3>
+      <ul>
+        <li>車上<b>三件好事</b>。</li>
+        <li>回家儀式——洗手 → 自己收背包 → 在「林家出遊地圖」貼一張貼紙(貼紙地圖=孩子的戰績牆)。</li>
+      </ul>
+    </div>
+
+    <div class="section-title">等待救援包</div>
+    <div class="section-sub">車上・排隊・餐廳,10 招隨身帶。</div>
+    <table class="tbl">
+      <tr><th>招式</th><th>場景</th><th>玩法</th></tr>
+      <tr><td>故事接龍</td><td>車上</td><td>一人一句,主角常常是放屁的恐龍。</td></tr>
+      <tr><td>相反詞大戰</td><td>車上</td><td>「大→小」「快樂→?」快問快答。</td></tr>
+      <tr><td>顏色偵探・車窗版</td><td>車上</td><td>「找出 5 台紅色的車!」找完換顏色。</td></tr>
+      <tr><td>猜謎語</td><td>車上/排隊</td><td>「白白的、冰冰的、會融化」——猜完換姊姊出題。</td></tr>
+      <tr><td>動物聲音猜謎</td><td>車上</td><td>你學叫聲他們猜,弟弟學的通常更像。</td></tr>
+      <tr><td>心算接龍(姊姊)</td><td>排隊</td><td>「3+5−2=?」答對換她出題。</td></tr>
+      <tr><td>指物命名(弟弟)</td><td>排隊</td><td>「眼睛在哪裡?」升級問情緒與動作。</td></tr>
+      <tr><td>二十問猜猜我是誰</td><td>餐廳</td><td>心裡想一個動物,輪流問是非題。</td></tr>
+      <tr><td>傳話遊戲</td><td>餐廳</td><td>悄悄話傳一圈,看走樣多少。</td></tr>
+      <tr><td>手指謠(弟弟)</td><td>餐廳</td><td>五隻猴子、大拇哥——有動作就不無聊。</td></tr>
+    </table>
+
+    <div class="section-title">出遊話術表</div>
+    <table class="tbl">
+      <tr><th>場景</th><th>你可以說</th></tr>
+      <tr><td>「還要多久?」</td><td>用孩子的單位:「再兩集巧虎的時間。」不要說「快到了」。</td></tr>
+      <tr><td>計畫變了(下雨/關門)</td><td>「計畫 B 時間到!」把變動包裝成彩蛋,不是失敗。</td></tr>
+      <tr><td>吵著買紀念品</td><td>事前約定「一人選一樣、預算○○元」,現場只執行、不談判。</td></tr>
+      <tr><td>不想走路</td><td>任務化:「幫我找到 3 個紅色招牌就到了。」</td></tr>
+      <tr><td>要回家時崩潰</td><td>轉場儀式「跟○○說掰掰」+車上任務(按電梯、當選歌 DJ)。</td></tr>
+    </table>
+
+    <div class="section-title">特殊狀態・出遊版</div>
+    <div class="rule-card">
+      <ul class="warn-list">
+        <li><b>車上崩潰</b>:安全第一,下個安全點停車再處理;行進間不回頭、不伸手。</li>
+        <li><b>景點爆滿</b>:直接抽備援點,不排隊硬上——排 40 分鐘隊的代價是整車情緒。</li>
+        <li><b>弟弟車上睡著</b>:改姊姊單獨小行程(就近咖啡+一杯她的飲料),弟弟醒後併回——把意外變成專屬時光。</li>
+        <li><b>天氣突變</b>:一鍵切「雨天放電」情境卡+時光手冊雨天版一日範本——雨不是計畫失敗,是換劇本。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" id="p-src" role="tabpanel">
+    <div class="section-title">資料與來源</div>
+    <div class="section-sub">每個景點至少 2 個獨立網域來源;查不到的欄位一律標「待確認」,不猜測。點開看出處。</div>
+    <div id="list-src"></div>
+    <div class="callout cafe" id="todoCallout"><b>待實測清單</b><span id="todoBody"></span></div>
+  </section>
+
+  <footer>
+    <span class="fam-name">林家 · 週末出遊</span><br>
+    資料版本 __BUILD_DATE__ · 共 __N__ 筆景點 · 車程與備案分鐘為座標估算值<br>
+    「待重驗」= 超過 6 個月未確認 · 排序公式與研究紀錄見 repo docs/
+  </footer>
+</div>
+
+<script>
+const VENUES = __VENUES__;
+const FAMILY = __FAMILY__;
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const state = { weather: null, scenario: null, drive: "any", free: false, meal: false, coffee: false };
+
+const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm"]);
+const CAT = v => FARM.has(v.id) ? "farm" : v.type === "戶外公園" ? "park" : (v.type === "親子咖啡" || v.type === "親子餐廳") ? "cafe" : "indoor";
+
+/* ---------- 日期與年齡 ---------- */
+const now = new Date();
+const WD = ["日", "一", "二", "三", "四", "五", "六"];
+$("#todayLine").textContent = "今天是 " + now.getFullYear() + " 年 " + (now.getMonth() + 1) + " 月 " + now.getDate() + " 日(週" + WD[now.getDay()] + ")";
+function monthsSince(ym) { const [y, m] = ym.split("-").map(Number); return (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m); }
+function bandOf(mo) { const y = mo / 12; return y < 2 ? "0-2" : y < 4 ? "2-4" : y < 6 ? "4-6" : "6-9"; }
+const KIDS = FAMILY.children.map((k, i) => { const mo = monthsSince(k.birth.slice(0, 7)); return { n: k.nickname || "孩子", i, mo, band: bandOf(mo) }; });
+$("#kidsRow").innerHTML = KIDS.map(k => `
+  <div class="kid k${k.i % 2}">
+    <span class="who">${k.n}</span>
+    <span class="age">${Math.floor(k.mo / 12)} 歲 ${k.mo % 12} 個月</span>
+    <span class="note">適齡帶 ${k.band} · 排序即時採計</span>
+  </div>`).join("");
+$("#libStats").textContent = `共 ${VENUES.length} 個景點 · 更新 ${VENUES[0] ? VENUES[0].last_verified : ""}`;
+
+/* ---------- 排序引擎 ---------- */
+function num(x) { return typeof x === "number" ? x : 0.5; }
+function dots(x) { return typeof x === "number" ? "●".repeat(x) + "○".repeat(3 - x) : "待確認"; }
+function isStale(v) { return (Date.now() - new Date(v.last_verified)) / 864e5 > 183; }
+function rainAvg(v) { return (num(v.weather_fit["小雨"]) + num(v.weather_fit["大雨"])) / 2; }
+function wf(v) {
+  if (state.scenario === "rainplay") return rainAvg(v);
+  const w = v.weather_fit;
+  if (state.weather === "hot") return num(w["晴熱"]);
+  if (state.weather === "rain") return rainAvg(v);
+  if (state.weather === "cool") return num(w["晴涼"]);
+  return 1;
+}
+function ageScore(v) { const bands = [...new Set(KIDS.map(k => k.band))]; return bands.reduce((a, b) => a + num(v.age_fit[b].score), 0) / bands.length; }
+function score(v) { return wf(v) * ageScore(v) * (isStale(v) ? 0.7 : 1); }
+function hotPri(v) { return num(v.shade) >= 2 ? 1 : 0; }
+function driveNum(v) { return typeof v.drive === "number" ? v.drive : 99; }
+
+/* 情境卡:一鍵=預組合篩選+排序權重(全部由現有欄位組裝) */
+const SCEN = {
+  nap:      { t: "午睡後快閃", f: v => driveNum(v) <= 20,
+              sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },
+  rainplay: { t: "雨天放電", f: v => rainAvg(v) >= 2 && ["室內樂園", "觀光工廠"].includes(v.type) && num(v.noise) >= 2,
+              sort: (a, b) => (num(b.v.weather_fit["大雨"]) - num(a.v.weather_fit["大雨"])) || (b.s - a.s) },
+  rest:     { t: "大人也要休息", f: v => v.flags.coffee && num(v.noise) === 3,
+              sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },
+  grand:    { t: "祖孫同行", f: v => v.fac["停車"].value === true && v.fac["廁所"].value === true,
+              sort: (a, b) => (driveNum(a.v) - driveNum(b.v)) || (b.s - a.s) },
+  trip:     { t: "整日遠征", f: v => driveNum(v) > 20 && driveNum(v) < 99 && (v.flags.meal || v.flags.coffee) && (v.type !== "戶外公園" || (v.rain_backup_id && v.rain_backup_id !== "無備案")),
+              sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },
+  eatplay:  { t: "吃飯順便玩", f: v => v.flags.meal && num(v.noise) === 3,
+              sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },
+};
+
+function pool(opt) {
+  const o = Object.assign({ scenario: state.scenario, meal: state.meal, coffee: state.coffee, drive: state.drive }, opt || {});
+  let list = VENUES.filter(v => v.status !== "closed");
+  if (o.meal) list = list.filter(v => v.flags.meal);
+  if (o.coffee) list = list.filter(v => v.flags.coffee);
+  if (o.drive !== "any") list = list.filter(v => driveNum(v) <= Number(o.drive));
+  if (o.scenario) list = list.filter(SCEN[o.scenario].f);
+  return list;
+}
+function recommend() {
+  let list = pool().map(v => ({ v, s: score(v) }));
+  const base = state.scenario ? SCEN[state.scenario].sort
+    : (a, b) => (state.weather === "hot" ? (hotPri(b.v) - hotPri(a.v)) : 0) || (b.s - a.s) || (driveNum(a.v) - driveNum(b.v));
+  list.sort((a, b) => (state.free ? (b.v.flags.free - a.v.flags.free) : 0) || base(a, b));
+  return list.slice(0, 3);
+}
+/* 空結果 → 放寬建議:逐一解除單一條件試算 */
+function relaxSuggestions() {
+  const cons = [];
+  if (state.scenario) cons.push({ label: `情境「${SCEN[state.scenario].t}」`, opt: { scenario: null } });
+  if (state.meal) cons.push({ label: "要有餐", opt: { meal: false } });
+  if (state.coffee) cons.push({ label: "要有咖啡", opt: { coffee: false } });
+  if (state.drive !== "any") cons.push({ label: `車程 ${state.drive} 分內`, opt: { drive: "any" } });
+  return cons.map(c => ({ label: c.label, n: pool(c.opt).length })).filter(c => c.n > 0);
+}
+
+/* ---------- 理由句引擎:全部由欄位組裝,禁止寫死文案 ---------- */
+function weatherBasis(v) {
+  if (state.scenario === "rainplay") return `大雨 ${typeof v.weather_fit["大雨"] === "number" ? v.weather_fit["大雨"] : "?"}/3`;
+  if (state.weather === "hot") return `晴熱 ${typeof v.weather_fit["晴熱"] === "number" ? v.weather_fit["晴熱"] : "?"}/3`;
+  if (state.weather === "rain") return `小雨${v.weather_fit["小雨"]}·大雨${v.weather_fit["大雨"]}`;
+  if (state.weather === "cool") return `晴涼 ${typeof v.weather_fit["晴涼"] === "number" ? v.weather_fit["晴涼"] : "?"}/3`;
+  return "";
+}
+function bestBand(v) { return KIDS.reduce((a, k) => num(v.age_fit[k.band].score) > num(v.age_fit[a.band].score) ? k : a, KIDS[0]); }
+function worstBand(v) { return KIDS.reduce((a, k) => num(v.age_fit[k.band].score) < num(v.age_fit[a.band].score) ? k : a, KIDS[0]); }
+function reasonLine1(v) {
+  const wb = weatherBasis(v);
+  const parts = [];
+  if (wb) parts.push(wb);
+  parts.push(`🚗${typeof v.drive === "number" ? v.drive + "分" : "待確認"}`);
+  parts.push(`遮蔭${dots(v.shade)}`);
+  const b = bestBand(v);
+  return `${parts.join(" · ")} · 適齡(${b.band}):${v.age_fit[b.band].reason}`;
+}
+function reasonLine2(v) {
+  const b = bestBand(v), w = worstBand(v);
+  if (num(v.age_fit[w.band].score) >= num(v.age_fit[b.band].score)) return "";
+  return `<div class="note2">注意(${w.band}):${v.age_fit[w.band].reason}</div>`;
+}
+function lastLog(v) { const l = v.family_log; return l && l.length ? `${l[l.length - 1].date}・${l[l.length - 1]["評分"]}/5・${l[l.length - 1]["心得"]}` : "尚無實測"; }
+function navUrl(v) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.name + " " + (v.address || "")); }
+function backupLine(v) {
+  if (v.type !== "戶外公園" || !v.rain_backup_id) return "";
+  if (v.rain_backup_id === "無備案") return `<div class="rainline">🌧 雨天備案:無備案(已降權)</div>`;
+  const b = VENUES.find(x => x.id === v.rain_backup_id);
+  const d = b && typeof b.drive === "number" ? `(從家約 ${b.drive} 分)` : "";
+  return `<div class="rainline">🌧 雨天備案:${b ? b.name : v.rain_backup_id}${d}</div>`;
+}
+const FACM = { true: "✓", false: "✗", "待確認": "?", "不適用": "—" };
+function srcTag(t) { return `<span class="badge">${t}</span>`; }
+
+function vcardHtml(v, enter) {
+  const cat = CAT(v);
+  return `
+  <div class="vcard ${cat}${enter ? " enter" : ""}" data-id="${v.id}">
+    <div class="tags">
+      <span class="tag ${cat}">${v.type}</span>
+      <span class="tag meta">💰 ${v.fee}</span>
+      ${isStale(v) ? '<span class="tag warn">⚠️ 待重驗</span>' : ""}
+      ${v.status === "待確認" ? '<span class="tag warn">狀態待確認</span>' : ""}
+    </div>
+    <div class="name">${v.name}</div>
+    <div class="how">${reasonLine1(v)}</div>
+    ${reasonLine2(v)}
+    <div class="scoreline">
+      <span>🔊 容忍 <b>${dots(v.noise)}</b></span>
+      <span>🛴 ${v.ride.ok === true ? "可騎" : v.ride.ok === false ? "不可" : "待確認"}</span>
+    </div>
+    <div class="kfit">${KIDS.map(k => `<span class="f${k.i % 2}">${k.n}(${k.band}):${typeof v.age_fit[k.band].score === "number" ? v.age_fit[k.band].score + "/3" : "待確認"}</span>`).join("")}</div>
+    ${v.games && v.games.length ? `<div class="gamesrow">🎲 帶什麼玩:${v.games.map(g => `<a class="gtag" href="time.html">${g}</a>`).join("")}</div>` : ""}
+    ${backupLine(v)}
+    <div class="vfoot">上次確認 ${v.last_verified} · 林家評價:${lastLog(v)}</div>
+    <div class="actrow">
+      <a class="abtn nav" href="${navUrl(v)}" target="_blank" rel="noopener">🧭 導航</a>
+      <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
+    </div>
+    <div class="exp">
+      <h4>天氣適性(0–3)</h4>
+      <div class="wgrid">${["晴熱", "晴涼", "小雨", "大雨"].map(k => `<div>${k}<b>${typeof v.weather_fit[k] === "number" ? v.weather_fit[k] : "?"}</b></div>`).join("")}</div>
+      <h4>各年齡帶</h4>
+      ${["0-2", "2-4", "4-6", "6-9"].map(b => `<div style="margin-bottom:3px"><b>${b}(${typeof v.age_fit[b].score === "number" ? v.age_fit[b].score + "/3" : "待確認"})</b>:${v.age_fit[b].reason}</div>`).join("")}
+      <h4>費用</h4><div>${v.fee_full || v.fee}</div>
+      <h4>滑步車/推車</h4><div>${v.ride.note}</div>
+      <h4>設施</h4><div class="facrow">${Object.entries(v.fac).map(([k, f]) => `${k}${FACM[String(f.value)] || "?"}${f.note ? `(${f.note})` : ""}`).join("・")}</div>
+      <h4>遮蔭依據</h4><div>${v.shade_basis}</div>
+      <h4>聲量依據</h4><div>${v.noise_basis}</div>
+      <h4>地址</h4><div>${v.address}</div>
+      <h4>來源(${v.evidence.length} 筆)</h4>
+      ${v.evidence.map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${e.url.replace(/^https?:\/\//, "").split("/")[0]}</a> <span class="sd">${e.date}</span><br><span class="sd">${e["摘要"]}</span></div>`).join("")}
+    </div>
+  </div>`;
+}
+
+/* ---------- 推薦區 ---------- */
+function renderStage() {
+  const stage = $("#stage");
+  if (!state.weather && !state.scenario) { stage.innerHTML = '<div class="draw-empty">點一張情境卡或一個天氣,馬上給你答案。<br>週末早上打開手機,10 秒出發。</div>'; return; }
+  const top = recommend();
+  if (top.length) { stage.innerHTML = top.map(({ v }) => vcardHtml(v, true)).join(""); return; }
+  const sug = relaxSuggestions();
+  stage.innerHTML = `<div class="draw-empty">這個組合沒有景點。放寬建議:<br>${sug.length ? sug.map(s => `解除「${s.label}」→ 可得 ${s.n} 個`).join("<br>") : "取消情境卡或條件試試"}</div>`;
+}
+$$(".scard").forEach(c => c.addEventListener("click", () => {
+  const s = c.dataset.scen;
+  state.scenario = state.scenario === s ? null : s;
+  $$(".scard").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.scen === state.scenario)));
+  renderStage();
+}));
+$$(".chip[data-group]").forEach(c => c.addEventListener("click", () => {
+  const g = c.dataset.group;
+  if (g === "weather" && state.weather === c.dataset.val) { state.weather = null; c.setAttribute("aria-pressed", "false"); renderStage(); return; }
+  state[g === "weather" ? "weather" : "drive"] = c.dataset.val;
+  $$('.chip[data-group="' + g + '"]').forEach(x => x.setAttribute("aria-pressed", x === c ? "true" : "false"));
+  renderStage();
+}));
+$$(".chip[data-flag]").forEach(c => c.addEventListener("click", () => {
+  const f = c.dataset.flag;
+  state[f] = !state[f];
+  c.setAttribute("aria-pressed", String(state[f]));
+  renderStage();
+}));
+
+/* ---------- 分頁清單 ---------- */
+for (const cat of ["park", "cafe", "farm", "indoor"]) {
+  const g = VENUES.filter(v => CAT(v) === cat).sort((a, b) => driveNum(a) - driveNum(b));
+  $("#cnt-" + cat).textContent = g.length + " 個";
+  $("#list-" + cat).innerHTML = g.map(v => vcardHtml(v, false)).join("");
+}
+
+/* ---------- 雨天攻略 ---------- */
+const parks = VENUES.filter(v => v.type === "戶外公園");
+$("#rainTbl").insertAdjacentHTML("beforeend", parks.map(v => {
+  const b = VENUES.find(x => x.id === v.rain_backup_id);
+  return `<tr><td>${v.name}</td><td>${b ? b.name : v.rain_backup_id || "—"}</td><td>${b && typeof b.drive === "number" ? "約 " + b.drive + " 分" : "待確認"}</td></tr>`;
+}).join(""));
+$("#list-heavyrain").innerHTML = VENUES.filter(v => v.weather_fit["大雨"] === 3)
+  .sort((a, b) => driveNum(a) - driveNum(b)).map(v => vcardHtml(v, false)).join("");
+
+/* ---------- 資料來源 ---------- */
+$("#list-src").innerHTML = VENUES.map(v => `
+  <details class="srcbox">
+    <summary>${v.name} <span class="badge">${v.evidence.length} 個來源</span><span class="badge">確認 ${v.last_verified}</span></summary>
+    ${v.evidence.map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${e.url}</a><br><span class="sd">${e.date} · ${e["摘要"]}</span></div>`).join("")}
+  </details>`).join("");
+const todo = [];
+for (const v of VENUES) {
+  const items = [];
+  if (v.lat == null) items.push("座標/車程");
+  for (const [k, f] of Object.entries(v.fac)) if (String(f.value) === "待確認") items.push(k);
+  if (String(v.ride.ok) === "待確認") items.push("滑步車");
+  if (items.length) todo.push(`${v.name}:${items.join("、")}`);
+}
+$("#todoBody").innerHTML = todo.length ? todo.join("<br>") : "目前沒有待實測項目 🎉";
+
+/* ---------- Tabs ---------- */
+$$(".tab-btn").forEach(btn => btn.addEventListener("click", () => {
+  $$(".tab-btn").forEach(b => b.setAttribute("aria-selected", "false"));
+  btn.setAttribute("aria-selected", "true");
+  $$(".panel").forEach(p => p.classList.remove("active"));
+  document.getElementById(btn.dataset.panel).classList.add("active");
+}));
+
+/* ---------- PWA:離線快取(宜蘭山區訊號差仍可用) ---------- */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>

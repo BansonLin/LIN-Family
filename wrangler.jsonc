@@ -7,6 +7,6 @@
     "directory": "./dist"
   },
   "build": {
-    "command": "mkdir -p dist && cp index.html time.html dist/"
+    "command": "node build.js"
   }
 }

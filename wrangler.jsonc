@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers 靜態站設定:只部署 dist/(index.html + time.html),
+  // config/ 與 data/ 不會出現在公開網址
+  "name": "lin-family",
+  "compatibility_date": "2026-07-19",
+  "assets": {
+    "directory": "./dist"
+  },
+  "build": {
+    "command": "mkdir -p dist && cp index.html time.html dist/"
+  }
+}

@@ -1,5 +1,9 @@
 # 重大設計決策紀錄
 
+## 2026-07-19|部署:Cloudflare Workers 接 GitHub 自動部署
+- 使用者選擇 Workers「Continue with GitHub」流程,repo 新增 wrangler.jsonc(檔案結構 scope 外的部署設定檔):assets 目錄 dist/,build 指令僅複製 index.html 與 time.html——確保 config/、data/ 不上公開網址。
+- 之後每次 push 到生產分支即自動重新部署。
+
 ## 2026-07-19|時光手冊併入本站(使用者指示)
 - 使用者提供既有「林家親子時光手冊 v3」單檔頁面,指示「另外開一個分頁,把資料結合在裡面」:以 time.html 併入本 repo(檔案結構因此在原 scope 外新增一個頂層檔案),內容維持原樣,僅於頁首加「🚗 週末出遊」入口;index.html 頁首對應加「⏳ 時光手冊」入口。
 - 兩頁互為入口、風格各自獨立(符合手冊系列「時光手冊加一顆週末出遊入口按鈕」的原始構想,只是改為同站部署)。

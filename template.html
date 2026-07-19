@@ -190,6 +190,9 @@
         <button class="chip" data-flag="meal" aria-pressed="false">🍽 要有餐</button>
         <button class="chip" data-flag="coffee" aria-pressed="false">☕ 要有咖啡</button>
       </div>
+      <div class="fgroup" role="group" aria-label="地區" id="zonerow">
+        <span class="flabel">地區</span>
+      </div>
       <div class="fgroup" role="group" aria-label="車程">
         <span class="flabel">車程</span>
         <button class="chip" data-group="drive" data-val="any" aria-pressed="true">不限</button>
@@ -337,7 +340,7 @@ const VENUES = __VENUES__;
 const FAMILY = __FAMILY__;
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
-const state = { weather: null, scenario: null, drive: "any", free: false, meal: false, coffee: false };
+const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
 
 const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm"]);
 const CAT = v => FARM.has(v.id) ? "farm" : v.type === "戶外公園" ? "park" : (v.type === "親子咖啡" || v.type === "親子餐廳") ? "cafe" : "indoor";
@@ -355,7 +358,6 @@ $("#kidsRow").innerHTML = KIDS.map(k => `
     <span class="age">${Math.floor(k.mo / 12)} 歲 ${k.mo % 12} 個月</span>
     <span class="note">適齡帶 ${k.band} · 排序即時採計</span>
   </div>`).join("");
-$("#libStats").textContent = `共 ${VENUES.length} 個景點 · 更新 ${VENUES[0] ? VENUES[0].last_verified : ""}`;
 
 /* ---------- 排序引擎 ---------- */
 function num(x) { return typeof x === "number" ? x : 0.5; }
@@ -393,7 +395,7 @@ const SCEN = {
 
 function pool(opt) {
   const o = Object.assign({ scenario: state.scenario, meal: state.meal, coffee: state.coffee, drive: state.drive }, opt || {});
-  let list = VENUES.filter(v => v.status !== "closed");
+  let list = VENUES.filter(v => v.status !== "closed" && (v.zone || "宜蘭") === state.zone);
   if (o.meal) list = list.filter(v => v.flags.meal);
   if (o.coffee) list = list.filter(v => v.flags.coffee);
   if (o.drive !== "any") list = list.filter(v => driveNum(v) <= Number(o.drive));
@@ -524,30 +526,39 @@ $$(".chip[data-flag]").forEach(c => c.addEventListener("click", () => {
   renderStage();
 }));
 
-/* ---------- 分頁清單 ---------- */
-for (const cat of ["park", "cafe", "farm", "indoor"]) {
-  const g = VENUES.filter(v => CAT(v) === cat).sort((a, b) => driveNum(a) - driveNum(b));
-  $("#cnt-" + cat).textContent = g.length + " 個";
-  $("#list-" + cat).innerHTML = g.map(v => vcardHtml(v, false)).join("");
-}
+/* ---------- 地區(zone) ---------- */
+const ZONES = [...new Set(VENUES.map(v => v.zone || "宜蘭"))].sort((a, b) => (a === "宜蘭" ? -1 : b === "宜蘭" ? 1 : 0));
+$("#zonerow").insertAdjacentHTML("beforeend", ZONES.map(z => `<button class="chip" data-zone="${z}" aria-pressed="${String(z === state.zone)}">${z === "宜蘭" ? "🏠 宜蘭" : z}</button>`).join(""));
+$$(".chip[data-zone]").forEach(c => c.addEventListener("click", () => {
+  state.zone = c.dataset.zone;
+  $$(".chip[data-zone]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === state.zone)));
+  renderStage(); renderLists();
+}));
+const ZV = () => VENUES.filter(v => (v.zone || "宜蘭") === state.zone);
 
-/* ---------- 雨天攻略 ---------- */
-const parks = VENUES.filter(v => v.type === "戶外公園");
-$("#rainTbl").insertAdjacentHTML("beforeend", parks.map(v => {
+/* ---------- 分頁清單/雨天/來源(依 zone 重繪) ---------- */
+function renderLists() {
+const ZL = ZV();
+$("#libStats").textContent = `${state.zone} ${ZL.length} 個景點・全庫 ${VENUES.length} 筆・更新 ${VENUES[0] ? VENUES[0].last_verified : ""}`;
+for (const cat of ["park", "cafe", "farm", "indoor"]) {
+  const g = ZL.filter(v => CAT(v) === cat).sort((a, b) => driveNum(a) - driveNum(b));
+  $("#cnt-" + cat).textContent = g.length + " 個";
+  $("#list-" + cat).innerHTML = g.length ? g.map(v => vcardHtml(v, false)).join("") : `<div class="section-sub">此地區暫無此類景點</div>`;
+}
+const parks = ZL.filter(v => v.type === "戶外公園");
+$("#rainTbl").innerHTML = "<tr><th>戶外景點</th><th>雨天備案</th><th>備案車程(從家)</th></tr>" + parks.map(v => {
   const b = VENUES.find(x => x.id === v.rain_backup_id);
   return `<tr><td>${v.name}</td><td>${b ? b.name : v.rain_backup_id || "—"}</td><td>${b && typeof b.drive === "number" ? "約 " + b.drive + " 分" : "待確認"}</td></tr>`;
-}).join(""));
-$("#list-heavyrain").innerHTML = VENUES.filter(v => v.weather_fit["大雨"] === 3)
+}).join("");
+$("#list-heavyrain").innerHTML = ZL.filter(v => v.weather_fit["大雨"] === 3)
   .sort((a, b) => driveNum(a) - driveNum(b)).map(v => vcardHtml(v, false)).join("");
-
-/* ---------- 資料來源 ---------- */
-$("#list-src").innerHTML = VENUES.map(v => `
+$("#list-src").innerHTML = ZL.map(v => `
   <details class="srcbox">
     <summary>${v.name} <span class="badge">${v.evidence.length} 個來源</span><span class="badge">確認 ${v.last_verified}</span></summary>
     ${v.evidence.map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${e.url}</a><br><span class="sd">${e.date} · ${e["摘要"]}</span></div>`).join("")}
   </details>`).join("");
 const todo = [];
-for (const v of VENUES) {
+for (const v of ZL) {
   const items = [];
   if (v.lat == null) items.push("座標/車程");
   for (const [k, f] of Object.entries(v.fac)) if (String(f.value) === "待確認") items.push(k);
@@ -555,6 +566,8 @@ for (const v of VENUES) {
   if (items.length) todo.push(`${v.name}:${items.join("、")}`);
 }
 $("#todoBody").innerHTML = todo.length ? todo.join("<br>") : "目前沒有待實測項目 🎉";
+}
+renderLists();
 
 /* ---------- Tabs ---------- */
 $$(".tab-btn").forEach(btn => btn.addEventListener("click", () => {

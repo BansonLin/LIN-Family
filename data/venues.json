@@ -126,7 +126,8 @@
       "同場騎車",
       "任務卡探險",
       "追泡泡"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "dongshan-river-eco-ark",
@@ -261,7 +262,8 @@
       "任務卡探險",
       "野餐日",
       "放大鏡觀察家"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "yilan-sports-park",
@@ -384,7 +386,8 @@
       "一二三木頭人",
       "踢球射門",
       "你追我跑"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "longtan-lake-scenic-area",
@@ -513,7 +516,8 @@
       "野餐日",
       "放大鏡觀察家",
       "故事接龍"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "wuyuan-water-fire-park",
@@ -642,7 +646,8 @@
       "追泡泡",
       "你追我跑",
       "一二三木頭人"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "shuilu-kids-cafe",
@@ -781,7 +786,8 @@
     "games": [
       "二十問猜猜我是誰",
       "傳話遊戲"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "lanyang-estuary-kids-restaurant",
@@ -916,7 +922,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "gitu-cafe-manor",
@@ -1033,7 +1040,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "lao-si-g-tea-coffee",
@@ -1150,7 +1158,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "amaze-rabbit-maze-jiaoxi-bath",
@@ -1267,7 +1276,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "lucky-art-crayon-castle",
@@ -1402,7 +1412,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "anyo-museum",
@@ -1537,7 +1548,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "wooderful-life-luodong",
@@ -1666,7 +1678,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "hsus-legend-vinegar-factory",
@@ -1789,7 +1802,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "lanyang-museum",
@@ -1942,7 +1956,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "dongshanriver-water-park",
@@ -2082,7 +2097,8 @@
     "games": [
       "追泡泡",
       "野餐日"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "wulaokeng-scenic-area",
@@ -2216,7 +2232,8 @@
     "games": [
       "野餐日",
       "放大鏡觀察家"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "suao-cold-spring-park",
@@ -2328,7 +2345,8 @@
     "family_log": [],
     "last_verified": "2026-07-19",
     "status": "active",
-    "rain_backup_id": "lucky-art-crayon-castle"
+    "rain_backup_id": "lucky-art-crayon-castle",
+    "zone": "宜蘭"
   },
   {
     "id": "yi-nong-ranch",
@@ -2451,7 +2469,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "bambi-land",
@@ -2580,7 +2599,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "grandma-zhang-mei-farm",
@@ -2697,7 +2717,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "jimmy-square",
@@ -2843,7 +2864,8 @@
     "games": [
       "顏色偵探",
       "招牌找字"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "luodong-cultural-working-house",
@@ -2970,7 +2992,8 @@
     "games": [
       "同場騎車",
       "動物模仿走"
-    ]
+    ],
+    "zone": "宜蘭"
   },
   {
     "id": "ncfta-yilan",
@@ -3081,7 +3104,8 @@
     ],
     "family_log": [],
     "last_verified": "2026-07-19",
-    "status": "active"
+    "status": "active",
+    "zone": "宜蘭"
   },
   {
     "id": "meihua-lake",
@@ -3209,6 +3233,7 @@
     "games": [
       "同場騎車",
       "任務卡探險"
-    ]
+    ],
+    "zone": "宜蘭"
   }
 ]

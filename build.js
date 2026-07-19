@@ -71,6 +71,7 @@ const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffe
 
 const slim = venues.map(v => ({
   id: v.id, name: v.name, type: v.type,
+  zone: v.zone || "宜蘭",
   address: v.location.address,
   drive: v.location.drive_min,
   shade: v.shade_score.score,

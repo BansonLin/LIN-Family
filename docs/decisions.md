@@ -1,5 +1,11 @@
 # 重大設計決策紀錄
 
+## 2026-07-19|index.html V2:改採時光手冊操作邏輯(使用者反饋 V1.1 不好用)
+- 視覺與互動全面對齊時光手冊:紙感底色、LXGW WenKai 標題(Google Fonts,離線退回系統字體)、孩子年齡卡、「今天去哪裡?」篩選列(天氣/條件/車程三組 chip)、置頂 sticky 分頁導覽。
+- 分頁:戶外公園/咖啡餐廳/室內雨天/雨天攻略(備案配對表+大雨 3 分清單)/資料來源(每景點 evidence 全文連結+待實測清單)。
+- 新增資料上頁面:完整費用敘述、evidence 出處(URL/類型/日期/摘要)、車程篩選(15/30 分內)。排序公式不變。
+- 三情境排序與全部互動經 headless Chromium 實測通過。
+
 ## 2026-07-19|部署:Cloudflare Workers 接 GitHub 自動部署
 - 使用者選擇 Workers「Continue with GitHub」流程,repo 新增 wrangler.jsonc(檔案結構 scope 外的部署設定檔):assets 目錄 dist/,build 指令僅複製 index.html 與 time.html——確保 config/、data/ 不上公開網址。
 - 之後每次 push 到生產分支即自動重新部署。

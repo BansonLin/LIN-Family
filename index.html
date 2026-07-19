@@ -1,19 +1,162 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>林家出遊手冊</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f6f4f">
+<title>林家出遊手冊</title>
+<style>
+  :root{--g:#2f6f4f;--bg:#f6f4ef;--card:#fff;--ink:#28312c;--sub:#6b756f;--warn:#b45309;--line:#e4e0d6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);padding:env(safe-area-inset-top) 14px 40px}
+  header{padding:18px 2px 10px;display:flex;align-items:center;justify-content:space-between}
+  h1{font-size:1.25rem;color:var(--g)}
+  #kidline{font-size:.8rem;color:var(--sub);margin-top:2px}
+  #gear{background:none;border:none;font-size:1.2rem;padding:6px}
+  .btnrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:8px 0 12px}
+  .scen{font-size:1.05rem;padding:16px 4px;border:2px solid var(--line);border-radius:14px;background:var(--card);text-align:center;line-height:1.5}
+  .scen small{display:block;font-size:.72rem;color:var(--sub)}
+  .scen.on{border-color:var(--g);background:#ebf3ee}
+  .chips{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .chip{font-size:.8rem;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--sub)}
+  .chip.on{border-color:var(--g);color:var(--g);background:#ebf3ee}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .card h2{font-size:1.05rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .badge{font-size:.68rem;color:var(--sub);border:1px solid var(--line);border-radius:6px;padding:1px 6px;white-space:nowrap}
+  .stale{color:var(--warn);border-color:var(--warn)}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;font-size:.82rem;color:var(--sub);margin:8px 0 6px}
+  .meta b{color:var(--ink);font-weight:600}
+  .reason{font-size:.85rem;margin:6px 0;line-height:1.55}
+  .foot{font-size:.75rem;color:var(--sub);margin-top:6px;line-height:1.6}
+  .rain{font-size:.82rem;background:#eef4fb;border-radius:8px;padding:7px 10px;margin-top:8px}
+  #empty{color:var(--sub);font-size:.9rem;text-align:center;padding:30px 0}
+  #setup{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+  #setup h3{font-size:.95rem;margin-bottom:4px}
+  #setup p{font-size:.76rem;color:var(--sub);margin-bottom:10px;line-height:1.5}
+  .krow{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;margin-bottom:8px}
+  .krow input{font-size:.9rem;padding:9px;border:1px solid var(--line);border-radius:8px;width:100%;background:#fff}
+  #save{width:100%;padding:12px;font-size:.95rem;background:var(--g);color:#fff;border:none;border-radius:10px;margin-top:4px}
+  footer{font-size:.7rem;color:var(--sub);text-align:center;margin-top:26px;line-height:1.7}
+</style>
 </head>
 <body>
-  <main style="font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 2rem 1rem;">
-    <h1>林家出遊手冊</h1>
-    <p>決策頁 V1 將於 Phase 3 產出(單檔、資料內嵌、手機優先)。</p>
-    <p>
-      <button disabled>☀️ 晴熱</button>
-      <button disabled>🌧 下雨</button>
-      <button disabled>🍃 舒服</button>
-    </p>
-  </main>
+<header>
+  <div><h1>林家出遊手冊</h1><div id="kidline"></div></div>
+  <button id="gear" aria-label="設定">⚙️</button>
+</header>
+
+<section id="setup" hidden>
+  <h3>孩子設定(只需一次)</h3>
+  <p>依隱私原則,出生年月不寫在網頁檔案裡;只儲存在這支手機的瀏覽器,不會上傳任何地方。</p>
+  <div class="krow"><input id="n1" placeholder="稱呼(如:姊姊)"><input id="b1" type="month" aria-label="孩子1出生年月"></div>
+  <div class="krow"><input id="n2" placeholder="稱呼(如:弟弟)"><input id="b2" type="month" aria-label="孩子2出生年月(可留空)"></div>
+  <button id="save">儲存</button>
+</section>
+
+<div class="btnrow">
+  <button class="scen" data-s="hot">☀️<small>晴熱</small></button>
+  <button class="scen" data-s="rain">🌧<small>下雨</small></button>
+  <button class="scen" data-s="cool">🍃<small>舒服</small></button>
+</div>
+<div class="chips">
+  <button class="chip" data-f="free">免費優先</button>
+  <button class="chip" data-f="meal">要有餐</button>
+  <button class="chip" data-f="coffee">要有咖啡</button>
+</div>
+
+<div id="cards"></div>
+<div id="empty" hidden>選一個天氣情境開始</div>
+
+<footer>資料版本:2026-07-19・共 15 筆景點<br>車程與雨備分鐘為座標估算值;「待重驗」= 超過 6 個月未確認</footer>
+
+<script>
+const VENUES = [{"id":"luodong-sports-park","name":"羅東運動公園","type":"戶外公園","drive":4,"shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":2,"大雨":1},"age_fit":{"0-2":{"score":2,"reason":"兒童遊戲場為PU軟墊地面+兒童沙池、有遮陽,嬰兒車可直達;但體育署全國運動場館資訊網載明哺乳室0間(僅1間親子廁所),嬰兒支援設施薄弱"},"2-4":{"score":3,"reason":"部落客實測遊具「挑戰難度不高、適合幼幼班」:鉛筆頭遊具組、碗公磨石子滑梯、沙坑、共融式鞦韆、彈跳床,加上遊戲區外圍滑步車跑道,正中3歲多孩子甜蜜點"},"4-6":{"score":3,"reason":"地景滑梯、多功能攀爬遊具、繩網、彈跳床,夏季另有徒涉池/泡泡噴泉戲水,還能餵魚、大草坪跑跳,放電量大且雨天有樂活館備案"},"6-9":{"score":2,"reason":"遊戲區遊具難度偏低、較適幼齡;但可租腳踏車環湖(老街碼頭)、爬23公尺望天丘、大草坪放風箏與球場活動,仍有可玩性"}},"rain_backup_id":"wooderful-life-luodong","family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"dongshan-river-eco-ark","name":"冬山河生態綠舟(冬山河森林公園)","type":"戶外公園","drive":15,"shade":1,"noise":3,"weather_fit":{"晴熱":1,"晴涼":3,"小雨":1,"大雨":0},"age_fit":{"0-2":{"score":2,"reason":"大片平整草皮可鋪墊爬行野餐;動線平坦適推車,搜尋結果顯示服務中心可免費借嬰兒車(來源頁待確認);未滿6歲免門票、電動小船未滿3歲免費。但無專屬幼兒軟墊/遊具,夏日遮蔭少、臨水域需全程看顧,故評2。"},"2-4":{"score":3,"reason":"萬坪草地適合奔跑放電,平坦步道適合滑步車(部落客建議自帶);可搭神秘河道電動小船(未滿3歲免費、滿3歲半票35元)、在森之脈橋看火車;正中此年齡帶。臨河岸需看緊。"},"4-6":{"score":3,"reason":"希望之丘放大版哈比屋可走入登頂眺望、神秘河道洞窟搭船探險(藍色星光燈飾如魔戒洞窟)、大樹公寓螺旋木構、綠舟樂園裝置藝術、看火車呼嘯而過,行走距離對接近6歲者剛好;未滿6歲/未滿115cm免門票。"},"6-9":{"score":3,"reason":"除搭船與哈比屋外,有水上自行車體驗(業者標示全年齡、60分鐘,Klook/Niceday/rezio 販售中)、獨角仙復育區與濕地生態觀察、賞鳥平台,園區大可走上半天到一天,探索型內容充足。"}},"rain_backup_id":"anyo-museum","family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":false,"coffee":false}},{"id":"yilan-sports-park","name":"宜蘭運動公園","type":"戶外公園","drive":9,"shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":1,"大雨":0},"age_fit":{"0-2":{"score":2,"reason":"2026新遊戲場有親子式鞦韆與沙桌、沙坑(中央社/自由時報載3款鞦韆含親子式),幼童遊憩區有搖搖椅、幼童蹺蹺板(寶寶溫);但無0-2專屬軟墊區,全戶外需家長全程貼身陪同,故2不給3。園內國民運動中心有哺乳室1間可支援。"},"2-4":{"score":3,"reason":"幼童遊憩區水管溜滑梯、玩沙池、搖搖椅、蹺蹺板專為幼童設計(寶寶溫),新遊戲場沙桌、小轉杯、親子/座椅式鞦韆適齡,平坦園路適合滑步車;官網稱分齡安全設計。"},"4-6":{"score":3,"reason":"新遊戲場2座彩虹溜滑梯、攀岩牆、圓筒爬網、繩梯、鳥巢鞦韆(通過TAF檢測),加上戰艦溜滑梯攀爬關卡,難度多元,接近6歲者可完整挑戰。"},"6-9":{"score":3,"reason":"戰艦溜滑梯可登艦首、攀爬關卡激發冒險精神(官網/部落格),另有星域體能區、山訓設施(領隊sky),大草皮可騎車、放風箏,學齡童仍有足夠強度。"}},"rain_backup_id":"wooderful-life-luodong","family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"longtan-lake-scenic-area","name":"龍潭湖風景區","type":"戶外公園","drive":19,"shade":1,"noise":3,"weather_fit":{"晴熱":1,"晴涼":3,"小雨":1,"大雨":0},"age_fit":{"0-2":{"score":2,"reason":"環湖步道平緩、部落格明言推嬰兒車可行,大草地可野餐;但無0-2專屬軟墊區或幼兒遊具,大碗公磨石子滑梯不適合嬰幼兒,尿布台/哺乳室待確認"},"2-4":{"score":2,"reason":"部落格建議小小孩玩碗公滑梯旁邊較緩區域,可餵魚餵鴨(小腹婆文章標題佐證)、草地放電、平坦環湖道騎滑步車;但人多時滑梯「容易變保齡球場」,3歲多需大人全程陪同"},"4-6":{"score":3,"reason":"大碗公磨石子溜滑梯為此年齡帶主打(寶寶溫建議大孩子玩中間),搭配大草皮野餐與腳踏車環湖,免費放電一流"},"6-9":{"score":3,"reason":"碗公滑梯「大人也能玩」速度感足(curly.com.tw 標題佐證),2.8公里環湖騎腳踏車/踏青對大童運動量充足"}},"rain_backup_id":"hsus-legend-vinegar-factory","family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"wuyuan-water-fire-park","name":"武淵水火同源親子公園(大碗公溜滑梯)","type":"戶外公園","drive":"待確認","shade":2,"noise":3,"weather_fit":{"晴熱":3,"晴涼":3,"小雨":3,"大雨":2},"age_fit":{"0-2":{"score":2,"reason":"人工草皮全區需脫鞋、乾淨開闊,部落格提到寶寶可在草皮安心爬行(草皮脫鞋制經多來源證實,爬行描述為單一來源);但大碗公/滾輪滑梯與攀爬架偏大齡,泡腳池雖淺仍需全程貼身看護,無專屬 0-2 遊具"},"2-4":{"score":3,"reason":"大沙坑、山丘涵洞鑽爬、淺泡腳池戲水,且大碗公磨石子滑梯有多種坡度可自選最緩的一側(tisshuang:每位小朋友都可找到適合自己的坡度;複查再獲甘單共「孩子可依年紀選坡度」獨立佐證),家長陪同即可玩大部分設施——本年齡帶可玩度高"},"4-6":{"score":3,"reason":"大碗公各坡度自由挑戰、滾輪溜滑梯、沙坑上紅色立體攀爬架、高低起伏地形玩鬼抓人(部落格實述),放電效果佳,對本年齡帶吸引力高"},"6-9":{"score":3,"reason":"大碗公最陡坡速度快(多來源:最左側最陡速度最快)、超長滾輪溜滑梯與立體攀爬架對大童仍具挑戰性,橋下開闊空間可跑跳;官方需公告禁滑草板正顯示大童玩法多元"}},"rain_backup_id":"wooderful-life-luodong","family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"shuilu-kids-cafe","name":"水鹿咖啡親子館","type":"親子餐廳","drive":25,"shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":3,"大雨":2},"age_fit":{"0-2":{"score":2,"reason":"二樓有3歲以下專屬遊戲設施區,室內冷氣球池與小遊戲室(積木、小車車)適合學步兒;店家提供IKEA嬰兒餐椅、兒童餐具與圍兜,推車可通行,100cm以下免票。扣分:尿布台/哺乳室有一則搜尋摘要稱有(獨立哺乳室+親子廁所附尿布台),但無法釘住可引用原文,仍列待確認;戶外沙坑與動物餵食區需家長全程貼身看顧。"},"2-4":{"score":3,"reason":"核心設施幾乎全對此齡層:大沙坑(附玩沙工具)、室內球池、扮家家酒/積木遊戲室、軌道小火車、撈魚池、餵兔子/天竺鼠等溫馴小動物;100cm(部分來源寫110cm)以下免門票。此年齡帶為本園主力客群。"},"4-6":{"score":3,"reason":"溜滑梯、盪鞦韆、沙坑、小火車、巨大扭蛋機、餵水鹿/浣熊/迷你馬/山羊等互動皆適齡且放電度高;接近6歲、身高滿110cm者可挑戰踩踩飛車(限110cm以上、60kg以下,部落格實測稱蠻刺激)。"},"6-9":{"score":2,"reason":"踩踩飛車、彈弓、撈魚池、投幣電動車與餵動物對低中年級仍有吸引力,但多數遊具(球池、扮家家酒、沙坑)偏幼齡;120cm以上須購全票300元(折抵200),一般停留約2-3小時,對較大孩子新鮮感偏短。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":true,"coffee":true}},{"id":"lanyang-estuary-kids-restaurant","name":"蘭陽溪口親子餐廳","type":"親子餐廳","drive":"待確認","shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":3,"大雨":2},"age_fit":{"0-2":{"score":2,"reason":"有寶寶粥與兒童餐椅;尿布台位於戶外用餐區旁且附濕紙巾與熱水沖洗區;100 公分以下免低消。但未見 0-2 專屬軟墊爬行區,球池/沙坑需家長全程貼身陪同(座位區有球池監控螢幕輔助),故 2 分。"},"2-4":{"score":3,"reason":"設施幾乎為此年齡帶量身打造:室內球池溜滑梯、沙坑、電動小火車、撈魚、貨櫃屋積木房,PU 賽車道(滑步車道)正適合 2-4 歲滑步車;此年齡帶為核心客群。"},"4-6":{"score":3,"reason":"賽車道、鞦韆、沙坑、撈魚、積木房與球池溜滑梯對 4-6 歲仍具高吸引力,部落客實訪稱「太放電啦」;有兒童餐,對本年齡帶後段仍具高可玩性。"},"6-9":{"score":2,"reason":"設施以學齡前為主(球池、沙坑、小火車),6-9 歲對球池/沙坑新鮮感漸低;仍可玩鞦韆、賽車道、撈魚,且餐廳對面即自行車步道、鄰蘭陽溪口濕地可賞鳥延伸活動,故 2 分。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":true,"coffee":false}},{"id":"gitu-cafe-manor","name":"幾度咖啡莊園","type":"親子咖啡","drive":21,"shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":1,"大雨":0},"age_fit":{"0-2":{"score":1,"reason":"大草坪平坦可讓學步兒在大人陪同下活動、沙坑可玩;但遊具與戲水池皆在戶外,且尿布台/哺乳室/室內軟墊區均查無證據(待確認),嬰幼兒支援設施不明,僅適合短暫停留。"},"2-4":{"score":3,"reason":"沙坑附玩沙工具、淺水戲水池、樹屋溜滑梯與鞦韆正中此齡層;大片草地平坦可跑跳,遊戲設施免費供用餐客人使用,abic 並載明供應兒童餐。"},"4-6":{"score":3,"reason":"溜滑梯、盪鞦韆、戲水池皆適齡,超大草坪可盡情奔跑;鄰近寒溪吊橋(路程約1.8公里)可延伸親子行程,多篇部落格以此齡層帶玩實例推薦。"},"6-9":{"score":2,"reason":"樹屋溜滑梯/鞦韆等遊具偏幼齡,對大童刺激度有限;但夏季戲水池、大草坪跑跳與寒溪吊橋散步仍有吸引力,適合半日行程。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":true,"coffee":true}},{"id":"lao-si-g-tea-coffee","name":"老司G Tea&Coffee","type":"親子咖啡","drive":"待確認","shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":2,"大雨":1},"age_fit":{"0-2":{"score":1,"reason":"無室內軟墊爬行區、尿布台/哺乳室證據;僅沙坑與餵魚可由大人抱著參與,鞦韆滑梯偏大齡,河岸水邊需防走失"},"2-4":{"score":3,"reason":"小沙坑、店家出借滑板車/三輪車、餵魚餵烏龜、盪鞦韆,尺度適合幼兒;玻璃屋內冷氣用餐可躲太陽,低消僅100元停留彈性大"},"4-6":{"score":3,"reason":"溜滑梯、盪鞦韆、沙坑、黑板塗鴉、餵魚生態區一次到位,多篇親子部落格以學齡前兒童實訪,咖哩飯/鬆餅等童餐選擇多"},"6-9":{"score":2,"reason":"遊具(沙坑/小滑梯)偏幼齡,對6歲以上放電強度不足;仍有餵魚、河岸騎車、黑板可玩,適合搭配清溝夜市或九連埤散步"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":false,"coffee":true}},{"id":"amaze-rabbit-maze-jiaoxi-bath","name":"A.maze兔子迷宮-礁溪浴場","type":"親子餐廳","drive":25,"shade":2,"noise":3,"weather_fit":{"晴熱":2,"晴涼":3,"小雨":3,"大雨":2},"age_fit":{"0-2":{"score":2,"reason":"1樓樓梯間設育嬰室(含洗手台、飲水機、休息空間與枕頭,fupo.tw 實訪證實),推車可入、6歲以下僅收50元;但場域以拍照為主,嬰兒可玩內容有限,球池區需家長全程貼身。"},"2-4":{"score":3,"reason":"粉紅球池搭配溜滑梯是「小朋友最愛的一區」,有大熊熊陪玩,戶外哈比村草坪可奔跑;abic 收錄評述室內球池+戶外草地小孩玩得盡興,正中此年齡帶。"},"4-6":{"score":3,"reason":"球池(fupo 實訪稱球池滿深、人可整個埋進去)、2D漫畫房、3D主題彩繪與哈比屋探索對學齡前大童吸引力高,可互動拍照;室內限時120分鐘對此年齡帶足夠放電+用餐。"},"6-9":{"score":2,"reason":"無大型體能設施,以拍照場景與球池為主,對大童吸引力中等;7-12歲門票250元可全額折抵,搭配彩虹蛋糕下午茶尚有誘因。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":true,"coffee":true}},{"id":"lucky-art-crayon-castle","name":"蜡藝蜡筆城堡","type":"觀光工廠","drive":23,"shade":3,"noise":3,"weather_fit":{"晴熱":3,"晴涼":2,"小雨":3,"大雨":3},"age_fit":{"0-2":{"score":1,"reason":"未滿3歲免門票可陪同入館但無DIY體驗(多來源一致,本次重新驗證);官方設施列表(宜蘭博物館家族頁/官網)載有哺乳室與尿布台,嬰兒後勤無虞;但搜尋結果未見0-2專屬軟墊爬行區,對嬰兒僅是「跟著看」的點"},"2-4":{"score":2,"reason":"玩色區、變裝人體彩繪區學齡前可玩(小菲、寶寶溫等親子部落格均帶幼兒實訪);但彩虹溜滑梯限滿6歲不能玩,部分DIY(壓製蠟筆、彩色筆)需家長全程協作;原研究引「官方建議3歲以上較能理解DIY」本次未重現原文,惟與未滿3歲無DIY之免票規則方向一致;本年齡帶適合但需家長陪做"},"4-6":{"score":3,"reason":"4項DIY(玩色/彩色筆/蜡筆/人體彩繪,政府觀光網確認)每半小時一場、全程約2小時,此年齡帶可自己動手完成、作品帶回家,是各親子部落格的主打客群;唯彩虹溜滑梯須滿6歲(官網slide頁確認),接近6歲者需現場依規定確認"},"6-9":{"score":3,"reason":"滿6歲解鎖8層樓室內彩虹溜滑梯(高27公尺、全長68公尺、約13.3秒,限體重未滿100kg、需著防護裝備,官網明列且多部落格重複證實),加上4項DIY,設施完整度對此年齡帶最高;「亞洲最大室內溜滑梯」為官方與部落格宣稱"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":false,"coffee":false}},{"id":"anyo-museum","name":"安永心食館","type":"觀光工廠","drive":22,"shade":3,"noise":3,"weather_fit":{"晴熱":3,"晴涼":2,"小雨":3,"大雨":3},"age_fit":{"0-2":{"score":2,"reason":"官方常態承辦收涎(4-6個月)/抓周(滿週歲)方案(優惠價1500元,含滑步車或毛毯2選1、全家福等,6名親友免費入館),館內有哺乳室、尿布台、嬰兒車租借與各區嬰兒車停放區,未滿3歲免門票;但AR互動與DIY對0-2歲實際可玩內容有限,主要是跟著逛與拍照。"},"2-4":{"score":3,"reason":"館內滑步車體驗/租借最適合2-4歲;AR互動直觀(拍大頭照上傳後在虛擬水中看到自己、變身美人魚)小小孩看到就興奮;DIY遊戲桌「有高有矮,大朋友或小小孩都能體驗」;未滿3歲免門票、全室內安全無日曬。"},"4-6":{"score":3,"reason":"激流泛舟體感遊戲、雙人捕魚對戰、天才小釣手、手作披薩/烘焙DIY正中4-6歲,寶寶溫部落格載小孩玩到滿身大汗、連玩好幾次不累,家長可陪同比賽。"},"6-9":{"score":3,"reason":"AR體感遊戲可親子對戰競賽,另有射擊體驗(2026童玩節票根9折;12:00-13:30休息)、暑期限定雷射對決任務,與2026年官網公告新場域「遙控賽車體驗場」(每場50分鐘),加上微型工廠手作DIY,大童有進階內容;惟全館體量約半日玩完。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":true,"coffee":false}},{"id":"wooderful-life-luodong","name":"木育森林 Wooderful Life(羅東林場店/羅東門市)","type":"室內樂園","drive":7,"shade":3,"noise":3,"weather_fit":{"晴熱":3,"晴涼":2,"小雨":3,"大雨":3},"age_fit":{"0-2":{"score":1,"reason":"可推嬰兒車入館(園區地面平整、無障礙設施完善有據);但館內未見 0-2 專屬軟墊爬行區,益智木球等木質小件對口慾期幼兒有誤食風險,需家長全程抱持或貼身看顧;哺乳室待確認"},"2-4":{"score":3,"reason":"叩叩木馬(騎乘)、樹洞毛毛蟲(磁鐵抓蟲)等低難度木質遊具免費玩,正中此齡段為核心客群;遊具多為站立操作、無高處墜落風險,惟人多時需留意木槍區流彈"},"4-6":{"score":3,"reason":"橡皮筋木槍射擊、益智木球、九大展區(世界森林之最、台灣動物打卡區等,政府網站載明)可自主操作;此年齡帶可全程自己玩,並可在家長協助下做付費DIY音樂盒/相框(官網載DIY每日16:30截止)"},"6-9":{"score":3,"reason":"射擊挑戰、益智木球、木育知識展區(碳循環、永續林業)與DIY音樂盒對學齡童吸引力高,多篇部落格稱大人小孩都愛玩;屬益智型而非體能型場館,好動型大童停留時間可能較短"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"hsus-legend-vinegar-factory","name":"潭酵天地觀光工廠","type":"觀光工廠","drive":19,"shade":3,"noise":3,"weather_fit":{"晴熱":3,"晴涼":2,"小雨":3,"大雨":3},"age_fit":{"0-2":{"score":1,"reason":"無 0-2 專屬軟墊區或爬行區的證據;兩層樓溜滑梯部落格載明約2歲起適用,0-2 只能推車旁觀大廳長頸鹿與白鷺鷥裝置、家長試飲;尿布台/哺乳室未能歸屬到可引用來源,嬰兒照護便利性待確認。"},"2-4":{"score":3,"reason":"兩層樓透明旋轉溜滑梯速度較慢、部落格載明建議約2~12歲(限重約50kg)且免費無限次玩,對3歲多放電剛好;另有免費兒童溜滑梯、投幣醋醋小火車與旋轉木馬(小小孩取向,2樓電動小火車部落格稱約適合幼兒園前幼童)。"},"4-6":{"score":3,"reason":"兩層樓旋轉溜滑梯(2~12歲、限重約50kg)可重複暢玩,加上投幣小火車、旋轉木馬與娛樂機台,接近6歲的孩子可自主重複玩;全室內冷氣、動線安全。"},"6-9":{"score":3,"reason":"滿8歲或身高130cm以上可憑館內消費發票/捐發票玩三層樓白金金屬迴旋溜滑梯(速度快、刺激,大人也能玩);未達門檻的6-7歲仍可玩適用至約12歲的兩層樓溜滑梯。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":true,"meal":false,"coffee":false}},{"id":"lanyang-museum","name":"蘭陽博物館","type":"其他","drive":38,"shade":3,"noise":3,"weather_fit":{"晴熱":3,"晴涼":2,"小雨":3,"大雨":3},"age_fit":{"0-2":{"score":1,"reason":"官網設哺乳室(沙發、屏風燈私密空間)、官方設施列表有尿布台與親子廁所,1F 免費借嬰兒推車、全程電梯無障礙,帶嬰兒同行無壓力;但展覽與考古沙坑皆非為 0-2 設計,無爬行軟墊區證據。"},"2-4":{"score":2,"reason":"兒童考古探索廳的考古沙坑挖寶與淇武蘭家屋扮家家酒適合幼童,部落格指工作台(連連看、拓印)較適合幼童;但需脫鞋著襪、現場領號限 45 分鐘場次,常設展對此齡吸引力有限。"},"4-6":{"score":3,"reason":"考古沙坑挖掘文物、拓印、扮家家酒正中此年齡,未滿 115 公分或 6 歲以下常設展免費、考古廳票 50 元;常設展「大船入港」漁獲場景等具象展示也看得懂。"},"6-9":{"score":3,"reason":"化身小小考古學家挖掘+考古工作室知識內容,加上山之層/平原層/海之層常設展玩中學,部落格實測一區區逛下來兩小時跑不掉;12 歲以下需成人陪同。"}},"family_log":[],"last_verified":"2026-07-19","status":"active","flags":{"free":false,"meal":false,"coffee":false}}];
+const BUILD = "2026-07-19";
+const LS = "lin-family-kids";
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+let scen = null, filters = { free: false, meal: false, coffee: false };
+
+function kids() { try { return JSON.parse(localStorage.getItem(LS)) || [] } catch (e) { return [] } }
+function monthsSince(ym) { const [y, m] = ym.split("-").map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); }
+function bandOf(mo) { const y = mo / 12; return y < 2 ? "0-2" : y < 4 ? "2-4" : y < 6 ? "4-6" : "6-9"; }
+function kidInfo() { return kids().filter(k => k.b).map(k => { const mo = monthsSince(k.b); return { n: k.n || "孩子", mo, band: bandOf(mo) }; }); }
+
+function num(x) { return typeof x === "number" ? x : 0.5; }   // 待確認 → 中性偏低,卡片另有標示
+function isStale(v) { return (Date.now() - new Date(v.last_verified)) / 864e5 > 183; }
+function wf(v) { const w = v.weather_fit; return scen === "hot" ? num(w["晴熱"]) : scen === "rain" ? (num(w["小雨"]) + num(w["大雨"])) / 2 : num(w["晴涼"]); }
+function ageScore(v, bands) { if (!bands.length) return 1; return bands.reduce((a, b) => a + num(v.age_fit[b].score), 0) / bands.length; }
+function score(v, bands) { return wf(v) * ageScore(v, bands) * (isStale(v) ? 0.7 : 1); }
+function hotPri(v) { return num(v.shade) >= 2 ? 1 : 0; }      // 晴熱優先:遮蔭≥2(含全室內)
+function driveNum(v) { return typeof v.drive === "number" ? v.drive : 99; }
+
+function rank() {
+  const bands = [...new Set(kidInfo().map(k => k.band))];
+  let list = VENUES.filter(v => v.status !== "closed");
+  if (filters.meal) list = list.filter(v => v.flags.meal);
+  if (filters.coffee) list = list.filter(v => v.flags.coffee);
+  list = list.map(v => ({ v, s: score(v, bands) }));
+  list.sort((a, b) =>
+    (filters.free ? (b.v.flags.free - a.v.flags.free) : 0) ||
+    (scen === "hot" ? (hotPri(b.v) - hotPri(a.v)) : 0) ||
+    (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)));
+  return { top: list.slice(0, 3), bands };
+}
+
+function bindingReason(v, ks) {
+  if (!ks.length) return "";
+  const worst = ks.reduce((a, k) => num(v.age_fit[k.band].score) < num(v.age_fit[a.band].score) ? k : a, ks[0]);
+  return `適齡(${worst.band}):${v.age_fit[worst.band].reason}`;
+}
+function lastLog(v) { const l = v.family_log; return l && l.length ? `${l[l.length - 1].date}・${l[l.length - 1]["評分"]}/5・${l[l.length - 1]["心得"]}` : "尚無實測"; }
+function backupOf(v) {
+  if (!v.rain_backup_id) return "";
+  if (v.rain_backup_id === "無備案") return `<div class="rain">🌧 雨天備案:無備案(已降權)</div>`;
+  const b = VENUES.find(x => x.id === v.rain_backup_id);
+  const d = b && typeof b.drive === "number" ? `(從家出發約 ${b.drive} 分)` : "";
+  return `<div class="rain">🌧 雨天備案:${b ? b.name : v.rain_backup_id}${d}</div>`;
+}
+
+function render() {
+  const ks = kidInfo();
+  $("#kidline").textContent = ks.length ? ks.map(k => `${k.n} ${Math.floor(k.mo / 12)}歲${k.mo % 12}月(${k.band})`).join("・") : "尚未設定孩子";
+  const cards = $("#cards"), empty = $("#empty");
+  if (!scen) { cards.innerHTML = ""; empty.hidden = false; return; }
+  empty.hidden = true;
+  const { top, bands } = rank();
+  cards.innerHTML = top.map(({ v, s }) => `
+  <div class="card">
+    <h2>${v.name} <span class="badge">${v.type}</span>${isStale(v) ? '<span class="badge stale">⚠️ 待重驗</span>' : ""}${v.status === "待確認" ? '<span class="badge stale">狀態待確認</span>' : ""}</h2>
+    <div class="meta">
+      <span>🚗 <b>${typeof v.drive === "number" ? v.drive + " 分" : "待確認"}</b></span>
+      <span>🌳 遮蔭 <b>${typeof v.shade === "number" ? v.shade + "/3" : "待確認"}</b></span>
+      <span>🔊 聲量容忍 <b>${typeof v.noise === "number" ? v.noise + "/3" : "待確認"}</b></span>
+    </div>
+    <div class="reason">${bindingReason(v, ks)}</div>
+    <div class="foot">上次確認:${v.last_verified}・林家評價:${lastLog(v)}</div>
+    ${v.type === "戶外公園" ? backupOf(v) : ""}
+  </div>`).join("");
+}
+
+$$(".scen").forEach(b => b.onclick = () => { scen = b.dataset.s; $$(".scen").forEach(x => x.classList.toggle("on", x === b)); render(); });
+$$(".chip").forEach(b => b.onclick = () => { const f = b.dataset.f; filters[f] = !filters[f]; b.classList.toggle("on", filters[f]); render(); });
+
+function openSetup() {
+  const k = kids();
+  $("#n1").value = k[0] ? k[0].n : ""; $("#b1").value = k[0] ? k[0].b : "";
+  $("#n2").value = k[1] ? k[1].n : ""; $("#b2").value = k[1] ? k[1].b : "";
+  $("#setup").hidden = false;
+}
+$("#gear").onclick = openSetup;
+$("#save").onclick = () => {
+  const out = [];
+  if ($("#b1").value) out.push({ n: $("#n1").value, b: $("#b1").value });
+  if ($("#b2").value) out.push({ n: $("#n2").value, b: $("#b2").value });
+  localStorage.setItem(LS, JSON.stringify(out));
+  $("#setup").hidden = true; render();
+};
+if (!kids().length) openSetup();
+render();
+</script>
 </body>
 </html>

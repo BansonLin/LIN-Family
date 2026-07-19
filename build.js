@@ -65,7 +65,15 @@ const FEE_SHORT = {
   "imit-rice": "免門票・冷泉泡腳免費",
   "kingcar-aquaculture": "200 元不可折・餵鯊魚 300/次",
   "toucheng-leisure-farm": "約 600 元(含餐/導覽/DIY)・預約制",
-  "junbaobei": "免費入館・DIY 另計"
+  "junbaobei": "免費入館・DIY 另計",
+  "annong-river-park": "免費・24 小時開放",
+  "luodong-forestry-culture-park": "免費入園・停車 60 元/時",
+  "baimi-clogs": "250 元含 DIY 抵用券・預約制",
+  "tiger-rice-noodle": "200 元含 DIY+米粉吃到飽(3 歲以下免)",
+  "brick-museum-yilan": "約 200–250 元含 3 項 DIY",
+  "doctor-duck": "100 元可全折・DIY 需預約",
+  "happiness-farm-20": "100 元可全折(100cm 以下免)",
+  "lanyang-creative": "免費入園・餐飲/DIY 另計"
 };
 const FEE_FULL = {
   "luodong-sports-park": "免門票;附設停車場收費時間08:00–21:00,小客車平日30元/次、假日50元/次(官方收費辦法);17:00後僅設籍宜蘭縣民眾憑國民身分證免費停車,部落格所稱「每次計3小時、17時後免費」以現場公告為準",
@@ -121,10 +129,18 @@ const FEE_FULL = {
   "imit-rice": "入館免門票、免費停車、免費試吃與紅豆水暢飲;DIY需付材料費——官網雪莓娘DIY材料費2入180元/3入250元,操作約20–30分,建議6歲以下一大一小,場次10:00/11:00/14:00/15:00;造型麻糬等其他DIY金額以現場或電洽03-9907779#500為準。",
   "kingcar-aquaculture": "門票:全票200元、優待票(3~11歲)150元、100公分以下/愛心票(65歲以上/孕婦/身心障礙及一名陪同者)100元;門票一律不可折抵消費(WebSearch 多數來源一致為『100公分以下仍需100元』,惟少數頁面誤記為免費,以收費為準)。加購體驗:餵鯊魚300元/次、水母餵食100元/次、花園鰻餵食100元/次。停車免費。",
   "toucheng-leisure-farm": "入園門票約$600/人(2026-07-19 WebSearch 多來源複查一致);孩童3歲以下免費入園、3-10歲購孩童票(現場購買)、11歲以上同大人;平日參加『一日遊體驗之旅』成人約9折;生態半日體驗優惠約TWD 900(含入園門票、DIY、自助傳統小吃);詳細套裝價格以官網/電話最新公告為準。",
-  "junbaobei": "入館參觀免費;DIY體驗需付費(如金柑乾洗手凝露、水嫩乳液、驅黑面膜、晚安凍膜、北蟲草接菌、優格等,另有四人DIY套票於KKday/Taipei Fun Pass販售,實際價格依現場/官網方案);停車免費。確切DIY單價未於檢索結果取得,標『待確認』"
+  "junbaobei": "入館參觀免費;DIY體驗需付費(如金柑乾洗手凝露、水嫩乳液、驅黑面膜、晚安凍膜、北蟲草接菌、優格等,另有四人DIY套票於KKday/Taipei Fun Pass販售,實際價格依現場/官網方案);停車免費。確切DIY單價未於檢索結果取得,標『待確認』",
+  "annong-river-park": "免費(免門票、免費停車場)",
+  "luodong-forestry-culture-park": "免費入園;停車另收費(小型車每小時60元,平日當日最高100元)",
+  "baimi-clogs": "現行官方售票頁(baimiclogs.boostime.me,2025-2026):全票250元、優惠票200元(宜蘭縣民/65歲以上憑證),身心障礙者、身高115cm以下、蘇澳鎮鎮民免費;門票含館內導覽與200元DIY抵用券(工藝DIY體驗)。採預約制。註:2026-07-19 WebSearch 查證發現票價存在來源矛盾——部分旅遊網/舊版資料仍列全票150/優惠100(舊制,免費含3歲以下),2022年前部落格另記免門票、DIY約100-150元;以官方預約售票頁現行250元含抵用券為準,實際以預約當下官網公告為主,建議行前致電03-9952653確認",
+  "tiger-rice-noodle": "全票200元(含一張DIY兌換券+100元抵用券);優惠票100元(65歲以上、12歲以下、宜蘭縣籍、身心障礙者及一名陪同者);3歲以下免費入館。門票含古早味炒米粉免費吃到飽,電鍋炒米粉/彩繪碗DIY以門票兌換券折抵;另有手作米粉DIY需加收工本費;免費停車。WebSearch 2026-07-19 多來源一致。",
+  "brick-museum-yilan": "全票原價 250 元(重新開幕/開幕優惠約 200–230 元;部分來源列平日 220/假日 250)、愛心票約 125–150 元(來源不一,funtime 與樂色山資料多列 125);未滿 3 歲或未滿 90cm 之幼兒及 75 歲以上長者免費;門票含 3 項積木 DIY 與一份(約 20 元)飲料兌換/折抵。實際票價以官網/官方 FB 最新公告為準(來源數字略有出入)。",
+  "doctor-duck": "入館全票100元(原價120,3歲以下及身障免費),可全額折抵館內消費;DIY另計並多需3天前預約:彩繪鴨180、古早味鹹鴨蛋180、鴨賞便利包/鴨賞DIY約220-280、櫻桃鴨御飯糰180等",
+  "happiness-farm-20": "入園門票100元/人(可全額折抵園內低消),100公分以下幼兒免費;空中樹梢體驗200元起;DIY 180元起",
+  "lanyang-creative": "免費入園(免門票);園內餐飲、選品購物、DIY手作體驗等另行付費。"
 };
-const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei"]);
-const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan","jianiao-garden","luwu-japanese-garden","herbelle","toucheng-leisure-farm","shengyang-water-plant-farm"]);
+const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park","juzhixiang","jiaoxi-tangweigou","paoma-historic-trail-park","yilanbing-museum","atters-cake","imit-rice","junbaobei","annong-river-park","luodong-forestry-culture-park","lanyang-creative"]);
+const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan","jianiao-garden","luwu-japanese-garden","herbelle","toucheng-leisure-farm","shengyang-water-plant-farm","lanyang-creative"]);
 const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch","chung-hsing-cultural-park","juzhixiang","jianiao-garden","xingbao-scallion-farm","herbelle","luwu-japanese-garden"]);
 
 const slim = venues.map(v => ({

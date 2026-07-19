@@ -1,11 +1,12 @@
 {
   "home": {
-    "address": "",
+    "address": "宜蘭縣三星鄉上將路一段471巷15號",
     "lat": null,
     "lng": null,
     "note": "lat/lng 由 Claude Code 於 Phase 2 依地址查證填入"
   },
   "children": [
-    { "nickname": "", "birth": "" }
+    { "nickname": "姊姊", "birth": "2020-08-23" },
+    { "nickname": "弟弟", "birth": "2023-03-10" }
   ]
 }

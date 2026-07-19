@@ -195,11 +195,35 @@ const slim = venues.map(v => ({
 
 const family = { children: fam.children.map(c => ({ nickname: c.nickname, birth: String(c.birth).slice(0, 7) })) };
 
+// 大人模式資料(data/places-adult.json;檔案不存在時為空陣列)
+let adultRaw = [];
+try { adultRaw = JSON.parse(fs.readFileSync(path.join(R, 'data/places-adult.json'), 'utf8')); } catch (e) { adultRaw = []; }
+const places = adultRaw.filter(p => p && p.id).map(p => ({
+  id: p.id, name: p.name, type: p.type,
+  zone: p.zone || '台北', district: p.district || '',
+  address: (p.location && p.location.address) || '待確認',
+  price_level: (p.price_band && p.price_band.level) || null,
+  price_per: (p.price_band && p.price_band.per_person) || '待確認',
+  price_basis: (p.price_band && p.price_band.basis) || '',
+  meal_type: p.meal_type || [],
+  scene_fit: p.scene_fit || {},
+  vibe: p.vibe || [],
+  open_late: p.open_late || {},
+  reservation: p.reservation || {},
+  work_ok: p.work_ok || {},
+  signature: p.signature || '',
+  evidence: p.evidence || [],
+  last_verified: p.last_verified || '',
+  status: p.status || 'active',
+}));
+
 let html = fs.readFileSync(path.join(R, 'template.html'), 'utf8');
-html = html.replace('__VENUES__', JSON.stringify(slim))
-  .replace('__FAMILY__', JSON.stringify(family))
+html = html.replace('__VENUES__', () => JSON.stringify(slim))
+  .replace('__PLACES__', () => JSON.stringify(places))
+  .replace('__FAMILY__', () => JSON.stringify(family))
   .replaceAll('__BUILD_DATE__', TODAY)
-  .replace('__N__', String(slim.length));
+  .replace('__N__', String(slim.length))
+  .replaceAll('__NA__', String(places.length));
 
 fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, 'index.html'), html);
@@ -230,4 +254,4 @@ fs.writeFileSync(path.join(DIST, 'sw.js'), [
   "});",
 ].join('\n'));
 
-console.log('dist/ 產出完成:index.html(' + (html.length / 1024).toFixed(1) + 'KB,' + slim.length + ' 筆)+ time.html + manifest + sw + icons');
+console.log('dist/ 產出完成:index.html(' + (html.length / 1024).toFixed(1) + 'KB,親子 ' + slim.length + ' 筆 / 大人 ' + places.length + ' 家)+ time.html + manifest + sw + icons');

@@ -26,9 +26,10 @@
 ```
 CLAUDE.md
 config/family.json      # 孩子出生年月、home 座標(由我手動填,你只讀取)
-data/venues.json        # 唯一資料庫
+data/venues.json        # 親子景點資料庫
+data/places-adult.json  # 大人模式餐飲資料庫(2026-07-19 核准新增,大人 schema 見下)
 .claude/commands/       # weekend / research / refresh / age-review / log
-index.html              # 單檔決策頁(手機優先)
+index.html              # 單檔決策頁(手機優先;親子/大人雙模式切換)
 docs/decisions.md       # 重大設計決策紀錄
 ```
 
@@ -50,6 +51,24 @@ docs/decisions.md       # 重大設計決策紀錄
 | status | active / closed / 待確認 |
 | zone | v1.2(2026-07-19 核准):地區標記,宜蘭 / 台北 / …;既有未標者視為宜蘭 |
 | games | v1.1(2026-07-19 核准,選填):適合帶去玩的遊戲名稱陣列,名稱須對應時光手冊遊戲庫 |
+
+## data/places-adult.json schema(大人模式・2026-07-19 核准新增)
+定位:出差臨時想找咖啡/晚餐(小孩不在身邊)、兩人約會、朋友聚餐、喝一杯宵夜的決策工具。孩子個資與親子欄位一律不出現在此檔。
+| 欄位 | 說明 |
+|---|---|
+| id / name / type | type ∈ 咖啡廳、餐廳、餐酒館、居酒屋、火鍋、燒肉、甜點店、早午餐、其他 |
+| zone / district | zone 目前皆台北;district 為行政區(信義/大安/中山/內湖/松山…),大人模式以行政區定位,不需 drive_min |
+| location | {address, lat, lng, coord_basis};座標可為 null(以行政區定位) |
+| price_band | {level 1–4, per_person 文字, basis};1=平價<300、2=小資300–600、3=中高600–1200、4=高級>1200 |
+| meal_type | 陣列:晚餐/咖啡/甜點/酒/宵夜/早午餐(供篩選) |
+| scene_fit | {solo, date, group, late} 各 {score 0–3, reason 具體理由} 對應四情境卡 |
+| vibe | 短標籤陣列(安靜可久坐/有插座/氣氛佳…) |
+| open_late / reservation / work_ok | {value, basis/note};打烊時間、訂位政策、可否久坐辦公(插座) |
+| signature | 招牌一句(菜/飲/氛圍),選填 |
+| evidence | [{url, source_type, date, 摘要}],≥ 2 筆獨立網域來源才可入庫 |
+| last_verified / status | 同親子庫規則 |
+
+**大人 scene_fit 評分基準**:solo(出差一人)3=有吧檯/單人友善且可久坐辦公;date(兩人約會)3=氣氛/隱私/燈光俱佳;group(朋友聚餐)3=多人/包廂/可分食且好聊;late(喝一杯宵夜)3=營業至深夜且有酒或宵夜。
 
 ## 評分基準(所有研究必須用同一把尺)
 - **noise_tolerance**:3=官方明示親子友善或設遊戲區;2=評論多見家庭客;1=一般客群混合;0=官網或評論強調安靜、成人向。

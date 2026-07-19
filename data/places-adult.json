@@ -1,0 +1,1551 @@
+[
+  {
+    "id": "tp-curista-coffee-city-hall",
+    "name": "CURISTA COFFEE 奎士咖啡 市府旗艦店",
+    "type": "咖啡廳",
+    "zone": "台北",
+    "district": "信義區",
+    "location": {
+      "address": "台北市信義區忠孝東路四段563號1樓",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 信義區 定位，座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–450",
+      "basis": "咖啡約150–200元加甜點/鹹食；部落格稱『平價卻是高級享受』(litwenblog / kkmurmur)"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "百坪空間、靠窗高腳椅區設插座、有Wifi，平日未客滿可續點續坐，多人在此用電腦辦公、數位遊牧，最適合出差一人久坐辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "純白系質感空間、360度環狀大理石吧台，環境好適合兩人小聚，但屬日間咖啡館、非燈光隱私型約會場地"
+      },
+      "group": {
+        "score": 2,
+        "reason": "佔地百坪、座位多，可容納多人共桌喝咖啡聊天，但非分食型聚餐場地"
+      },
+      "late": {
+        "score": 0,
+        "reason": "20:30 打烊，無供酒與宵夜，不適合深夜/宵夜場景"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "有插座",
+      "百坪明亮",
+      "精品咖啡",
+      "未客滿不限時"
+    ],
+    "open_late": {
+      "value": "20:30",
+      "basis": "營業08:00–20:30(ningl / kkmurmur 部落格)"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "部落格皆為現場入座、未明載訂位政策；官方訂位資訊待確認"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "靠窗高腳椅區有插座、有Wifi；客滿限時2小時，未客滿可續點一份餐點續坐辦公"
+    },
+    "signature": "百坪純白精品咖啡館，靠窗插座區是一人辦公首選",
+    "evidence": [
+      {
+        "url": "https://ningl.tw/%E5%A5%8E%E5%A3%AB%E5%92%96%E5%95%A1%E5%B8%82%E5%BA%9C%E6%97%97%E8%89%A6%E5%BA%97%E4%BF%A1%E7%BE%A9%E5%8D%80%E5%B8%82%E6%94%BF%E5%BA%9C%E5%92%96%E5%95%A1%E5%BB%B3%E6%8E%A8%E8%96%A6/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "信義區市政府白色系咖啡廳，明載不限時、有插座、靠窗高腳椅可辦公"
+      },
+      {
+        "url": "https://kkmurmur.com/curista-coffee-city-hall/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "占地百坪精品咖啡館，含地址(忠孝東路四段563號1樓)、菜單與市政府站步行動線"
+      },
+      {
+        "url": "https://stancylife.com/curista-coffee/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "信義區不限時咖啡廳心得，客滿限時2小時、未客滿可續點續坐"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-hoda-bistro",
+    "name": "Hoda Bistro 餐酒館",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "信義區",
+    "location": {
+      "address": "台北市信義區忠孝東路五段61號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 信義區 定位，座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000",
+      "basis": "低消NT500/人，加創意調酒與餐點約600–1000(eggie / niniyeh)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "夜間餐酒館以兩人以上為主，一人可小酌尚可但氛圍偏聚會、非久坐辦公型"
+      },
+      "date": {
+        "score": 3,
+        "reason": "低調隱密位置、氣氛不拘謹、燈光佳，多篇部落格點名約會/慶生首選，創意諧音特調適合兩人微醺"
+      },
+      "group": {
+        "score": 3,
+        "reason": "餐點份量足可分食、有包廂最多容納8位(6人以下低消NT3000)，適合朋友聚餐好聊"
+      },
+      "late": {
+        "score": 3,
+        "reason": "週日–四營業至01:00、週五六至02:00，供酒與餐酒料理，適合喝一杯/宵夜"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "創意調酒",
+      "低調隱密",
+      "可包廂",
+      "營業到深夜"
+    ],
+    "open_late": {
+      "value": "週日–四 01:00 / 週五六 02:00",
+      "basis": "營業週日~四18:00–01:00、週五六18:00–02:00(eggie / niniyeh)"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "可線上訂位，週末沒訂位進不去(eggie / niniyeh)"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "夜間餐酒館、無辦公插座環境，用餐限時2小時，不適合久坐辦公"
+    },
+    "signature": "無國界創意料理配諧音梗特調，招牌起司瀑布",
+    "evidence": [
+      {
+        "url": "https://dalang.tw/hoda-bistro/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "信義評分最高餐酒館，最新菜單、多款精緻料理與特色調酒，點名信義約會聚會餐廳"
+      },
+      {
+        "url": "https://niniyeh.com/hoda-bistro/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "市政府站出站就能喝的餐酒館，混血料理個性小店，低消NT500/人"
+      },
+      {
+        "url": "https://eggie.tw/blog/posts/8234352866",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "無國界餐酒料理與調酒，營業週日–四18:00–01:00/週五六到02:00，包廂可容納8位"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-orange-shabu-a9",
+    "name": "橘色涮涮屋 新光三越A9館",
+    "type": "火鍋",
+    "zone": "台北",
+    "district": "信義區",
+    "location": {
+      "address": "台北市信義區松壽路9號7樓(新光三越信義新天地A9館)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 信義區 定位，座標待確認"
+    },
+    "price_band": {
+      "level": 4,
+      "per_person": "約 NT$1200–2500",
+      "basis": "火鍋套餐約1000多元起、海鮮套餐約NT2000(食記 / niniyeh)"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "頂級鍋物一人可入座，但採預付訂金制、單價高、氛圍偏聚餐與慶生，非一人日常首選"
+      },
+      "date": {
+        "score": 2,
+        "reason": "裝潢奢華、桌邊服務精緻、A9高樓可欣賞信義夜景，兩人約會體驗佳，惟單價高且限時2小時"
+      },
+      "group": {
+        "score": 3,
+        "reason": "頂級精緻鍋物聚餐代名詞，空間與服務適合多人聚餐、慶生等重要場合"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至23:30，可涵蓋晚餐後時段，但非深夜酒吧/宵夜型態"
+      }
+    },
+    "vibe": [
+      "頂級鍋物",
+      "精緻桌邊服務",
+      "百貨高樓夜景",
+      "適合聚餐慶生"
+    ],
+    "open_late": {
+      "value": "23:30",
+      "basis": "營業11:30–23:30(fonfood / anikofoodie)"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "採預付訂金制，可透過 inline / 新光三越線上訂位(inline.app / skm.com.tw)"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "高級鍋物餐廳、用餐限時2小時，不適合辦公"
+    },
+    "signature": "火鍋界的LV，頂級和牛海鮮涮涮鍋加專人桌邊服務",
+    "evidence": [
+      {
+        "url": "https://niniyeh.com/orange-shabu-shabu-house-a9/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "A9館頂級精緻鍋物，含地址(松壽路9號7樓)、套餐內容與2小時限時"
+      },
+      {
+        "url": "https://anikofoodie.com/orangeshabua9/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "火鍋界的LV、米其林指南餐盤推薦，吃鍋喝調酒欣賞信義夜景，營業11:30–23:30"
+      },
+      {
+        "url": "https://inline.app/booking/-LL7w1Y0HNb5dvdA1v7N:inline-live-2a466/-LL7w1n6jfj2G-vhT__F",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "橘色涮涮屋新光三越A9線上訂位頁，證實現營運且採訂位/預付訂金制"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-backyard-jr-xinyi",
+    "name": "小後苑 Backyard Jr. 信義店",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "信義區",
+    "location": {
+      "address": "台北市信義區松壽路9號3樓(新光三越信義新天地A9館)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 信義區 定位，座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$800–1500",
+      "basis": "威士忌酒吧加晚間套餐/餐酒搭配，約800–1500(globalfoodelicious)"
+    },
+    "meal_type": [
+      "酒",
+      "晚餐",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "威士忌吧檯、逾2000款酒單，一人靠吧檯品酒小酌自在，惟屬酒吧非久坐辦公咖啡"
+      },
+      "date": {
+        "score": 3,
+        "reason": "百貨中的威士忌博物館酒吧，氛圍佳、餐酒搭配專業，適合兩人微醺約會"
+      },
+      "group": {
+        "score": 2,
+        "reason": "台式餐酒館可多人小酌聚餐，惟以吧檯/酒吧座位為主，非大桌分食型聚餐"
+      },
+      "late": {
+        "score": 3,
+        "reason": "每天營業至凌晨02:00，供逾2000款威士忌與台式餐酒，是信義百貨區少見的深夜酒吧"
+      }
+    },
+    "vibe": [
+      "威士忌博物館",
+      "餐酒搭配",
+      "深夜酒吧",
+      "氣氛佳"
+    ],
+    "open_late": {
+      "value": "凌晨 02:00",
+      "basis": "營業11:00–02:00(winentaste / niniyeh)"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "熱門百貨威士忌酒吧，部落格未明載訂位政策，訂位資訊待確認"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "威士忌酒吧、夜間營業，不適合久坐辦公"
+    },
+    "signature": "逾2000款威士忌X台式餐酒，百貨裡的深夜威士忌吧",
+    "evidence": [
+      {
+        "url": "https://globalfoodelicious.com/backyard-jr-xinyi-2023/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "信義店菜單有單點也有晚間套餐，台式餐酒館X威士忌酒吧"
+      },
+      {
+        "url": "https://niniyeh.com/backyard-jr/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "台北威士忌酒吧X台式餐酒館，威士忌品項逾2000款"
+      },
+      {
+        "url": "https://www.winentaste.com/magazine/food_pairing_tina_%20backyard_jr",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "信義新光三越A9小後苑，地址松壽路9號3樓、營業至凌晨02:00、餐酒搭配專業"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-2730-cafe",
+    "name": "2730 café 貳柒參零咖啡",
+    "type": "咖啡廳",
+    "zone": "台北",
+    "district": "大安區",
+    "location": {
+      "address": "台北市大安區延吉街288號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 大安區 定位（近信義安和站），座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$130–350",
+      "basis": "低消一杯飲品最低130元可坐整天，飲品150–200，加點簡餐/甜點約再加150–250"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "不限時、非訂位制、部分座位有插座，低消一杯飲品130就能久坐；老宅安靜氛圍適合一人工作讀書"
+      },
+      "date": {
+        "score": 2,
+        "reason": "復古文青老宅、昏黃燈光、有三隻店貓，兩人來悠閒放鬆，但屬休閒貓咖非隱私型約會餐廳"
+      },
+      "group": {
+        "score": 1,
+        "reason": "老宅改建座位有限、不主打多人聚餐，人多不易一起坐"
+      },
+      "late": {
+        "score": 1,
+        "reason": "22:00 打烊（最後出餐21:00），非深夜場"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "安靜可久坐",
+      "老宅文青",
+      "有貓"
+    ],
+    "open_late": {
+      "value": "22:00",
+      "basis": "多篇部落格：平日12:00–22:00、週末11:30–22:00、週三休、最後出餐21:00"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "部落格指出為不限時、非訂位制咖啡廳"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "不限時、部分座位有插座、低消僅一杯飲品，適合久坐辦公讀書"
+    },
+    "signature": "延吉街老宅貓咪不限時咖啡，家傳醉雞飯與抹茶巴斯克",
+    "evidence": [
+      {
+        "url": "https://whos-talking.com/2024/06/06/2730cafe/",
+        "source_type": "blog",
+        "date": "2024-06",
+        "摘要": "證實不限時復古老宅咖啡廳、鄰近信義安和站、有貓、供應家常料理甜點"
+      },
+      {
+        "url": "https://beri.tw/2730cafe/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "老屋咖啡、有貓、不限時、賣古早味料理，大安區適合工作讀書的安靜咖啡廳"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/314344",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "延吉街文青老宅貓咪咖啡廳、私房料理，地點在大安區延吉街"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-uchi-grill-bistro",
+    "name": "UCHI 吾居炭火餐酒",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "大安區",
+    "location": {
+      "address": "台北市大安區忠孝東路四段223巷59號1樓",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 大安區 定位（忠孝敦化站），座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$1,000–1,500（均消約 NT$1,200）",
+      "basis": "多來源列均消參考 $1,200/人；情人節雙人套餐每人 NT$1,314"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "炭火餐酒館偏兩人以上，未見明確單人吧檯久坐資訊，一人尚可但非主打"
+      },
+      "date": {
+        "score": 3,
+        "reason": "沈穩低調有溫度的用餐空間、燈光佳、半開放式廚房直火料理、冠軍調酒師聯名調飲，多篇媒體列為情人節約會推薦"
+      },
+      "group": {
+        "score": 3,
+        "reason": "B1 有獨立 KTV 包廂最多可容納20人，適合聚餐、派對、慶生、商務聚會"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至約 23:30（部分較舊資料為 23:00），可小酌到晚"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "燈光好",
+      "炭火直火",
+      "有包廂KTV",
+      "冠軍調酒"
+    ],
+    "open_late": {
+      "value": "23:30",
+      "basis": "多個較新來源列 17:30–23:30；部分較舊資料為 18:00–23:00，來源略有出入"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "提供 inline/EZTABLE 線上訂位，需預付訂金（6人以下每桌$480、7人以上每桌$1,200）"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "晚間餐酒館、非久坐辦公型場所"
+    },
+    "signature": "炭火直烤×西式作法日料，KTV包廂可邊唱邊吃",
+    "evidence": [
+      {
+        "url": "https://newexperience.blog/2025/02/08/",
+        "source_type": "news",
+        "date": "2025-02",
+        "摘要": "東區新餐酒館，炭火料理、冠軍調酒、情人節雙人套餐，氛圍適合約會"
+      },
+      {
+        "url": "https://www.verse.com.tw/article/7-best-taipei-restaurants-for-valentines-day",
+        "source_type": "news",
+        "date": "2025-02",
+        "摘要": "2025情人節約會推薦台北氣氛餐廳，列入最新開幕東區餐酒館 UCHI 吾居炭火餐酒"
+      },
+      {
+        "url": "https://www.carture.com.tw/others/article/34877-",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "私廚延伸打造的餐酒館，直火料理、包廂歡唱一站搞定，均消約$1,200、線上訂位"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-erbensong-shabu",
+    "name": "二本松涮涮屋 本館",
+    "type": "火鍋",
+    "zone": "台北",
+    "district": "大安區",
+    "location": {
+      "address": "台北市大安區瑞安街118號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 大安區 定位（大安站步行約5–8分鐘），座標待確認"
+    },
+    "price_band": {
+      "level": 4,
+      "per_person": "約 NT$1,000–4,000（套餐780–3,980，多落在1,000–2,000）另加10%服務費",
+      "basis": "多篇菜單食記列套餐價780–3,980元、每人低消一套餐"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "涮涮鍋為個人鍋、單人低消一套餐可獨座，但屬高檔宴客型，一人前往略為隆重"
+      },
+      "date": {
+        "score": 3,
+        "reason": "全程桌邊代煮尊榮服務、頂級和牛海鮮、有隱密包廂，適合紀念日精緻約會或招待"
+      },
+      "group": {
+        "score": 3,
+        "reason": "獨立包廂約可容8人、也有四人桌與圓桌，全程代煮好專心聊天，商務聚會/家庭聚餐首選"
+      },
+      "late": {
+        "score": 1,
+        "reason": "17:30–22:30（午餐12:00–14:30），約22:30打烊，非深夜場"
+      }
+    },
+    "vibe": [
+      "頂級火鍋",
+      "桌邊代煮",
+      "有包廂",
+      "適合宴客",
+      "高單價"
+    ],
+    "open_late": {
+      "value": "22:30",
+      "basis": "多篇食記列營業 12:00–14:30、17:30–22:30，週二公休"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "全預約制、桌邊代煮，訂位需訂金每人500元、包廂低消20,000元"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "全服務式高檔火鍋、非辦公場所"
+    },
+    "signature": "米其林一星主廚監製、火鍋界的PRADA，全程桌邊代煮松葉蟹和牛",
+    "evidence": [
+      {
+        "url": "https://dalang.tw/erbensongshabu/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026最新菜單，台北大安頂級火鍋、專人桌邊服務、北海道花咲蟹套餐"
+      },
+      {
+        "url": "https://eggie.tw/blog/post/231140185",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "大安站美食、高檔火鍋餐酒館、台北包廂聚餐餐廳、火鍋界的Prada"
+      },
+      {
+        "url": "https://2bunny.tw/er-ben-song/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "大安站步行約4分鐘、桌邊服務頂級火鍋，CNN、NHK 推薦，Google 4.9分"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-abv-southeast-asian",
+    "name": "ABV南洋餐酒館 國館店",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "大安區",
+    "location": {
+      "address": "台北市大安區光復南路280巷39號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 大安區 定位（國父紀念館站），座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1,000（餐點＋精釀啤酒）",
+      "basis": "多篇食記描述南洋料理＋精釀啤酒搭餐，另有4人分享套餐可攤低人均，來源未列統一均消"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "座位多、南洋度假風氛圍輕鬆，一人小酌精釀啤酒配下酒菜自在，但偏聚餐型、非久坐辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "熱帶度假 Villa 風、戶外座位，兩人輕鬆用餐氛圍佳，但屬熱鬧非隱私型"
+      },
+      "group": {
+        "score": 3,
+        "reason": "座位非常多、可包場/公司聚餐、多為分享餐、300+精釀啤酒好點好聊，明示適合多人"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:30、有酒有南洋下酒宵夜料理，深夜喝一杯首選"
+      }
+    },
+    "vibe": [
+      "營業到凌晨",
+      "300+精釀啤酒",
+      "南洋度假風",
+      "座位多可包場",
+      "適合聚餐"
+    ],
+    "open_late": {
+      "value": "凌晨 01:30",
+      "basis": "官網與多篇食記：週一～週日 12:00–凌晨01:30、不限時、下午不休息"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "座位多但聚餐/包場旺，食記建議先訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "餐酒館、熱鬧環境，非久坐辦公場所"
+    },
+    "signature": "九國東南亞料理配300+世界精釀啤酒，開到凌晨的度假風餐酒館",
+    "evidence": [
+      {
+        "url": "https://www.abv.com.tw/southeast-asian-store/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官網國館店資訊：地址光復南路280巷39號、營業至凌晨01:30、九國南洋料理與精釀啤酒"
+      },
+      {
+        "url": "https://www.mecocute.com/abv-bar-kitchen/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "大安區國館店、9個東南亞國家料理、營業至凌晨1:30、座位多適合聚餐包場"
+      },
+      {
+        "url": "https://niniyeh.com/abv-southeastasian-bistro/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "國父紀念館聚餐首選、300+精釀啤酒搭南洋料理、侍酒師桌邊服務、座位多"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-beifongshe-cafe",
+    "name": "北風社",
+    "type": "咖啡廳",
+    "zone": "台北",
+    "district": "中山區",
+    "location": {
+      "address": "台北市大同區赤峰街47巷18號2樓",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以中山站/赤峰街生活圈定位歸為中山區;行政區實為大同區,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–250",
+      "basis": "低消一杯飲品、不限時、不收服務費;手沖與義式飲品為主(catcha-cafes、痞客邦 tong67)"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "不限時、不收服務費,牆面與吧台旁皆有插座、WiFi強,二樓老屋安靜,常見帶電腦久坐工作/繪圖的創作者"
+      },
+      "date": {
+        "score": 2,
+        "reason": "老屋二樓、偏黃燈泡與日系抒情/Lo-fi 音樂,像靜謐書房,兩人安靜聊天可;但人潮多、常客滿"
+      },
+      "group": {
+        "score": 1,
+        "reason": "老屋小桌空間、平假日都易客滿常需排隊,不適合多人聚會"
+      },
+      "late": {
+        "score": 1,
+        "reason": "營業至 00:00 可坐較晚,但為咖啡廳、無酒、非宵夜場;週四公休"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "WiFi強",
+      "安靜可久坐",
+      "老屋文青"
+    ],
+    "open_late": {
+      "value": "00:00(週四公休)",
+      "basis": "痞客邦 tong67、catcha-cafes 記營業約 13:00–24:00,週四休"
+    },
+    "reservation": {
+      "value": "不接受訂位,尖峰需排隊,建議提前到",
+      "basis": "部落格提到開店前就有人排隊,建議提前約30分鐘或避開尖峰(auntie.tw、supertaste)"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "不限時、不收服務費,牆面與吧台皆有插座,WiFi強,適合帶電腦久坐辦公"
+    },
+    "signature": "赤峰街不起眼老屋二樓的靜謐書房系咖啡,招牌西西里咖啡",
+    "evidence": [
+      {
+        "url": "https://catcha-cafes.com/place/beifongshe-cafe/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "推薦一家適合工作的咖啡廳:不限時、插座位置多、WiFi 很強"
+      },
+      {
+        "url": "https://tong67.pixnet.net/blog/posts/17331322497",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "赤峰街浮光書店旁、巷弄二樓老屋咖啡廳,不限時、有 WiFi、有插座"
+      },
+      {
+        "url": "https://auntie.tw/20251028/",
+        "source_type": "blog",
+        "date": "2025-10",
+        "摘要": "赤峰街不限時老宅咖啡廳,2025 年 10 月仍營業,確認店況"
+      },
+      {
+        "url": "https://travel.ettoday.net/article/2598644.htm",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "台北中山不限時有插座咖啡廳,讀書工作必收藏,列入北風社"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-wow-bistro",
+    "name": "WOW Bistro 旺・慢食餐酒館(中山店)",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "中山區",
+    "location": {
+      "address": "台北市中山區中山北路二段42巷34號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以中山區定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "晚餐約 NT$400–600(商業午餐約 NT$180–280)",
+      "basis": "三人分享餐約1680元、人均400–600;另收10%服務費、最低消費每位約180–200元(rockydora、mstryit)"
+    },
+    "meal_type": [
+      "晚餐",
+      "午餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "以套餐/分享餐與情侶、家庭客為主,一人尚可(有商業午餐)但氛圍偏兩人以上,非單人設計"
+      },
+      "date": {
+        "score": 3,
+        "reason": "多篇部落格點名『不踩雷歐式約會餐酒館』,氣氛佳、不拘束,台灣食材入菜的創意義式料理與燉飯"
+      },
+      "group": {
+        "score": 2,
+        "reason": "有雙人/三人套餐與包場服務,可容納多人;但店內空間不大、座位不多,大團體受限,需訂位"
+      },
+      "late": {
+        "score": 0,
+        "reason": "晚餐 21:30 打烊,非宵夜場"
+      }
+    },
+    "vibe": [
+      "約會氣氛佳",
+      "歐式餐酒館",
+      "創意義大利麵",
+      "需訂位"
+    ],
+    "open_late": {
+      "value": "21:30",
+      "basis": "營業 11:30–15:30 及 17:30–21:30、無公休(mstryit、opentable)"
+    },
+    "reservation": {
+      "value": "建議提前訂位(座位少、常客滿)",
+      "basis": "座位數不多、生意好經常客滿,建議電話或網路訂位(rockydora、anikofoodie)"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "餐酒館、用餐限時2小時,非工作/久坐場所"
+    },
+    "signature": "以台灣食材入菜的創意義式料理與燉飯,中山站不踩雷約會餐酒館",
+    "evidence": [
+      {
+        "url": "https://mstryit.com/wowbistro/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "餐點好吃又不會太拘束的約會餐廳,附菜單、氣氛佳"
+      },
+      {
+        "url": "https://www.rockydora.com/2023/09/Taipei.wowbistro1.html",
+        "source_type": "blog",
+        "date": "2023-09",
+        "摘要": "提前訂位才不會撲空、人均400–600、晚餐排餐,座位不多需訂位"
+      },
+      {
+        "url": "https://anikofoodie.com/wowbistro/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中山站不踩雷的歐式約會餐酒館,義大利麵/燉飯為主"
+      },
+      {
+        "url": "https://www.opentable.com/restaurant/profile/180479",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "OpenTable 訂位頁,確認地址、可線上訂位、目前營業中"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-abv-japanese-izakaya",
+    "name": "ABV 日式居酒館(中山店)",
+    "type": "居酒屋",
+    "zone": "台北",
+    "district": "中山區",
+    "location": {
+      "address": "台北市中山區中山北路二段39巷16-2號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以中山區定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "均消約 NT$500–800",
+      "basis": "部落格記均消約$500,另有3–4人及5–6人分享餐可分食(niniyeh、softc)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "設板前檯面與高腳椅吧檯座位,單人可小酌用餐、侍酒師可協助選精釀啤酒;整體仍偏聚餐氛圍"
+      },
+      "date": {
+        "score": 2,
+        "reason": "復古居酒屋精緻空間、300款精釀啤酒選擇多,兩人小酌氣氛佳;但較熱鬧、非安靜隱私型"
+      },
+      "group": {
+        "score": 3,
+        "reason": "座位多、有3–4人與5–6人分享餐可分食好聊,聚餐小酌熱門,超適合朋友喝一杯"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 02:00,300款世界精釀啤酒配居酒屋料理,喝一杯、續攤宵夜首選(打烊02:00)"
+      }
+    },
+    "vibe": [
+      "300款精釀啤酒",
+      "營業到凌晨2點",
+      "聚餐分食",
+      "有吧檯",
+      "復古居酒屋"
+    ],
+    "open_late": {
+      "value": "凌晨02:00",
+      "basis": "營業 16:00–02:00(官網 abv.com.tw、niniyeh)"
+    },
+    "reservation": {
+      "value": "可訂位、建議預約;用餐限時約 180 分鐘、內用收 10% 服務費(官方/WalkerLand)",
+      "basis": "訂位電話02-2571-1007,可訂位、不限時(niniyeh、pekoblog)"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋熱鬧環境、用餐限時約180分鐘,聚餐小酌取向,不適合辦公"
+    },
+    "signature": "六門大冰箱300款世界精釀啤酒,搭配關西風居酒屋料理與稻草燒",
+    "evidence": [
+      {
+        "url": "https://niniyeh.com/abv-japanese-izakaya/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中山站聚餐宵夜超有氣氛,300款精釀啤酒任選,均消約$500,營業至凌晨2點"
+      },
+      {
+        "url": "https://www.abv.com.tw/japanese-store-en/",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "ABV Bar & Kitchen 官方頁,日式居酒館店家資訊、營業16:00–02:00"
+      },
+      {
+        "url": "https://softc.tw/abv-japanese/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "近中山站3號出口、復古日式居酒屋,有板前吧檯與高腳椅、精釀啤酒"
+      },
+      {
+        "url": "https://pekoblog.tw/abvbar/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "不限時聚餐宵夜首選,吃得到稻草燒的中山餐酒館"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-gaojiazhuang-mitaimu",
+    "name": "高家莊米苔目",
+    "type": "台式小吃(宵夜)",
+    "zone": "台北",
+    "district": "中山區",
+    "location": {
+      "address": "台北市中山區林森北路279號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以中山區定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–350",
+      "basis": "米苔目/魯肉飯平價,但小菜黑白切偏高、一人約抓$200才吃得爽(lexie、juhsin)"
+    },
+    "meal_type": [
+      "宵夜",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "台式小吃店,單人點碗米苔目+黑白切自在,夜貓一人吃宵夜無壓力;尖峰時段人多可能需併桌"
+      },
+      "date": {
+        "score": 1,
+        "reason": "熱鬧排隊老店、環境樸實吵雜,非約會取向"
+      },
+      "group": {
+        "score": 3,
+        "reason": "黑白切、多樣小菜、魯肉飯適合多人分食共享,夜生活聚會熱門、越晚人越多"
+      },
+      "late": {
+        "score": 3,
+        "reason": "40餘年老字號宵夜名店,平日營業至 01:00、週五六至 02:00,林森北條通深夜食堂代表(週日公休)"
+      }
+    },
+    "vibe": [
+      "老字號",
+      "深夜食堂",
+      "黑白切分食",
+      "排隊名店",
+      "越晚越熱鬧"
+    ],
+    "open_late": {
+      "value": "平日01:00,週五六02:00(週日公休)",
+      "basis": "營業約17:00–01:00、週五六至02:00(lexie、wisely)"
+    },
+    "reservation": {
+      "value": "免預約(現場排隊)",
+      "basis": "小吃店現場候位,永遠客滿排隊(goodeat、juhsin)"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "傳統宵夜小吃店、人多吵雜,不適合辦公"
+    },
+    "signature": "林森北路40餘年宵夜名店,招牌米苔目湯與神級紅燒大腸黑白切",
+    "evidence": [
+      {
+        "url": "https://lexie.tw/koa/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "45年老字號宵夜、神級紅燒大腸,中山區林森北美食,小菜偏高一人約$200"
+      },
+      {
+        "url": "https://goodeat.tw/food/michimok-kao/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "林森北路條通宵夜,永遠在排隊的美味宵夜"
+      },
+      {
+        "url": "https://leafyeh.com/post-95565042/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "台北夜生活宵夜名店、食尚玩家介紹,數十年如一日"
+      },
+      {
+        "url": "https://wisely.tw/read-34134.html",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "林森北路深夜食堂、50年黑白切老店,記營業至凌晨、近捷運中山站"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-wilsonpark-bistro",
+    "name": "WilsonPark 威爾森公園",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "內湖區",
+    "location": {
+      "address": "台北市內湖區民權東路6段125-1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 內湖區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "單點約 NT$800–1500;雙人套餐 $3680 或 $5280(約每人 $1840–2640)",
+      "basis": "部落格記載雙人8道菜套餐 $3680/$5280,主打乾式熟成牛排、威靈頓牛排、A5和牛,單點另計"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "以雙人/多人套餐與牛排為主,一人前往較不經濟,非單人友善設定"
+      },
+      "date": {
+        "score": 3,
+        "reason": "內湖知名約會餐酒館,質感工業風、燈光沉穩有氣氛,設雙人套餐$3680/$5280,多篇部落格列為約會首選並提供餐酒搭配"
+      },
+      "group": {
+        "score": 2,
+        "reason": "可多人用餐、餐點可分享,朋友聚餐亦適合,但空間偏精緻非大型聚會場地"
+      },
+      "late": {
+        "score": 1,
+        "reason": "晚餐營業至約23:00,有葡萄酒可小酌,但非深夜/宵夜場"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "約會首選",
+      "工業風",
+      "餐酒搭配",
+      "低調奢華"
+    ],
+    "open_late": {
+      "value": "晚餐約至 23:00",
+      "basis": "搜尋結果記載平日午餐 11:30–14:30、晚餐 17:30–23:00(去前建議確認)"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "多來源提及威靈頓牛排為預約制、需訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "正式餐酒館、以套餐用餐為主,非久坐辦公場所"
+    },
+    "signature": "米其林三星出身主廚的威靈頓牛排與乾式熟成牛排,餐酒搭配",
+    "evidence": [
+      {
+        "url": "https://www.wilsonparkbistro.com/",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "官網:內湖乾式熟成牛排餐酒館,主打頂級原肉、世界精選葡萄酒與餐酒搭配套餐"
+      },
+      {
+        "url": "https://lizzzstyle.tw/wilsonpark/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "質感台北約會餐廳推薦,義大利白酒、美國prime肋眼牛排,氣氛適合兩人"
+      },
+      {
+        "url": "https://sainteat.tw/wilsonpark/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "內湖民權東路餐酒館,主廚為國外米其林三星餐廳出身,環境有氣氛適合約會小酌"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-gumgum-beer-wings-neike",
+    "name": "GUMGUM 雞翅啤酒吧(內科店)",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "內湖區",
+    "location": {
+      "address": "台北市內湖區基湖路3巷68號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 內湖區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000",
+      "basis": "多來源記載低消每人500元;招牌雞翅240、披薩450、松露燉飯450,含啤酒約每人600–1000"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "獨棟玻璃屋餐酒館座位以多人為主,低消每人500,一人前往較不划算"
+      },
+      "date": {
+        "score": 2,
+        "reason": "玻璃屋森林系與頂樓露營風裝潢、氣氛佳,兩人也合適,但偏熱鬧聚餐非私密約會"
+      },
+      "group": {
+        "score": 3,
+        "reason": "內科聚餐熱門,2F獨立包廂可容16–20人,適合尾牙/家族/朋友聚餐,雞翅披薩可分食好聊"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至22:30,主打台灣精釀啤酒可微醺小酌,但非凌晨深夜場"
+      }
+    },
+    "vibe": [
+      "玻璃屋",
+      "森林系",
+      "聚餐熱門",
+      "精釀啤酒",
+      "有包廂"
+    ],
+    "open_late": {
+      "value": "約 22:30",
+      "basis": "多來源記載午晚兩段營業,晚餐段約 17:30–22:30(週四午餐時段略異)"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "多來源指訂位爆滿、用餐時段常滿位,建議一定要先訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "用餐不限時但為餐酒館聚餐場所,非辦公用途"
+    },
+    "signature": "獨棟玻璃屋餐酒館,15種口味水牛城雞翅x台灣精釀啤酒,曾獲評亞洲第二好吃雞翅",
+    "evidence": [
+      {
+        "url": "https://bobowin.blog/gumgum-neihu/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "基湖路3巷68號獨棟玻璃屋餐酒館,近捷運西湖站,附完整菜單,建議訂位"
+      },
+      {
+        "url": "https://beccadaily.com/p5745/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "內科聚餐餐廳、壽星慶生首選,2F包廂可容16–20人,低消每人500"
+      },
+      {
+        "url": "https://dm0520.com/blog/post/gumgumbeerwings",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "訂位爆滿的玻璃屋餐酒館,15種雞翅x台灣精釀啤酒,內湖微醺聚餐推薦"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-all-day-roasting-company",
+    "name": "ALL DAY ROASTING COMPANY(民生店)",
+    "type": "咖啡廳",
+    "zone": "台北",
+    "district": "松山區",
+    "location": {
+      "address": "台北市松山區延壽街329號1樓",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 松山區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–450",
+      "basis": "pickyeaterr/mamahuhu 菜單:咖啡飲品約150–280,低消一杯飲料,可另加餐點甜點"
+    },
+    "meal_type": [
+      "咖啡",
+      "早午餐",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "入口整排高腳椅每座位皆有掛勾與插座,免費wifi、不限時、美式咖啡無限續杯,低消僅一杯飲料,非常適合一人久坐辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "挑高玻璃屋工業風、自然採光佳、空間舒適可兩人,但氛圍偏日間明亮而非昏暗浪漫"
+      },
+      "group": {
+        "score": 2,
+        "reason": "超大空間並有兩間半開放包廂與一超大包廂,可辦讀書會/小型聚會,但屬咖啡輕食非分食聚餐場"
+      },
+      "late": {
+        "score": 0,
+        "reason": "打烊約21:00–22:00,非宵夜場"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "免費wifi",
+      "挑高玻璃屋",
+      "工業風",
+      "安靜可久坐"
+    ],
+    "open_late": {
+      "value": "約 21:00–22:00(各來源不一,待確認)",
+      "basis": "pickyeaterr/mamahuhu 記 11:00–22:00,另有來源記 10:00–21:00"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "各部落格未明確說明訂位政策,現場候位為主"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "高腳椅座位每座有插座+免費wifi,不限時,低消一杯飲料,適合帶電腦辦公"
+    },
+    "signature": "自家烘焙職人咖啡與招牌酥烤蘋果派,獲選台灣最佳咖啡館之一",
+    "evidence": [
+      {
+        "url": "https://twobunnytravel.tw/all-day-roasting-company/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "民生社區不限時咖啡廳,免費wifi、入口高腳椅每座有插座,適合久坐辦公"
+      },
+      {
+        "url": "https://mamahuhu.blog/twfood/alldayroasting/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "地址延壽街329號,不限時/WIFI/插座,招牌酥烤蘋果派,美式咖啡無限續杯"
+      },
+      {
+        "url": "https://pickyeaterr.com/all-day-roasting-company/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "菜單價位:咖啡飲品約150–280,低消一杯飲料,工業風不限時"
+      },
+      {
+        "url": "https://iceoffice.com.tw/taipeicafemap/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025台北咖啡廳地圖收錄,民生社區不限時、氣氛佳"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-schumanns-bistro-no6-nanjing",
+    "name": "舒曼六號餐館(南京店)",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "松山區",
+    "location": {
+      "address": "台北市松山區南京東路三段303巷8弄11號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 松山區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–600",
+      "basis": "sainteat/fonfood/tiffany0118 菜單:低消每人一份餐點或185元,豬腳燉飯230–240,招牌豬腳600/份,套餐升級+150–180,千元內"
+    },
+    "meal_type": [
+      "早午餐",
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有高腳椅面門座位與靠窗位,一個人耍文青可,但客滿時限時90分鐘、非辦公取向"
+      },
+      "date": {
+        "score": 3,
+        "reason": "森林秘境綠意庭院+工業風,設兩人/四人與靠窗座位,多篇部落格列為情侶約會推薦(氛圍偏明亮綠意而非昏暗)"
+      },
+      "group": {
+        "score": 3,
+        "reason": "多篇明示適合三五好友聚會,招牌德國豬腳可分食,寵物友善,有戶外露天庭院"
+      },
+      "late": {
+        "score": 1,
+        "reason": "打烊21:30、最後點餐20:30,有德國餐酒但非深夜場"
+      }
+    },
+    "vibe": [
+      "綠意庭院",
+      "工業風",
+      "寵物友善",
+      "招牌德國豬腳",
+      "適合聚會約會"
+    ],
+    "open_late": {
+      "value": "21:30(最後點餐20:30)",
+      "basis": "官網/travel.yam/sainteat 週一至五11:00–21:30,週六日及國定假日10:00–21:30"
+    },
+    "reservation": {
+      "value": "建議預約(招牌豬腳須提前預訂)",
+      "basis": "多家部落格提醒3×3德國香烤啤酒豬腳須前一天預訂,客滿限時90分鐘"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "客滿時限時90分鐘、未強調插座,非久坐辦公空間"
+    },
+    "signature": "招牌3×3德國香烤啤酒豬腳(須前一天預訂),外皮酥脆",
+    "evidence": [
+      {
+        "url": "https://www.schumannsbistrono6.com/pages/location",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官網分店資訊,南京店地址台北市松山區南京東路三段303巷8弄11號"
+      },
+      {
+        "url": "https://travel.yam.com/article/128520",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "南京復興站寵物友善餐廳,招牌德國豬腳、綠意庭院城市綠洲"
+      },
+      {
+        "url": "https://sainteat.tw/schumanns-no6/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "價位千元內,低消每人一份餐點或185元,招牌豬腳600/份須預訂"
+      },
+      {
+        "url": "https://tiffany0118.tw/schumannsbistrono6/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "附菜單,兩人/四人與靠窗座位適合情侶約會與聚會,豬腳沒預約吃不到"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/355184",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "森林秘境歐式特色豬腳餐酒館,適合三五好友聚會"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-fanthaisy-thai",
+    "name": "小食泰泰式料理餐廳",
+    "type": "餐廳",
+    "zone": "台北",
+    "district": "松山區",
+    "location": {
+      "address": "台北市松山區敦化北路238巷27號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 松山區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "個人套餐約 NT$200;朋友聚餐點桌菜約 NT$300–500/人,不收服務費",
+      "basis": "suni/jeremyfoodie 菜單:個人式泰式定食約200元(主餐+4小菜+香米飯),不收服務費"
+    },
+    "meal_type": [
+      "午餐",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有個人泰式定食(主餐+4小菜+香米飯),份量足、一人可獨享,座位含1樓與地下室,但非吧檯/辦公型"
+      },
+      "date": {
+        "score": 2,
+        "reason": "明亮白色系網美風、溫馨氛圍,兩人用餐可,但非昏暗浪漫約會主打"
+      },
+      "group": {
+        "score": 3,
+        "reason": "許多企業指名的公司聚會餐廳、口碑家庭聚餐,三五好友可點一桌分享菜,1樓+地下室座位,好聊可分食"
+      },
+      "late": {
+        "score": 0,
+        "reason": "分午晚兩時段營業、晚間約20:00–20:30打烊,不適合宵夜"
+      }
+    },
+    "vibe": [
+      "道地泰味",
+      "可分食桌菜",
+      "企業聚會愛店",
+      "網美風",
+      "不收服務費"
+    ],
+    "open_late": {
+      "value": "約 20:00–20:30(週一至四晚間至20:00,週五及週末至20:30;午晚分時段)",
+      "basis": "nowhot01/suni:週一至四11:30–14:00、16:30–20:00,週五至20:30,週六日11:30–20:30"
+    },
+    "reservation": {
+      "value": "建議預約(電話/inline/OpenTable)",
+      "basis": "inline.app、OpenTable 提供線上訂位,聚餐熱門"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "泰式餐廳午晚分時段營業,非久坐辦公空間"
+    },
+    "signature": "泰國華僑主廚30年掌勺,焰炒打拋豬、鹹蛋黃月亮蝦餅等道地泰味",
+    "evidence": [
+      {
+        "url": "https://www.fanthaisy.com/blogs/news/songshan-group-dining-guide",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "松山聚餐首選,企業指名公司聚會、口碑家庭聚餐,道地泰味溫暖氛圍"
+      },
+      {
+        "url": "https://nowhot01.com/fanthaisy/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "泰國華僑主廚30年,道地泰味創新,適合三五好友/部門同事聚餐,不收服務費"
+      },
+      {
+        "url": "https://suni.tw/thai_food/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "含菜單價錢,個人套餐約200元,地址敦化北路238巷27號,午晚分時段營業"
+      },
+      {
+        "url": "https://jeremyfoodie.tw/%E9%A3%9F%E8%A8%98%E5%8F%B0%E5%8C%97%E5%B8%82-%E5%B0%8F%E9%A3%9F%E6%B3%B0%E6%B3%B0%E5%BC%8F%E6%96%99%E7%90%86%E9%A4%90%E5%BB%B3-%E4%B8%80%E5%80%8B%E4%BA%BA%E5%8F%AF%E7%8D%A8%E4%BA%AB%E4%BB%BD/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "一個人可獨享份量充足的泰式定食(主餐+4小菜+泰國香米飯)"
+      },
+      {
+        "url": "https://www.opentable.com/restaurant/profile/177902",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "OpenTable 訂位頁,顯示餐廳仍營業並可線上訂位"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tp-originbar-yuan",
+    "name": "OriginBAR 源",
+    "type": "餐酒館",
+    "zone": "台北",
+    "district": "松山區",
+    "location": {
+      "address": "台北市松山區南京東路四段133巷5弄31號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 松山區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "平日低消 NT$300、假日 NT$500(不收服務費);含調酒與餐點單人約 NT$400–700(估算)",
+      "basis": "sunshinesharing/nowhot01 低消資訊;含調酒餐點之總消費為估算,待確認"
+    },
+    "meal_type": [
+      "酒",
+      "宵夜",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有吧台可欣賞調酒師與一整面酒牆,以茶酒為主、新手友善,一人小酌自在"
+      },
+      "date": {
+        "score": 3,
+        "reason": "歐式鄉村溫馨佈置、氣氛輕鬆佳,多篇形容『喝不喝酒都很有氣氛』,適合兩人小酌約會"
+      },
+      "group": {
+        "score": 2,
+        "reason": "有沙發區可安排多人聚餐,但整體屬小酒館空間、人多需預留"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00、週五六至02:00,有茶酒調酒與餐點可當宵夜"
+      }
+    },
+    "vibe": [
+      "茶酒調酒",
+      "歐式鄉村",
+      "氣氛佳",
+      "吧台",
+      "營業到深夜"
+    ],
+    "open_late": {
+      "value": "01:00(週五、六至02:00),週日公休",
+      "basis": "sunshinesharing/lexie:營業18:30–01:00,週五六至02:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "訂位電話(02)2547-5817,人氣店家、Google 4.9星"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "酒吧夜間營業,非辦公空間"
+    },
+    "signature": "以茶為基底的特色風味調酒,一整面酒牆,Google 4.9星",
+    "evidence": [
+      {
+        "url": "https://sunshinesharing.tw/originbar_yuan/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "歐式鄉村酒吧,茶酒調酒,營業18:30–01:00(週五六至02:00),平日低消$300假日$500不收服務費"
+      },
+      {
+        "url": "https://lexie.tw/originbar1/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "茶酒調酒專門,小巨蛋酒吧,餐點好吃,吧台+沙發區"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/318256/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "Google評價4.9星,用shot把你灌醉,含完整菜單"
+      },
+      {
+        "url": "https://bernicelife.com/originbar-%E6%BA%90%E5%96%9D%E4%B8%8D%E5%96%9D%E9%85%92%E9%83%BD%E5%BE%88%E6%9C%89%E6%B0%A3%E6%B0%9B%E7%9A%84%E9%AB%98%E5%93%81%E8%B3%AA%E9%85%92%E5%90%A7%E6%9D%BE%E5%B1%B1%E5%8D%80/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "喝不喝酒都很有氣氛的高品質酒吧,松山區"
+      },
+      {
+        "url": "https://nowhot01.com/originbar-source/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "溫馨茶酒餐酒館,獨家調酒與美食,平日低消$300假日$500不收服務費"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  }
+]

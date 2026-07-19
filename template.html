@@ -155,6 +155,23 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   @keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.96)}100%{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+  /* 親子/大人 模式切換 */
+  .modeswitch{display:flex;gap:8px;margin-top:14px;background:#EFEAE0;border-radius:999px;padding:4px;width:fit-content}
+  .mode-btn{border:none;background:transparent;color:var(--ink-soft);border-radius:999px;padding:7px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .18s ease}
+  .mode-btn[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(80,60,30,.12)}
+  .mode-btn:focus-visible{outline:2.5px solid var(--park);outline-offset:2px}
+  body.adult{--park:#7A4FA0;--park-bg:#EEE6F5;--park-deep:#5A3080}
+  .scenrow4{grid-template-columns:repeat(2,1fr)}
+  @media(min-width:520px){.scenrow4{grid-template-columns:repeat(4,1fr)}}
+  .acard .name{font-size:22px}
+  .pricepill{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800}
+  .vibe{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+  .vibe span{font-size:11px;background:#EFEAE0;color:var(--ink-soft);border-radius:999px;padding:2px 9px}
+  .openline{font-size:13px;background:#F2EEE5;color:#5A5145;border-radius:10px;padding:7px 11px;margin-top:9px}
+  .sfit{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+  .sfit span{font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 9px;background:#F2EEE5;color:var(--ink-soft)}
+  .sfit span.on{background:var(--park-bg);color:var(--park-deep)}
 </style>
 </head>
 <body>
@@ -162,11 +179,16 @@
 
   <header>
     <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">出遊版</span><a class="xlink" href="time.html">⏳ 時光手冊</a></div>
-    <h1>林家出遊手冊</h1>
+    <h1 id="appTitle">林家出遊手冊</h1>
     <div class="today" id="todayLine">—</div>
+    <div class="modeswitch" role="group" aria-label="模式切換">
+      <button class="mode-btn" id="mode-kids" aria-pressed="true">👨‍👩‍👧 親子出遊</button>
+      <button class="mode-btn" id="mode-adult" aria-pressed="false">🧑 大人時間</button>
+    </div>
     <div class="kids" id="kidsRow"></div>
   </header>
 
+  <div id="kidsMode">
   <section class="draw" aria-label="今天去哪裡">
     <h2>今天去哪裡？<small id="libStats">—</small></h2>
     <div class="scenrow" role="group" aria-label="情境卡">
@@ -327,10 +349,83 @@
     <div id="list-src"></div>
     <div class="callout cafe" id="todoCallout"><b>待實測清單</b><span id="todoBody"></span></div>
   </section>
+  </div><!-- /kidsMode -->
+
+  <div id="adultMode" hidden>
+    <section class="draw" aria-label="大人今天吃哪裡">
+      <h2>大人時間・吃哪裡？<small id="aStats">—</small></h2>
+      <div class="scenrow scenrow4" role="group" aria-label="大人情境卡">
+        <button class="scard ascard" data-ascen="solo"><div class="si">🧳</div><div class="st">出差一人</div></button>
+        <button class="scard ascard" data-ascen="date"><div class="si">💑</div><div class="st">兩人約會</div></button>
+        <button class="scard ascard" data-ascen="group"><div class="si">🍻</div><div class="st">朋友聚餐</div></button>
+        <button class="scard ascard" data-ascen="late"><div class="si">🌙</div><div class="st">喝一杯・宵夜</div></button>
+      </div>
+      <div class="filters">
+        <div class="fgroup" role="group" aria-label="行政區" id="distrow">
+          <span class="flabel">地區</span>
+          <button class="chip" data-dist="any" aria-pressed="true">不限</button>
+        </div>
+        <div class="fgroup" role="group" aria-label="價位">
+          <span class="flabel">價位</span>
+          <button class="chip" data-price="any" aria-pressed="true">不限</button>
+          <button class="chip" data-price="1" aria-pressed="false">💵 平價</button>
+          <button class="chip" data-price="2" aria-pressed="false">💰 小資</button>
+          <button class="chip" data-price="3" aria-pressed="false">💎 中高</button>
+          <button class="chip" data-price="4" aria-pressed="false">👑 高級</button>
+        </div>
+        <div class="fgroup" role="group" aria-label="需求">
+          <span class="flabel">需求</span>
+          <button class="chip" data-ameal="酒" aria-pressed="false">🍸 想喝酒</button>
+          <button class="chip" data-ameal="宵夜" aria-pressed="false">🌙 宵夜時段</button>
+          <button class="chip" data-awork="1" aria-pressed="false">🔌 可久坐辦公</button>
+        </div>
+      </div>
+      <div class="draw-stage" id="aStage">
+        <div class="draw-empty">點一張情境卡,10 秒內給你 3 個台北答案。<br>出差臨時想吃什麼,不用再滑地圖。</div>
+      </div>
+      <div class="principle-line">排序:<b>情境適配 × 資料新鮮度</b> · 每筆皆附 ≥2 獨立來源與價位依據</div>
+    </section>
+
+    <nav class="tabs" aria-label="大人分頁">
+      <div class="tabs-inner" role="tablist">
+        <button class="tab-btn" role="tab" aria-selected="true" data-apanel="a-cafe">☕ 咖啡・久坐</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-apanel="a-dinner">🍽 晚餐</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-apanel="a-drink">🍸 小酌宵夜</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-apanel="a-all">🗺 全部</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-apanel="a-src">📚 資料來源</button>
+      </div>
+    </nav>
+
+    <section class="panel active" id="a-cafe" role="tabpanel">
+      <div class="section-title">咖啡・久坐 <span class="cnt" id="acnt-cafe"></span></div>
+      <div class="section-sub">一個人也自在,可久坐、多半有插座。出差空檔辦公或放空的首選。</div>
+      <div id="alist-cafe"></div>
+    </section>
+    <section class="panel" id="a-dinner" role="tabpanel">
+      <div class="section-title">晚餐 <span class="cnt" id="acnt-dinner"></span></div>
+      <div class="section-sub">兩人約會或朋友聚餐,依價位與地區篩,不知道吃什麼時先看這頁。</div>
+      <div id="alist-dinner"></div>
+    </section>
+    <section class="panel" id="a-drink" role="tabpanel">
+      <div class="section-title">小酌・宵夜 <span class="cnt" id="acnt-drink"></span></div>
+      <div class="section-sub">喝一杯或深夜想吃點什麼,營業到晚的口袋名單。</div>
+      <div id="alist-drink"></div>
+    </section>
+    <section class="panel" id="a-all" role="tabpanel">
+      <div class="section-title">全部場所 <span class="cnt" id="acnt-all"></span></div>
+      <div class="section-sub">依地區排序,全庫大人場所一次看。</div>
+      <div id="alist-all"></div>
+    </section>
+    <section class="panel" id="a-src" role="tabpanel">
+      <div class="section-title">資料與來源</div>
+      <div class="section-sub">每間店至少 2 個獨立網域來源;查不到的欄位一律標「待確認」,不猜測。點開看出處。</div>
+      <div id="alist-src"></div>
+    </section>
+  </div><!-- /adultMode -->
 
   <footer>
     <span class="fam-name">林家 · 週末出遊</span><br>
-    資料版本 __BUILD_DATE__ · 共 __N__ 筆景點 · 車程與備案分鐘為座標估算值<br>
+    資料版本 __BUILD_DATE__ · 親子 __N__ 筆 · 大人 __NA__ 家 · 車程與備案分鐘為座標估算值<br>
     「待重驗」= 超過 6 個月未確認 · 排序公式與研究紀錄見 repo docs/
   </footer>
 </div>
@@ -338,6 +433,7 @@
 <script>
 const VENUES = __VENUES__;
 const FAMILY = __FAMILY__;
+const PLACES = __PLACES__;
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
@@ -570,13 +666,191 @@ $("#todoBody").innerHTML = todo.length ? todo.join("<br>") : "目前沒有待實
 }
 renderLists();
 
-/* ---------- Tabs ---------- */
-$$(".tab-btn").forEach(btn => btn.addEventListener("click", () => {
-  $$(".tab-btn").forEach(b => b.setAttribute("aria-selected", "false"));
+/* ---------- Tabs(親子分頁,僅綁 data-panel) ---------- */
+$$(".tab-btn[data-panel]").forEach(btn => btn.addEventListener("click", () => {
+  $$(".tab-btn[data-panel]").forEach(b => b.setAttribute("aria-selected", "false"));
   btn.setAttribute("aria-selected", "true");
-  $$(".panel").forEach(p => p.classList.remove("active"));
+  $$("#kidsMode .panel").forEach(p => p.classList.remove("active"));
   document.getElementById(btn.dataset.panel).classList.add("active");
 }));
+
+/* ================= 大人模式 ================= */
+const astate = { scen: null, dist: "any", price: "any", ameal: new Set(), work: false };
+const ASCEN = { solo: "出差一人", date: "兩人約會", group: "朋友聚餐", late: "喝一杯・宵夜" };
+const PRICE_LABEL = { 1: "💵 平價", 2: "💰 小資", 3: "💎 中高", 4: "👑 高級" };
+const anum = x => typeof x === "number" ? x : 0.5;
+const sfitScore = (p, k) => p.scene_fit && p.scene_fit[k] ? anum(p.scene_fit[k].score) : 0;
+function aStale(p) { return (Date.now() - new Date(p.last_verified)) / 864e5 > 183; }
+/* 分類:cafe(咖啡/甜點/早午餐)/ drink(酒/居酒屋/宵夜)/ dinner(其餘正餐) */
+function ACAT(p) {
+  const t = p.type || "", m = p.meal_type || [];
+  if (/咖啡|甜點|早午餐|下午茶/.test(t) || (m.includes("咖啡") && !m.includes("晚餐"))) return "cafe";
+  if (/酒|居酒屋|bar|酒吧/i.test(t) || (m.includes("酒") && !m.includes("晚餐")) || (m.includes("宵夜") && !m.includes("晚餐"))) return "drink";
+  return "dinner";
+}
+const ACSS = { cafe: "cafe", drink: "indoor", dinner: "park" };
+
+function aPool(opt) {
+  const o = Object.assign({ dist: astate.dist, price: astate.price, work: astate.work }, opt || {});
+  let list = PLACES.filter(p => p.status !== "closed");
+  if (o.dist !== "any") list = list.filter(p => p.district === o.dist);
+  if (o.price !== "any") list = list.filter(p => p.price_level === Number(o.price));
+  for (const m of astate.ameal) list = list.filter(p => (p.meal_type || []).includes(m));
+  if (o.work) list = list.filter(p => p.work_ok && p.work_ok.value === true);
+  return list;
+}
+function aRecommend() {
+  const k = astate.scen;
+  let list = aPool().map(p => ({ p, s: sfitScore(p, k) * (aStale(p) ? 0.7 : 1) }));
+  list.sort((a, b) => (b.s - a.s) || ((a.p.price_level || 9) - (b.p.price_level || 9)));
+  return list.slice(0, 3);
+}
+function aRelax() {
+  const cons = [];
+  if (astate.dist !== "any") cons.push({ label: `地區「${astate.dist}」`, opt: { dist: "any" } });
+  if (astate.price !== "any") cons.push({ label: `價位「${PRICE_LABEL[astate.price]}」`, opt: { price: "any" } });
+  if (astate.work) cons.push({ label: "可久坐辦公", opt: { work: false } });
+  return cons.map(c => ({ label: c.label, n: aPool(c.opt).length })).filter(c => c.n > 0);
+}
+
+function aNav(p) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.name + " " + (p.district || "") + " " + (p.address || "")); }
+function sfitPills(p) {
+  return `<div class="sfit">` + Object.keys(ASCEN).map(k => {
+    const on = astate.scen === k ? " on" : "";
+    const ic = { solo: "🧳", date: "💑", group: "🍻", late: "🌙" }[k];
+    return `<span class="${on.trim()}">${ic}${typeof (p.scene_fit && p.scene_fit[k] && p.scene_fit[k].score) === "number" ? p.scene_fit[k].score : "?"}</span>`;
+  }).join("") + `</div>`;
+}
+function aReason(p) {
+  const k = astate.scen;
+  const r = p.scene_fit && p.scene_fit[k] ? p.scene_fit[k].reason : "";
+  return [p.signature, r].filter(Boolean).join(" · ");
+}
+function acardHtml(p, enter) {
+  const cat = ACAT(p), css = ACSS[cat];
+  const openTxt = p.open_late && p.open_late.value ? `🕛 營業至 ${p.open_late.value}` : "";
+  const resv = p.reservation && p.reservation.value ? ` · 訂位:${p.reservation.value}` : "";
+  return `
+  <div class="vcard acard ${css}${enter ? " enter" : ""}" data-aid="${p.id}">
+    <div class="tags">
+      <span class="tag ${css}">${p.type}</span>
+      <span class="tag meta">📍 ${p.district || p.zone}</span>
+      <span class="tag meta"><span class="pricepill">${PRICE_LABEL[p.price_level] || "價位待確認"}</span> ${p.price_per || ""}</span>
+      ${aStale(p) ? '<span class="tag warn">⚠️ 待重驗</span>' : ""}
+      ${p.status === "待確認" ? '<span class="tag warn">狀態待確認</span>' : ""}
+    </div>
+    <div class="name">${p.name}</div>
+    <div class="how">${aReason(p) || "—"}</div>
+    ${sfitPills(p)}
+    ${p.vibe && p.vibe.length ? `<div class="vibe">${p.vibe.map(v => `<span>${v}</span>`).join("")}</div>` : ""}
+    ${openTxt ? `<div class="openline">${openTxt}${resv}</div>` : ""}
+    <div class="vfoot">上次確認 ${p.last_verified}${p.work_ok && p.work_ok.value === true ? " · 🔌 可久坐辦公" : ""}</div>
+    <div class="actrow">
+      <a class="abtn nav" href="${aNav(p)}" target="_blank" rel="noopener">🧭 導航</a>
+      <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
+    </div>
+    <div class="exp">
+      <h4>四情境適配(0–3)</h4>
+      <div class="wgrid">${Object.keys(ASCEN).map(k => `<div>${ASCEN[k]}<b>${typeof (p.scene_fit && p.scene_fit[k] && p.scene_fit[k].score) === "number" ? p.scene_fit[k].score : "?"}</b></div>`).join("")}</div>
+      ${Object.keys(ASCEN).map(k => p.scene_fit && p.scene_fit[k] && p.scene_fit[k].reason ? `<div style="margin-top:3px"><b>${ASCEN[k]}</b>:${p.scene_fit[k].reason}</div>` : "").join("")}
+      <h4>價位</h4><div>${p.price_per || "待確認"}${p.price_basis ? `(${p.price_basis})` : ""}</div>
+      <h4>營業/訂位</h4><div>營業至 ${p.open_late && p.open_late.value ? p.open_late.value : "待確認"}${p.open_late && p.open_late.basis ? `(${p.open_late.basis})` : ""} · 訂位 ${p.reservation && p.reservation.value ? p.reservation.value : "待確認"}</div>
+      <h4>一人/辦公</h4><div>${p.work_ok && p.work_ok.note ? p.work_ok.note : (p.work_ok && p.work_ok.value === true ? "可久坐" : "待確認")}</div>
+      <h4>類型・餐段</h4><div>${(p.meal_type || []).join("・") || "待確認"}</div>
+      <h4>地址</h4><div>${p.address || "待確認"}</div>
+      <h4>來源(${(p.evidence || []).length} 筆)</h4>
+      ${(p.evidence || []).map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${String(e.url).replace(/^https?:\/\//, "").split("/")[0]}</a> <span class="sd">${e.date}</span><br><span class="sd">${e["摘要"]}</span></div>`).join("")}
+    </div>
+  </div>`;
+}
+
+function renderAStage() {
+  const stage = $("#aStage");
+  if (!astate.scen) { stage.innerHTML = '<div class="draw-empty">點一張情境卡,10 秒內給你 3 個台北答案。<br>出差臨時想吃什麼,不用再滑地圖。</div>'; return; }
+  const top = aRecommend();
+  if (top.length) { stage.innerHTML = top.map(({ p }) => acardHtml(p, true)).join(""); return; }
+  const sug = aRelax();
+  stage.innerHTML = `<div class="draw-empty">這個組合沒有場所。放寬建議:<br>${sug.length ? sug.map(s => `解除「${s.label}」→ 可得 ${s.n} 家`).join("<br>") : "換一張情境卡或取消篩選試試"}</div>`;
+}
+/* 分頁歸屬:依「適合做什麼」而非店名關鍵字;晚餐/小酌可重疊(一家餐酒館兩頁都出現) */
+const TABF = {
+  cafe: p => ACAT(p) === "cafe",
+  dinner: p => ACAT(p) !== "cafe" && (sfitScore(p, "date") >= 2 || sfitScore(p, "group") >= 2),
+  drink: p => sfitScore(p, "late") >= 2,
+};
+function renderALists() {
+  $("#aStats").textContent = `台北大人場所 ${PLACES.length} 家・更新 ${PLACES[0] ? PLACES[0].last_verified : "—"}`;
+  for (const cat of ["cafe", "dinner", "drink"]) {
+    const g = PLACES.filter(p => p.status !== "closed" && TABF[cat](p)).sort((a, b) => (a.price_level || 9) - (b.price_level || 9));
+    $("#acnt-" + cat).textContent = g.length + " 家";
+    $("#alist-" + cat).innerHTML = g.length ? g.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">此類暫無場所</div>`;
+  }
+  const all = PLACES.filter(p => p.status !== "closed").sort((a, b) => String(a.district).localeCompare(String(b.district)));
+  $("#acnt-all").textContent = all.length + " 家";
+  $("#alist-all").innerHTML = all.length ? all.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">暫無場所,資料建置中</div>`;
+  $("#alist-src").innerHTML = all.map(p => `
+    <details class="srcbox">
+      <summary>${p.name} <span class="badge">${(p.evidence || []).length} 個來源</span><span class="badge">確認 ${p.last_verified}</span></summary>
+      ${(p.evidence || []).map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${e.url}</a><br><span class="sd">${e.date} · ${e["摘要"]}</span></div>`).join("")}
+    </details>`).join("");
+}
+/* 行政區 chip:由資料生成 */
+function initDistricts() {
+  const ds = [...new Set(PLACES.map(p => p.district).filter(Boolean))].sort();
+  $("#distrow").insertAdjacentHTML("beforeend", ds.map(d => `<button class="chip" data-dist="${d}" aria-pressed="false">${d}</button>`).join(""));
+}
+function bindAdult() {
+  $$(".ascard").forEach(c => c.addEventListener("click", () => {
+    const s = c.dataset.ascen;
+    astate.scen = astate.scen === s ? null : s;
+    $$(".ascard").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.ascen === astate.scen)));
+    renderAStage();
+  }));
+  $$(".chip[data-dist]").forEach(c => c.addEventListener("click", () => {
+    astate.dist = c.dataset.dist;
+    $$(".chip[data-dist]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.dist === astate.dist)));
+    renderAStage();
+  }));
+  $$(".chip[data-price]").forEach(c => c.addEventListener("click", () => {
+    astate.price = c.dataset.price;
+    $$(".chip[data-price]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.price === astate.price)));
+    renderAStage();
+  }));
+  $$(".chip[data-ameal]").forEach(c => c.addEventListener("click", () => {
+    const m = c.dataset.ameal;
+    if (astate.ameal.has(m)) astate.ameal.delete(m); else astate.ameal.add(m);
+    c.setAttribute("aria-pressed", String(astate.ameal.has(m)));
+    renderAStage();
+  }));
+  $$(".chip[data-awork]").forEach(c => c.addEventListener("click", () => {
+    astate.work = !astate.work;
+    c.setAttribute("aria-pressed", String(astate.work));
+    renderAStage();
+  }));
+  $$('.tab-btn[data-apanel]').forEach(btn => btn.addEventListener("click", () => {
+    $$('.tab-btn[data-apanel]').forEach(b => b.setAttribute("aria-selected", "false"));
+    btn.setAttribute("aria-selected", "true");
+    $$("#adultMode .panel").forEach(p => p.classList.remove("active"));
+    document.getElementById(btn.dataset.apanel).classList.add("active");
+  }));
+}
+initDistricts();
+bindAdult();
+renderALists();
+
+/* ---------- 模式切換 ---------- */
+function setMode(adult) {
+  document.body.classList.toggle("adult", adult);
+  $("#kidsMode").hidden = adult;
+  $("#adultMode").hidden = !adult;
+  $("#kidsRow").style.display = adult ? "none" : "";
+  $("#mode-kids").setAttribute("aria-pressed", String(!adult));
+  $("#mode-adult").setAttribute("aria-pressed", String(adult));
+  $("#appTitle").textContent = adult ? "林家・大人時間" : "林家出遊手冊";
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+$("#mode-kids").addEventListener("click", () => setMode(false));
+$("#mode-adult").addEventListener("click", () => setMode(true));
 
 /* ---------- PWA:離線快取(宜蘭山區訊號差仍可用) ---------- */
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {

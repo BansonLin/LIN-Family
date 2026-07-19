@@ -343,7 +343,8 @@ const $$ = s => [...document.querySelectorAll(s)];
 const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
 
 const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm"]);
-const CAT = v => FARM.has(v.id) ? "farm" : v.type === "戶外公園" ? "park" : (v.type === "親子咖啡" || v.type === "親子餐廳") ? "cafe" : "indoor";
+const OUTDOORISH = new Set(["taipei-zoo", "taipei-childrens-amusement-park"]);
+const CAT = v => FARM.has(v.id) ? "farm" : (OUTDOORISH.has(v.id) || v.type === "戶外公園") ? "park" : (v.type === "親子咖啡" || v.type === "親子餐廳") ? "cafe" : "indoor";
 
 /* ---------- 日期與年齡 ---------- */
 const now = new Date();
@@ -381,7 +382,7 @@ function driveNum(v) { return typeof v.drive === "number" ? v.drive : 99; }
 const SCEN = {
   nap:      { t: "午睡後快閃", f: v => driveNum(v) <= 20,
               sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },
-  rainplay: { t: "雨天放電", f: v => rainAvg(v) >= 2 && ["室內樂園", "觀光工廠"].includes(v.type) && num(v.noise) >= 2,
+  rainplay: { t: "雨天放電", f: v => rainAvg(v) >= 2 && CAT(v) === "indoor" && num(v.noise) >= 2,
               sort: (a, b) => (num(b.v.weather_fit["大雨"]) - num(a.v.weather_fit["大雨"])) || (b.s - a.s) },
   rest:     { t: "大人也要休息", f: v => v.flags.coffee && num(v.noise) === 3,
               sort: (a, b) => (b.s - a.s) || (driveNum(a.v) - driveNum(b.v)) },

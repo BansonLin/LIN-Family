@@ -36,7 +36,16 @@ const FEE_SHORT = {
   "jimmy-square": "免費・24 小時開放",
   "luodong-cultural-working-house": "免門票・停車 30 元/時",
   "ncfta-yilan": "150 元(未滿 6 歲/115cm 以下免)・縣民 100",
-  "meihua-lake": "免費入園・停車約 100 元/次"
+  "meihua-lake": "免費入園・停車約 100 元/次",
+  "chung-hsing-cultural-park": "免費入園・停車 30 元/時",
+  "luodong-likoyung-library": "免費入館(休館日多,出發前確認)",
+  "yilan-art-museum": "50 元(未滿 6 歲/縣民免)",
+  "wanglongpi": "免門票・停車免費",
+  "taipei-zoo": "100 元(未滿 6 歲免)・市民 60",
+  "taipei-childrens-amusement-park": "入園 30 元(6 歲以下免)・設施 20–30 元/項",
+  "ntsec": "常設展 120 元(未滿 6 歲或 115cm 以下免)",
+  "taipei-astronomical-museum": "展示館 40 元(學齡前免)",
+  "daan-forest-park": "免費・24 小時開放"
 };
 const FEE_FULL = {
   "luodong-sports-park": "免門票;附設停車場收費時間08:00–21:00,小客車平日30元/次、假日50元/次(官方收費辦法);17:00後僅設籍宜蘭縣民眾憑國民身分證免費停車,部落格所稱「每次計3小時、17時後免費」以現場公告為準",
@@ -63,15 +72,24 @@ const FEE_FULL = {
   "jimmy-square": "幾米廣場免費、24小時開放;幸福轉運站戶外區過往免費,官方旅遊網現列夏令(5-10月)週四至週二9:30-18:00、冬令9:00-17:30、週三休館,惟營運現況有矛盾證據、以電洽為準;室內收費現況待確認(幾米團隊時期僅球池收費約100-150元,2021年後易主);周邊停車每小時20-50元(後站停車場最近、假日易滿)",
   "luodong-cultural-working-house": "免門票免費參觀(特殊展覽視主辦單位是否售票);附設停車場每小時30元(10分鐘內免費,平日上限150元、假日上限180元)",
   "ncfta-yilan": "全票150元、優惠票120元(6歲以上學生)、宜蘭縣民100元、敬老票75元、未滿6歲或115公分以下免費;年卡350元(縣民年卡250元、敬老年卡100元);停車前30分鐘免費、每小時30元、當日上限60元;DIY另計(如手機架DIY 200元、月河遊船3-12歲100元、未滿3歲免費)",
-  "meihua-lake": "免費入園。停車費記載不一:2026 年來源載計次收費一次100元(較新);較早親子部落格載每小時50元、租車可折抵,以現場公告為準。遊湖船全票75元/半票35元;人力協力車約200-300元、四輪電輔車約300-500元/輛"
+  "meihua-lake": "免費入園。停車費記載不一:2026 年來源載計次收費一次100元(較新);較早親子部落格載每小時50元、租車可折抵,以現場公告為準。遊湖船全票75元/半票35元;人力協力車約200-300元、四輪電輔車約300-500元/輛",
+  "chung-hsing-cultural-park": "免費入園(戶外與展館皆免門票);停車費小客車30元/時(週一至四上限90元、週五至日及國定假日上限150元)、大客車60元/時、機車20元/次、自行車免費;手作DIY課程與部分特展依各工坊/活動公告另計(興工一場染布體驗約250-350元,其餘價格待確認)",
+  "luodong-likoyung-library": "免費入館(玩全台灣旅遊網景點頁與文化部博物之島館舍資料均載明免費)",
+  "yilan-art-museum": "全票50元;身高未滿115公分或未滿6歲兒童免費、設籍宜蘭縣縣民免費;優待票30元(團體30人以上);持蘭陽博物館常設展票根優惠30元(檢索 2026-07-19,依官網購票資訊頁)",
+  "wanglongpi": "免門票、停車免費;周邊自費項目:花田村湖畔咖啡簡餐、窯烤披薩DIY約250元起、魚飼料(2024 年資訊,價格待重驗);另有望龍埤鵝肉攤低消20元麵食",
+  "taipei-zoo": "全票100元、優待票50元、臺北市民票60元、團體票70元;未滿6歲免費(2024-04-01調漲後現行價,CNA與官網雙源證實);遊園列車每趟5元(學齡前免費,悠遊卡或投幣);娃娃車租借每次50元(押證件或押金1000元);園外停車場另計費",
+  "taipei-childrens-amusement-park": "入園全票30元、7-12歲優待票15元、6歲以下免費;大型設施15項(編號1-13+K1/K2)每項20-30元,一日樂Fun券200元暢玩編號1-13(星光票140元,16:00後),小型委外設施50-80元;2026暑期水樂園300元、水陸聯票480元;停車平日30元/時、假日40元/時",
+  "ntsec": "常設展(3–6F)全票120元、學生/一般團體90元(2026-01-01起,凍漲16年後首次調漲);未滿6歲或身高115公分以下兒童、65歲以上免費(修正:原稿僅載115公分以下)。兒童益智探索館另購票全票60元、2歲以下免費、每場限售220張(2025年報導稱兒童館收費不在此波調漲內,實際票價建議現場確認);空中腳踏車、3D劇場另計;地下停車場收費",
+  "taipei-astronomical-museum": "展示館全票40元、臺北市民20元(可刷悠遊卡);宇宙劇場100元、宇宙探險70元;學齡前兒童、在校學生免費入展示館;1樓特展免費",
+  "daan-forest-park": "免費入園;附設地下停車場計時收費(假日白天約 40 元/時、平日白天約 20 元/時、夜間 10 元/時,半小時計費)"
 };
-const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park"]);
+const FREE = new Set(["luodong-sports-park","yilan-sports-park","longtan-lake-scenic-area","wuyuan-water-fire-park","wooderful-life-luodong","hsus-legend-vinegar-factory","jimmy-square","luodong-cultural-working-house","meihua-lake","suao-cold-spring-park","chung-hsing-cultural-park","luodong-likoyung-library","wanglongpi","daan-forest-park"]);
 const MEAL = new Set(["shuilu-kids-cafe","lanyang-estuary-kids-restaurant","amaze-rabbit-maze-jiaoxi-bath","gitu-cafe-manor","anyo-museum","ncfta-yilan"]);
-const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch"]);
+const COFFEE = new Set(["shuilu-kids-cafe","gitu-cafe-manor","lao-si-g-tea-coffee","amaze-rabbit-maze-jiaoxi-bath","bambi-land","luodong-cultural-working-house","meihua-lake","yi-nong-ranch","chung-hsing-cultural-park"]);
 
 const slim = venues.map(v => ({
   id: v.id, name: v.name, type: v.type,
-  zone: v.zone || "宜蘭",
+  zone: v.zone || '宜蘭',
   address: v.location.address,
   drive: v.location.drive_min,
   shade: v.shade_score.score,
@@ -102,8 +120,7 @@ html = html.replace('__VENUES__', JSON.stringify(slim))
   .replace('__N__', String(slim.length));
 
 fs.mkdirSync(DIST, { recursive: true });
-fs.writeFileSync(path.join(R, "index.html"), html);
-fs.writeFileSync(path.join(DIST, "index.html"), html);
+fs.writeFileSync(path.join(DIST, 'index.html'), html);
 for (const f of ['time.html', 'icon-192.png', 'icon-512.png']) fs.copyFileSync(path.join(R, f), path.join(DIST, f));
 
 fs.writeFileSync(path.join(DIST, 'manifest.json'), JSON.stringify({

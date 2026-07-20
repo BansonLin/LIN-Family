@@ -364,7 +364,7 @@ html = html.replace('__VENUES__', () => JSON.stringify(slim))
 
 fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, 'index.html'), html);
-for (const f of ['time.html', 'icon-192.png', 'icon-512.png']) fs.copyFileSync(path.join(R, f), path.join(DIST, f));
+for (const f of ['time.html', 'disney.html', 'icon-192.png', 'icon-512.png']) fs.copyFileSync(path.join(R, f), path.join(DIST, f));
 
 fs.writeFileSync(path.join(DIST, 'manifest.json'), JSON.stringify({
   name: '林家出遊手冊', short_name: '出遊手冊',
@@ -381,7 +381,7 @@ const CACHE = 'lin-family-' + Date.now();
 // 絕不 respondWith(undefined)(修正快取未命中+網路瞬斷 → ERR_FAILED),離線回退到已快取頁或 503。
 fs.writeFileSync(path.join(DIST, 'sw.js'), [
   'const C = ' + JSON.stringify(CACHE) + ';',
-  "const ASSETS = ['./', './index.html', './time.html', './manifest.json', './icon-192.png', './icon-512.png'];",
+  "const ASSETS = ['./', './index.html', './time.html', './disney.html', './manifest.json', './icon-192.png', './icon-512.png'];",
   "async function clean(r) { const b = await r.blob(); return new Response(b, { status: 200, headers: { 'Content-Type': r.headers.get('Content-Type') || '' } }); }",
   "async function precache() { const c = await caches.open(C); await Promise.allSettled(ASSETS.map(async a => { try { const r = await fetch(a, { redirect: 'follow' }); if (r && r.ok) await c.put(a, await clean(r)); } catch (e) {} })); }",
   "self.addEventListener('install', e => { e.waitUntil(precache().then(() => self.skipWaiting())); });",

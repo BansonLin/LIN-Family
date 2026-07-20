@@ -31,6 +31,7 @@ data/venues.json        # 親子景點資料庫
 data/places-adult.json  # 大人模式餐飲資料庫(2026-07-19 核准新增,大人 schema 見下)
 .claude/commands/       # weekend / research / refresh / age-review / log
 index.html              # 單檔決策頁(手機優先;親子/大人雙模式切換)
+disney.html             # 東京迪士尼旅行手冊(2026-07-21 核准新增;一次性旅行頁,離線可用)
 docs/decisions.md       # 重大設計決策紀錄
 ```
 

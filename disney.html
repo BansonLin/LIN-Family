@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家東京迪士尼手冊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+  :root{
+    --paper:#F7F3EC; --card:#FFFFFF;
+    --ink:#33302A; --ink-soft:#6F675C; --line:#E6DED0;
+    --sea:#2C5F8A; --sea-bg:#E2ECF5; --sea-deep:#1E4463;
+    --land:#7A4FA0; --land-bg:#EEE6F5; --land-deep:#5A3080;
+    --gold:#D9932A; --gold-bg:#FBEDD6; --gold-deep:#8A5A10;
+    --ok:#2E7D74; --ok-bg:#E2EFEC; --ok-deep:#1F5B54;
+    --warn:#B0483A; --warn-bg:#F6E3E0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;padding-bottom:56px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header{padding:26px 0 8px;animation:fadeUp .5s ease both}
+  .eyebrow{font-size:12px;letter-spacing:.35em;color:var(--ink-soft);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .ver{background:var(--ink);color:#fff;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+  .xlink{margin-left:auto;background:var(--ok);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700}
+  h1{font-family:'LXGW WenKai TC',serif;font-size:30px;font-weight:700;letter-spacing:.05em;line-height:1.3;margin-top:2px}
+  .countline{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .countline b{font-family:'M PLUS Rounded 1c',sans-serif;font-size:16px;color:var(--land-deep)}
+  .trip-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}
+  .trip-strip .d{border:1.5px solid var(--line);background:#FDFBF7;border-radius:11px;padding:7px 4px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s ease}
+  .trip-strip .d .dd{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:15px;line-height:1.2}
+  .trip-strip .d .dl{font-size:11px;color:var(--ink-soft);font-weight:700}
+  .trip-strip .d[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+  .trip-strip .d[aria-pressed="true"] .dd,.trip-strip .d[aria-pressed="true"] .dl{color:#fff}
+
+  .section-title{font-family:'LXGW WenKai TC',serif;font-size:20px;font-weight:700;margin:20px 0 6px;display:flex;align-items:center;gap:10px}
+  .section-title::after{content:"";flex:1;height:1.5px;background:var(--line)}
+  .sub{font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+
+  .scen{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  .scen button{border:1.5px solid var(--line);background:#FDFBF7;border-radius:12px;padding:9px 4px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s ease}
+  .scen .si{font-size:17px;line-height:1.2}
+  .scen .st{font-size:12px;font-weight:700;margin-top:2px}
+  .scen button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+  .scen button[aria-pressed="true"] .st{color:#fff}
+  .answer{display:none;background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:13px 15px;margin-top:9px;font-size:14px;animation:fadeUp .25s ease both}
+  .answer.on{display:block}
+  .answer h4{font-size:13px;font-weight:700;margin:7px 0 2px;color:var(--ink)}
+  .answer h4.tl{color:var(--land-deep)} .answer h4.ts{color:var(--sea-deep)}
+  .answer ul{list-style:none}
+  .answer li{padding:2.5px 0 2.5px 16px;position:relative;color:#4A443B;font-size:13.5px}
+  .answer li::before{content:"";position:absolute;left:2px;top:12px;width:7px;height:7px;border-radius:2px;background:var(--gold);transform:rotate(8deg)}
+
+  .panel{display:none}
+  .panel.active{display:block;animation:fadeUp .3s ease both}
+  .tl-day{border-left:3px solid var(--line);margin:10px 0 4px 6px;padding-left:14px}
+  .step{position:relative;margin-bottom:11px}
+  .step::before{content:"";position:absolute;left:-20.5px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--paper)}
+  .step.key::before{background:var(--land)}
+  .step .t{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13.5px;color:var(--ink)}
+  .step .x{font-size:14px;color:#4A443B}
+  .step .x b{color:var(--ink)}
+  .step .note{font-size:12.5px;color:var(--ink-soft)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;margin-left:4px;vertical-align:1px}
+  .badge.land{background:var(--land-bg);color:var(--land-deep)}
+  .badge.sea{background:var(--sea-bg);color:var(--sea-deep)}
+  .badge.warn{background:var(--warn-bg);color:var(--warn)}
+  .badge.ok{background:var(--ok-bg);color:var(--ok-deep)}
+  .badge.gold{background:var(--gold-bg);color:var(--gold-deep)}
+
+  .callout{border-radius:var(--radius);padding:12px 15px;margin:10px 0;font-size:14px}
+  .callout.land{background:var(--land-bg);color:var(--land-deep)}
+  .callout.sea{background:var(--sea-bg);color:var(--sea-deep)}
+  .callout.gold{background:var(--gold-bg);color:var(--gold-deep)}
+  .callout.warn{background:var(--warn-bg);color:var(--warn)}
+  .callout.ok{background:var(--ok-bg);color:var(--ok-deep)}
+  .callout b{display:block;font-family:'LXGW WenKai TC',serif;font-size:15.5px;margin-bottom:2px}
+
+  .tbl{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+  .tbl th{background:#EFEAE0;text-align:left;padding:5px 8px;font-size:12px;color:var(--ink-soft)}
+  .tbl td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+  .tblwrap{overflow-x:auto}
+  .yes{color:var(--ok-deep);font-weight:700} .no{color:var(--warn);font-weight:700} .mid{color:var(--gold-deep);font-weight:700}
+
+  details.box{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:11px 14px;margin-top:9px}
+  details.box summary{font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  details.box summary::-webkit-details-marker{display:none}
+  details.box summary::after{content:"▾";margin-left:auto;color:var(--ink-soft)}
+  details[open].box summary::after{content:"▴"}
+  details.box .bd{margin-top:8px;font-size:13.5px}
+
+  .check{list-style:none}
+  .check li{padding:5px 0;border-bottom:1px dashed var(--line);display:flex;gap:9px;align-items:flex-start;font-size:14px}
+  .check li:last-child{border-bottom:none}
+  .check input{width:19px;height:19px;margin-top:4px;accent-color:var(--ok);flex-shrink:0}
+  .check label{flex:1;cursor:pointer}
+  .check input:checked+label{color:var(--ink-soft);text-decoration:line-through}
+
+  .linkrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+  .lbtn{font-size:12.5px;font-weight:700;border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink);border-radius:999px;padding:6px 13px;text-decoration:none}
+  .lbtn.hot{border-color:var(--land);color:var(--land-deep)}
+
+  footer{margin-top:36px;padding-top:14px;border-top:1.5px solid var(--line);font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.9}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">迪士尼版</span><a class="xlink" href="index.html">🧭 出遊手冊</a></div>
+    <h1>🏰 林家東京迪士尼手冊</h1>
+    <div class="countline" id="countLine">—</div>
+    <div class="trip-strip" role="tablist">
+      <button class="d" data-day="d25"><div class="dd">7/25</div><div class="dl">六・抵達</div></button>
+      <button class="d" data-day="d26"><div class="dd">7/26</div><div class="dl">日・陸 TDL</div></button>
+      <button class="d" data-day="d27"><div class="dd">7/27</div><div class="dl">一・海 TDS</div></button>
+      <button class="d" data-day="d28"><div class="dd">7/28</div><div class="dl">二・移動</div></button>
+    </div>
+  </header>
+
+  <!-- ========== 現場 10 秒決策 ========== -->
+  <div class="section-title">現場 10 秒決策</div>
+  <div class="sub">在園裡遇到狀況,點一張卡直接拿答案。</div>
+  <div class="scen">
+    <button data-a="hot"><div class="si">🥵</div><div class="st">太熱了</div></button>
+    <button data-a="rain"><div class="si">⛈</div><div class="st">下雨打雷</div></button>
+    <button data-a="nap"><div class="si">😴</div><div class="st">弟弟睡了</div></button>
+    <button data-a="queue"><div class="si">⏳</div><div class="st">排隊爆了</div></button>
+    <button data-a="eat"><div class="si">🍽</div><div class="st">吃飯</div></button>
+    <button data-a="lost"><div class="si">🆘</div><div class="st">走失應變</div></button>
+  </div>
+
+  <div class="answer" id="a-hot">
+    <h4 class="tl">7/26 陸 TDL</h4>
+    <ul>
+      <li><b>Country Bear 劇場</b> 7/17 起官方開放純吹冷氣休息;<b>魅惑のチキルーム</b>等待短。</li>
+      <li><b>フィルハーマジック</b>(3D 劇場,稍暗🟠)、World Bazaar 整條有頂棚。</li>
+      <li>杯麵灑水秀(12:50/14:55 場)站停點正面=天然沖涼,備薄雨衣。</li>
+    </ul>
+    <h4 class="ts">7/27 海 TDS</h4>
+    <ul>
+      <li><b>美人魚礁湖 Triton's Kingdom 室內區</b>=救命區:Ariel's Playground 免排隊+暗+涼、礁湖劇場 2026 夏開放休憩。</li>
+      <li>Turtle Talk/海底兩萬哩/神燈劇場(免費 PP 可抽,全室內)。</li>
+      <li>Harbor Splash 灑水(上午~午後早段)、Aquatopia 濕身版。</li>
+    </ul>
+    <h4>共通</h4>
+    <ul>
+      <li>水壺可帶入,飲水機位置看官方 App 地圖(TDS 20+ 處)。</li>
+      <li>園內買的冷感毛巾/霧化扇,對象店可<b>免費補冰水</b>。</li>
+    </ul>
+  </div>
+
+  <div class="answer" id="a-rain">
+    <ul>
+      <li><b>打雷預報=全戶外設施停</b>(含遊行);風速 ≥10m/s 或危險豪雨也停。普通小雨約 3/4 設施(室內)照常。</li>
+      <li>⚠️ <b>Gadget 雲霄飛車(弟弟主力)雨天最容易停</b>——天色不對就先去搭。</li>
+      <li>雨衣策略:幼兒用<b>雨披</b>(設施上不能撐傘);園內透明雨衣約 ¥500–600、米奇雨披約 ¥1,500。</li>
+      <li>雨檔室內動線:TDL→フィルハーマジック/Country Bear/美女與野獸(排隊多在室內);TDS→美人魚礁湖整套+劇場群。</li>
+      <li>雷雨多為午後短時,躲 40–60 分鐘常常就過了——進餐廳吃點心等。</li>
+    </ul>
+  </div>
+
+  <div class="answer" id="a-nap">
+    <ul>
+      <li><b>主策略:回大倉睡</b>。當日可無限次再入園(出園掃 QR、回來重過安檢);TDS 只 1 站 4 分、TDL 3 站 9 分,15:00 回房睡到 17:00,晚上完全復活。</li>
+      <li>園內版:TDS→美人魚礁湖(暗+涼+座位多)推車睡;TDL→劇場型設施輪流進場。</li>
+      <li>弟弟睡著時=<b>姊姊專屬時間</b>:一人陪弟弟,另一人帶姊姊玩她的等級(過 102 的話:翱翔/巨雷山)。</li>
+      <li>爸媽想玩 117 三巨頭(地心/印第/憤怒雙神)→ 用<b>交替乘車</b>:排隊前向 Cast 申告,第二人免重排。</li>
+    </ul>
+  </div>
+
+  <div class="answer" id="a-queue">
+    <ul>
+      <li>基準:幼兒同行 <b>>50 分鐘的隊不排</b>(例外:冰雪奇緣看當下值不值)。</li>
+      <li><b>免費 Priority Pass 還能用(8/31 終止)</b>,App 抽了就走:TDS 親子四寶=Turtle Talk/尼莫/神燈劇場/海底兩萬哩;TDL 剩巨雷山/星際旅行(102+)與幽靈公館(🔴 怕黑跳過)。</li>
+      <li>替代動線:TDL→Western River 鐵路/Jungle Cruise/卡通城遊具;TDS→電氣化鐵道/威尼斯貢多拉當坐船兜風。</li>
+      <li>抽籤劇場(マジミュ/ジャンボリ/Dreams Take Flight)中了就是「免排隊的 25 分鐘冷氣」。</li>
+    </ul>
+  </div>
+
+  <div class="answer" id="a-eat">
+    <ul>
+      <li>鐵則:<b>午餐 10:30 入店、晚餐 16:30</b>;12:00–13:00 是地獄。</li>
+      <li>當日 Priority Seating <b>每天 9:00 在 App 開搶</b>(事前窗已過)——TDL 搶イーストサイド、TDS 搶ホライズンベイ/レストラン櫻。</li>
+      <li>不賭 PS 的保底:TDL→ハングリーベア兒童咖哩 ¥940/グランマ・サラ ¥940;TDS→カスバ(¥800 級、座位海)/ホライズンベイ自取式。</li>
+      <li>Mobile Order 入園就先卡下午點心時段;低過敏餐(8 品目排除)到店向 Cast 講即可。</li>
+      <li>爆米花:7/26 買一桶(¥2,800–3,800)+紙盒 ¥400 分裝止戰,7/27 帶桶續裝 ¥600。</li>
+    </ul>
+  </div>
+
+  <div class="answer" id="a-lost">
+    <ul>
+      <li><b>當下:抓住最近的 Cast 就好</b>——無線電全園共享特徵,園內「不做走失廣播」,別傻等。</li>
+      <li>會合點:TDL=迷子中心(World Bazaar,與 Baby Center 併設);<b>TDS 7/27=入口 Guest Relations</b>(Baby Center 休止中)。</li>
+      <li>預防:入園先領<b>免費迷子貼紙</b>(寫名字+電話,有保護膜);每天早上拍兩個孩子全身照。</li>
+      <li>約定句:「走散就站在原地,找穿制服的工作人員」。</li>
+      <li>身體不適:任何 Cast 都能帶你到中央救護室。</li>
+    </ul>
+  </div>
+
+  <!-- ========== 身高門檻(全行程最關鍵) ========== -->
+  <div class="section-title">身高門檻:先量再玩</div>
+  <div class="callout gold"><b>入園第一件事之一:兩個孩子在第一個門檻設施量身高</b>過了會發「當日通用手環」,之後同級設施出示即可。差 1–2cm 也會被擋、無通融;弟弟卡 90、姊姊卡 102,都是臨界值,以現場 Cast 實測為準。</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>門檻</th><th>設施</th><th>弟弟 90–99</th><th>姊姊 100–117</th></tr>
+    <tr><td>81cm</td><td>杯麵歡樂之旅 <span class="badge land">陸</span></td><td class="yes">✅ 可</td><td class="yes">✅ 可</td></tr>
+    <tr><td>90cm</td><td>飛濺山・Gadget <span class="badge land">陸</span>/尼莫・小比目魚 <span class="badge sea">海</span></td><td class="mid">🟡 現場量</td><td class="yes">✅ 可</td></tr>
+    <tr><td>102cm</td><td>巨雷山・星際旅行 <span class="badge land">陸</span>/翱翔・驚魂古塔・彼得潘FS <span class="badge sea">海</span></td><td class="no">❌</td><td class="mid">🟡 現場量</td></tr>
+    <tr><td>117cm</td><td>地心・印第・憤怒雙神 <span class="badge sea">海</span></td><td class="no">❌</td><td class="no">❌ → 爸媽交替乘車</td></tr>
+  </table></div>
+  <details class="box"><summary>姊姊過/沒過 102 的兩套劇本</summary><div class="bd">
+    <b>過了 102</b>:解鎖翱翔(TDS 王牌,建議 PP/早排)、巨雷山+星際旅行(TDL,免費 PP)、彼得潘 FS。驚魂古塔雖能搭,對 6 歲仍太嚇,建議跳過。<br>
+    <b>沒過 102</b>:完全不影響主線——美女與野獸、杯麵、冰雪奇緣、樂佩全部無此門檻;她的清單以無限制旗艦為主,一樣滿載。<br>
+    <b>無身高限制的旗艦</b>:美女與野獸(官方無身高限制,只需自行坐穩——網傳 81cm 是謠言)、冰雪奇緣(6 次緩坡滑落,🟠 視膽量)、樂佩燈籠節、小熊維尼<span class="badge warn">7/26 休止</span>。
+  </div></details>
+  <details class="box"><summary>3 歲怕黑警示(無身高限制也要看)</summary><div class="bd">
+    🔴 <b>建議跳過</b>:幽靈公館、加勒比海盜、白雪公主(幼兒哭點前三名)。<br>
+    🟠 <b>視膽量</b>:冰雪奇緣(滑落 6 次但皆緩坡)、神燈劇場(精靈突臉)、海底兩萬哩(深海昏暗)、フィルハーマジック、尼莫(密閉+晃)。<br>
+    🟢 <b>安心</b>:辛巴達傳奇之旅(治癒系船遊)、美女與野獸、杯麵、Busy Buggies、旋轉木馬類。
+  </div></details>
+
+  <!-- ========== DPA 微量方案 ========== -->
+  <div class="section-title">花錢方案:微量 DPA + 免費 PP 拉滿</div>
+  <div class="callout land"><b>只買兩筆,共約 ¥12,000</b>① 7/26 陸:美女與野獸 DPA ¥2,000×3 人(唯一必買,週日早售罄,入園立刻買)。② 7/27 海:安娜與艾莎 DPA ¥2,000×3 人(開園數分鐘售罄,開門瞬間手機下單)。<b>弟弟未滿 4 歲免門票=所有 DPA 都不用買他的份</b>,抱著一起搭。選配:電子遊行鑑賞區 ¥2,500×3(免卡位神器,看體力)。</div>
+  <div class="callout ok"><b>免費 Priority Pass:8/31 終止前的最後紅利</b>App 抽、不用錢、可重複抽(用完或隔 2 小時)。海 TDS 是主戰場:Turtle Talk/尼莫/神燈劇場/海底兩萬哩(親子四寶全室內冷氣)+印第/憤怒雙神(爸媽交替乘車用)。陸 TDL 可用的剩:巨雷山/星際旅行(姊姊過 102 才有意義)+幽靈公館(帶孩子跳過)——<b>維尼與怪獸電力 7/26 休止,別浪費抽次</b>。</div>
+
+  <!-- ========== 每日作戰 ========== -->
+  <div class="section-title">每日作戰時間軸</div>
+  <div class="sub">點上方日期切換。時刻=表定慣例,當日以官方 App 為準。</div>
+
+  <section class="panel" id="d25">
+    <div class="callout gold"><b>7/25(六)抵達日:目標只有三件事</b>入住、吃飽、把明天的裝備與 App 全部就位。</div>
+    <div class="tl-day">
+      <div class="step"><div class="t">15:00 前若已到舞浜</div><div class="x">行李在舞浜駅前 <b>Welcome Center 免費寄送到大倉</b>(受理 8:00–15:00);過時間就直接拖去飯店(Bayside 站徒步 3 分)。</div></div>
+      <div class="step key"><div class="t">17:00 前後</div><div class="x">Check-in ホテルオークラ東京ベイ。<b>順口問櫃檯三件事</b>:①宅急便寄行李到下一間飯店的截止時間 ②早餐是否含在方案+開場時間 ③有無 JR 舞浜接駁班表。</div></div>
+      <div class="step"><div class="t">傍晚</div><div class="x">單軌回舞浜(孩子免費)→ <b>Ikspiari</b>:4F 餐廳吃晚餐(到 23:00)→ <b>成城石井</b>(到 22:30)買明天早餐麵包+水果 → <b>Tomod's 藥妝</b>買防暑四寶:冷感濕巾、鹽糖、防曬補充、退熱貼。</div></div>
+      <div class="step"><div class="t">回房後(今晚必辦)</div><div class="x">① 兩支手機都裝好官方 App+登入 MyDisney(台灣可下載,自動英文版)② 確認 7/26、7/27 兩張日付門票就緒(姊姊小人票/弟弟免票)③ 量弟弟體重——≤15kg 明天才能租園內推車 ④ 手機、行動電源全充飽(App 極耗電)。</div><div class="note">附近補給:飯店內藥妝賣店(尿布/泡麵/飲料);24h LAWSON 在希爾頓,徒步 6 分。</div></div>
+      <div class="step"><div class="t">21:30</div><div class="x">全家早睡。明天 6:45 起床。</div></div>
+    </div>
+  </section>
+
+  <section class="panel" id="d26">
+    <div class="callout land"><b>7/26(日)陸 TDL:暑假週日=全年前段班人潮</b>核心策略:早鳥 3 小時決勝負、中午躲熱、傍晚看遊行。今晚<b>沒有煙火</b>(夏季停演),壓軸是 19:45 電子遊行。⚠️ 當天休止:小熊維尼、小小世界、怪獸電力公司、小飛象、太空山——別排進動線。</div>
+    <div class="tl-day">
+      <div class="step"><div class="t">06:45</div><div class="x">起床。早餐吃昨晚買的麵包最快(飯店 buffet 尖峰 8:00–8:40 會吃掉你的早鳥優勢)。</div></div>
+      <div class="step key"><div class="t">07:15</div><div class="x">出門 → Bayside 搭 07:20–30 班次(<b>往 TDL 要繞 3 站約 9 分</b>)→ 07:45 抵大門排安檢(週日安檢 30–45 分)。</div></div>
+      <div class="step key"><div class="t">08:45–09:00 開園瞬間(三線並行)</div><div class="x">① 爸:App 秒買<b>美女與野獸 DPA×3</b> ② 媽:App 抽籤<b>マジミュ+ジャンボリミッキー</b>+抽第一張免費 PP ③ 進園後:領<b>迷子貼紙</b>+弟弟租推車(¥1,000)。</div></div>
+      <div class="step"><div class="t">09:00–10:30 黃金時段</div><div class="x"><b>杯麵歡樂之旅</b>(81cm+,兩個都能玩,夏季特別版音樂)→ <b>卡通城</b>:Gadget 雲霄飛車(弟弟在此量 90)+米妮之家+遊具街景放電。</div></div>
+      <div class="step"><div class="t">10:30 早午餐(避峰)</div><div class="x">ハングリーベア甘口兒童咖哩 ¥940 或 グランマ・サラ ¥940(全室內洞穴涼);9:00 有搶到當日 PS 就去イーストサイド(兒童義大利麵 ¥1,600)。</div></div>
+      <div class="step"><div class="t">11:30–12:50</div><div class="x">幻想樂園精簡版:城堡旋轉木馬+愛麗絲茶會+彼得潘天空之旅;<b>白雪公主跳過</b>(🔴)。美女與野獸 DPA 時段到就去(排隊區在室內,城堡本身就是高潮)。</div></div>
+      <div class="step"><div class="t">12:50 或 14:55</div><div class="x"><b>杯麵灑水秀</b>(遊行路線,約 35 分):想濕站花車停點正面、想看不想濕站外圍;薄雨衣+替換衣物出動。</div></div>
+      <div class="step"><div class="t">13:30–16:30 熱峰迴避</div><div class="x">弟弟午睡:<b>回大倉睡</b>(3 站)或推車+劇場輪進(Country Bear 休憩/フィルハーマジック/チキルーム)。姊姊若過 102:此時段爸媽輪流帶她刷<b>星際旅行/巨雷山 PP</b>。</div></div>
+      <div class="step"><div class="t">16:30</div><div class="x">晚餐早吃(二選一:早上沒吃到的那家)。</div></div>
+      <div class="step"><div class="t">17:00 ⚠️</div><div class="x">日間遊行 <b>Harmony in Color</b>(時刻以 App 為準):16:15 在西側有建物陰影的路緣坐定。</div></div>
+      <div class="step key"><div class="t">19:45</div><div class="x">壓軸:<b>電子遊行 Dreamlights</b>。免費卡位 19:00 前;或 DPA 鑑賞區 ¥2,500×3 直接躺贏。看完隨人流出園,單軌回 Bayside。</div></div>
+    </div>
+  </section>
+
+  <section class="panel" id="d27">
+    <div class="callout sea"><b>7/27(一)海 TDS:比週日鬆一點,但今夏樂園大飯店/大使住客有 TDS 提早入園</b>——別硬拚 Fantasy Springs 頭香,靠 DPA 解決。今天的王牌:FS 自由進區(不用搶入場資格)+ 免費 PP 親子四寶 + 美人魚礁湖避暑。⚠️ 飛毯 7/28 起休止=今天是本行程最後機會;樂佩 7/25 剛重開(出發前確認)。</div>
+    <div class="tl-day">
+      <div class="step key"><div class="t">07:30</div><div class="x">出門(比昨天晚 15 分)→ Bayside <b>往 TDS 只 1 站 4 分</b> → 07:50 抵閘門(North/South 選人少側)。</div></div>
+      <div class="step key"><div class="t">08:45–09:00 開園瞬間</div><div class="x">① 手速全開:App 秒買<b>安娜與艾莎 Frozen Journey DPA×3</b>(數分鐘售罄;失敗→改買樂佩或彼得潘)② 抽 <b>Dreams Take Flight</b> 劇場抽籤 ③ 抽第一張免費 PP(尼莫或 Turtle Talk)。</div></div>
+      <div class="step"><div class="t">09:15–11:00 Fantasy Springs</div><div class="x">直接進區(免資格):<b>Busy Buggies</b>(幼齡友善、無 DPA 只能排,早上隊最短)→ <b>樂佩燈籠節</b>(視隊長/DPA)→ 冰雪 DPA 時段到就搭(🟠 六次緩坡滑落,先跟姊姊預告)。FS 內順買限定<b>蒜香蝦爆米花</b>續裝 ¥600。</div></div>
+      <div class="step"><div class="t">10:30 午餐(避峰)</div><div class="x"><b>ホライズンベイ</b>(自取式、看得到才點、兒童餐約 ¥1,040)或 <b>カスバ</b>(¥800 級咖哩、座位海量);9:00 搶到 PS 就照 PS 走。</div></div>
+      <div class="step"><div class="t">11:30 前後</div><div class="x">地中海港灣看 <b>Harbor Splash 灑水</b>(上午~午後早段,場次看 App)——當天最涼的十分鐘。</div></div>
+      <div class="step"><div class="t">12:00–15:30 熱峰=美人魚礁湖時間</div><div class="x"><b>Triton's Kingdom 室內區</b>:Ariel's Playground 放電+礁湖劇場休憩+幼齡設施群;弟弟推車午睡首選(暗+涼)。免費 PP 輪刷:神燈劇場、海底兩萬哩、Turtle Talk。撐不住就回大倉(1 站)。<b>哺乳/尿布注意:主 Baby Center 休止中</b>→ 用礁湖 Baby Care Room 或驚魂古塔旁授乳室。</div></div>
+      <div class="step"><div class="t">15:30–17:30</div><div class="x">阿拉伯海岸:神燈劇場(沒刷到 PP 就排)+<b>魔毯(最後一天!)</b>+雙層旋轉木馬;辛巴達治癒船遊收尾。爸媽此時輪流交替乘車玩<b>印第/地心</b>(PP+交替併用問 Cast)。</div></div>
+      <div class="step"><div class="t">17:00 ⚠️</div><div class="x">25 週年港灣秀 <b>Sparkling Jubilee Celebration</b>(場次以 App 為準),地中海港灣隨處可看。</div></div>
+      <div class="step key"><div class="t">20:15</div><div class="x">夜壓軸 <b>Believe! ~Sea of Dreams~</b> 水上大秀:港灣外圍站著看免費(提早 30–40 分找位);Miracosta 牆面投影同場加映。看完出園,1 站回家。</div></div>
+      <div class="step"><div class="t">回飯店後(重要)</div><div class="x"><b>在櫃檯寄宅急便</b>:大行李寄到戶塚的飯店(160 尺寸約 ¥3,020/件,翌日達)→ 明天輕裝移動,躲開東京站轉乘地獄。</div></div>
+    </div>
+  </section>
+
+  <section class="panel" id="d28">
+    <div class="callout gold"><b>7/28(二)移動日:12:00 退房 → 15:00 戶塚 check-in</b>行李昨晚寄了=今天每人一個小背包。避開 17:00 後通勤尖峰,13:00–15:00 間移動最舒服。</div>
+    <div class="tl-day">
+      <div class="step"><div class="t">早上</div><div class="x">睡到自然醒,吃頓不趕時間的飯店早餐(大人約 ¥3,800/兒童 ¥1,900,若方案未含);或 Ikspiari 逛最後一圈。</div></div>
+      <div class="step key"><div class="t">12:00</div><div class="x">退房。若想再玩半天:行李寄 Bell Desk,傍晚再走。</div></div>
+      <div class="step"><div class="t">13:00 出發</div><div class="x">Bayside → 單軌 → 舞浜駅 → <b>京葉線</b>(13–17 分)→ 東京站。</div></div>
+      <div class="step"><div class="t">東京站轉乘 ⚠️</div><div class="x">京葉線月台在地下最深處,<b>走到東海道線月台要 15–20 分</b>——有電梯,不趕、慢慢走。</div></div>
+      <div class="step"><div class="t">東海道線</div><div class="x">東京 → 戶塚直達 36–43 分(從東京站發車,有位子坐);全程 IC 約 ¥945/大人,總時程抓 2 小時。</div></div>
+      <div class="step key"><div class="t">15:00</div><div class="x">相鉄フレッサイン橫濱戶塚 check-in,宅急便行李已在(或傍晚前到)。迪士尼篇完賽 🎉</div></div>
+    </div>
+  </section>
+
+  <!-- ========== 清單 ========== -->
+  <div class="section-title">清單(點了會記住)</div>
+  <details class="box" open><summary>🧳 出發前(台灣就辦好)</summary><div class="bd"><ul class="check" data-ck="pre">
+    <li><input type="checkbox" id="c1"><label for="c1">兩支手機裝官方 App+MyDisney 登入(台灣可下載,英文版)</label></li>
+    <li><input type="checkbox" id="c2"><label for="c2">7/26+7/27 日付門票確認到手(姊姊小人票、弟弟免票)——還沒買就立刻買,週日票有售罄風險;真售罄→向大倉申請住客購票</label></li>
+    <li><input type="checkbox" id="c3"><label for="c3">量弟弟體重(≤15kg 才能租園內推車;超過就自帶推車)</label></li>
+    <li><input type="checkbox" id="c4"><label for="c4">兩張不同的信用卡(海外卡 3D 驗證常卡關;DPA 刷不過園內有現金櫃檯)</label></li>
+    <li><input type="checkbox" id="c5"><label for="c5">印官方 PDF 園區地圖各一份(紙本地圖已停發,App 沒電備用)</label></li>
+    <li><input type="checkbox" id="c6"><label for="c6">薄雨衣×4(灑水秀+雷陣雨)、替換衣物、冷感巾、帽子、常備藥</label></li>
+    <li><input type="checkbox" id="c7"><label for="c7">看 7/26・7/27 官方當日頁:營時/休止清單/樂佩是否運行(出發前 1–2 天)</label></li>
+  </ul></div></details>
+  <details class="box"><summary>🎒 入園當天包包</summary><div class="bd"><ul class="check" data-ck="bag">
+    <li><input type="checkbox" id="b1"><label for="b1">水壺×2(園內飲水機可補)、鹽糖</label></li>
+    <li><input type="checkbox" id="b2"><label for="b2">替換衣物一套/孩子(灑水秀+流汗)+小毛巾</label></li>
+    <li><input type="checkbox" id="b3"><label for="b3">薄雨衣×4、防曬、帽子、濕紙巾</label></li>
+    <li><input type="checkbox" id="b4"><label for="b4">行動電源(App 一整天=吃電怪獸)</label></li>
+    <li><input type="checkbox" id="b5"><label for="b5">100 円硬幣數枚(置物櫃)+ 少量現金</label></li>
+    <li><input type="checkbox" id="b6"><label for="b6">入園先辦:迷子貼紙×2、量身高拿手環、(7/27)爆米花桶帶了沒</label></li>
+  </ul></div></details>
+  <details class="box"><summary>🃏 排隊救援包(10 招隨身帶)</summary><div class="bd">
+    故事接龍(一人一句,主角常是放屁的恐龍)・相反詞大戰・顏色偵探(找 5 個米奇頭!)・猜謎語・動物聲音猜謎・心算接龍(姊姊)・指物命名(弟弟)・二十問猜猜我是誰・傳話遊戲・手指謠(弟弟)。<br>
+    <span class="badge gold">加碼</span> 排隊>30 分:輪流去買爆米花回來隊裡吃;「還要多久?」→ 用孩子的單位回答:「再兩集巧虎」。
+  </div></details>
+
+  <!-- ========== 出發前複查 ========== -->
+  <div class="section-title">出發前 App 複查清單</div>
+  <div class="sub">本手冊查證日 2026-07-21;以下項目會浮動,出發前 1–2 天用官方管道再確認一次。</div>
+  <div class="callout warn"><b>浮動項</b>① 7/26・7/27 當日營時與票價檔 ② 當日休止清單(尤其樂佩是否運行)③ 杯麵灑水秀/兩場遊行/Harbor Splash/港灣秀當日場次 ④ 免費 PP 當日發券名單 ⑤ 天氣與雷雨預報(氣象廳)⑥ 大倉宅急便收件截止時間 ⑦ 單軌全面 QR 化後 Suica 可否進站(不行就現場買 QR 票,孩子反正免費)。</div>
+  <div class="linkrow">
+    <a class="lbtn hot" href="https://www.tokyodisneyresort.jp/tdl/daily/calendar.html" target="_blank" rel="noopener">TDL 當日情報</a>
+    <a class="lbtn hot" href="https://www.tokyodisneyresort.jp/tds/daily/calendar/" target="_blank" rel="noopener">TDS 當日情報</a>
+    <a class="lbtn" href="https://www.tokyodisneyresort.jp/tdl/monthly/stop.html" target="_blank" rel="noopener">TDL 休止清單</a>
+    <a class="lbtn" href="https://www.tokyodisneyresort.jp/tds/monthly/stop.html" target="_blank" rel="noopener">TDS 休止清單</a>
+    <a class="lbtn" href="https://www.tokyodisneyresort.jp/tdr/guide/app_service/disneypremieraccess.html" target="_blank" rel="noopener">DPA 官方頁</a>
+    <a class="lbtn" href="https://www.tokyodisneyresort.jp/tdr/guide/app_service/prioritypass.html" target="_blank" rel="noopener">免費 PP 官方頁</a>
+    <a class="lbtn" href="https://www.jma.go.jp/bosai/forecast/" target="_blank" rel="noopener">氣象廳預報</a>
+  </div>
+
+  <footer>
+    林家 · 東京迪士尼 2026-07-25~28<br>
+    研究+獨立對抗查證完成日 2026-07-21 · 價格/時刻以官方 App 當日為準 · 標 ⚠️ 者出發前複查<br>
+    離線可用(PWA 快取)· 回 <a href="index.html" style="color:inherit">出遊手冊</a> / <a href="time.html" style="color:inherit">時光手冊</a>
+  </footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* 倒數 + 預設分頁(旅程中自動跳當天) */
+const DAYS = { d25: "2026-07-25", d26: "2026-07-26", d27: "2026-07-27", d28: "2026-07-28" };
+const now = new Date();
+const today = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+const d0 = new Date(2026, 6, 25);
+const diff = Math.ceil((d0 - now) / 864e5);
+$("#countLine").innerHTML = today > "2026-07-28"
+  ? "旅程完賽 🎉 願回憶常新"
+  : (today >= "2026-07-25" ? "旅程進行中 — 玩得開心,補水、防曬、慢慢來" : "出發倒數 <b>" + diff + "</b> 天 · 7/25 入住舞浜 → 7/26 陸 → 7/27 海");
+
+function showDay(k) {
+  $$(".trip-strip .d").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.day === k)));
+  $$(".panel").forEach(p => p.classList.toggle("active", p.id === k));
+}
+$$(".trip-strip .d").forEach(b => b.addEventListener("click", () => showDay(b.dataset.day)));
+const auto = Object.keys(DAYS).find(k => DAYS[k] === today);
+showDay(auto || (today > "2026-07-28" ? "d28" : "d26"));
+
+/* 情境卡 */
+$$(".scen button").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.a;
+  const open = b.getAttribute("aria-pressed") === "true";
+  $$(".scen button").forEach(x => x.setAttribute("aria-pressed", "false"));
+  $$(".answer").forEach(a => a.classList.remove("on"));
+  if (!open) { b.setAttribute("aria-pressed", "true"); $("#a-" + k).classList.add("on"); }
+}));
+
+/* 清單勾選記憶 */
+const CK = "disney-checks-v1";
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(CK) || "{}"); } catch (e) {}
+$$(".check input").forEach(c => {
+  if (saved[c.id]) c.checked = true;
+  c.addEventListener("change", () => {
+    saved[c.id] = c.checked;
+    try { localStorage.setItem(CK, JSON.stringify(saved)); } catch (e) {}
+  });
+});
+
+/* PWA */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>

@@ -12206,5 +12206,3247 @@
     "family_log": [],
     "last_verified": "2026-07-19",
     "status": "active"
+  },
+  {
+    "id": "tn-linmoniang-park",
+    "name": "林默娘公園",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市安平區安億路旁(近安平漁人碼頭)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安平區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 0,
+      "basis": "2公頃海邊大草坪、樹蔭極少,夏日正午曝曬不宜,傍晚較舒適並可看夕陽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "開闊平坦大草坪與海堤,適合滑步車、跑跳、放風箏、玩泡泡;主要為草地非硬鋪面"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "全戶外開闊公園,孩子跑跳喧鬧不擾人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "草坪平坦可學步爬行,但無專屬遊具需大人陪同;鄰近港濱歷史公園有幼兒遊戲場可搭配"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "開闊草地適合滑步車、追泡泡、放風箏放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "空間大可跑跳騎車、放大型風箏"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "可放風箏騎車,但無挑戰性遊具,大童易膩"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "戶外公園,館舍設施待確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "無餐飲服務"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "入口設收費停車場,停車方便"
+      },
+      "廁所": {
+        "value": "待確認",
+        "note": "鄰近漁人碼頭/港濱公園有公廁,園內廁所待確認"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.daisyyohoho.com/linmoniang-park/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "2公頃開闊海邊草坪,放風箏玩泡泡毛小孩奔跑;現場有人賣風箏與滑草板;樹蔭不多夏日正午不建議,傍晚看夕陽佳"
+      },
+      {
+        "url": "https://mimigo.tw/2014-03-19-412/",
+        "source_type": "blog",
+        "date": "2014起持續更新",
+        "摘要": "週末午後親子放風箏、玩泡泡的開闊草地,空曠有風、離馬路遠、無電線桿適合放風箏"
+      },
+      {
+        "url": "https://q82465.pixnet.net/blog/posts/12226881895",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "鄰近港濱歷史公園特色遊戲場(鯨魚海洋主題遊具),可與林默娘公園、大魚的祝福串遊"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-anping-tree-house",
+    "name": "安平樹屋",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市安平區古堡街108號(英商德記洋行旁)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安平區 定位,外縣市不計宜蘭車程;地址以德記洋行/樹屋園區公開資訊,座標待確認"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "老榕樹冠層盤據形成天然遮蔭,但屬半戶外露天木棧道,雨天遮蔽有限"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "架高鐵木棧道、階梯與狹窄動線,推車部分路段受限,滑步車不適合;以參觀探索為主"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外古蹟園區開闊,孩子講話不至擾人,但屬參觀型景點非遊戲場"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "棧道有高低差與縫隙,幼兒需全程牽抱,以參觀為主"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "樹根盤繞像探險可看氣根爬棧道,但需防跌"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "屋樹共生探險感強,適合好奇探索與拍照"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "可理解屋樹共生與洋行歷史,兼具知識性"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內有簡易餐飲/咖啡座位,兒童椅待確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "停車": {
+        "value": "待確認",
+        "note": "園區無大型停車場,周邊路邊/收費停車場,待確認"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設洗手間"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://historic.tainan.gov.tw/index.php?option=module&lang=cht&task=pageinfo&id=60&index=4",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "臺南市文化局古蹟營運科官方頁,屋樹共生古蹟,設鐵棧橋與木棧道參觀動線"
+      },
+      {
+        "url": "https://mimigo.tw/anping-treehouse/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "全票70/半票35元、台南市民免費,一票暢遊樹屋+德記洋行+朱玖瑩故居;老榕氣根盤據"
+      },
+      {
+        "url": "https://ceciliafang1103.pixnet.net/blog/post/155987072",
+        "source_type": "blog",
+        "date": "2019",
+        "摘要": "老榕樹冠層形成天然遮蔭,園區有簡單桌椅可休息;架高木棧道有高低差"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-eternal-golden-castle",
+    "name": "億載金城(二鯤鯓砲臺)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市安平區光州路3號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安平區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "城內中央為開闊大草原曝曬,僅城牆邊與入口有零星樹蔭"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "城內大草坪平坦開闊適合跑跳放電;護城河邊步道與拱門動線,滑步車可玩但多為草地,護城河天鵝船已移除"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開闊古蹟,孩子跑跳不擾人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以參觀古砲臺為主,幼兒僅能在草地爬走"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "大草原可放電跑跳,登稜堡階梯需牽扶"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "爬城牆稜堡、看古砲、繞護城河,探索感足"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "結合課本歷史(沈葆楨/全台首座西式砲臺),知識與放電兼具"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "無餐飲服務"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "門口收費停車場一次30元不限時"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設洗手間"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/673/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台南官方旅遊網,護城河拱門入內為綠草如茵大草原(昔日操練場),登稜堡可居高眺望"
+      },
+      {
+        "url": "https://bobbytravel.tw/yi-zai-jin-cheng/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "全台首座西式砲臺,門票全票70/半票35元,跟課本一起旅行的歷史景點"
+      },
+      {
+        "url": "https://adontrip.com/blog/54624/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "門口收費停車場一次30元不限時、銅板價門票;護城河天鵝船前幾年已移除"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-anping-saltoffice",
+    "name": "安平出張所(原夕遊出張所)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市安平區古堡街196號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安平區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "日式木造建築室內與簷廊可遮蔭,前方庭院與白沙灘公園露天"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "以逛鹽鋪、找生日鹽、木造建築參觀為主,庭院空間有限不適合騎車;前方安平鹽神白沙灘公園可玩沙"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "半戶外鹽業主題文創園區,家庭客多,室內鹽鋪為選購空間宜留意音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以逛鹽鋪、看木造建築為主,幼兒參與度低"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "找生日鹽、敲彩鹽蛋、吃鹽霜淇淋、看水豚有趣,前方可玩沙"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "尋找專屬生日鹽顏色與意義、水豚互動、漢服體驗,認識鹽文化"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生日鹽意義與鹽業歷史有知識性,白沙灘玩沙、水豚互動"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "附近設停車場,部分免費"
+      },
+      "廁所": {
+        "value": "待確認",
+        "note": "待確認"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://historic.tainan.gov.tw/index.php?option=module&lang=cht&task=pageinfo&id=549&index=5",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "原臺灣總督府專賣局台南支局安平分室(鹽業古蹟),免門票,販售日曬鹽與366生日彩鹽"
+      },
+      {
+        "url": "https://tapioca.live/anping-saltoffice/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "2024新團隊接手更名『安平出張所』,新增水豚互動、漢服體驗、生日鹽御守,免門票;原夕遊出張所名稱已停用"
+      },
+      {
+        "url": "https://yiwutrip.tw/sio-house/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "免門票,366色生日彩鹽、可敲來吃的彩鹽蛋、雪鹽燒霜淇淋;前方安平鹽神白沙灘公園可玩沙;附近有停車場"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-anping-childrens-museum",
+    "name": "安平兒童館(臺南市兒童福利服務中心)",
+    "type": "室內樂園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市安平區中華西路二段315號(社會福利綜合大樓)3-4樓",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安平區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "兩層樓全室內冷氣空間"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內主題遊戲區,不可騎乘滑步車;為遊具與情境遊戲空間"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子專門室內遊戲館,近20個主題遊戲區,孩子喧鬧屬正常"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "有多感官教室等適合低幼,但部分遊具偏大童,分齡區使用需留意"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "ㄅㄨㄅㄨ樂園、組合建構、樂翻區等適齡放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "文化體驗、生態科學、足球派對區多元探索"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "官方稱小學生也適合,但部分區偏幼兒"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "設育嬰哺乳室,尿布台通常隨附但未明列,待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "待確認"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "館內設育嬰哺乳室"
+      },
+      "停車": {
+        "value": "待確認",
+        "note": "位於社福綜合大樓,周邊路邊/停車場,館方停車資訊待確認"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://sab.tainan.gov.tw/News.aspx?n=21447&sms=19553",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台南市社會局官方頁,安平兒童館位於安平區中華西路二段315號社福大樓,週二至週日9:00-17:00,週一及國定假日休館"
+      },
+      {
+        "url": "https://supertaste.tvbs.com.tw/kids/355740",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "食尚玩家報導:兩層樓近20個主題遊戲區(樂翻區/組合建構/ㄅㄨㄅㄨ樂園/足球派對等),銅板價,適合雨天室內遛小孩"
+      },
+      {
+        "url": "https://anity0404.pixnet.net/blog/post/219260907",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "上百坪室內遊戲空間、設育嬰哺乳室,適合雨天備案,分主題區適合學齡前至小學"
+      },
+      {
+        "url": "https://chloestyle.tw/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "平日台南市民童票35/外縣市50、假日70/100、家長票一律60元;兩層樓多主題遊戲區"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-hele-plaza",
+    "name": "河樂廣場",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市中西區中正路343-20號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 2,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "下凹式露天設計提供大面積遮蔭,中段有『馬路底下玩水』的全遮蔽空間,但主水池仍露天曝曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "地面平坦開闊、推車好推;主體為戲水池非騎乘場地,滑步車宜在乾區周邊玩"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "露天親水公共廣場,幼兒戲水嬉鬧不擾人,家庭客為主"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "最淺處僅到腳踝、水深約30cm,幼兒可玩水但須全程陪同(現場無救生員)"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "淺水戲水最適齡,水質三重過濾,可自由踩水放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "水域開闊可盡情玩水消暑,周邊平坦可跑跳"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "水淺對大童刺激度較低,仍適合戲水+周邊散步騎車"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "設有無障礙(親子)廁所,尿布台配置未見明確報導"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外廣場無餐飲座位"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "停車": {
+        "value": true,
+        "note": "園區無自設停車場;周邊路邊約340席+日月亭環河街停車場(中西區環河街62號,步行約1分鐘)"
+      },
+      "廁所": {
+        "value": true,
+        "note": "左右兩側設男女廁、無障礙親子廁所及更衣/淋浴間"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://ppfcc.org/6371/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "特公盟(還我特色公園行動聯盟)實測:親水設施、沙灘意象、下凹遮蔭、廁所含淋浴更衣間,適合親子戲水"
+      },
+      {
+        "url": "https://lyes.tw/33235882-%E6%B2%B3%E6%A8%82%E5%BB%A3%E5%A0%B4/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "涼子是也:交通停車、開放時間9:00–21:30週二休、設施總整理,水最深約30cm、最淺到腳踝、7歲以下須陪同"
+      },
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/5996/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台南旅遊網:地址中西區中正路343-20號、下凹式露天親水廣場、荷蘭團隊設計,現仍開放"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-confucius-temple",
+    "name": "台南孔廟",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市中西區南門路2號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "園區內老樹成蔭提供大面積樹蔭,但部分廣場區域無遮蔽、日曬仍強"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "古蹟園區以散步為主,磚石步道部分不好推,不適合騎滑步車放電;對面府中街商圈人多"
+    },
+    "noise_tolerance": {
+      "score": 1,
+      "basis": "古蹟參觀場域,大成殿等室內需保持安靜;戶外園區家庭遊客混合"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以走逛看建築為主,幼兒興趣低,需抱著或推車"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "庭園可短暫跑跳、看紅牆老樹,搭配府中街小吃"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可認識簡單歷史、擲筊求魁星筆,注意力有限"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "全台首學寓教於樂,適合學齡童認識歷史+逛孔廟商圈市集"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "停車": {
+        "value": true,
+        "note": "南門路兩側路邊停車格;對面台南市美術館地下停車場,另有忠義國小、建興國中路外停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tn-confucius.org.tw/page.asp?orcaid=F1099DC5-EBF9-4B08-8480-CAF71E0EED0C",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "臺南孔廟官網參觀資訊:收費區25元/人、團體20元,大成殿8:30–17:30開放,現仍營運"
+      },
+      {
+        "url": "https://roamingnow.com/tainan-confucius-temple-travel-guide/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "旅遊攻略:園區可推嬰兒車但部分路面不好推、遮蔭有限建議防曬,鄰近停車資訊"
+      },
+      {
+        "url": "https://carolblog.tw/tainan-confucius-temple/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "卡蘿:古色古香寓教於樂,對面府中街孔廟商圈美食小店多,附免費停車點"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-chihkan-tower",
+    "name": "赤崁樓",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市中西區民族路二段212號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "庭園有樹蔭,文昌閣、海神廟等建物內部可遮陽避雨,但庭院動線多為露天"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "古蹟有台階與磚石地,不適合騎乘;建議攜輕便推車或背巾"
+    },
+    "noise_tolerance": {
+      "score": 1,
+      "basis": "古蹟參觀場域,一般遊客為主,需適度輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以看古蹟為主,台階多、幼兒需抱或背巾"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "可看庭園錦鯉、在廣場短暫跑跳"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "海神廟、文昌閣可簡單導覽,注意力有限"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "普羅民遮城歷史寓教於樂,適合學齡童認識台南古蹟"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "停車": {
+        "value": false,
+        "note": "無附設停車場,周邊腹地狹窄、停車場1小時多在50元以上且一位難求,建議搭大眾運輸"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區內設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/674/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台南旅遊網:中西區主要古蹟,內有海神廟、文昌閣、蓬壺書院,現仍開放參觀"
+      },
+      {
+        "url": "https://bobbytravel.tw/chihkan-tower/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "波比看世界:全票70/半票35、台南市民免費,無附設停車場、周邊停車一位難求,歷史特色介紹"
+      },
+      {
+        "url": "https://bunnyann.tw/tainan-family/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "小兔小安親子整理:帶幼兒需防曬防蚊、建議輕便推車或背巾,古蹟寓教於樂"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-art-museum-2",
+    "name": "臺南國家美術館(原臺南市美術館2館)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市中西區忠義路二段1號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內冷氣場館,坂茂設計五角玻璃天花板遮陽,晴熱/雨天皆宜"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "美術館室內不可騎乘;設電梯與電扶梯,推車友善"
+    },
+    "noise_tolerance": {
+      "score": 1,
+      "basis": "展間需保持安靜輕聲,惟設有兒童藝術中心為親子友善互動空間"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "展間需抱著輕聲,幼兒以兒藝中心軟性體驗為主"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "兒童藝術中心可拼花磚、疊疊樂等動手體驗"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "兒藝中心互動體驗(修復畫作、拼貼)適齡,寓教於樂"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "特展+兒童藝術中心互動,適合學齡童藝術啟蒙"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "設有親子廁所"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內餐廳/咖啡廳是否備兒童椅未見明確報導"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "官網空間介紹列有哺乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "地下1、2樓為開放大眾使用的收費停車場,推車進出便利"
+      },
+      "廁所": {
+        "value": true,
+        "note": "設親子廁所、無障礙廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tnam.museum/visit/floor_plan/2/1/2/7",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "臺南市美術館官網空間介紹:設親子廁所、無障礙廁所、哺乳室、醫護室、兒童藝術中心"
+      },
+      {
+        "url": "https://mimigo.tw/tainan-art-museum-ii/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "Mimi韓:坂茂設計玻璃天花板,兒童藝術中心讓孩子體驗修復畫作、拼花磚、疊疊樂,親子友善"
+      },
+      {
+        "url": "https://bobbytravel.tw/tainan-art-museum/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "波比看世界:門票、地下停車場、館內餐廳咖啡廳資訊,全室內有電梯電扶梯推車友善"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-fire-museum",
+    "name": "台南市消防史料館",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市中西區中正路2-1號(原合同廳舍,湯德章紀念公園旁)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內古蹟展館,有冷氣,晴熱/雨天皆宜"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內博物館不可騎乘;為古蹟建物有樓層,推車電梯配置待確認"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "免費親子室內景點、家庭客多且有小小消防員變裝體驗,惟仍為博物館需適度輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以看展為主,幼兒興趣有限,變裝消防服偏大童尺寸"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "可看古董消防車、簡單變裝拍照、蓋紀念章"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "小小消防員變裝、操作水管噴射體驗最適齡"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "VR地震救援體驗+消防歷史知識,適合學齡童防災學習"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確報導"
+      },
+      "停車": {
+        "value": "待確認",
+        "note": "館無自設停車場,周邊湯德章紀念公園一帶路邊停車,建議搭大眾運輸"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://dper.tncfd.gov.tw/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台南市消防局防災教育館/消防史料館官網:免費參觀、開放時間與團體導覽預約制度,現仍營運"
+      },
+      {
+        "url": "https://yoke918.tw/firefighting/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "青青小熊:免門票景點,體驗變裝當小小消防員、古董消防車、蓋章,親子室內景點"
+      },
+      {
+        "url": "https://chloestyle.tw/firemuseumtn/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "柯蘿依:免費親子景點,90年古蹟合同廳舍、認識消防員工作、地震救援體驗,室內冷氣"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-barclay-park",
+    "name": "巴克禮紀念公園",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市東區崇明里(中華東路三段與崇明路一帶,台南文化中心對面)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以東區定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "腹地9.1公頃,大面積老樹林蔭與落羽松步道,樹下草地多人野餐;仍有開闊草坪日曬處"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "腹地大、步道平緩,推車可行、幼兒可跑跳;部分為木棧道與生態碎石步道,滑步車以草地/鋪面步道段為宜"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "全戶外開放式公園,以附近居民與戶外教學小朋友為主,幼兒喧鬧不易打擾他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "適合推車散步、看水池與鳥類生態,但無0-2專屬遊具"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "大草地可跑跳、親近水生態,惟以自然體驗為主、無大型溜滑梯遊戲場"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可騎腳踏車、觀察生態導覽,活動空間開闊"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "適合自然觀察、野餐與騎乘,偏靜態生態公園非刺激遊具"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未見明確資訊"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無提供"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未見明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "設有巴克禮紀念公園停車場(uTagGo收錄),周邊亦有路邊停車"
+      },
+      "廁所": {
+        "value": true,
+        "note": "市立公園設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/1350/",
+        "source_type": "官網",
+        "date": "2026-07(查閱)",
+        "摘要": "台南市官方旅遊網:巴克禮公園為城市之肺、腹地廣大、秋冬落羽松轉紅,樹蔭綠地充足"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/273539",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格『散步遛小孩好去處』:遊客不多、環境優美、適合帶推車悠閒活動"
+      },
+      {
+        "url": "https://mimigo.tw/barclay-park/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "旅遊部落格:陽光穿林、樹下草地可野餐,城市綠洲、冬季落羽松景觀"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-ncku-campus",
+    "name": "成功大學光復校區(榕園・成功湖)",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市東區大學路1號(光復校區榕園、成功湖)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以東區定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "榕園有12棵榕樹含百年老榕、綠意深濃,校園樹蔭草地多;開闊草坪仍會日曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "校園道路寬廣平坦、假日車少,適合推車、幼兒騎腳踏車/滑步車,榕園大草坪可跑跳"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "全戶外開放校園綠地,假日多為散步野餐遊客,幼兒喧鬧不易打擾"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "適合推車漫步、看成功湖綠頭鴨/白鵝/烏龜,親近自然但無遊具"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "榕園草地可跑跳、湖邊看動物,活動安全但偏靜態"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可騎腳踏車、認識植物生態,空間開闊"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生態豐富且有小西門/小東門城遺跡等歷史場景,適合自然人文探索"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "校內建築或有,搜尋未確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外校園無提供"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未確認"
+      },
+      "停車": {
+        "value": "待確認",
+        "note": "校內汽車停車受限、機車格多,建議停周邊路邊或收費停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "校內館舍設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tneast.gov.tw/News_Photo_Content.aspx?n=23763&s=7673738",
+        "source_type": "官網",
+        "date": "2026-07(查閱)",
+        "摘要": "台南市東區區公所景點介紹:成大榕園百年老榕、綠色草坪,假日散步野餐首選"
+      },
+      {
+        "url": "https://okgo.tw/mobile/butyview/3191",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "旅遊網:光復校區榕園、成功湖綠意盎然,湖畔動植物生態豐富、適合親近自然"
+      },
+      {
+        "url": "https://www.tonyhuang39.com/tony/tony1295.html",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "旅記:成功湖旁動植物生態(綠頭鴨/白鵝/烏龜/鯉魚等),校園樹蔭草地恬靜適合散步"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-austin-land-nanfang",
+    "name": "奧斯丁夢想樂園(台南南紡店)",
+    "type": "室內樂園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市東區中華東路一段366號 南紡購物中心 2館 B1(部分來源列 358號,建議現場核對門牌)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以東區定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內冷氣空間,不受日曬雨淋"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內樂園不可帶自備滑步車;館內設空中滑軌、汽車小鎮電動車等替代放電設施"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子專門室內樂園、12主題遊戲區,吵鬧為常態、無須顧慮打擾他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 3,
+        "reason": "設2歲以下兒童發展區與貝殼細沙池,軟性安全適合小小孩"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "七彩球池、溜滑梯、扮家家酒、糖果森林適齡好玩"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "空中滑軌、氣墊跑酷、迷宮闖關、彈跳床放電足"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "12歲以下可入場,惟多數設施偏幼兒、大童挑戰性略低"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "遊樂區內親子休息室設尿布台"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "搜尋未確認"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "親子休息室設哺乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "南紡購物中心附設停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "百貨與樂園內設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.austinland.com.tw/",
+        "source_type": "官網",
+        "date": "2026-07(查閱)",
+        "摘要": "奧斯丁夢想樂園官網:主題室內親子樂園品牌(南紡為分店)"
+      },
+      {
+        "url": "https://tinyhumanonboard.com/austin-tainan/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格『南紡奧斯丁』:滑梯、滑草坪、闖關、彈簧床等室內設施"
+      },
+      {
+        "url": "https://yoyoman822.pixnet.net/blog/post/69503390",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪部落格:南紡店2館B1約450-700坪、首創空中滑軌與電動車、貝殼細沙、親子休息室含尿布台哺乳室"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-tainan-park",
+    "name": "台南公園",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市北區公園路356號(近台南火車站)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以北區定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "台南最古老公園、樹木茂密百年大樹成蔭;遊戲區與水岸仍有日曬處"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "腹地大、步道平坦,適合推車與幼兒滑步車;鄰火車站需注意周邊車流"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "全戶外開放公園,幼兒喧鬧不易打擾他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可推車散步、看燕潭水景與天鵝船,但遊具偏中大童"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "設兒童遊戲區/溜滑梯,適合學步幼兒放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "遊戲區溜滑梯、搭天鵝船、大草地跑跳皆宜"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "可騎腳踏車、逛百年老樹與旁邊市立圖書館,遊具刺激度普通"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無提供"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "鄰台南火車站(不到200公尺),周邊有大型停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "市立公園設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://mimigo.tw/tainan-family/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子景點懶人包:台南公園位火車站旁、佔地大、有親子天鵝船與溜滑梯遊戲區,旁為市立圖書館、大型停車場"
+      },
+      {
+        "url": "https://tinyhumanonboard.com/tainanpark/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格:整理台南免費特色公園遊戲場、含遊戲區與停車遮蔭資訊"
+      },
+      {
+        "url": "https://publicworks.tainan.gov.tw/cp.aspx?n=41285",
+        "source_type": "官網",
+        "date": "2026-07(查閱)",
+        "摘要": "台南市工務局特色遊戲場頁面:市轄公園兒童遊戲場設施(政府主管單位)"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shueijiaoshe",
+    "name": "水交社文化園區(飛行親子館)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市南區興中街118號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "實際位於南區(非東區/北區),以行政區定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "眷村園區有樹蔭、罐頭玩具設於樹下不會太曬,另有多個室內場館可遮陽避雨"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "戶外眷村步道與草地可跑跳、推車可行;為巷弄園區非開闊操場,滑步車空間有限"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "飛行親子館為2-6歲親子專門場館、戶外為開放園區,幼兒喧鬧容忍度高"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "飛行親子館限2歲以上,戶外可推車但適玩設施有限"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "飛行親子館主客群:圍裙變裝、市場扮家家酒、復古童玩、積木修飛機"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "親子館適齡上限、戶外眷村與戰鬥機可拍照跑跳"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "親子館超齡,但可探索眷村文化場館與戶外裝置藝術"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "親子館或有,搜尋未確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "文化園區/親子館無明確提供"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "園區對面有大型停車空間,附近算好停車"
+      },
+      "廁所": {
+        "value": true,
+        "note": "文化園區設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://shueijiaoshe.tainan.gov.tw/",
+        "source_type": "官網",
+        "date": "2026-07(查閱)",
+        "摘要": "水交社文化園區官網:空軍眷村改造之文化園區(主管單位官方頁)"
+      },
+      {
+        "url": "https://guliufish.com/blog/post/shueijiaoshe-fly",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格:飛行親子館適合2-6歲、銅板價,戶外寬敞日式建築好拍"
+      },
+      {
+        "url": "https://bunnyann.tw/bunnyann475/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪部落格:飛行親子館好玩、有戰鬥機可拍,樹蔭下有罐頭玩具、對面好停車"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-taijiang-visitor-center",
+    "name": "台江國家公園遊客中心(台江學園)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市安南區四草大道118號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "室內展館全遮蔭且有冷氣、蚵殼牆高腳屋走廊有遮棚;戶外水上木棧道與廣場遮蔭有限,夏季正午偏曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "戶外木棧道與廣場平坦、推車順暢;滑步車可在戶外平台,但四周為水池、臨水區需全程盯緊"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "免門票開放的生態遊客中心,家庭客多;室內放映室與展區屬半安靜空間,需控制孩子音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車友善、可看水上白色建築,但展示互動偏大童、臨水池需抱緊看顧"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "戶外平台可跑跳、看蚵殼牆與水景,但室內展板互動性對此齡有限"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "生態互動展板、影片與潟湖模型能引發興趣,水上高腳屋建築探索好玩"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "黑面琵鷺、潟湖地形、濕地生態具教育性,適合學齡孩子邊看邊學"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "官網未明列,建議去電台江處確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內無正式餐廳,兒童椅待確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "官網未明列"
+      },
+      "停車": {
+        "value": true,
+        "note": "周邊設漁濱路、城平路等多處免費停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "遊客中心館內設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tjnp.gov.tw/ch/sglarticle/visitor-center",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台江國家公園官方遊客中心頁:免門票、開放09:00-17:00週一休、水上生態展示館與解說設施"
+      },
+      {
+        "url": "https://travel.yam.com/article/137698",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "輕旅行實訪:純白水上高腳屋建築、蚵殼裝飾、免門票,適合親子拍照與認識生態的免費景點"
+      },
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/5812/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台南旅遊網官方介紹台江國家公園管理處遊客中心暨行政中心園區位置與內容"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-sicao-green-tunnel",
+    "name": "四草綠色隧道(四草大眾廟搭船)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市安南區大眾路360號(四草大眾廟登船處)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "綠色隧道紅樹林河段兩側有樹蔭,但竹筏無屋頂、登船前廣場也無遮棚;館方發斗笠與救生衣,大太陽下仍會曬"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "為30分鐘搭竹筏活動,非放電/騎乘型;推車可停放候船室但不能上船,全程須坐定穿救生衣"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "家庭客多、導覽解說時大家一起聽;竹筏空間狹小需坐好,不宜大聲吵鬧"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "須全程坐好、穿救生衣戴斗笠,幼兒易不耐且臨水需抱緊,體驗風險與難度較高"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "看招潮蟹、彈塗魚會興奮,但30分鐘航程要坐定對此齡有挑戰"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "紅樹林生態導覽聽得懂、像上一堂自然課,適齡且新奇"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "河口生態、水鳥與水筆仔導覽具教育性,學齡孩子收穫多"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "候船室設施未見明確資料"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確資料"
+      },
+      "停車": {
+        "value": true,
+        "note": "四草大道旁及大眾廟周邊有免費停車場,假日建議提早"
+      },
+      "廁所": {
+        "value": true,
+        "note": "候船室旁設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.kkday.com/zh-tw/blog/217268/asia-taiwan-tainan-sicao-green-tunnel",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "攻略:船票200元、附近免費停車場、輪椅與推車可停放候船室、導覽招潮蟹彈塗魚適合親子"
+      },
+      {
+        "url": "https://mimigo.tw/green-eye/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪:竹筏無屋頂會很曬、發斗笠與救生衣必穿、推車可用、小朋友看到招潮蟹很興奮"
+      },
+      {
+        "url": "https://bunnyann.tw/bunnyann238-2026/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026實訪:30分鐘竹筏、導覽解說彈塗魚水鳥水筆仔,適合作為台南親子生態行程"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-nmth",
+    "name": "國立臺灣歷史博物館",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市安南區長和路一段250號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "兒童廳、常設展廳、VR體驗皆為室內冷氣空間;戶外雖有草坪但主要遊玩區在室內,可全程避暑"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "戶外園區與草坪開闊、可推車野餐、滑步車可在戶外空地放電;室內兒童廳為互動展、不能騎乘"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "一樓兒童廳為親子專屬互動空間、家庭客集中,吵鬧容忍度高;常設展廳則需維持博物館禮儀"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可推車、兒童廳部分軟性互動可參與,但多數關卡設計偏4歲以上"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "兒童廳蓋房子、做衣服、划船追飛魚等體驗遊具好上手"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "兒童廳、時光車站與AR/VR互動最適齡,能玩能學"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "七大主題常設展與VR體驗兼具趣味與台灣史學習,適合學齡"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "設兒童廳的大型公立博物館通常設置,官方頁未逐項列出,建議現場或去電確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內餐飲區未查得明確資訊"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "官方友善措施頁未明列,建議去電06-3568889確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "設遊客停車場,小客車計次50元/次、機車免費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內各樓層設有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.nmth.gov.tw/cp.aspx?n=4089",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方票價頁:全票100元、優待票50元、未滿6歲免票"
+      },
+      {
+        "url": "https://www.nmth.gov.tw/cp.aspx?n=4109",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方兒童廳頁:時光之旅/互動體驗/戶外探險三區、每日上下午分場、中間清場"
+      },
+      {
+        "url": "https://mimigo.tw/taiwan-historymuseum/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "實訪:整修後重開、兒童廳AR互動、彩繪划船找腳印,適合室內親子;停車計次50元"
+      },
+      {
+        "url": "https://myjourney.tw/nmth/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪:兒童廳、時光車站、VR體驗,親子必玩、戶外草坪多家庭野餐"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-yantian-eco-village",
+    "name": "鹽田生態文化村(安順鹽場)",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市安南區大眾路101巷12號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "日式建築聚落與周邊林木提供零星遮蔭,瓦盤鹽田與濕地開闊處幾乎無遮蔽;安順吉鹽故事館室內可短暫避暑"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "聚落道路與園區步道平坦開闊,適合推車與滑步車放電;鹽田水域與濕地邊需看顧"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外開放園區、人潮不密集,孩子跑跳不易吵到他人;故事館室內導覽時需降低音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "戶外曝曬且鹽田臨水,推車可行但可看內容少、夏季不宜久留"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "開闊聚落可放電跑跳,但鹽業文化與生態解說偏大童"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可認識瓦盤鹽田、日式建築與濕地生態,需家長引導講解"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "台灣第一個製鹽工業區的鹽業史與濕地賞鳥具戶外教學價值"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未見明確資料"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確資料"
+      },
+      "停車": {
+        "value": true,
+        "note": "台江生態文化園區為開闊區域,周邊有停車空間,建議現場確認"
+      },
+      "廁所": {
+        "value": "待確認",
+        "note": "故事館/園區應有公廁,搜尋未明確標示,建議現場確認"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.swcoast-nsa.gov.tw/zh-tw/attraction/details/68",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "雲嘉南濱海國家風景區官方頁:安順鹽場日式建築聚落、瓦盤鹽田與濕地生態、免費開放"
+      },
+      {
+        "url": "https://peanutwalker.com/salt_village_tainan/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪:舊日式建築聚落、瓦盤鹽田金色夕陽,鄰四草野保區、台江鯨豚館與安順鹽場遺跡"
+      },
+      {
+        "url": "https://lucharger.com/%E9%B9%BD%E7%94%B0%E7%94%9F%E6%85%8B%E6%96%87%E5%8C%96%E6%9D%91/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪:安南區鹽田生態文化村,鹽業歷史聚落與生態環境介紹"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-luermen-shengmu-temple",
+    "name": "正統鹿耳門聖母廟",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市安南區城安路160號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 安南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "廟前大廣場開闊、幾乎無遮蔭,夏季正午偏曬;殿宇室內挑高可遮陽避雨但非孩子戲耍空間"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "廟前廣場與廊道平坦寬闊,適合推車與滑步車放電;香客/人潮與祭祀區需看顧、避開香火"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外廣場開闊、孩子跑跳空間大不易吵到他人;但殿內為莊嚴宗教祭祀場所需守禮、降低音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "廣場平坦可推車散步,但無專屬幼兒設施,需避開香火與人潮"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "廣場開闊可跑跳放電,巨大順風耳千里眼神像新奇,但無遊具"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可看仿紫禁城宮廷建築、體驗漢服拍照,對建築與民俗有初步興趣"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "認識台版紫禁城建築、媽祖信仰與元宵煙火,具文化體驗但停留時間有限"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未見明確資料"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "非餐飲場所"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見明確資料"
+      },
+      "停車": {
+        "value": true,
+        "note": "廟方設有停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "大型廟宇設有公用廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://luermen.org.tw/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方網站:安南區城安路160號、仿北京紫禁城宮殿式建築、開放05:00-21:00"
+      },
+      {
+        "url": "https://www.travelking.com.tw/tourguide/scenery102860.html",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "旅遊導覽:遠東第一大廟宇之譽、南北四進三落五殿、廟前廣場、有停車場"
+      },
+      {
+        "url": "https://fullfenblog.tw/sheng-mu-temple/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026實訪:台版紫禁城、廟前大廣場好拍、二樓漢服體驗100元起、元宵煙火知名"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-nanke-archaeology",
+    "name": "南科考古館(國立臺灣史前文化博物館南科館)",
+    "type": "室內樂園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市新市區南科三路10號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新市/南科 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內恆溫展館,兒童廳與海洋劇場皆在室內,晴熱下雨皆宜"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內博物館不能騎乘;但參觀動線緩下坡無階梯,推車好推,部落格提到『一路下坡飆推車』"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "設有兒童廳親子遊戲空間可放鬆,但二三展廳為靜態展示需輕聲,家庭客多"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "兒童廳有森林迷宮等軟性設施可爬走,但展廳偏靜態,需大人抱看"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "兒童廳太陽與樹精靈、森林迷宮、玩沙互動最適合,可玩很久"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "沉浸式互動考古遊戲、通關集章,動手體驗參與感高"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "一秒變偵探柯南解謎、4D海洋劇場,寓教於樂適合學齡童"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "大型公立博物館通常有,搜尋未逐一列出,建議去電06-5050905確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內紙箱王考古餐廳是否有兒童椅未查得"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "文化部友善措施頁列有無障礙及親子服務"
+      },
+      "停車": {
+        "value": true,
+        "note": "從南科三路進入有免費地下停車場(與南科管理局共用),備無障礙車位"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設廁所,館內禁飲食僅能喝水"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://stsp.nmp.gov.tw/fare",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方頁證實地址台南市新市區南科三路10號、週二至週日09:00-17:00、週一休館、門票80元及免費對象"
+      },
+      {
+        "url": "https://bobowin.blog/tainan-cowgu/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "兒童廳重新開放、銅板價、4D海洋劇場、免費地下停車場,親子玩一天心得"
+      },
+      {
+        "url": "https://tiyama.net/nankemuseum/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "兒童廳與海洋劇場需預約、推車動線緩下坡無階梯好推,館內禁飲食"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-tree-valley-science",
+    "name": "樹谷生活科學館",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市新市區中心東路12號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新市/南科(樹谷園區) 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內自然史博物館,恐龍骨骼、化石、生物考古科學三大展區皆在室內"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內展館不能騎乘,以動手操作展品為主;可推推車入館"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "寓教於樂展館,家庭客多、多數展品可親手操作,但仍屬展館環境宜適度輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以化石骨骼靜態展示為主,幼幼專屬互動少,較難久待"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "門口大恐龍、恐龍骨骼吸睛,可操作展品但需大人陪同解說"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "生物、考古、科學展區多可親手操作,參與感高玩得久"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "劍齒象化石、長毛象標本、科學知識,寓教於樂適合學齡童"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明列,建議去電06-5894800確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內無正式餐飲,兒童椅未查得"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "訪客回饋提到館內有親子廁所與哺乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "遊客停車場免費且遼闊,不太需擔心車位;電動車充電另收費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設廁所(含親子廁所)"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tvsm.com.tw/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方網站,地址台南市新市區中心東路12號、開放時間與展區介紹"
+      },
+      {
+        "url": "https://helloiammiao.com/tvlsm/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025最新票價全票80/優惠60/未滿6歲免、超值百元玩整天、館內環境親子心得"
+      },
+      {
+        "url": "https://almablog.tw/blog/post/225775",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "生物考古科學三大展區、巨大劍齒象化石、銅板價可親手操作展品"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shanhua-beer",
+    "name": "善化啤酒觀光工廠(台灣菸酒善化啤酒廠)",
+    "type": "觀光工廠",
+    "zone": "台南",
+    "location": {
+      "address": "台南市善化區成功路2號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 善化 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "啤酒文物館為室內,園區另有魚池休息區與樹木半戶外,半室內半戶外"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區像大型休憩公園佔地大、廣場開闊,推車好走、孩子可跑跳放電;滑步車場地平整度待確認"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "免費開放觀光工廠,家庭與一般遊客混合、以戶外園區為主,孩子可較放鬆"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以參觀啤酒文物、拍照為主,幼幼專屬設施少"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "園區開闊可跑跳、餵魚看啤酒裝置藝術"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "文物館參觀加園區走逛,內容偏成人啤酒主題"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "可認識啤酒文化,較靜態;深度導覽需另預約"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "設有哺乳室,尿布台未明列"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "有餐飲服務,兒童椅未查得"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "多篇來源明示設有哺乳室,對婦嬰友善"
+      },
+      "停車": {
+        "value": true,
+        "note": "附廣大免費停車場,含無障礙停車位3格"
+      },
+      "廁所": {
+        "value": true,
+        "note": "備廁所與無障礙廁所2間"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://ab716991.pixnet.net/blog/posts/8234532749",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "免門票、附免費停車場、設哺乳室、對婦嬰友善的善化親子景點心得"
+      },
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/556/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台南旅遊網證實地址、營業時間、無障礙停車位與廁所、魚池休息區與餐飲服務"
+      },
+      {
+        "url": "https://www.tourismfactory.tw/TNFactoryContent.php?id=14",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "全國唯一以啤酒為主題的觀光工廠,提供文化館參觀與餐飲、免費參觀"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-tree-valley-farm",
+    "name": "樹谷農場",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市新市區中心東路12號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新市/南科(樹谷園區,鄰樹谷生活科學館) 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "以戶外動物園區為主,零星樹蔭與樹屋遮蔽,部落格建議豔陽天做好防曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "有大沙坑、樹屋溜滑梯遊戲場與開闊步道,可推車、跑跳放電;滑步車依現場平整度待確認"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子休閒農場專門場域,戶外可盡情餵動物、玩沙,不易吵到他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可近距離看動物、玩沙,但需大人全程看顧"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "餵小羊喝奶、兔子鴕鳥梅花鹿互動、樹屋溜滑梯與大沙坑最適合"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "20多種動物餵食、自費騎小馬繞場,動手互動樂趣多"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "餵食互動仍新鮮,但內容重複性較高,較快逛完"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明列"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "農場非正式餐廳,未查得"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明列"
+      },
+      "停車": {
+        "value": true,
+        "note": "設免費停車場,停車方便"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區有廁所與洗手台,並設有較低洗手台顧及小小孩身高"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://cmeyy.tw/blog/post/20190507",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "門票60元可餵20多種小動物、兒童遊樂設施、新增賞鳥區"
+      },
+      {
+        "url": "https://bunnyann.tw/bunnyann326/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "超多可愛小動物餵食、樹屋溜滑梯與大沙坑全攻略,戶外為主"
+      },
+      {
+        "url": "https://fullfenblog.tw/tree-valley-farm/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025最新門票資訊、親子同遊餵食小動物、營業時間週一休"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shanshang-waterworks",
+    "name": "臺南山上花園水道博物館",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市山上區山上里16號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 山上區(鄰善化,南科旅遊常順遊) 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "園區寬闊、新種樹木尚未長大,沿途遮蔭少,官方與部落格建議做好防曬;博物館建築內可暫避"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "占地寬廣、有大片草地與廣場,很適合帶孩子放電、騎滑步車跑跳,推車好走"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "以戶外開闊公園與古蹟園區為主,孩子玩水玩沙跑跳不易干擾他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "沙坑、草地可爬走,但遮蔭少需防曬看顧"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "八田水池玩水、木頭巨人守護的沙坑、草地放電最適合"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "玩水玩沙、搭遊園小火車、探索日式古蹟建築"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "百年水道古蹟導覽加大空間活動,寓教於樂適合學齡童"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公立博物館通常有,搜尋未明列,建議去電06-5781900確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園區咖啡館是否有兒童椅未查得"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明列"
+      },
+      "停車": {
+        "value": true,
+        "note": "入口兩側有東、西兩座停車場,另市道178旁有臨時停車場約90輛"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://waterworks.tainan.gov.tw/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方網站,開放時間09:30-17:30、週三休園、門票與園區(博物館區/淨水池區)資訊"
+      },
+      {
+        "url": "https://janice.life/waterworks/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "遊園車、玩水水池、遊戲沙坑,親子玩水玩沙同遊心得,園區內有咖啡館供餐飲"
+      },
+      {
+        "url": "https://mimigo.tw/water-works/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "門票交通攻略、東西側停車場容量、園區寬闊遮蔭少需防曬、適合帶孩子放電"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-wanpi-world",
+    "name": "頑皮世界野生動物園",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市學甲區三慶里6鄰頂洲75-25號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 學甲 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "半開放式園區,樹蔭野餐區可遮陽,但動物參觀步道多為露天;夏季曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "大道平坦好推嬰兒車(園方有嬰兒車租借),另設兒童遊戲場可放電;非滑步車專用場地"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子取向野生動物園,遊客以家庭客為主,並設兒童樂園,完全不怕孩子吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可推車看動物、餵食觀察,但室內電玩館與遊樂設施多有身高限制"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "餵食小動物、水豚互動、兒童樂園,夏季綠洲水樂園兒童池水深僅50公分"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "近距離餵食互動、室內守護者星際訓練館電玩遊樂、水樂園滑水道皆適合"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "動物種類逾300種、遊樂設施與夏季水樂園耐玩,可安排一日"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,大型園區通常設有,建議行前致電06-7810000確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內有餐飲區,兒童椅未見明確記載"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "超大停車場,汽車80元/次、機車免費,30分內離場免費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://ivychi.com/wanpiworldzoo/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "動物園+遊戲場+戲水池三合一,半開放環境乾淨,可近距離互動,設小兒童樂園,親子放電天堂"
+      },
+      {
+        "url": "https://fullfenblog.tw/wanpi-world-safari-zoo/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026最新門票資訊、餵萌寵、看企鵝、玩水樂園、搭水豚列車,室內遊樂館"
+      },
+      {
+        "url": "https://gofunit.com/%E5%8F%B0%E5%8D%97%E9%A0%91%E7%9A%AE%E4%B8%96%E7%95%8C%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026門票優惠、交通、接駁車與停車(汽車80元)資訊,確認仍營運"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-jianshanpi",
+    "name": "尖山埤江南渡假村(現稱柳營尖山埤渡假村)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市柳營區旭山里60號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 柳營 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "湖濱林蔭與大量花木植栽,部分步道有樹蔭,但主景在開闊湖畔戶外"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區廣大、環湖步道與草地開闊,適合推車與騎滑步車放電,另有遊園小火車代步"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "開闊戶外渡假村,遊客多為家庭與團體,空間大不易吵到他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可推車遊湖賞景、搭遊園小火車,但無專屬幼兒設施"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "童心園沙坑、3座溜滑梯、攀爬架、踩腳踏船、遊園小火車適合小小孩"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "沙坑、攀岩牆、繩索攀爬、腳踏船與夏季水上活動皆能玩"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "獨木舟、划浪板、跳水平台、環湖騎車等較大孩子玩得盡興"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內會館/餐廳應有,未見明確記載"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "園區設停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://bobowin.blog/tainan-jianshanpi/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "無邊際泳池、踩船遊湖、超美湖景,親子住宿一晚,全房型介紹,證實仍營運"
+      },
+      {
+        "url": "https://payton0325.pixnet.net/blog/post/357033607",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "大年初一家族走春,市集野餐、遊湖腳踏船,阿公阿嬤陪孫的親子行程"
+      },
+      {
+        "url": "https://www.siraya-nsa.gov.tw/zh-tw/attractions/detail/13",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "西拉雅國家風景區官方介紹:近100頃湖光生態,園區設施與遊湖活動"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-nanyuan-farm",
+    "name": "南元花園休閒農場",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市柳營區果毅里南湖25號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 柳營 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "長達十公里林蔭步道與兩千多種植栽提供樹蔭,部分區有遮雨棚,但主景在戶外"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "步道平坦、嬰兒車可輕鬆推行,動物區有圍欄安全;園區廣可散步放電,以生態園林為主非滑步車坡道"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "生態植物休閒農場,遊客以家庭與長輩為主,戶外開闊,音量壓力低"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "平坦步道好推車、可愛動物區有圍欄可觀察餵食,安全但無專屬幼兒設施"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "餵兔子、小老鼠等溫馴小動物參與感強,湖區生態與水上高爾夫可玩"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "動物餵食、水上高爾夫、湖上原木屋與園區探索適合"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "以生態植物與餵食觀察為主,刺激性遊具較少,大孩子可能覺得較平淡"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電06-6990726確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內有餐廳,兒童椅未見明確記載"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "設停車場,停車費一輛50元;假日車位緊張"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.bring-you.info/zh-tw/tainan-nanyuan-farm",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "設施、交通、住宿介紹,台南週末休閒度假親子景點,步道平坦好推嬰兒車"
+      },
+      {
+        "url": "https://journey.tw/nanyuanfarm/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "許傑旅行圖中:湖上原木屋、水上高爾夫、兩千多種植物分佈的自然花園,25公頃6湖泊"
+      },
+      {
+        "url": "https://www.nanyuanfarm.com.tw/page_08.php",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方門票(全票350/敬老兒童300/未滿4歲免費)與開放時間08:00–17:00"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-zoumalai-farm",
+    "name": "走馬瀨農場",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "台南市大內區二溪里唭子瓦60號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 大內(近溪北) 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "40公頃大草原開闊、遮蔽少,僅周邊林區與建物旁有零星樹蔭;夏季草原曝曬,靠戲水世界降溫"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "40公頃紐西蘭風大草原超適合奔跑、放風箏、騎滑步車與腳踏車放電,園內另有單車設施"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "開闊戶外牧草草原,空間極大,完全不怕孩子跑跳吵鬧"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "草原推車散步、可愛動物區餵食觀察,但多數遊戲券設施需較大孩子"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "草原奔跑、可愛動物園、親子廣場、夏季戲水世界(水深淺)適合"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "戲水世界、腳踏船、碰碰船、單車與外國馬術特技秀皆能玩"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "射箭、高空繩索、飆馬特技秀、露營烤肉,大孩子放電一整日"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內有餐廳/烤肉區,兒童椅未見明確記載"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "轎車50元、大客車100元、機車20元/台"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://tw.trip.com/guide/attraction/%E8%B5%B0%E9%A6%AC%E7%80%A8%E8%BE%B2%E5%A0%B4.html",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025交通、門票、遊樂設施全攻略,水戰(戲水)樂園、彩虹馬打卡點,120公頃40公頃大草原"
+      },
+      {
+        "url": "https://gofunit.com/%E8%B5%B0%E9%A6%AC%E7%80%A8%E8%BE%B2%E5%A0%B4%EF%BD%9C%E5%8F%B0%E5%8D%97%E8%A6%AA%E5%AD%90%E6%99%AF%E9%BB%9E%EF%BD%9C%E4%BE%86%E5%AA%B2%E7%BE%8E%E7%B4%90%E8%A5%BF%E8%98%AD%E8%BE%B2%E5%A0%B4%E7%9A%84/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "媲美紐西蘭大草原奔跑放鬆,露營區住宿與設施介紹,可愛動物區/親子遊樂區/戲水池"
+      },
+      {
+        "url": "https://footprints.tw/14207882480",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "親子共遊三天兩夜行程規劃,含周邊景點,證實仍營運且適合帶幼兒"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-cowhome",
+    "name": "八老爺車站・乳牛的家",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "台南市柳營區八翁里93之138號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 柳營 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "園區設綠蔭步道與部分棚架,規模小遮蔽尚可;火車餐廳為室內"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區平坦好推嬰兒車,適合幼兒走動餵動物;空間不大,非大草原放電型"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子觀光牧場,餵動物與懷舊童玩,遊客全為家庭客,完全不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 3,
+        "reason": "溫馴小動物近距離觀察、平坦好推車、看小火車,低幼易參與且安全"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "拿奶瓶餵小乳牛、餵羊兔天竺鼠、玩懷舊童玩,參與感強"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "餵食與徒手擠牛奶體驗、搭五分車、童玩,互動豐富"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "以餵食與童玩為主,刺激性低,大孩子約停留1–2小時"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電06-6225199確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "設火車餐廳,兒童椅未見明確記載"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "搜尋未明確記載,建議行前致電確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "設免費停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設有公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://tiyama.net/cowhome/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "五分火車、鐵路餐廳、餵動物,日式木造車站,親子景點"
+      },
+      {
+        "url": "https://yoke918.tw/cowhome/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "青青小熊:親子同遊推薦,找小動物玩耍,溫馴動物近距離接觸"
+      },
+      {
+        "url": "https://bearlovefood.com/blog/post/cowhome",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "附門票(80元可折抵30元、90cm以下免費)與免費停車資訊,推車/輪椅可行,綠蔭步道"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-cigu-saltmountain",
+    "name": "七股鹽山",
+    "type": "戶外公園",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市七股區鹽埕里66號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 七股 定位,外縣市不計宜蘭車程;鄰七股遊客中心約5分鐘"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "鹽山主體與步道全無遮蔽,園區廣大需自備陽傘;僅入口商店/DIY區有棚"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區平坦開闊、官方標示推車/輪椅友善,廣場區可放電騎滑步車;鹽山本體為階梯需抱抱,地面部分為鹽粒需注意"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開闊遊樂園區,以親子客為主,幼兒喧鬧無妨"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車友善、可搭遊園小火車看風景吃冰;鹽山階梯需家長抱,多數遊樂設施需身高"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "爬鹽山、玩鹽、搭小火車、碰碰船/天鵝船,放電剛好"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "爬鹽山、腳踏天鵝船、旋轉木馬等遊樂設施最適齡"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "仍好玩但刺激度普通,建議搭配周邊景點延長停留"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "有餐飲/冰品區但無明確兒童椅資訊"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "設停車場,汽車清潔費100元/次"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設公廁"
+      }
+    },
+    "rain_backup_id": "tn-cigu-visitorcenter",
+    "evidence": [
+      {
+        "url": "https://bunnyann.tw/blog-post_22-52025/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "一日遊攻略:園區廣大戶外幾無遮蔭需帶陽傘,遊園小火車60元/趟約8分鐘,建議停留約1.5小時,古裝與小火車體驗"
+      },
+      {
+        "url": "https://www.abic.com.tw/place/view/id/1199",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子平台標示推車/輪椅友善、免費入園,汽車清潔費100元,適合帶小小孩"
+      },
+      {
+        "url": "https://fullfenblog.tw/tn-lucky-cat/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025雪鹽祭6米高柴犬吉祥物,園區持續營運並設親子遊樂設施與互動活動"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-jingzaijiao-saltfield",
+    "name": "井仔腳瓦盤鹽田",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市北門區永華里井仔腳",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北門 定位,外縣市不計宜蘭車程;鄰水晶教堂/北門遊客中心"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "露天鹽田本體幾乎全無遮蔽、海風大,僅一旁商店/遊客中心區有棚,建議傍晚前往"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "鹽田為窄土堤與瓦盤結構,不適合滑步車/腳踏車;適合牽小孩體驗挑鹽、堆鹽、收鹽"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "露天開闊鹽田,親子體驗客多,幼兒喧鬧無妨"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車可到觀景區賞夕陽,惟挑鹽體驗與窄堤需全程看顧、鹽粒勿誤食"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "挑鹽、堆鹽、玩鹽等親子體驗剛好,現場即可參加"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "曬鹽DIY體驗、認識傳統鹽業,寓教於樂適齡"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "體驗有趣、知識性佳,惟停留約1小時,深度有限"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "無座位餐廳,無明確資訊"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "設專用停車場,假日建議提早;亦可停興安宮前廣場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "遊客中心設無障礙廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://natsuphil.com/tainan/beimen-salt/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "小菲親子:北門第一座百年鹽田,可挑鹽堆鹽體驗、美拍夕陽,適合親子同遊"
+      },
+      {
+        "url": "https://mimigo.tw/jingzaijiao/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "免門票,鹽田遮蔭少、海風大建議傍晚賞夕陽,四大看點與交通/停車建議"
+      },
+      {
+        "url": "https://www.swcoast-nsa.gov.tw/zh-tw/attraction/details/369",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "雲嘉南官網:現存最古老瓦盤鹽田(1818年),提供無障礙廁所/停車,遊客中心09:00-17:30"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-beimen-crystalchurch",
+    "name": "北門水晶教堂(北門遊客中心・婚紗美地)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市北門區北門里200號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北門 定位,外縣市不計宜蘭車程;婚紗美地/北門遊客中心同園區"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "戶外婚紗美地與彩繪區零星遮蔭,曝曬明顯;北門遊客中心為室內冷氣空間可短暫躲避"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區平坦開闊有廣場,好推車、可騎滑步車放電,並可買飼料餵魚池"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開闊打卡園區,幼兒喧鬧無妨;室內遊客中心展區請放低音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "平坦好推車、可餵魚,但以拍照打卡為主,幼兒專屬設施少"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "開闊廣場放電、餵魚、互動彩繪牆,適齡好玩"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可餵魚、騎滑步車、拍照,惟以打卡為主,停留約30-60分易膩"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "拍照、餵魚為主,深度有限,建議搭配井仔腳鹽田同遊"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "遊客中心推測有,無明確來源"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "無座位餐廳,無明確資訊"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "北門遊客中心設哺乳室(另有充電站、無障礙廁所)"
+      },
+      "停車": {
+        "value": true,
+        "note": "水晶教堂停車場+北門遊客中心大型車停車場,免費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "設無障礙廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://natsuphil.com/tainan/crystal-curch/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "小菲親子:純白玻璃屋教堂,順遊北門遊客中心、鏡射地景與互動彩繪牆,可買飼料餵魚"
+      },
+      {
+        "url": "https://www.twtainan.net/zh-tw/attractions/detail/5622/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台南旅遊網:營業週一至五09:30-17:30、假日至18:00;主建築圍籬施工預計2026/1/31完工;入場免門票"
+      },
+      {
+        "url": "https://bobbytravel.tw/crystal-church/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "波比看世界:水晶教堂與遊客中心、婚紗美地夢幻拍照場地,曾收門票20元,免費停車"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "待確認"
+  },
+  {
+    "id": "tn-cigu-visitorcenter",
+    "name": "七股遊客中心(雲嘉南濱海國家風景區)",
+    "type": "其他",
+    "zone": "台南",
+    "location": {
+      "address": "臺南市七股區龍山里102-8號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 七股 定位,外縣市不計宜蘭車程;鄰七股鹽山約5分鐘,可經彎橋步道接鹽山兒童遊戲區"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "室內生態展示館為全冷氣空間可避暑避雨;戶外水上步道與階梯無遮蔽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "館區平坦、推車/輪椅友善;戶外水上步道部分為階梯需注意;可經彎橋接七股鹽山遊戲區放電"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "室內生態展示館屬公共展覽空間,幼兒喧鬧宜留意;戶外水上步道開闊無妨"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車友善、可吹冷氣看展;展示以觀賞為主,幼兒互動設施少"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "8倍放大濕地生態體驗區、水上步道、鄰鹽山遊戲區,寓教於樂"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "生態互動展示、4米黑面琵鷺地標、水上步道拍照,適齡"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生態知識加水上步道與鄰鹽山,能吸收也能放電"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "無座位餐廳,無明確資訊"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "遊客中心推測有,無明確來源"
+      },
+      "停車": {
+        "value": true,
+        "note": "現場設停車場,免費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "遊客中心設公廁/無障礙廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://fullfenblog.tw/cigu-tourist-center/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "滿分旅遊:水上步道、海中鹽雪小屋、小火車、霜淇淋、手作,台南最美水上步道,親子同行好玩"
+      },
+      {
+        "url": "https://www.swcoast-nsa.gov.tw/zh-tw/attraction/details/511",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "雲嘉南官網:免門票、09:00-17:30、設停車場,室內生態展示館(冷氣),推車/輪椅友善"
+      },
+      {
+        "url": "https://luckyday296.pixnet.net/blog/post/405103888",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "痞客邦實遊:4公尺高黑面琵鷺地標、白色打卡階梯、水上步道、嘟嘟車,IG打卡新景點"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
   }
 ]

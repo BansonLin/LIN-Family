@@ -482,12 +482,13 @@ const REPO = "BansonLin/LIN-Family";
 const LF = (() => {
   const KEY = "lf-logs-v1";
   let logs = [];
+  let confirmMode = false;
   try { logs = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { logs = []; }
   const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(logs)); } catch (e) {} };
   const today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
   const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const api = {
-    for(id) { return logs.filter(l => l.id === id); },
+    for(id, kind) { return logs.filter(l => l.id === id && (!kind || l.kind === kind)); },
     pending() { return logs.filter(l => !l.synced); },
     formHtml() {
       return '<div class="logform"><div class="lf-q">你們去過這裡?留個評分給未來的自己 👇</div>'
@@ -514,6 +515,7 @@ const LF = (() => {
       const rating = +(form.dataset.rating || 0); if (!rating) return;
       const note = (form.querySelector(".lognote").value || "").trim();
       const id = card.dataset.id || card.dataset.aid;
+      if (!id) return;
       const kind = card.dataset.id ? "kids" : "adult";
       const nameEl = card.querySelector(".name");
       const name = nameEl ? nameEl.textContent.trim() : id;
@@ -523,10 +525,10 @@ const LF = (() => {
       api.toast("已記錄 " + "★".repeat(rating) + " · 存在手機了");
       api.rerender();
     },
-    line(id, repoLog) {
+    line(id, kind, repoLog) {
       const all = [];
       (repoLog || []).forEach(l => all.push({ date: l.date, rating: l["評分"], note: l["心得"], local: false }));
-      api.for(id).forEach(l => all.push({ date: l.date, rating: l.rating, note: l.note, local: true, synced: l.synced }));
+      api.for(id, kind).forEach(l => all.push({ date: l.date, rating: l.rating, note: l.note, local: true, synced: l.synced }));
       if (!all.length) return "尚無實測";
       all.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
       const x = all[0], stars = "★".repeat(Math.max(0, Math.min(5, x.rating || 0)));
@@ -536,8 +538,16 @@ const LF = (() => {
     renderBar() {
       const bar = $("#logbar"); if (!bar) return;
       const n = api.pending().length;
-      if (!n) { bar.hidden = true; document.body.classList.remove("has-bar"); return; }
-      bar.querySelector(".lb-t").innerHTML = "📝 有 <b>" + n + "</b> 筆林家實測待回報";
+      if (!n) { bar.hidden = true; confirmMode = false; document.body.classList.remove("has-bar"); return; }
+      if (confirmMode) {
+        bar.innerHTML = '<span class="lb-t">送出後點 ✓ 清除;還沒送可<b>再回報</b></span>'
+          + '<button class="lb-copy" onclick="LF.report()">再回報</button>'
+          + '<button class="lb-go" onclick="LF.done()">✓ 已回報</button>';
+      } else {
+        bar.innerHTML = '<span class="lb-t">📝 有 <b>' + n + "</b> 筆林家實測待回報</span>"
+          + '<button class="lb-copy" onclick="LF.copy()">複製</button>'
+          + '<button class="lb-go" onclick="LF.report()">回報 →</button>';
+      }
       bar.hidden = false; document.body.classList.add("has-bar");
     },
     payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, rating: l.rating, note: l.note, ts: l.ts })); },
@@ -546,15 +556,18 @@ const LF = (() => {
       const body = "林家 App 產生的實測回饋。請用 /sync-logs 吃進對應 family_log(kids→data/venues.json、adult→data/places-adult.json),以 ts 去重。\n\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
       const url = "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent("family-log " + today() + "(" + p.length + " 筆)") + "&labels=" + encodeURIComponent("family-log") + "&body=" + encodeURIComponent(body);
       window.open(url, "_blank", "noopener");
-      api.pending().forEach(l => l.synced = true); persist();
-      api.toast("已開 GitHub,送出 issue 就完成回報"); api.rerender();
+      confirmMode = true; api.toast("送出 issue 後回來點「✓ 已回報」"); api.renderBar();
     },
     copy() {
       const p = api.payload(); if (!p.length) return;
       const txt = "請把以下林家實測寫進 family_log(kids→venues.json、adult→places-adult.json,以 ts 去重):\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
-      const done = () => { api.pending().forEach(l => l.synced = true); persist(); api.toast("已複製,貼到 Claude Code 即可"); api.rerender(); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => api.toast("複製失敗,請長按選取"));
-      else done();
+      const after = () => { confirmMode = true; api.toast("已複製,貼到 Claude Code;完成後點「✓ 已回報」"); api.renderBar(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(after, () => api.toast("複製失敗,請長按選取"));
+      else after();
+    },
+    done() {
+      api.pending().forEach(l => l.synced = true); persist();
+      confirmMode = false; api.toast("已清除待回報,謝謝 🙏"); api.rerender();
     },
     toast(msg) {
       const t = $("#lfToast"); if (!t) return; t.textContent = msg; t.classList.add("show");
@@ -568,7 +581,7 @@ const LF = (() => {
   };
   return api;
 })();
-const famLine = (id, repoLog) => LF.line(id, repoLog);
+const famLine = (id, kind, repoLog) => LF.line(id, kind, repoLog);
 
 const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm", "jianiao-garden", "xingbao-scallion-farm", "guangxing-farm", "keda-goat-farm", "toucheng-leisure-farm", "happiness-farm-20", "tc-houli-horse-farm", "tc-muxinquan-farm", "tc-baigu-manor", "tn-wanpi-world", "tn-cowhome", "tn-nanyuan-farm", "tn-tree-valley-farm"]);
 const OUTDOORISH = new Set(["taipei-zoo", "taipei-childrens-amusement-park"]);
@@ -706,7 +719,7 @@ function vcardHtml(v, enter) {
     <div class="kfit">${KIDS.map(k => `<span class="f${k.i % 2}">${k.n}(${k.band}):${typeof v.age_fit[k.band].score === "number" ? v.age_fit[k.band].score + "/3" : "待確認"}</span>`).join("")}</div>
     ${v.games && v.games.length ? `<div class="gamesrow">🎲 帶什麼玩:${v.games.map(g => `<a class="gtag" href="time.html">${g}</a>`).join("")}</div>` : ""}
     ${backupLine(v)}
-    <div class="vfoot">上次確認 ${v.last_verified} · 林家評價:${famLine(v.id, v.family_log)}</div>
+    <div class="vfoot">上次確認 ${v.last_verified} · 林家評價:${famLine(v.id, "kids", v.family_log)}</div>
     <div class="actrow">
       <a class="abtn nav" href="${navUrl(v)}" target="_blank" rel="noopener">🧭 導航</a>
       <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>
@@ -897,7 +910,7 @@ function acardHtml(p, enter) {
     ${sfitPills(p)}
     ${p.vibe && p.vibe.length ? `<div class="vibe">${p.vibe.map(v => `<span>${v}</span>`).join("")}</div>` : ""}
     ${openTxt ? `<div class="openline">${openTxt}${resv}</div>` : ""}
-    <div class="vfoot">上次確認 ${p.last_verified}${p.work_ok && p.work_ok.value === true ? " · 🔌 可久坐辦公" : ""} · 林家評價:${famLine(p.id, p.family_log)}</div>
+    <div class="vfoot">上次確認 ${p.last_verified}${p.work_ok && p.work_ok.value === true ? " · 🔌 可久坐辦公" : ""} · 林家評價:${famLine(p.id, "adult", p.family_log)}</div>
     <div class="actrow">
       <a class="abtn nav" href="${aNav(p)}" target="_blank" rel="noopener">🧭 導航</a>
       <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>

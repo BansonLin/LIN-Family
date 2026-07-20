@@ -349,6 +349,7 @@ const places = adultRaw.filter(p => p && p.id).map(p => ({
   work_ok: p.work_ok || {},
   signature: p.signature || '',
   evidence: p.evidence || [],
+  family_log: p.family_log || [],
   last_verified: p.last_verified || '',
   status: p.status || 'active',
 }));

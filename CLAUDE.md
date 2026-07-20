@@ -47,7 +47,7 @@ docs/decisions.md       # 重大設計決策紀錄
 | facilities | 尿布台、兒童椅、哺乳室、停車、廁所 |
 | rain_backup_id | 就近雨天備案的 venue id(戶外類必填;找不到標「無備案」並降權) |
 | evidence | [{url, source_type: blog/官網/news/實測, date, 摘要}],≥ 2 筆獨立來源才可入庫 |
-| family_log | [{date, 評分 1–5, 心得}] 林家實測,權重高於一切網路來源 |
+| family_log | [{date, 評分 1–5, 心得, ts?}] 林家實測,權重高於一切網路來源;ts(選填,毫秒)為 App 順手回報的去重鍵 |
 | last_verified | 日期;超過 6 個月 → 推薦時必須顯示「待重驗」警語 |
 | status | active / closed / 待確認 |
 | zone | v1.2(2026-07-19 核准):地區標記,宜蘭 / 台北 / …;既有未標者視為宜蘭 |
@@ -67,6 +67,7 @@ docs/decisions.md       # 重大設計決策紀錄
 | open_late / reservation / work_ok | {value, basis/note};打烊時間、訂位政策、可否久坐辦公(插座) |
 | signature | 招牌一句(菜/飲/氛圍),選填 |
 | evidence | [{url, source_type, date, 摘要}],≥ 2 筆獨立網域來源才可入庫 |
+| family_log | (2026-07-20 核准補上,與親子一致)[{date, 評分 1–5, 心得, ts?}] 林家實測,權重高於網路來源 |
 | last_verified / status | 同親子庫規則 |
 
 **大人 scene_fit 評分基準**:solo(出差一人)3=有吧檯/單人友善且可久坐辦公;date(兩人約會)3=氣氛/隱私/燈光俱佳;group(朋友聚餐)3=多人/包廂/可分食且好聊;late(喝一杯宵夜)3=營業至深夜且有酒或宵夜。
@@ -88,6 +89,7 @@ docs/decisions.md       # 重大設計決策紀錄
 - 首頁三鍵:☀️ 晴熱 / 🌧 下雨 / 🍃 舒服。按下後依 weather_fit × age_fit × 資料新鮮度排序,輸出 2–3 張推薦卡。
 - 推薦卡內容:車程、遮蔭、聲量容忍、適齡理由一句、last_verified、林家上次評價、雨天備案(戶外卡必附)。
 - 次要篩選:免費優先 / 要有餐 / 要有咖啡。
+- 順手回報:每張卡片「📝 我去過」→ 星等+一句心得,即時存 localStorage(離線可用、卡片馬上顯示林家評價);底部待回報列一鍵開 GitHub family-log issue 或複製,交 /sync-logs 吃進 family_log。純 client 端,不違反下方禁令。
 - 禁止:登入、後端、資料庫、任何非必要框架。
 
 ## 週期指令(.claude/commands/)
@@ -95,7 +97,8 @@ docs/decisions.md       # 重大設計決策紀錄
 - **/research {景點名}**:依研究 SOP 新增或更新單一 venue。
 - **/refresh**:列出 last_verified 超過 6 個月的 venue,逐一重驗(歇業、改裝、價格)。
 - **/age-review**:每半年執行。計算每個孩子未來 6 個月將進入的年齡帶 → 研究新增 5–10 個該年齡帶高分景點 → 將全年齡帶 age_fit ≤ 1 的景點標記「畢業」。
-- **/log {景點} {1–5} {心得}**:寫入 family_log 並更新 last_verified。
+- **/log {景點} {1–5} {心得}**:手打寫入 family_log 並更新 last_verified。
+- **/sync-logs**:把 App「📝 我去過」順手回報(GitHub family-log issue 或貼上的 JSON)批次吃進 family_log,以 ts 去重、更新 last_verified、close issue。
 
 ## 停止條件(每次任務)
 - 完成指令定義的產出即停止,輸出:✅ 完成項目、⚠️ 待確認清單、下一步建議一行。

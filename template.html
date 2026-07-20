@@ -172,6 +172,33 @@
   .sfit{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
   .sfit span{font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 9px;background:#F2EEE5;color:var(--ink-soft)}
   .sfit span.on{background:var(--park-bg);color:var(--park-deep)}
+
+  /* 林家實測・順手回報 */
+  .abtn.log{border-color:var(--cafe);color:var(--cafe-deep)}
+  .vfoot .mylog{color:var(--cafe-deep);font-weight:700}
+  .logform{display:none;margin-top:10px;border-top:1.5px dashed var(--line);padding-top:11px;animation:fadeUp .25s ease both}
+  .vcard.logging .logform{display:block}
+  .logform .lf-q{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+  .stars{display:flex;gap:4px;font-size:30px;line-height:1;user-select:none;margin-bottom:9px}
+  .stars .st{cursor:pointer;color:#D9CFBC;transition:transform .1s ease}
+  .stars .st.on{color:#E8A61E}
+  .stars .st:active{transform:scale(1.2)}
+  .lognote{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;font-size:14px;font-family:inherit;background:#FDFBF7;color:var(--ink)}
+  .lognote:focus{outline:none;border-color:var(--cafe)}
+  .lf-row{display:flex;gap:8px;margin-top:9px}
+  .lf-save{flex:2;background:var(--cafe);color:#fff;border:none;border-radius:10px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+  .lf-save[disabled]{opacity:.45;cursor:default}
+  .lf-cancel{flex:1;background:#fff;border:1.5px solid var(--line);border-radius:10px;color:var(--ink-soft);font-family:inherit;font-size:14px;cursor:pointer}
+  #logbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1.5px solid var(--line);box-shadow:0 -4px 16px rgba(80,60,30,.1);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto}
+  #logbar[hidden]{display:none}
+  #logbar .lb-t{font-size:13.5px;font-weight:700;color:var(--ink);flex:1;line-height:1.4}
+  #logbar .lb-t b{color:var(--cafe-deep)}
+  #logbar button{border:none;border-radius:999px;padding:9px 15px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
+  #logbar .lb-go{background:var(--ink);color:#fff}
+  #logbar .lb-copy{background:#EFEAE0;color:var(--ink-soft)}
+  .lf-toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;z-index:50;opacity:0;transition:opacity .25s ease;pointer-events:none}
+  .lf-toast.show{opacity:1}
+  body.has-bar{padding-bottom:120px}
 </style>
 </head>
 <body>
@@ -433,6 +460,13 @@
   </footer>
 </div>
 
+<div id="logbar" hidden>
+  <span class="lb-t"></span>
+  <button class="lb-copy" onclick="LF.copy()">複製</button>
+  <button class="lb-go" onclick="LF.report()">回報 →</button>
+</div>
+<div class="lf-toast" id="lfToast"></div>
+
 <script>
 const VENUES = __VENUES__;
 const FAMILY = __FAMILY__;
@@ -440,6 +474,101 @@ const PLACES = __PLACES__;
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
+
+/* ========== 林家實測・順手回報 ==========
+   現場:卡片上點星等+選填一句 → 立即存 localStorage(離線可用、卡片馬上顯示)。
+   回報:批次一鍵開 GitHub issue(label=family-log)或複製,交 /sync-logs 吃進 family_log。 */
+const REPO = "BansonLin/LIN-Family";
+const LF = (() => {
+  const KEY = "lf-logs-v1";
+  let logs = [];
+  try { logs = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { logs = []; }
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(logs)); } catch (e) {} };
+  const today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const api = {
+    for(id) { return logs.filter(l => l.id === id); },
+    pending() { return logs.filter(l => !l.synced); },
+    formHtml() {
+      return '<div class="logform"><div class="lf-q">你們去過這裡?留個評分給未來的自己 👇</div>'
+        + '<div class="stars" onclick="LF.star(event)">' + [1, 2, 3, 4, 5].map(n => '<span class="st" data-v="' + n + '">★</span>').join("") + "</div>"
+        + '<input class="lognote" maxlength="60" placeholder="一句心得(選填):好停車、玩瘋了、太曬…">'
+        + '<div class="lf-row"><button class="lf-cancel" onclick="LF.close(this)">取消</button><button class="lf-save" onclick="LF.save(this)" disabled>記錄</button></div></div>';
+    },
+    open(btn) {
+      const card = btn.closest(".vcard");
+      $$(".vcard.logging").forEach(c => { if (c !== card) c.classList.remove("logging"); });
+      card.classList.toggle("logging");
+      if (card.classList.contains("logging")) { const inp = card.querySelector(".lognote"); if (inp) setTimeout(() => inp.focus(), 60); }
+    },
+    close(btn) { btn.closest(".vcard").classList.remove("logging"); },
+    star(ev) {
+      const s = ev.target.closest(".st"); if (!s) return;
+      const form = s.closest(".logform"), v = +s.dataset.v;
+      form.dataset.rating = String(v);
+      form.querySelectorAll(".st").forEach(x => x.classList.toggle("on", +x.dataset.v <= v));
+      const save = form.querySelector(".lf-save"); save.disabled = false; save.textContent = "記錄 " + "★".repeat(v);
+    },
+    save(btn) {
+      const form = btn.closest(".logform"), card = btn.closest(".vcard");
+      const rating = +(form.dataset.rating || 0); if (!rating) return;
+      const note = (form.querySelector(".lognote").value || "").trim();
+      const id = card.dataset.id || card.dataset.aid;
+      const kind = card.dataset.id ? "kids" : "adult";
+      const nameEl = card.querySelector(".name");
+      const name = nameEl ? nameEl.textContent.trim() : id;
+      logs.push({ id, kind, name, date: today(), rating, note, ts: Date.now(), synced: false });
+      persist();
+      card.classList.remove("logging");
+      api.toast("已記錄 " + "★".repeat(rating) + " · 存在手機了");
+      api.rerender();
+    },
+    line(id, repoLog) {
+      const all = [];
+      (repoLog || []).forEach(l => all.push({ date: l.date, rating: l["評分"], note: l["心得"], local: false }));
+      api.for(id).forEach(l => all.push({ date: l.date, rating: l.rating, note: l.note, local: true, synced: l.synced }));
+      if (!all.length) return "尚無實測";
+      all.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+      const x = all[0], stars = "★".repeat(Math.max(0, Math.min(5, x.rating || 0)));
+      const tag = x.local ? (x.synced ? "" : ' <span style="opacity:.55">(待回報)</span>') : "";
+      return '<span class="mylog">' + stars + "</span> " + esc(x.date) + (x.note ? "・" + esc(x.note) : "") + tag;
+    },
+    renderBar() {
+      const bar = $("#logbar"); if (!bar) return;
+      const n = api.pending().length;
+      if (!n) { bar.hidden = true; document.body.classList.remove("has-bar"); return; }
+      bar.querySelector(".lb-t").innerHTML = "📝 有 <b>" + n + "</b> 筆林家實測待回報";
+      bar.hidden = false; document.body.classList.add("has-bar");
+    },
+    payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, rating: l.rating, note: l.note, ts: l.ts })); },
+    report() {
+      const p = api.payload(); if (!p.length) return;
+      const body = "林家 App 產生的實測回饋。請用 /sync-logs 吃進對應 family_log(kids→data/venues.json、adult→data/places-adult.json),以 ts 去重。\n\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
+      const url = "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent("family-log " + today() + "(" + p.length + " 筆)") + "&labels=" + encodeURIComponent("family-log") + "&body=" + encodeURIComponent(body);
+      window.open(url, "_blank", "noopener");
+      api.pending().forEach(l => l.synced = true); persist();
+      api.toast("已開 GitHub,送出 issue 就完成回報"); api.rerender();
+    },
+    copy() {
+      const p = api.payload(); if (!p.length) return;
+      const txt = "請把以下林家實測寫進 family_log(kids→venues.json、adult→places-adult.json,以 ts 去重):\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
+      const done = () => { api.pending().forEach(l => l.synced = true); persist(); api.toast("已複製,貼到 Claude Code 即可"); api.rerender(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, () => api.toast("複製失敗,請長按選取"));
+      else done();
+    },
+    toast(msg) {
+      const t = $("#lfToast"); if (!t) return; t.textContent = msg; t.classList.add("show");
+      clearTimeout(api._tt); api._tt = setTimeout(() => t.classList.remove("show"), 2200);
+    },
+    rerender() {
+      try { renderStage(); renderLists(); } catch (e) {}
+      try { renderAStage(); renderALists(); } catch (e) {}
+      api.renderBar();
+    },
+  };
+  return api;
+})();
+const famLine = (id, repoLog) => LF.line(id, repoLog);
 
 const FARM = new Set(["yi-nong-ranch", "bambi-land", "grandma-zhang-mei-farm", "jianiao-garden", "xingbao-scallion-farm", "guangxing-farm", "keda-goat-farm", "toucheng-leisure-farm", "happiness-farm-20", "tc-houli-horse-farm", "tc-muxinquan-farm", "tc-baigu-manor", "tn-wanpi-world", "tn-cowhome", "tn-nanyuan-farm", "tn-tree-valley-farm"]);
 const OUTDOORISH = new Set(["taipei-zoo", "taipei-childrens-amusement-park"]);
@@ -577,11 +706,13 @@ function vcardHtml(v, enter) {
     <div class="kfit">${KIDS.map(k => `<span class="f${k.i % 2}">${k.n}(${k.band}):${typeof v.age_fit[k.band].score === "number" ? v.age_fit[k.band].score + "/3" : "待確認"}</span>`).join("")}</div>
     ${v.games && v.games.length ? `<div class="gamesrow">🎲 帶什麼玩:${v.games.map(g => `<a class="gtag" href="time.html">${g}</a>`).join("")}</div>` : ""}
     ${backupLine(v)}
-    <div class="vfoot">上次確認 ${v.last_verified} · 林家評價:${lastLog(v)}</div>
+    <div class="vfoot">上次確認 ${v.last_verified} · 林家評價:${famLine(v.id, v.family_log)}</div>
     <div class="actrow">
       <a class="abtn nav" href="${navUrl(v)}" target="_blank" rel="noopener">🧭 導航</a>
+      <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>
       <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
     </div>
+    ${LF.formHtml()}
     <div class="exp">
       <h4>天氣適性(0–3)</h4>
       <div class="wgrid">${["晴熱", "晴涼", "小雨", "大雨"].map(k => `<div>${k}<b>${typeof v.weather_fit[k] === "number" ? v.weather_fit[k] : "?"}</b></div>`).join("")}</div>
@@ -766,11 +897,13 @@ function acardHtml(p, enter) {
     ${sfitPills(p)}
     ${p.vibe && p.vibe.length ? `<div class="vibe">${p.vibe.map(v => `<span>${v}</span>`).join("")}</div>` : ""}
     ${openTxt ? `<div class="openline">${openTxt}${resv}</div>` : ""}
-    <div class="vfoot">上次確認 ${p.last_verified}${p.work_ok && p.work_ok.value === true ? " · 🔌 可久坐辦公" : ""}</div>
+    <div class="vfoot">上次確認 ${p.last_verified}${p.work_ok && p.work_ok.value === true ? " · 🔌 可久坐辦公" : ""} · 林家評價:${famLine(p.id, p.family_log)}</div>
     <div class="actrow">
       <a class="abtn nav" href="${aNav(p)}" target="_blank" rel="noopener">🧭 導航</a>
+      <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>
       <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
     </div>
+    ${LF.formHtml()}
     <div class="exp">
       <h4>四情境適配(0–3)</h4>
       <div class="wgrid">${Object.keys(ASCEN).map(k => `<div>${ASCEN[k]}<b>${typeof (p.scene_fit && p.scene_fit[k] && p.scene_fit[k].score) === "number" ? p.scene_fit[k].score : "?"}</b></div>`).join("")}</div>
@@ -892,6 +1025,9 @@ function setMode(adult) {
 }
 $("#mode-kids").addEventListener("click", () => setMode(false));
 $("#mode-adult").addEventListener("click", () => setMode(true));
+
+/* 林家實測待回報列(依 localStorage 初始化) */
+LF.renderBar();
 
 /* ---------- PWA:離線快取(宜蘭山區訊號差仍可用) ---------- */
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {

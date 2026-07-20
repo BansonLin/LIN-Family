@@ -551,20 +551,22 @@ const LF = (() => {
       bar.hidden = false; document.body.classList.add("has-bar");
     },
     payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, rating: l.rating, note: l.note, ts: l.ts })); },
+    clipText() { return "請把以下林家實測寫進 family_log(kids→venues.json、adult→places-adult.json,以 ts 去重):\n```json\n" + JSON.stringify(api.payload(), null, 2) + "\n```"; },
+    _clip(okMsg) {
+      const txt = api.clipText();
+      const after = () => { confirmMode = true; api.toast(okMsg); api.renderBar(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(after, () => api.toast("複製失敗,請長按選取內容"));
+      else after();
+    },
     report() {
       const p = api.payload(); if (!p.length) return;
       const body = "林家 App 產生的實測回饋。請用 /sync-logs 吃進對應 family_log(kids→data/venues.json、adult→data/places-adult.json),以 ts 去重。\n\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
       const url = "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent("family-log " + today() + "(" + p.length + " 筆)") + "&labels=" + encodeURIComponent("family-log") + "&body=" + encodeURIComponent(body);
+      if (url.length > 7000) { api._clip("筆數多、網址過長,已自動改用複製;貼到 Claude Code 即可"); return; }
       window.open(url, "_blank", "noopener");
       confirmMode = true; api.toast("送出 issue 後回來點「✓ 已回報」"); api.renderBar();
     },
-    copy() {
-      const p = api.payload(); if (!p.length) return;
-      const txt = "請把以下林家實測寫進 family_log(kids→venues.json、adult→places-adult.json,以 ts 去重):\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
-      const after = () => { confirmMode = true; api.toast("已複製,貼到 Claude Code;完成後點「✓ 已回報」"); api.renderBar(); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(after, () => api.toast("複製失敗,請長按選取"));
-      else after();
-    },
+    copy() { if (!api.pending().length) return; api._clip("已複製,貼到 Claude Code;完成後點「✓ 已回報」"); },
     done() {
       api.pending().forEach(l => l.synced = true); persist();
       confirmMode = false; api.toast("已清除待回報,謝謝 🙏"); api.rerender();

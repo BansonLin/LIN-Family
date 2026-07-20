@@ -7515,5 +7515,2416 @@
     ],
     "last_verified": "2026-07-19",
     "status": "active"
+  },
+  {
+    "id": "tn-we-drink-beer-company",
+    "name": "沃隼釀造 WE Drink Beer Company",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "中西區",
+    "location": {
+      "address": "台南市中西區神農街108號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中西區 神農街 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–600",
+      "basis": "內用精釀啤酒均一價約 NT$150/杯,另有小食滷味當下酒菜;2 杯加小食約 400–500(緹雅瑪/搜尋摘要)"
+    },
+    "meal_type": [
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有吧檯與單杯精釀($150/杯),極簡水泥空間一人小酌自在;非久坐辦公型"
+      },
+      "date": {
+        "score": 2,
+        "reason": "清水模極簡與神農街老屋氛圍特殊,燈光氣氛佳,適合兩人小酌"
+      },
+      "group": {
+        "score": 3,
+        "reason": "招牌 Beer flight 一次喝 4 款可分享,小食滷味可分食好聊,神農街熱門聚會酒吧"
+      },
+      "late": {
+        "score": 3,
+        "reason": "平日營業至凌晨 00:00(假日至 22:00,週一二公休),有酒與下酒小食"
+      }
+    },
+    "vibe": [
+      "精釀啤酒",
+      "水泥極簡",
+      "神農街老屋",
+      "可小酌",
+      "有吧檯"
+    ],
+    "open_late": {
+      "value": "平日至 00:00,週日至 21:00(週一、二公休)",
+      "basis": "緹雅瑪 blog 及搜尋摘要,平日16:00–00:00"
+    },
+    "reservation": {
+      "value": "免預約(建議先確認,待確認)",
+      "basis": "部落格未明示訂位政策"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "酒吧型場所,未見插座/辦公資訊,不適合久坐辦公"
+    },
+    "signature": "台南在地精釀啤酒,首推 Beer flight 一次喝 4 款 On Tap",
+    "evidence": [
+      {
+        "url": "https://garyforfun.blogspot.com/2019/10/wedrinkbc-tainan.html",
+        "source_type": "blog",
+        "date": "2019-10",
+        "摘要": "神農街精釀啤酒吧,台南在地精釀,實地介紹店內空間與酒款"
+      },
+      {
+        "url": "https://tiyama.net/wedrinkbc/",
+        "source_type": "blog",
+        "date": "待確認(約2019–2020)",
+        "摘要": "神農街108號,清水模極簡空間,台南在地精釀品牌,營業時間 16:00–24:00"
+      },
+      {
+        "url": "https://beri.tw/we-drink-beer-company/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "神農街酒吧,一片極簡水泥空間的精釀啤酒吧,中西區美食"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-bar-tcrc",
+    "name": "Bar TCRC 前科累累俱樂部",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "中西區",
+    "location": {
+      "address": "台南市中西區新美街117號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中西區 新美街(近神農街)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–800(估)",
+      "basis": "低消一杯飲品、現金消費,客製調酒價位詳細待確認(欣晴/披著虎皮的貓 blog)"
+    },
+    "meal_type": [
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有前後兩個大吧檯可獨坐,與調酒師討論客製調酒不尷尬;但需預約、非辦公久坐"
+      },
+      "date": {
+        "score": 3,
+        "reason": "老宅改建復古氛圍、光線不會太暗,亞洲 50 大名店,適合兩人微醺約會"
+      },
+      "group": {
+        "score": 1,
+        "reason": "老宅空間受限、座位不多,無法接待 6 人以上團體"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 02:00,主打創意調酒;需提前預約、現金消費"
+      }
+    },
+    "vibe": [
+      "老宅復古",
+      "客製化調酒",
+      "有大吧檯",
+      "亞洲50大",
+      "需預約"
+    ],
+    "open_late": {
+      "value": "20:00–02:00",
+      "basis": "欣晴 suni.tw blog"
+    },
+    "reservation": {
+      "value": "建議預約(熱門需提前預約,現金消費)",
+      "basis": "多篇 blog 提及需預約、低消一杯"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "酒吧需預約、低消一杯,非久坐辦公場所"
+    },
+    "signature": "無制式酒單,與調酒師討論基酒與口味的客製創意調酒",
+    "evidence": [
+      {
+        "url": "https://suni.tw/bar-tcrc/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "新美街117號,老宅改建,在地人推薦必喝調酒,含菜單價位與 20:00–02:00 營業"
+      },
+      {
+        "url": "https://rainieis.tw/bar-tcrc/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "亞洲最佳酒吧第23名,無酒單創意調酒,老宅小酒館揚名國際"
+      },
+      {
+        "url": "https://blog.jesselin.com/archives/39873/bar-tcrc/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "傑西大叔實訪 TCRC,需預約、客製調酒體驗"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-a-ming-pig-heart",
+    "name": "阿明豬心冬粉",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "中西區",
+    "location": {
+      "address": "台南市中西區保安路72號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中西區 保安路 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–450",
+      "basis": "腰只湯80、豬心冬粉55、蒜頭豬腳120、鴨腳翅100 等單點,黑白切多點會上升(ANIKO/Darren 菜單)"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "小吃老店可一人點碗豬心冬粉,但需排隊、常共桌;一人尚可"
+      },
+      "date": {
+        "score": 1,
+        "reason": "排隊人潮多、共桌熱鬧,非約會氛圍"
+      },
+      "group": {
+        "score": 3,
+        "reason": "多人點各式豬內臟黑白切分食好聊,保安路聚餐排隊名店"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 00:00(週一公休),保安路經典宵夜,凌晨 12 點依舊排隊"
+      }
+    },
+    "vibe": [
+      "米其林必比登",
+      "排隊名店",
+      "保安路宵夜",
+      "黑白切分食",
+      "現點現燙"
+    ],
+    "open_late": {
+      "value": "17:00–00:00(週一公休)",
+      "basis": "ANIKO 艾妮可 blog、米其林指南"
+    },
+    "reservation": {
+      "value": "不接受訂位(現場排隊候位)",
+      "basis": "多篇 blog 描述現場大排長龍"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "排隊小吃攤,不可久坐辦公"
+    },
+    "signature": "招牌豬心冬粉、腰只湯,現點現燙保有脆嫩",
+    "evidence": [
+      {
+        "url": "https://guide.michelin.com/us/en/tainan-region/tainan/restaurant/a-ming-zhu-xing-baoan-road",
+        "source_type": "官網",
+        "date": "2024",
+        "摘要": "米其林必比登推薦,保安路豬心冬粉老店"
+      },
+      {
+        "url": "https://anikofoodie.com/aminpig/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "保安路72號,17:00–00:00,凌晨12點依舊大排長龍,含菜單價位"
+      },
+      {
+        "url": "https://travel.ettoday.net/article/2931941.htm",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "ETtoday 報導賣近70年的台南深夜豬心冬粉,內臟控必推,需排隊"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-yongle-beef-soup",
+    "name": "永樂牛肉湯",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "中西區",
+    "location": {
+      "address": "台南市中西區國華街三段175號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中西區 國華街(永樂市場)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$150–300",
+      "basis": "牛肉湯一碗與牛肉部位單點的平價小吃(涼子/WISELY 菜單)"
+    },
+    "meal_type": [
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "市場老店一人喝碗溫體牛肉湯很自在,單人常見;非辦公久坐"
+      },
+      "date": {
+        "score": 1,
+        "reason": "市場小攤環境,非約會氛圍"
+      },
+      "group": {
+        "score": 2,
+        "reason": "可多人同桌分點溫體牛不同部位;座位為市場攤規模有限"
+      },
+      "late": {
+        "score": 3,
+        "reason": "凌晨 00:30 開賣(賣完為止,週二公休),為台南夜貓/調酒師的解酒醒酒宵夜名單"
+      }
+    },
+    "vibe": [
+      "溫體牛",
+      "凌晨開賣",
+      "解酒宵夜",
+      "國華街市場",
+      "湯頭清甜"
+    ],
+    "open_late": {
+      "value": "00:30–11:30(賣完為止,週二公休)",
+      "basis": "涼子是也 lyes.tw、dennyli blog"
+    },
+    "reservation": {
+      "value": "免預約(現場候位)",
+      "basis": "市場小吃,blog 皆現場排隊"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "市場小攤,不可久坐辦公"
+    },
+    "signature": "現沖溫體牛肉湯,蔬果大骨熬煮湯頭清甜,午夜解酒聖品",
+    "evidence": [
+      {
+        "url": "https://lyes.tw/33590629-%E6%B0%B8%E6%A8%82%E7%89%9B%E8%82%89%E6%B9%AF/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "國華街、永樂市場老店,凌晨開賣,睡不著來碗牛肉湯,附菜單"
+      },
+      {
+        "url": "https://tutufoodaholic.tw/yongleniuroutang/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "午夜的解酒聖品,調酒師推薦的宵夜牛肉湯"
+      },
+      {
+        "url": "https://wisely.tw/read-30492.html",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "國華街三段175號,凌晨開賣國華街牛肉湯,牛五花及私房組合推薦"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-a-room-of-ones-own",
+    "name": "自己的房間",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "中西區",
+    "location": {
+      "address": "台南市中西區新美街160號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中西區 新美街(近赤崁樓)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–350",
+      "basis": "低消每人一杯飲品,手沖咖啡與生乳酪蛋糕(WhosTalking/WalkerLand)"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "平日不限時,幾乎每個座位有插座+免費 wifi,一整排靠窗個人座與書櫃,一人來不尷尬,適合讀書辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "木質歐式古典空間舒適,有兩人座,環境好適合兩人"
+      },
+      "group": {
+        "score": 2,
+        "reason": "有四人座區可小聚;座位規模中等"
+      },
+      "late": {
+        "score": 1,
+        "reason": "營業至 21:00,偏早打烊,非宵夜場"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "免費wifi",
+      "書櫃",
+      "老屋木質",
+      "安靜可久坐"
+    ],
+    "open_late": {
+      "value": "13:00–21:00(假日限時 3 小時)",
+      "basis": "WhosTalking 胡說、WalkerLand"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "blog 未提訂位需求"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "幾乎每個座位有插座+免費 wifi,平日不限時(假日限 3 小時),低消一杯"
+    },
+    "signature": "生乳酪蛋糕與單品手沖,靠窗個人座宛如回到自己的房間",
+    "evidence": [
+      {
+        "url": "https://whos-talking.com/2024/11/05/jojofizz/",
+        "source_type": "blog",
+        "date": "2024-11",
+        "摘要": "新美街平日不限時咖啡廳,有插座、免費wifi,讀書做報告工作好去處,乳酪蛋糕大推"
+      },
+      {
+        "url": "https://vocus.cc/article/656fd528fd89780001e72808",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中西區咖啡廳自己的房間,享受悠閒閱讀的空間"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/367033",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "近赤崁樓新美街巷弄低調小店,木質歐式古典空間,生乳酪蛋糕與精緻單品手沖"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-after-island",
+    "name": "在島之後 After Island. 餐酒館",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "東區",
+    "location": {
+      "address": "台南市東區東寧路201巷121號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以東區(東寧路)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$500–800(主食280–300、小點100–230、含華麗調酒350–400;宵夜時段低消350/人)",
+      "basis": "多篇部落格菜單摘要與愛食記價位資訊"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "偏兩人以上餐酒館,一人尚可但宵夜時段低消350/人偏高,非單人辦公取向"
+      },
+      "date": {
+        "score": 3,
+        "reason": "無酒單華麗特調用乾冰呈現好喝又好拍,雙層空間氣氛佳,部落格多推為約會首選"
+      },
+      "group": {
+        "score": 2,
+        "reason": "有雙層空間可小聚分食鹹食,但座位常客滿、桌數有限"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨02:00,21:00後為宵夜餐酒時段,有酒與宵夜"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "調酒華麗好拍",
+      "雙層空間",
+      "宵夜餐酒",
+      "常客滿"
+    ],
+    "open_late": {
+      "value": "凌晨02:00",
+      "basis": "多篇部落格與愛食記營業時間(14:00–02:00)"
+    },
+    "reservation": {
+      "value": "建議預約(FB訂位)",
+      "basis": "Threads/部落格多提常客滿、建議先以FB訂位訂餐"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "餐酒館氛圍,非辦公久坐場所,無提及插座/限時"
+    },
+    "signature": "無酒單華麗特調搭海鮮燉飯/沖繩塔可飯,如絲綢般的檸檬塔",
+    "evidence": [
+      {
+        "url": "https://www.wensgoodlife.com/after-island/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "惠雯小廢文:台南東區餐酒館,檸檬塔、阿里山金萱入酒、海瓜子酒食,好食共享"
+      },
+      {
+        "url": "https://cmn.tw/after-island/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "原味覺醒:浮誇特調酒吧,網美必來,好吃好喝好拍"
+      },
+      {
+        "url": "https://ifoodie.tw/restaurant/62f91fe88282871239ef701c-%E5%9C%A8%E5%B3%B6%E4%B9%8B%E5%BE%8CAfter-Island.-%E9%A4%90%E9%85%92",
+        "source_type": "實測",
+        "date": "2026",
+        "摘要": "愛食記平台現況:評分4.6、818則評論,標示東寧路201巷121號、調酒聚餐約會首選"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-x-dining-bistro",
+    "name": "X Dining Bistro 艾克斯義式餐酒館",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "東區",
+    "location": {
+      "address": "台南市東區大學路22巷18號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以東區(成大大學路22巷)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$400–1000(平日商業午餐划算,晚餐排餐/A5和牛套餐偏中高)",
+      "basis": "部落格提商業午餐划算、晚餐排餐與和牛套餐"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "空間偏聚餐約會取向,一人可用但非單人友善設計"
+      },
+      "date": {
+        "score": 3,
+        "reason": "隱身成大巷弄的質感餐酒館,氣氛好、燈光佳,多篇部落格推為約會慶生餐廳"
+      },
+      "group": {
+        "score": 3,
+        "reason": "用餐空間寬敞、可包場,適合家庭/學校/商務聚餐,排餐燉飯可分食好聊"
+      },
+      "late": {
+        "score": 1,
+        "reason": "晚餐約21:00打烊,非深夜場"
+      }
+    },
+    "vibe": [
+      "質感",
+      "巷弄隱密",
+      "適合約會",
+      "可包場",
+      "無添加料理"
+    ],
+    "open_late": {
+      "value": "約21:00(平日11:00–14:00、17:30–21:00;週二三包場預約制)",
+      "basis": "官網與部落格營業時間,惟各來源時段略有出入"
+    },
+    "reservation": {
+      "value": "建議預約(可線上訂位/包場)",
+      "basis": "官網提供線上訂位,週二三為包場預約制"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "正式餐酒館,非辦公久坐場所"
+    },
+    "signature": "A.A無添加三星認證的義式排餐、得獎燉飯與A5和牛套餐",
+    "evidence": [
+      {
+        "url": "https://www.isfoodlife.com/2025/07/tainan-xdining-bistro.html",
+        "source_type": "blog",
+        "date": "2025-07",
+        "摘要": "台南約會餐廳推薦,燉飯控必訪,成大22巷質感義式餐酒館"
+      },
+      {
+        "url": "https://decing.tw/tainan-xdining/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "熱血玩台南:隱藏成大巷弄,商業午餐划算,約會聚餐推薦"
+      },
+      {
+        "url": "https://xdiningbistro.com/",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "官方網站:大學路22巷18號,酒館菜/牛排/葡萄酒品飲,線上訂位"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-keukenhof-garden",
+    "name": "庫肯花園餐廳",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "東區",
+    "location": {
+      "address": "台南市東區大學路22巷1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以東區(成大大學路22巷)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$350–550(均消約450)",
+      "basis": "愛食記均消約$450、部落格排餐/義大利麵價位"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "可單點義大利麵,但環境定位為聚餐約會,非單人取向"
+      },
+      "date": {
+        "score": 2,
+        "reason": "歐風花園城堡佈置、燈光氣氛佳,部落格列為約會慶生好地方"
+      },
+      "group": {
+        "score": 3,
+        "reason": "座位不少、空間寬敞帶異國感,適合朋友小聚聚餐、餐點可分食好聊"
+      },
+      "late": {
+        "score": 0,
+        "reason": "20:45打烊,無深夜或酒類主打"
+      }
+    },
+    "vibe": [
+      "歐風花園城堡",
+      "氣氛佳",
+      "座位多",
+      "適合聚餐約會",
+      "價位親民"
+    ],
+    "open_late": {
+      "value": "約20:45",
+      "basis": "多篇部落格與台南旅遊網營業時間11:00–20:45"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "部落格提供訂位電話06-2352201"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "義式餐廳非辦公取向,未見不限時/插座資訊"
+    },
+    "signature": "開業18年人氣義大利米燉飯,取名自荷蘭庫肯霍夫花園的歐風城堡",
+    "evidence": [
+      {
+        "url": "https://etaiwan.blog/701-tnnkeukenhof/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "口袋吃吃五十咩:成大周邊開業18年人氣義大利麵,大學路18/22巷聚餐約會好選擇"
+      },
+      {
+        "url": "https://www.twtainan.net/zh-tw/shop/consume/1506/",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "台南旅遊網(官方)收錄庫肯花園餐廳,歐風佈置義式料理"
+      },
+      {
+        "url": "https://chioutian.pixnet.net/blog/post/572824372",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "午間食客:庫肯花園2023新價菜單,排餐焗烤義式料理,均消約450"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-bottoms-up-cafe",
+    "name": "喝起來 Bottoms Up",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "東區",
+    "location": {
+      "address": "台南市東區長榮路三段131號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以東區(成大/大學路商圈)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–300(自家烘焙咖啡+甜點/司康)",
+      "basis": "部落格咖啡與司康價位摘要"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "平日不限時、有插座與Wi-Fi、兩層樓質感寬敞,部落格明推適合讀書辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "二樓坐擁大片綠意、環境舒適,兩人小坐氛圍佳"
+      },
+      "group": {
+        "score": 1,
+        "reason": "咖啡廳座位,多人可坐但非聚餐分食取向"
+      },
+      "late": {
+        "score": 1,
+        "reason": "以日間為主,平日約18:00打烊(部分報導假日到深夜),打烊時間各來源不一,待確認"
+      }
+    },
+    "vibe": [
+      "平日不限時",
+      "有插座",
+      "Wi-Fi",
+      "自家烘焙",
+      "坐擁綠意",
+      "質感"
+    ],
+    "open_late": {
+      "value": "待確認(平日約18:00,假日部分報導延長)",
+      "basis": "部落格營業時間說法不一(9:00–18:00 / 假日延長)"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "部落格未提需訂位"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "平日不限時、每區有插座、提供Wi-Fi;假日限2小時"
+    },
+    "signature": "自家烘焙咖啡搭英式司康,成大旁兩層樓坐擁大片綠意",
+    "evidence": [
+      {
+        "url": "https://www.bigfang.tw/blog/post/bottomsup-cafe-tainan",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "樂活的大方:成大旁2層樓質感舒適咖啡,坐享大片綠意"
+      },
+      {
+        "url": "https://alexia8236.pixnet.net/blog/post/226731910",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "廢姐肥食:成大附近質感咖啡廳,平日不限時、有插座,適合讀書辦公"
+      },
+      {
+        "url": "https://hululu.tw/bottoms-up/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "花露露:插座咖啡廳、不限時、自家烘焙,環境舒服寬敞"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shengsheng-coffee",
+    "name": "昇陞咖啡",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "東區",
+    "location": {
+      "address": "台南市東區東門路二段343號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以東區(東門路,近大學路/成大商圈)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–300(咖啡+甜點)",
+      "basis": "部落格品項與價位摘要"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "每個座位都有插座、提供Wi-Fi、不限時、雙店面寬敞,被台南人激推為工作咖啡首選"
+      },
+      "date": {
+        "score": 1,
+        "reason": "工作型咖啡氛圍,環境偏機能取向,約會氣氛普通"
+      },
+      "group": {
+        "score": 2,
+        "reason": "雙店面騎樓空間寬敞,可多人聊聚,但非聚餐分食取向"
+      },
+      "late": {
+        "score": 1,
+        "reason": "營業至22:00,非深夜場"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "每座位插座",
+      "Wi-Fi",
+      "寵物友善",
+      "空間寬敞"
+    ],
+    "open_late": {
+      "value": "22:00",
+      "basis": "部落格營業時間11:00–22:00(以店家IG為準)"
+    },
+    "reservation": {
+      "value": "可預約",
+      "basis": "部落格提可預約,時間以店家IG公告為準"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "每個座位有插座、提供Wi-Fi、不限時,適合久坐辦公"
+    },
+    "signature": "咖啡好喝、環境舒服可坐一整天的工作咖啡,牛奶糖脆脆拿鐵/炙燒巴斯克乳酪",
+    "evidence": [
+      {
+        "url": "https://vickylife.com/shengsheng-coffee/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "Vicky媽媽:東門路上不限時、有插座、提供Wi-Fi、寵物友善的工作好去處,每座位皆有插座"
+      },
+      {
+        "url": "https://www.dcard.tw/f/food/p/259553172",
+        "source_type": "ptt",
+        "date": "待確認",
+        "摘要": "Dcard美食板『分享五家台南咖啡廳』收錄昇陞咖啡"
+      },
+      {
+        "url": "https://soler.com.tw/coffeeshop_tainan/",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "SOLER風格誌『8間不限時台南讀書咖啡廳』收錄,適合數位遊牧/遠距工作"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-home-cafe-anping",
+    "name": "舫 Home Cafe(海上船屋咖啡)",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "安平區",
+    "location": {
+      "address": "台南市安平區安億橋旁(漁人碼頭旁,停安億路公有停車場);確切門牌待確認",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以安平區漁人碼頭/安億橋定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$100–200",
+      "basis": "多篇部落格與 ETtoday 報導:低消一人一杯飲品,飲品價位約 110–150 元,僅收現金"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "全預約制、以拍照與夕陽海景為主,一人可登船但氛圍偏約會/打卡;內用無限時但無冷氣"
+      },
+      "date": {
+        "score": 3,
+        "reason": "全台唯一船屋咖啡,停泊漁人碼頭旁,拱形花窗配夕陽海景超浪漫,多篇被列為約會/放閃景點"
+      },
+      "group": {
+        "score": 1,
+        "reason": "船艙空間有限、需三天前預約人數,不適合臨時多人聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "最晚週六日 13:00–19:00,平日 18:00 打烊,無深夜/酒"
+      }
+    },
+    "vibe": [
+      "海景",
+      "夕陽",
+      "船屋復古花窗",
+      "浪漫約會",
+      "寵物友善",
+      "需預約",
+      "內用無限時"
+    ],
+    "open_late": {
+      "value": "週二/四/五 13:00–18:00、週六日 13:00–19:00(週一、三公休)",
+      "basis": "fullfenblog、chloestyle 等多篇部落格一致"
+    },
+    "reservation": {
+      "value": "全預約制,需三天前 IG(@home.cafe2024)私訊預約,不接受現場臨時登船",
+      "basis": "ETtoday 與多篇部落格"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "全預約制、船艙無冷氣、以海景拍照約會為主,未見插座/辦公相關資訊,不適合久坐辦公"
+    },
+    "signature": "登船喝咖啡配夕陽海景,全台唯一海上船隻咖啡館",
+    "evidence": [
+      {
+        "url": "https://travel.ettoday.net/article/2729783.htm",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "ETtoday 旅遊雲開箱台南唯一海上咖啡廳,全預約制、船屋喝咖啡看夕照"
+      },
+      {
+        "url": "https://chloestyle.tw/homecafe/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "柯蘿依 Chloe:全預約制登船看美景享美食,低消一杯飲品、內用無限時、寵物友善"
+      },
+      {
+        "url": "https://fullfenblog.tw/home-cafe/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "全預約制、僅現金、飲品約110–150元,船艙保留船椅與復古花窗、拱形窗拍漁港海景"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-tianma-xingkong-bistro",
+    "name": "天馬星空餐酒館 Bistro Tian Ma Xing Kong",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "安平區",
+    "location": {
+      "address": "台南市安平區建平路680號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以安平區建平路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–500",
+      "basis": "多篇報導:人均約 300–500 元、每人低消 250 元"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "餐酒館以聚餐/約會為主,菜色偏分食,一人前往較不適合"
+      },
+      "date": {
+        "score": 3,
+        "reason": "紫藍色霓虹燈光夢幻浪漫、沙發舒適,多篇列為約會慶生首選,燈光美氣氛佳"
+      },
+      "group": {
+        "score": 3,
+        "reason": "設 4 人與 10 人座位區,適合三五好友、公司團聚、家族聚會,浮誇海鮮拼盤可分食"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 02:00,有調酒/試管酒/摩天輪 shot,適合喝一杯與宵夜"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "燈光美",
+      "藍色霓虹夢幻",
+      "適合聚餐",
+      "有調酒",
+      "深夜營業",
+      "慶生浮誇"
+    ],
+    "open_late": {
+      "value": "週二~五 17:30–02:00、週六日 17:00–02:00(週一公休)",
+      "basis": "decing、部落格與 PTT 食記"
+    },
+    "reservation": {
+      "value": "建議提早訂位(電話/網路),壽星請先告知",
+      "basis": "多篇部落格與 Klook 訂位頁"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "餐酒館、晚間營業、以聚餐小酌為主,不適合辦公"
+    },
+    "signature": "波士頓龍蝦拼盤、戰斧牛排、24 杯摩天輪 shot,壽星招待龍蝦",
+    "evidence": [
+      {
+        "url": "https://decing.tw/tainan-marestaurant/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "熱血玩台南:安平建平路680號,17:30–02:00 週一休,壽星送波士頓龍蝦、試管酒"
+      },
+      {
+        "url": "https://hululu.tw/tianma/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "花露露:紫藍霓虹燈光浪漫、沙發舒服,4人與10人座位區適合聚餐約會慶生"
+      },
+      {
+        "url": "https://etaiwan.blog/708-tian-ma-xong-king/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "下班聚餐約會的夢幻暗藍色系餐酒館,人均約300–500、低消250,有代叫車服務"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-riverbank-cafe-anping",
+    "name": "河岸咖啡 Riverbank café(原臺南運河安平海關)",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "安平區",
+    "location": {
+      "address": "台南市安平區安平路97-15號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以安平區運河河畔/安平海關古蹟定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$35–150",
+      "basis": "涼子是也等部落格:飲品 35 元起、內用不限時"
+    },
+    "meal_type": [
+      "咖啡"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "內用不限時、有書可閱讀、氛圍安靜,一人自在;惟座位不多、插座/wifi 待確認"
+      },
+      "date": {
+        "score": 2,
+        "reason": "百年紅磚海關古蹟改建、運河河畔戶外座位,環境雅致適合兩人,但 18:00 打烊無夜間氛圍"
+      },
+      "group": {
+        "score": 1,
+        "reason": "座位數不多、空間偏小,不適合多人聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "10:30–18:00,早打烊、無酒"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "不限時",
+      "古蹟老宅",
+      "運河河景",
+      "有書可讀",
+      "平價"
+    ],
+    "open_late": {
+      "value": "10:30–18:00(週一公休)",
+      "basis": "臺南市文化局古蹟營運科頁面與部落格"
+    },
+    "reservation": {
+      "value": "免預約(一般直接入座);待確認是否可訂位",
+      "basis": "部落格未提訂位、屬文化局自營古蹟咖啡"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "內用不限時、可久坐讀書,但座位不多且未見插座/wifi 明確資訊,辦公友善度待現場確認"
+    },
+    "signature": "1926 年運河安平海關古蹟改建,坐運河畔品書喝咖啡",
+    "evidence": [
+      {
+        "url": "https://historic.tainan.gov.tw/index.php?option=module&lang=cht&task=pageinfo&id=981&index=9",
+        "source_type": "官網",
+        "date": "2022",
+        "摘要": "臺南市文化局古蹟營運科:市定古蹟原台南運河安平海關,文化局自營的河岸咖啡"
+      },
+      {
+        "url": "https://lyes.tw/33702020-%E6%B2%B3%E5%B2%B8%E5%92%96%E5%95%A1/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "涼子是也:安平河畔百年紅磚古蹟咖啡館,飲品35元起、不限時,運河旁設座位"
+      },
+      {
+        "url": "https://sansalife.com/riverbank-coffee/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "混血珊莎:百年日式老宅內喝下午茶,和室空間、內有書籍、運河景觀"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-deepblue-cafe-anping",
+    "name": "深藍咖啡館旗艦店",
+    "type": "甜點店",
+    "zone": "台南",
+    "district": "安平區",
+    "location": {
+      "address": "台南市安平區建平路335號(平通路與建平路交叉口)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以安平區建平路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$330–550",
+      "basis": "官網/部落格:個人低消 330 元、內用加 10% 服務費,主打千層蛋糕加飲品"
+    },
+    "meal_type": [
+      "甜點",
+      "咖啡"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "可獨坐吃甜點,二三樓有位置;惟用餐限時 90 分鐘、低消 330,不利久留辦公"
+      },
+      "date": {
+        "score": 3,
+        "reason": "毛森江清水模建築低調奢華、IG 打卡熱點,千層蛋糕精緻,適合兩人甜點約會"
+      },
+      "group": {
+        "score": 2,
+        "reason": "二三樓座位多可容納多人,但限時 90 分鐘且以甜點為主、非正餐聚會"
+      },
+      "late": {
+        "score": 0,
+        "reason": "約 09:30–17:30(來源略異),下午即打烊、無酒"
+      }
+    },
+    "vibe": [
+      "清水模建築",
+      "網美打卡",
+      "千層蛋糕",
+      "甜點約會",
+      "限時90分",
+      "12歲以下不入座"
+    ],
+    "open_late": {
+      "value": "約 10:30–19:00(另有來源記 08:00–20:00),各來源不一待確認,週三公休",
+      "basis": "官網與部落格,營業時間各來源略有出入,待確認"
+    },
+    "reservation": {
+      "value": "待確認(以現場候位為主)",
+      "basis": "部落格未明確提供訂位資訊"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "用餐限時 90 分鐘、個人低消 330 元、12 歲以下不入座,不適合久坐辦公"
+    },
+    "signature": "千層蛋糕界的 LV,毛森江清水模打造的旗艦甜點館",
+    "evidence": [
+      {
+        "url": "http://www.deepblue-cafe.com.tw/about/store",
+        "source_type": "官網",
+        "date": "2024",
+        "摘要": "深藍咖啡館官網門市資訊:安平旗艦店,主打千層蛋糕"
+      },
+      {
+        "url": "https://margaret.tw/deepblue-cafe-tainan/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "瑪格:毛森江清水模建築、千層蛋糕名店,建平路335號、清水模低調奢華"
+      },
+      {
+        "url": "https://hululu.tw/deepblue/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "花露露:清水模旗艦店內用明亮,個人低消330、限時90分、內用10%服務費、12歲以下不入座"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-beefcake-coffee-anping",
+    "name": "猛男咖啡 2.0 安平店(Beefcake Coffee)",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "安平區",
+    "location": {
+      "address": "台南市安平路42號(安平運河旁,安平店);行政區邊界待確認",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以安平運河旁/安平店定位,座標與確切行政區待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–450",
+      "basis": "部落格:自家烘焙精品咖啡+早午餐,屬中價位(per_person 為估算,詳細均消待確認)"
+    },
+    "meal_type": [
+      "咖啡",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "自家烘焙精品咖啡、桌數多、透明落地窗,一人喝咖啡自在可停留;惟插座/wifi/是否限時待確認"
+      },
+      "date": {
+        "score": 2,
+        "reason": "運河旁、灰色木質大理石桌工業風氛圍佳,兩人喝咖啡吃早午餐舒適"
+      },
+      "group": {
+        "score": 2,
+        "reason": "室內用餐空間多、桌數算多,可容納數人小聚,但非聚餐/包廂型場所"
+      },
+      "late": {
+        "score": 0,
+        "reason": "營業至 21:00,偏傍晚結束、無酒吧/宵夜屬性"
+      }
+    },
+    "vibe": [
+      "運河旁",
+      "精品咖啡",
+      "自家烘焙",
+      "早午餐",
+      "工業風",
+      "停車方便"
+    ],
+    "open_late": {
+      "value": "各來源不一(多為10:00–18:00、假日09:30–18:00、週三公休;部分來源記至22:00–23:00),待現場確認",
+      "basis": "愛食記/部落格門市資訊"
+    },
+    "reservation": {
+      "value": "待確認(部落格未明確說明訂位政策)",
+      "basis": "多篇部落格未提訂位"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "桌數多、落地窗、環境可停留,但未見插座/wifi/是否限時明確資訊,辦公友善度待現場確認"
+    },
+    "signature": "安平運河旁人氣精品咖啡與硬派風格早午餐,老闆具 SCA 杯測師資格",
+    "evidence": [
+      {
+        "url": "https://www.bigfang.tw/blog/post/beefcakecoffee-anping",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "樂活的大方:安平運河旁人氣咖啡店,好喝精品咖啡,運河旁有停車格、停車方便"
+      },
+      {
+        "url": "https://udn.com/news/story/7208/7734449",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "聯合新聞網:猛男咖啡2.0安平店,日系風格打卡牆,推薦咖哩、打拋豬,值得二訪"
+      },
+      {
+        "url": "https://travel.yam.com/article/133654",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "輕旅行:安平運河旁人氣特色早午餐,日系窗景、庭院風格好愜意"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-wanxiang-lamb-hotpot",
+    "name": "萬香土產紅燒羊肉爐",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "北區",
+    "location": {
+      "address": "台南市北區公園路429號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北區 公園路 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–500",
+      "basis": "部落格多稱平價經濟實惠、免服務費;羊肉爐+熱炒多人分食均攤"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "熱炒羊肉爐以多人分食為主,一人可入座但份量與熱鬧氛圍偏向多人,無吧檯單人座"
+      },
+      "date": {
+        "score": 1,
+        "reason": "公園路三角窗人氣老店,環境熱鬧吵雜,非約會取向"
+      },
+      "group": {
+        "score": 3,
+        "reason": "火鍋爐+海鮮+熱炒+燒烤菜色多可分食,免服務費不限時,適合朋友聚餐;天冷易客滿建議訂位"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至深夜(來源稱約 01:00–03:00),飄香30年老派宵夜場,配免費古早味紅茶與啤酒"
+      }
+    },
+    "vibe": [
+      "老派宵夜",
+      "熱炒可分食",
+      "不限時免服務費",
+      "三角窗人氣老店"
+    ],
+    "open_late": {
+      "value": "約凌晨 01:00–03:00(各來源不一,待確認)",
+      "basis": "welcometw 宵夜懶人包稱 16:00–03:00;其他部落格稱至 01:00"
+    },
+    "reservation": {
+      "value": "建議預約(天冷客滿)",
+      "basis": "部落格提醒寒流時滿到炸,務必事先預約"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "熱炒宵夜店吵雜、無明示插座,不適合辦公"
+    },
+    "signature": "飄香30年紅燒羊肉爐,另有海鮮熱炒燒烤與免費古早味紅茶",
+    "evidence": [
+      {
+        "url": "https://www.welcometw.com/%E5%8F%B0%E5%8D%97%E5%AE%B5%E5%A4%9C%EF%BD%9C15%E5%AE%B6%E5%8F%B0%E5%8D%97%E6%B7%B1%E5%A4%9C%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%96%A6%EF%BC%8C%E5%8D%88%E5%A4%9C%E9%99%90%E5%AE%9A%E5%AE%B5%E5%A4%9C%E5%B0%B1/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "列為台南深夜食堂宵夜推薦,公園路429號、營業至凌晨、免服務費不限時"
+      },
+      {
+        "url": "https://www.tainanlohas.cc/2017/01/blog-post.html",
+        "source_type": "blog",
+        "date": "2017",
+        "摘要": "[台南][北區] 實地食記,證實地點在北區公園路,羊肉爐+熱炒海鮮的老店"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/182886",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "窩客島實測,北區公園路一年四季都能吃到的紅燒羊肉爐與特色熱炒"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-zouxin-bistro-wine",
+    "name": "走心 Zouxin Bistro & Wine",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "北區",
+    "location": {
+      "address": "台南市北區長榮路五段104號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北區 長榮路五段 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000(含酒水,依點酒而定)",
+      "basis": "葡萄酒餐酒館,部落格稱高質感、餐酒價位合理份量足夠"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "木質餐酒館以兩人以上為主,酒吧時段可一人小酌葡萄酒,但非單人久坐/辦公取向"
+      },
+      "date": {
+        "score": 3,
+        "reason": "木質調高質感裝潢、燈光佳氣氛放鬆,多篇部落格點名下班約會慶生首選"
+      },
+      "group": {
+        "score": 3,
+        "reason": "店內設小包廂隔間適合大組數,中西合併菜單可分食,葡萄酒選項齊全有專人推薦好聊"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至 23:00,晚餐 18:00–21:30 後轉葡萄酒吧時段可續攤小酌(非凌晨場),週一二公休"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "木質調質感",
+      "適合約會慶生",
+      "葡萄酒選項齊全",
+      "有小包廂"
+    ],
+    "open_late": {
+      "value": "23:00(週一、二公休)",
+      "basis": "土土旅食記趣、痞客邦食記載營業 15:30–23:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "約會慶生熱門,部落格建議先訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "餐酒館氛圍非辦公,且晚餐時段限定"
+    },
+    "signature": "中西合併菜單與義大利麵,搭配齊全葡萄酒與自然酒",
+    "evidence": [
+      {
+        "url": "https://www.gotainan.com.tw/2025/01/zouxin-bistro-wine.html",
+        "source_type": "blog",
+        "date": "2025-01",
+        "摘要": "北區長榮路五段餐酒館,中西合併菜單+義大利麵,裝潢舒適優雅適合約會慶生"
+      },
+      {
+        "url": "https://tutufoodaholic.tw/tainan-zouxin-bistro-wine/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "台南葡萄酒餐酒館,冬季新菜單,環境放鬆氛圍好,葡萄酒品項齊全"
+      },
+      {
+        "url": "https://food1998.pixnet.net/blog/post/111460495",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "木質調裝潢、氣氛質感絕佳,適合下班約會的台南餐酒館"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-srimala-coffee-park",
+    "name": "勝曼咖啡 公園門市 Srimala Coffee",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "北區",
+    "location": {
+      "address": "台南市北區公園路916號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北區 公園路 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–350",
+      "basis": "菜單為自烘咖啡、甜點、現烤披薩與拌麵套餐,單品加輕食約此區間"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "明亮木質空間、插座多、免費 wifi、不限時,聯合新聞網明示適合舒適工作/讀書,自由業與學生族首選"
+      },
+      "date": {
+        "score": 2,
+        "reason": "環境舒適可兩人喝咖啡吃甜點,但屬日間工作型咖啡廳,氣氛非浪漫約會"
+      },
+      "group": {
+        "score": 2,
+        "reason": "座位不少可容多人,但為安靜工作/讀書取向,不宜大聲聚會聊天"
+      },
+      "late": {
+        "score": 0,
+        "reason": "僅營業至 19:00,無酒、非宵夜場"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "有插座",
+      "免費wifi",
+      "不限時",
+      "明亮木質",
+      "適合辦公讀書"
+    ],
+    "open_late": {
+      "value": "約 21:00(官網 07:00–21:00,舊資訊約 18:00–19:00)",
+      "basis": "聯合新聞網與部落格載約 07:00–19:00"
+    },
+    "reservation": {
+      "value": "免預約(待確認)",
+      "basis": "一般連鎖咖啡廳,無需訂位,尖峰或滿座待確認"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "插座多、免費 wifi、不限時,新聞明示可舒適工作讀書"
+    },
+    "signature": "自家烘焙咖啡搭配現烤披薩與手工甜點,明亮不限時工作咖啡廳",
+    "evidence": [
+      {
+        "url": "https://udn.com/news/story/7208/8066281",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "聯合新聞網報導勝曼咖啡公園店空間明亮、可舒適工作且不限時"
+      },
+      {
+        "url": "https://rabbitfunaround.com/blog/post/srimala-coffee",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "北區公園門市,有插座、Wifi、不限時,實地介紹"
+      },
+      {
+        "url": "https://blue90184.pixnet.net/blog/post/343605606",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "公園店附插座 wifi 不限時,飯麵披薩甜點餐點品項豐富"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-changbei-yakiniku-refugee",
+    "name": "長北燒肉難民營",
+    "type": "燒肉",
+    "zone": "台南",
+    "district": "北區",
+    "location": {
+      "address": "台南市北區長北街159號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北區 長北街 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–500",
+      "basis": "食尚玩家/聯合新聞網載套餐 300 元起,含小菜沙拉白飯例湯,加點約此區間"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "主打一人燒肉,面牆一人一爐,老闆為拯救不敢單獨吃燒肉的「燒肉難民」而開,一個人零尷尬"
+      },
+      "date": {
+        "score": 1,
+        "reason": "一人一爐、與陌生客可能併坐,情侶也得分開烤,非約會取向"
+      },
+      "group": {
+        "score": 1,
+        "reason": "空間僅容約12–13人,不可訂位、朋友同行可能被拆開坐,不利多人同桌"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至 23:30,可當晚餐後宵夜燒肉,但非凌晨場,週四公休"
+      }
+    },
+    "vibe": [
+      "一人燒肉",
+      "孤獨美食家",
+      "平價套餐",
+      "需候位不可訂位"
+    ],
+    "open_late": {
+      "value": "23:30(週四公休)",
+      "basis": "聯合新聞網與痞客邦食記載 17:30–23:30"
+    },
+    "reservation": {
+      "value": "不接受訂位,需現場候位",
+      "basis": "部落格載無法預約,滿座發號碼牌需等 1–1.5 小時"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "一人一爐燒肉店、油煙與候位環境,不適合辦公"
+    },
+    "signature": "一人一爐的平價一人燒肉,套餐 300 元起附小菜、胡麻沙拉與每日例湯",
+    "evidence": [
+      {
+        "url": "https://udn.com/news/story/7208/7041759",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "聯合新聞網報導台南北區長北燒肉難民營,一個人也能瀟灑吃燒肉"
+      },
+      {
+        "url": "https://www.ptt.cc/bbs/Tainan/M.1596634176.A.D3D.html",
+        "source_type": "ptt",
+        "date": "2020-08",
+        "摘要": "PTT Tainan 板食記,北區一人燒肉,座位與套餐實測分享"
+      },
+      {
+        "url": "https://wasai117.pixnet.net/blog/posts/9556642549",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "喵爸部落格北區長北燒肉難民營,地址159號、營業時間與一人用餐細節"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shitai-yakitori",
+    "name": "失態炭火手作 Shitai YAKI TORI",
+    "type": "居酒屋",
+    "zone": "台南",
+    "district": "北區",
+    "location": {
+      "address": "台南市北區海安路三段735號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北區 海安路三段(花園夜市旁) 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–800(含酒)",
+      "basis": "串燒單點+清酒/生啤,部落格屬質感居酒屋小酌價位"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "海安路質感居酒屋,搜尋證實設有吧檯座,一人可小酌串燒清酒;惟主打宵夜熱鬧聚會,單人辦公不宜"
+      },
+      "date": {
+        "score": 2,
+        "reason": "日式庭園風、氣派有質感、設包廂,環境好適合兩人小酌;惟主打熱鬧宵夜非安靜約會"
+      },
+      "group": {
+        "score": 3,
+        "reason": "設包廂、KTV、投影機,串燒可分食,每晚20:00擲骰活動炒熱氣氛,適合朋友聚會"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 01:00,清酒與生啤專賣、備長炭串燒,道地下班小酌宵夜場"
+      }
+    },
+    "vibe": [
+      "深夜小酌",
+      "質感日式",
+      "備長炭串燒",
+      "清酒生啤專賣",
+      "有包廂KTV"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00",
+      "basis": "南人幫、熱血玩台南載營業 18:00–01:00"
+    },
+    "reservation": {
+      "value": "建議預約(可線上訂位)",
+      "basis": "autoreserve 提供線上訂位,人氣店建議先訂"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋宵夜小酌場,不適合辦公"
+    },
+    "signature": "備長炭直烤高品質黑羽雞串燒與限量提燈串,清酒、生啤專賣",
+    "evidence": [
+      {
+        "url": "https://lifeintainan.com/shitaiyakitori/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "南人幫實測,海安路日式居酒屋,黑羽雞串燒、清酒生啤專賣,營業到凌晨一點的宵夜好去處"
+      },
+      {
+        "url": "https://decing.tw/tainan-sitan/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "熱血玩台南載日式清酒專賣居酒屋,營業至凌晨一點,下班小酌吃宵夜好去處"
+      },
+      {
+        "url": "https://anikofoodie.com/shitai-yakitori/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "海安路質感居酒屋,黑羽雞備長炭直烤,每日限量提燈串,證實地址與品項"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-a-break-cafe",
+    "name": "午營咖啡 a break cafe",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "南區",
+    "location": {
+      "address": "台南市南區福吉路64號4樓",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$150–250",
+      "basis": "官網與部落格:低消為每人一杯飲料,假日18:00前每人150元;甜點/熱壓吐司單價低"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "政大畢業老闆打造的『研究生活』空間,到處都有插座、免費wifi、明示不限時且『坐越久老闆越開心』,多元座位含獨處區,部落格多見一人打報告/辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "溫暖知性的文青老宅四樓空間、氣氛舒服可兩人久坐,但整體偏讀書工作氛圍、非燈光隱私型約會場"
+      },
+      "group": {
+        "score": 1,
+        "reason": "有可聊天區與不定期講座活動,小群體可,但四樓空間偏小、主打獨處讀書,非聚餐首選"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至約23:00,屬深夜咖啡,但無供酒與宵夜餐"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "安靜可久坐",
+      "文青老宅",
+      "寵物友善"
+    ],
+    "open_late": {
+      "value": "約 23:00",
+      "basis": "官網/eatholic 記 14:00–23:00;部分部落格記至22:30,精確打烊待確認"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "部落格皆為現場入座,無訂位需求"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "到處有插座+免費wifi+不限時,官網與部落格明示適合久坐辦公讀書;禁帶外食,平日全天低消一杯飲料"
+    },
+    "signature": "支持直接貿易咖啡與人道雞蛋的不限時研究生活空間,自家手作甜點、熱壓吐司",
+    "evidence": [
+      {
+        "url": "https://www.abreakcafe.com/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官網自述『一間坐越久老闆越開心的店』、研究生活/精品咖啡/講座選書,低消規則(平日全天一杯飲料、假日18:00前每人150)"
+      },
+      {
+        "url": "https://tenjo.tw/abreakcafe/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "周花花食記:南區福吉路64號4樓,不限時可久坐看書、免費插座wifi、寵物友善,多元座位"
+      },
+      {
+        "url": "https://www.eatholic.cc/abreakcafe/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "食在好吃:每個座位都是專屬舒適小空間、到處都有插座,適合工作讀書"
+      },
+      {
+        "url": "https://lilian1045.pixnet.net/blog/post/307676654",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "1045部落格:有插頭有wifi的打報告好去處,大學生打報告的舒適地方"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-the-sober-foodie",
+    "name": "食上主義餐酒館 The Sober Foodie",
+    "type": "餐酒館",
+    "zone": "台南",
+    "district": "南區",
+    "location": {
+      "address": "台南市南區體育路21巷5之1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–600",
+      "basis": "部落格:低消$250/人+10%服務費,實際客單約400–600元"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "屬約會/聚餐取向的餐酒館,一人可小酌用餐但氛圍以多人為主、無吧檯久坐辦公資訊"
+      },
+      "date": {
+        "score": 3,
+        "reason": "老宅建築、燈光昏暗典雅、靜謐慵懶氛圍,多篇部落格列為浪漫約會首選"
+      },
+      "group": {
+        "score": 3,
+        "reason": "適合下班後朋友聚餐,義式料理與下酒菜可分食,不定期邀客座調酒師,空間典雅"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至23:00,有調酒可小酌,但非凌晨深夜場"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "燈光昏暗",
+      "老宅餐酒館",
+      "有調酒",
+      "約會首選"
+    ],
+    "open_late": {
+      "value": "23:00",
+      "basis": "皮老闆/黛西優齁齁:營業17:00–23:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "黛西優齁齁:人氣夯店超難訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "昏暗餐酒館氛圍、無久坐辦公插座資訊,不適合辦公"
+    },
+    "signature": "腐皮松露雞肉捲、香煎無骨牛小排,不定期客座調酒",
+    "evidence": [
+      {
+        "url": "https://pboss.tw/the-sober-foodie/",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "皮老闆的美食地圖:南區體育路21巷幽靜典雅餐酒館,燈光昏暗、餐酒氛圍靜謐慵懶,17:00–23:00"
+      },
+      {
+        "url": "https://www.daisyyohoho.com/the-sober-foodie/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "黛西優齁齁:老宅建築新風格、人氣夯店超難訂位,義式料理與調酒"
+      },
+      {
+        "url": "https://dingeat.com/thesoberfoodie/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "丁Ding:不定時邀請知名調酒師客座調酒,適合下班後跟朋友聚餐或約會小酌"
+      },
+      {
+        "url": "https://www.yunwander.com/2021/08/12/soberfoodie/",
+        "source_type": "blog",
+        "date": "2021-08",
+        "摘要": "飄泊的云:浪漫約會首選、必點腐皮松露雞肉捲"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-600-duck",
+    "name": "六百番砂鍋鹽焗鴨(六百番海鮮市場)",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "南區",
+    "location": {
+      "address": "台南市南區永成路二段1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–700(多人分攤)",
+      "basis": "部落格估算:平價熱炒海鮮+砂鍋鴨一鍋分食,精確人均待確認"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 0,
+        "reason": "大圓桌、砂鍋鴨一鍋起、聚餐取向,不適合一人"
+      },
+      "date": {
+        "score": 1,
+        "reason": "熱鬧海鮮熱炒餐廳、明亮多人氛圍,非約會場"
+      },
+      "group": {
+        "score": 3,
+        "reason": "明示適合多人聚餐,備包廂、大圓桌,菜色含烤炸日式熱炒海鮮多樣可分食,好停車"
+      },
+      "late": {
+        "score": 1,
+        "reason": "營業至22:00,非深夜場"
+      }
+    },
+    "vibe": [
+      "多人聚餐",
+      "有包廂",
+      "好停車",
+      "海鮮熱炒",
+      "汕頭火鍋"
+    ],
+    "open_late": {
+      "value": "22:00",
+      "basis": "官網/美食媒體:平日16:00–22:00,假日11:00–14:00及17:00–22:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "部落格:假日人多易客滿,建議先訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "多人聚餐海鮮餐廳,不適合辦公"
+    },
+    "signature": "全台唯一泉州鹽焗砂鍋鴨『一鴨三吃』,附設海鮮市場可代客料理",
+    "evidence": [
+      {
+        "url": "https://www.600duck.com.tw/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官網:台南南區餐廳,熱炒海鮮/汕頭火鍋/日本料理/活海鮮代客料理,主打聚餐"
+      },
+      {
+        "url": "https://www.siktungtainan.com/600duck",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "食通台南:六百番海鮮市場-砂鍋鹽焗鴨,永成路二段,砂鍋鴨料理與海鮮市場"
+      },
+      {
+        "url": "https://www.wanpgirl.com.tw/2023/08/blog-post_21.html",
+        "source_type": "blog",
+        "date": "2023-08",
+        "摘要": "丸皮妹:多人聚餐推薦、菜色多樣平價熱炒海鮮,空間寬敞座位多、有包廂"
+      },
+      {
+        "url": "https://supertaste.tvbs.com.tw/food/350211",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "食尚玩家:全台唯一砂鍋鹽焗鴨,肉質超嫩、鴨香濃郁"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shang-hai-seafood",
+    "name": "尚海海產(尚海活虫市)",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "南區",
+    "location": {
+      "address": "台南市南區夏林路58號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–600(熱炒分攤)",
+      "basis": "部落格估算:現撈海產熱炒、份量實在,精確人均待確認"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "海產熱炒店可一人點海鮮粥/小菜,但整體多人熱炒氛圍"
+      },
+      "date": {
+        "score": 1,
+        "reason": "熱鬧宵夜熱炒、冰櫃點菜的市場感,非約會氣氛"
+      },
+      "group": {
+        "score": 3,
+        "reason": "遊覽車專程帶客的豪華海鮮聚餐/家庭聚餐,現撈海產與熱炒多樣可分食"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00,台南在地知名宵夜熱炒據點,現點現做海鮮"
+      }
+    },
+    "vibe": [
+      "營業到凌晨",
+      "宵夜熱炒",
+      "現撈海產",
+      "在地人推薦",
+      "份量實在"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00",
+      "basis": "台南好Food遊/瑪格:營業17:00–01:00,無公休"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "部落格提及人氣店建議先訂位,確切政策待確認"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "宵夜熱炒海產店,不適合辦公"
+    },
+    "signature": "海鮮粥、招牌炸雞翅、炒烏魚膘,冰櫃現撈點菜",
+    "evidence": [
+      {
+        "url": "https://itainan.com.tw/shanhai-seafood/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "台南好Food遊:台南人的深夜食堂,南區夏林路58號、17:00–01:00,海產粥與炸雞翅必點"
+      },
+      {
+        "url": "https://margaret.tw/tainan-seafood-shanhai/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "瑪格圖寫生活:在地人帶路的台南宵夜熱炒,海鮮粥、炸雞翅、炒烏魚膘多招牌"
+      },
+      {
+        "url": "https://bubusimplelife.com/taonan-shang-hai-stir-fried-restaurant/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "Bu大姐:南區熱炒,遊覽車專程帶客人來吃,份量實在"
+      },
+      {
+        "url": "https://orange.udn.com/orange/story/123282/8941874",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "橘世代(udn):深夜熱炒店靠炸雞翅爆紅,在地推薦"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-shun-shun-kitchen",
+    "name": "順順料理所",
+    "type": "早午餐",
+    "zone": "台南",
+    "district": "南區",
+    "location": {
+      "address": "台南市南區大成路二段238號(近金華路口)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$150–300",
+      "basis": "部落格菜單:披薩$90起、義大利麵套餐$100起(含濃湯與$60飲品)"
+    },
+    "meal_type": [
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "文青小店、老闆娘親切像到朋友家作客,兩人座桌一人可自在獨坐,但無插座辦公資訊"
+      },
+      "date": {
+        "score": 2,
+        "reason": "木質溫馨、日系簡約、座位間距舒適,適合兩人;惟空間小(5–6桌)非隱私型"
+      },
+      "group": {
+        "score": 1,
+        "reason": "僅約五張兩人座桌、一組用餐上限3人且不接受3人以上訂位,不適合多人聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "日間早午餐/義式小店,晚間不營業,非深夜場"
+      }
+    },
+    "vibe": [
+      "文青小店",
+      "木質溫馨",
+      "日系簡約",
+      "現點現做",
+      "低調巷弄"
+    ],
+    "open_late": {
+      "value": "日間營業(約09:00起,晚間不營業)",
+      "basis": "部落格未列完整每日營業時間,IG不定期公休"
+    },
+    "reservation": {
+      "value": "免預約(不接受3人以上訂位)",
+      "basis": "部落格:僅約五張兩人座桌,不收3人以上訂位"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "未見插座/久坐辦公資訊,小店座位有限、生意不錯,可能不宜長時間辦公"
+    },
+    "signature": "菌菇系列義大利麵+蘑菇濃湯、現點現做披薩",
+    "evidence": [
+      {
+        "url": "https://alexia8236.pixnet.net/blog/post/227015374",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "廢姐肥食:南區大成路二段文青小店,現點現做披薩義大利麵、主食多樣,木質溫馨5–6桌、一組上限3人不提供訂位"
+      },
+      {
+        "url": "https://vickylife.com/soonsoon/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "Vicky媽媽:大成路二段238號,菌菇義大利麵+蘑菇濃湯招牌、附菜單,披薩$90起、義麵套餐$100起"
+      },
+      {
+        "url": "https://boylondon.tw/11yi-cuisine/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "倫敦男孩台南義式料理懶人包收錄順順料理所"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-thai-ghost-skewers-yongkang",
+    "name": "泰式幽靈串燒-永康店",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "永康區",
+    "location": {
+      "address": "台南市永康區東橋一路12-1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以永康區東橋一路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–500",
+      "basis": "泰式串燒/熱炒/火鍋合菜,人均約 300–500(精確金額待確認,依 pixnet 食記推估)"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "南洋風熱炒串燒店偏多人分食,一人前往尚可但非主打,無吧檯單人友善設計"
+      },
+      "date": {
+        "score": 2,
+        "reason": "南洋風裝潢、掛滿花草藝術裝飾,氣氛溫馨有異國情調,可兩人來但空間熱鬧非安靜隱私型"
+      },
+      "group": {
+        "score": 3,
+        "reason": "寬敞開放式空間可容約 50 人,招牌超大隻小卷、椒鹽芋絲肥腸等可分食,聚餐高人氣常滿座"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 01:30,台南少見泰式宵夜,內用明果冰淇淋吃到飽,宵夜小聚佳"
+      }
+    },
+    "vibe": [
+      "南洋風",
+      "宵夜熱門",
+      "適合多人",
+      "可分食",
+      "高人氣"
+    ],
+    "open_late": {
+      "value": "凌晨 01:30",
+      "basis": "多篇食記與 ifoodie/Joymap 載營業 17:30–01:30;UDN 標題泛稱『開到半夜兩點』,實際打烊 01:30"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "食記稱八九點仍滿座,可透過 Joymap/微碧線上訂位,電話 06-302-2631"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "熱炒串燒宵夜場,環境熱鬧,不適合辦公久坐"
+    },
+    "signature": "招牌雙份超大隻烤小卷、椒鹽芋絲肥腸,泰式椰奶烤工,內用明果冰淇淋吃到飽",
+    "evidence": [
+      {
+        "url": "https://udn.com/news/story/7208/8236149",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "開到半夜兩點的台南少見泰式宵夜,招牌超大隻小卷必點、內用明果冰淇淋吃到飽"
+      },
+      {
+        "url": "https://wasai117.pixnet.net/blog/post/577346048",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "喵爸食記,永康店東橋一路,泰式快炒/串燒/火鍋,超大烤鮮魚必點"
+      },
+      {
+        "url": "https://foodintainan.com.tw/%E5%8F%B0%E5%8D%97%E6%9D%B1%E5%8D%80%E7%BE%8E%E9%A3%9F%E3%80%8B%E6%B3%B0%E5%BC%8F%E5%B9%BD%E9%9D%88%E4%B8%B2%E7%87%92%E6%B0%B8%E5%BA%B7%E5%BA%97-%E9%A9%9A%E8%B1%94%E8%87%AD%E8%B1%86%E8%85%90%E8%82%A5/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "永康店宵夜燒烤好選擇,臭豆腐肥腸與牛肉料理,50 人寬敞空間"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-duling-feng-shao",
+    "name": "獨領瘋燒",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "永康區",
+    "location": {
+      "address": "台南市永康區中華路502號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以永康區中華路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–450",
+      "basis": "多篇食記形容『平價串燒』,人均推估 250–450,精確金額待確認"
+    },
+    "meal_type": [
+      "晚餐",
+      "宵夜",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "純炭火平價串燒、點單現烤,被定位為『下班小酌好所在』,一人來吃串燒配酒自在,冷氣座位舒適"
+      },
+      "date": {
+        "score": 1,
+        "reason": "平價宵夜串燒店,氛圍熱鬧輕鬆而非約會情調,適合輕鬆兩人但非浪漫首選"
+      },
+      "group": {
+        "score": 3,
+        "reason": "平價串燒可多人分食,冷氣空間、烤爐與座位分開無油煙,朋友/公司聚餐熱門"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至隔日凌晨 02:00,下班小酌與宵夜場,串燒配酒"
+      }
+    },
+    "vibe": [
+      "平價",
+      "純炭火串燒",
+      "下班小酌",
+      "有冷氣",
+      "宵夜熱門"
+    ],
+    "open_late": {
+      "value": "隔日凌晨 02:00",
+      "basis": "dingeat 食記與 ifoodie 載約 17:00/18:00–02:00"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "多為現場候位,訂位政策未明確,電話 06-303-7509"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "炭火串燒酒場、夜間營業,不適合辦公"
+    },
+    "signature": "純炭火現烤平價串燒,烤爐與座位分開無油煙,還有鍋燒意麵,下班小酌好所在",
+    "evidence": [
+      {
+        "url": "https://dingeat.com/06-303-7509/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "永康中華路上的獨領瘋燒,宵夜時段必吃的平價串燒,地址中華路502號,營業至凌晨"
+      },
+      {
+        "url": "https://hahalover.pixnet.net/blog/post/347886832",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "串燒酒場、純炭火燒烤,定位為下班小酌好所在,冷氣座位舒適"
+      },
+      {
+        "url": "https://hululu.tw/2016-12-10-720/",
+        "source_type": "blog",
+        "date": "2016",
+        "摘要": "永康宵夜場人氣店,平價串燒、碳火直燒,位於中華路"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-mr-wheat-yongkang",
+    "name": "Mr.Wheat 小麥先生創意料理-永康旗艦店",
+    "type": "餐廳",
+    "zone": "台南",
+    "district": "永康區",
+    "location": {
+      "address": "台南市永康區永大路三段99號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以永康區永大路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–600",
+      "basis": "火鍋/義大利麵/燉飯/丼飯創意料理,人均推估 300–600,精確金額待確認"
+    },
+    "meal_type": [
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "定位家庭/公司聚餐餐廳,一人可用餐但非主打,無單人吧檯"
+      },
+      "date": {
+        "score": 2,
+        "reason": "刻意打暗的暖黃燈光、木質裝潢營造情調,座位間隔寬不擁擠,並有包廂,兩人用餐舒適"
+      },
+      "group": {
+        "score": 3,
+        "reason": "永康旗艦店為品牌最大店,聚餐首選,提供不需低消的獨立包廂,料理多元可分食,適合慶生/謝師宴"
+      },
+      "late": {
+        "score": 1,
+        "reason": "平日與假日皆 22:00 打烊,非深夜宵夜場"
+      }
+    },
+    "vibe": [
+      "聚餐首選",
+      "有包廂",
+      "暖黃燈光",
+      "座位寬敞",
+      "多國料理"
+    ],
+    "open_late": {
+      "value": "22:00",
+      "basis": "官網/食記:平日 11:00–15:30、17:30–22:00,假日 11:00–22:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "聚餐與包廂熱門,建議先訂位,電話 06-201-5818"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "聚餐型餐廳,非咖啡辦公空間"
+    },
+    "signature": "多國創意料理,火鍋/義大利麵/燉飯一次滿足,私房石燒蒜蝦飯,設不需低消包廂",
+    "evidence": [
+      {
+        "url": "https://decing.tw/mrwheat/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "多國料理一次滿足,家庭公司聚餐好選擇,永大路三段99號"
+      },
+      {
+        "url": "https://foodintainan.com.tw/tainanfood-mr-wheat-flagship-store/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "永大路上優質聚餐餐廳,暖黃燈光有情調、座位寬敞、設包廂,聚餐首選"
+      },
+      {
+        "url": "http://www.mr-wheat.com/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "小麥先生官方網站,品牌與菜色資訊(火鍋/義大利麵/義國米食等)"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tn-hideout-coffee",
+    "name": "離島咖啡 Hideout Coffee",
+    "type": "咖啡廳",
+    "zone": "台南",
+    "district": "永康區",
+    "location": {
+      "address": "台南市永康區中華路23巷1-2號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以永康區中華路定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–400",
+      "basis": "nataslife 稱均消約 $250–400,每人低消飲品一杯(甜點除外),現金消費"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "每個座位獨立、間距足,氛圍安靜『相當適合一個人前往』喝單品咖啡放空;惟客滿限時 2 小時、現金消費、插座資訊未明確,故非辦公滿分"
+      },
+      "date": {
+        "score": 2,
+        "reason": "安靜質感老宅木質風,兩人可靜靜喝咖啡吃甜點,但『島規』要求輕聲交談,非熱絡氛圍"
+      },
+      "group": {
+        "score": 0,
+        "reason": "座位僅約 5 桌且明示『不接待 5 位以上客人』,不適合多人聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "傍晚即打烊(約 18:00–19:00),不供酒,無宵夜場"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "獨立座位",
+      "單品咖啡",
+      "老宅質感",
+      "適合一個人"
+    ],
+    "open_late": {
+      "value": "約 18:00–19:00(店休不定,以 IG 公告為準)",
+      "basis": "來源營業時間有 12:00–18:00 與 13:00–19:00 兩說,需再確認"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "多為現場登島,訂位政策未明確"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "安靜獨立座位適合閱讀/專注,但客滿限時 2 小時、僅收現金、插座/WiFi 是否提供未見明確資訊,不宜長時辦公"
+    },
+    "signature": "『登島』逃離現實的安靜咖啡空間,單品咖啡與手作甜點(布丁、布朗尼、巴斯克),需先讀『島規』",
+    "evidence": [
+      {
+        "url": "https://nataslife.com/hideout-coffee/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "永康中華路23巷,手工甜點與單品咖啡,均消約 250–400、低消飲品一杯、現金消費"
+      },
+      {
+        "url": "https://enlifesun.com/blog/post/120002286",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "座位獨立保持距離、安靜不被打擾,適合只想安安靜靜喝杯咖啡的一個人"
+      },
+      {
+        "url": "https://tong5410.pixnet.net/blog/posts/10353180216",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "『島規』:禁外食、不接待 5 位以上、不接待 12 歲以下兒童、禁寵物、客滿限時 2 小時"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
   }
 ]

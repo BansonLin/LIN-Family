@@ -183,6 +183,10 @@
   .stars .st{cursor:pointer;color:#D9CFBC;transition:transform .1s ease}
   .stars .st.on{color:#E8A61E}
   .stars .st:active{transform:scale(1.2)}
+  .qrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+  .qrow .ql{font-size:13.5px;font-weight:500;color:var(--ink);flex-shrink:0}
+  .qrow .ql i{font-style:normal;font-size:10.5px;color:var(--ink-soft);margin-left:4px;background:#EFEAE0;border-radius:999px;padding:1px 7px}
+  .qrow .stars{font-size:26px;gap:6px;margin-bottom:0}
   .lognote{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;font-size:14px;font-family:inherit;background:#FDFBF7;color:var(--ink)}
   .lognote:focus{outline:none;border-color:var(--cafe)}
   .lf-row{display:flex;gap:8px;margin-top:9px}
@@ -490,9 +494,24 @@ const LF = (() => {
   const api = {
     for(id, kind) { return logs.filter(l => l.id === id && (!kind || l.kind === kind)); },
     pending() { return logs.filter(l => !l.synced); },
-    formHtml() {
-      return '<div class="logform"><div class="lf-q">你們去過這裡?留個評分給未來的自己 👇</div>'
-        + '<div class="stars" onclick="LF.star(event)">' + [1, 2, 3, 4, 5].map(n => '<span class="st" data-v="' + n + '">★</span>').join("") + "</div>"
+    QS: {
+      kids: [
+        { k: "整體", label: "🌟 整體推薦", req: true },
+        { k: "放電", label: "⚡ 放電效果" },
+        { k: "友善", label: "👶 親子友善" },
+        { k: "舒適", label: "🌤 舒適遮蔭" },
+      ],
+      adult: [
+        { k: "整體", label: "🌟 整體推薦", req: true },
+        { k: "食物", label: "🍽 食物飲品" },
+        { k: "氣氛", label: "🪑 氣氛環境" },
+        { k: "CP值", label: "💰 CP 值" },
+      ],
+    },
+    formHtml(kind) {
+      const qs = api.QS[kind] || api.QS.kids;
+      return '<div class="logform"><div class="lf-q">去過?點星星快速評,「整體」必填、其他順手 👇</div>'
+        + qs.map(q => '<div class="qrow"' + (q.req ? ' data-req="1"' : "") + ' data-q="' + q.k + '"><span class="ql">' + q.label + (q.req ? "" : "<i>選填</i>") + '</span><span class="stars" onclick="LF.star(event)">' + [1, 2, 3, 4, 5].map(n => '<span class="st" data-v="' + n + '">★</span>').join("") + "</span></div>").join("")
         + '<input class="lognote" maxlength="60" placeholder="一句心得(選填):好停車、玩瘋了、太曬…">'
         + '<div class="lf-row"><button class="lf-cancel" onclick="LF.close(this)">取消</button><button class="lf-save" onclick="LF.save(this)" disabled>記錄</button></div></div>';
     },
@@ -505,21 +524,30 @@ const LF = (() => {
     close(btn) { btn.closest(".vcard").classList.remove("logging"); },
     star(ev) {
       const s = ev.target.closest(".st"); if (!s) return;
-      const form = s.closest(".logform"), v = +s.dataset.v;
-      form.dataset.rating = String(v);
-      form.querySelectorAll(".st").forEach(x => x.classList.toggle("on", +x.dataset.v <= v));
-      const save = form.querySelector(".lf-save"); save.disabled = false; save.textContent = "記錄 " + "★".repeat(v);
+      const row = s.closest(".qrow"), form = s.closest(".logform"), v = +s.dataset.v;
+      row.dataset.val = String(v);
+      row.querySelectorAll(".st").forEach(x => x.classList.toggle("on", +x.dataset.v <= v));
+      const req = form.querySelector(".qrow[data-req]");
+      const overall = +((req && req.dataset.val) || 0);
+      const save = form.querySelector(".lf-save");
+      save.disabled = !overall;
+      save.textContent = overall ? "記錄 " + "★".repeat(overall) : "記錄";
     },
     save(btn) {
       const form = btn.closest(".logform"), card = btn.closest(".vcard");
-      const rating = +(form.dataset.rating || 0); if (!rating) return;
+      const req = form.querySelector(".qrow[data-req]");
+      const rating = +((req && req.dataset.val) || 0); if (!rating) return;
+      const scores = {};
+      form.querySelectorAll(".qrow:not([data-req])").forEach(r => { const v = +(r.dataset.val || 0); if (v) scores[r.dataset.q] = v; });
       const note = (form.querySelector(".lognote").value || "").trim();
       const id = card.dataset.id || card.dataset.aid;
       if (!id) return;
       const kind = card.dataset.id ? "kids" : "adult";
       const nameEl = card.querySelector(".name");
       const name = nameEl ? nameEl.textContent.trim() : id;
-      logs.push({ id, kind, name, date: today(), rating, note, ts: Date.now(), synced: false });
+      const entry = { id, kind, name, date: today(), rating, note, ts: Date.now(), synced: false };
+      if (Object.keys(scores).length) entry.scores = scores;
+      logs.push(entry);
       persist();
       card.classList.remove("logging");
       api.toast("已記錄 " + "★".repeat(rating) + " · 存在手機了");
@@ -550,7 +578,7 @@ const LF = (() => {
       }
       bar.hidden = false; document.body.classList.add("has-bar");
     },
-    payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, rating: l.rating, note: l.note, ts: l.ts })); },
+    payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, rating: l.rating, scores: l.scores, note: l.note, ts: l.ts })); },
     clipText() { return "請把以下林家實測寫進 family_log(kids→venues.json、adult→places-adult.json,以 ts 去重):\n```json\n" + JSON.stringify(api.payload(), null, 2) + "\n```"; },
     _clip(okMsg) {
       const txt = api.clipText();
@@ -727,7 +755,7 @@ function vcardHtml(v, enter) {
       <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>
       <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
     </div>
-    ${LF.formHtml()}
+    ${LF.formHtml("kids")}
     <div class="exp">
       <h4>天氣適性(0–3)</h4>
       <div class="wgrid">${["晴熱", "晴涼", "小雨", "大雨"].map(k => `<div>${k}<b>${typeof v.weather_fit[k] === "number" ? v.weather_fit[k] : "?"}</b></div>`).join("")}</div>
@@ -918,7 +946,7 @@ function acardHtml(p, enter) {
       <button class="abtn log" onclick="LF.open(this)">📝 我去過</button>
       <button class="abtn" onclick="this.closest('.vcard').classList.toggle('open')">📖 詳細</button>
     </div>
-    ${LF.formHtml()}
+    ${LF.formHtml("adult")}
     <div class="exp">
       <h4>四情境適配(0–3)</h4>
       <div class="wgrid">${Object.keys(ASCEN).map(k => `<div>${ASCEN[k]}<b>${typeof (p.scene_fit && p.scene_fit[k] && p.scene_fit[k].score) === "number" ? p.scene_fit[k].score : "?"}</b></div>`).join("")}</div>

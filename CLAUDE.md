@@ -47,7 +47,7 @@ docs/decisions.md       # 重大設計決策紀錄
 | facilities | 尿布台、兒童椅、哺乳室、停車、廁所 |
 | rain_backup_id | 就近雨天備案的 venue id(戶外類必填;找不到標「無備案」並降權) |
 | evidence | [{url, source_type: blog/官網/news/實測, date, 摘要}],≥ 2 筆獨立來源才可入庫 |
-| family_log | [{date, 評分 1–5, 心得, ts?}] 林家實測,權重高於一切網路來源;ts(選填,毫秒)為 App 順手回報的去重鍵 |
+| family_log | [{date, 評分 1–5, 心得, ts?, 細項?}] 林家實測,權重高於一切網路來源;ts(選填,毫秒)為 App 去重鍵;細項(選填)為 App 快評分項星等(親子:放電/友善/舒適;大人:食物/氣氛/CP值) |
 | last_verified | 日期;超過 6 個月 → 推薦時必須顯示「待重驗」警語 |
 | status | active / closed / 待確認 |
 | zone | v1.2(2026-07-19 核准):地區標記,宜蘭 / 台北 / …;既有未標者視為宜蘭 |
@@ -67,7 +67,7 @@ docs/decisions.md       # 重大設計決策紀錄
 | open_late / reservation / work_ok | {value, basis/note};打烊時間、訂位政策、可否久坐辦公(插座) |
 | signature | 招牌一句(菜/飲/氛圍),選填 |
 | evidence | [{url, source_type, date, 摘要}],≥ 2 筆獨立網域來源才可入庫 |
-| family_log | (2026-07-20 核准補上,與親子一致)[{date, 評分 1–5, 心得, ts?}] 林家實測,權重高於網路來源 |
+| family_log | (2026-07-20 核准補上,與親子一致)[{date, 評分 1–5, 心得, ts?, 細項?}] 林家實測,權重高於網路來源 |
 | last_verified / status | 同親子庫規則 |
 
 **大人 scene_fit 評分基準**:solo(出差一人)3=有吧檯/單人友善且可久坐辦公;date(兩人約會)3=氣氛/隱私/燈光俱佳;group(朋友聚餐)3=多人/包廂/可分食且好聊;late(喝一杯宵夜)3=營業至深夜且有酒或宵夜。

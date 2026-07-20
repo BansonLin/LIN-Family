@@ -215,7 +215,7 @@
       <div class="fgroup" role="group" aria-label="地區" id="zonerow">
         <span class="flabel">地區</span>
       </div>
-      <div class="fgroup" role="group" aria-label="車程">
+      <div class="fgroup" role="group" aria-label="車程" id="driverow">
         <span class="flabel">車程</span>
         <button class="chip" data-group="drive" data-val="any" aria-pressed="true">不限</button>
         <button class="chip" data-group="drive" data-val="15" aria-pressed="false">15 分內</button>
@@ -361,8 +361,11 @@
         <button class="scard ascard" data-ascen="late"><div class="si">🌙</div><div class="st">喝一杯・宵夜</div></button>
       </div>
       <div class="filters">
+        <div class="fgroup" role="group" aria-label="城市" id="azonerow">
+          <span class="flabel">城市</span>
+        </div>
         <div class="fgroup" role="group" aria-label="行政區" id="distrow">
-          <span class="flabel">地區</span>
+          <span class="flabel">區域</span>
           <button class="chip" data-dist="any" aria-pressed="true">不限</button>
         </div>
         <div class="fgroup" role="group" aria-label="價位">
@@ -544,7 +547,9 @@ function lastLog(v) { const l = v.family_log; return l && l.length ? `${l[l.leng
 function navUrl(v) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(v.name + " " + (v.address || "")); }
 function backupLine(v) {
   if (v.type !== "戶外公園" || !v.rain_backup_id) return "";
-  if (v.rain_backup_id === "無備案") return `<div class="rainline">🌧 雨天備案:無備案(已降權)</div>`;
+  if (v.rain_backup_id === "無備案") return (v.zone && v.zone !== "宜蘭")
+    ? `<div class="rainline">🌧 就近雨備:同城另找室內(外縣市不強制配對)</div>`
+    : `<div class="rainline">🌧 雨天備案:無備案(已降權)</div>`;
   const b = VENUES.find(x => x.id === v.rain_backup_id);
   const d = b && typeof b.drive === "number" ? `(從家約 ${b.drive} 分)` : "";
   return `<div class="rainline">🌧 雨天備案:${b ? b.name : v.rain_backup_id}${d}</div>`;
@@ -629,9 +634,21 @@ $("#zonerow").insertAdjacentHTML("beforeend", ZONES.map(z => `<button class="chi
 $$(".chip[data-zone]").forEach(c => c.addEventListener("click", () => {
   state.zone = c.dataset.zone;
   $$(".chip[data-zone]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === state.zone)));
+  applyKidsZoneUI();
   renderStage(); renderLists();
 }));
 const ZV = () => VENUES.filter(v => (v.zone || "宜蘭") === state.zone);
+/* 車程篩選只在宜蘭主圈有意義(外縣市 drive_min 從宜蘭家算無意義)→ 非宜蘭 zone 隱藏並歸零 */
+function applyKidsZoneUI() {
+  const isYilan = state.zone === "宜蘭";
+  const dr = $("#driverow");
+  if (dr) dr.style.display = isYilan ? "" : "none";
+  if (!isYilan && state.drive !== "any") {
+    state.drive = "any";
+    $$('.chip[data-group="drive"]').forEach(x => x.setAttribute("aria-pressed", String(x.dataset.val === "any")));
+  }
+}
+applyKidsZoneUI();
 
 /* ---------- 分頁清單/雨天/來源(依 zone 重繪) ---------- */
 function renderLists() {
@@ -675,7 +692,12 @@ $$(".tab-btn[data-panel]").forEach(btn => btn.addEventListener("click", () => {
 }));
 
 /* ================= 大人模式 ================= */
-const astate = { scen: null, dist: "any", price: "any", ameal: new Set(), work: false };
+const AZONE_ORDER = ["台北", "宜蘭", "台中", "台南"];
+const AZONES = [...new Set(PLACES.map(p => p.zone || "台北"))].sort((a, b) => {
+  const ia = AZONE_ORDER.indexOf(a), ib = AZONE_ORDER.indexOf(b);
+  return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+});
+const astate = { zone: AZONES[0] || "台北", scen: null, dist: "any", price: "any", ameal: new Set(), work: false };
 const ASCEN = { solo: "出差一人", date: "兩人約會", group: "朋友聚餐", late: "喝一杯・宵夜" };
 const PRICE_LABEL = { 1: "💵 平價", 2: "💰 小資", 3: "💎 中高", 4: "👑 高級" };
 const anum = x => typeof x === "number" ? x : 0.5;
@@ -692,7 +714,7 @@ const ACSS = { cafe: "cafe", drink: "indoor", dinner: "park" };
 
 function aPool(opt) {
   const o = Object.assign({ dist: astate.dist, price: astate.price, work: astate.work }, opt || {});
-  let list = PLACES.filter(p => p.status !== "closed");
+  let list = PLACES.filter(p => p.status !== "closed" && (p.zone || "台北") === astate.zone);
   if (o.dist !== "any") list = list.filter(p => p.district === o.dist);
   if (o.price !== "any") list = list.filter(p => p.price_level === Number(o.price));
   for (const m of astate.ameal) list = list.filter(p => (p.meal_type || []).includes(m));
@@ -766,7 +788,7 @@ function acardHtml(p, enter) {
 
 function renderAStage() {
   const stage = $("#aStage");
-  if (!astate.scen) { stage.innerHTML = '<div class="draw-empty">點一張情境卡,10 秒內給你 3 個台北答案。<br>出差臨時想吃什麼,不用再滑地圖。</div>'; return; }
+  if (!astate.scen) { stage.innerHTML = '<div class="draw-empty">點一張情境卡,10 秒內給你 3 個' + astate.zone + '答案。<br>臨時想吃什麼,不用再滑地圖。</div>'; return; }
   const top = aRecommend();
   if (top.length) { stage.innerHTML = top.map(({ p }) => acardHtml(p, true)).join(""); return; }
   const sug = aRelax();
@@ -778,26 +800,34 @@ const TABF = {
   dinner: p => ACAT(p) !== "cafe" && (sfitScore(p, "date") >= 2 || sfitScore(p, "group") >= 2),
   drink: p => sfitScore(p, "late") >= 2,
 };
+const AZV = () => PLACES.filter(p => (p.zone || "台北") === astate.zone);
 function renderALists() {
-  $("#aStats").textContent = `台北大人場所 ${PLACES.length} 家・更新 ${PLACES[0] ? PLACES[0].last_verified : "—"}`;
+  const ZL = AZV();
+  $("#aStats").textContent = `${astate.zone}大人場所 ${ZL.length} 家・全庫 ${PLACES.length} 家・更新 ${PLACES[0] ? PLACES[0].last_verified : "—"}`;
   for (const cat of ["cafe", "dinner", "drink"]) {
-    const g = PLACES.filter(p => p.status !== "closed" && TABF[cat](p)).sort((a, b) => (a.price_level || 9) - (b.price_level || 9));
+    const g = ZL.filter(p => p.status !== "closed" && TABF[cat](p)).sort((a, b) => (a.price_level || 9) - (b.price_level || 9));
     $("#acnt-" + cat).textContent = g.length + " 家";
-    $("#alist-" + cat).innerHTML = g.length ? g.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">此類暫無場所</div>`;
+    $("#alist-" + cat).innerHTML = g.length ? g.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">此區此類暫無場所</div>`;
   }
-  const all = PLACES.filter(p => p.status !== "closed").sort((a, b) => String(a.district).localeCompare(String(b.district)));
+  const all = ZL.filter(p => p.status !== "closed").sort((a, b) => String(a.district).localeCompare(String(b.district)));
   $("#acnt-all").textContent = all.length + " 家";
-  $("#alist-all").innerHTML = all.length ? all.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">暫無場所,資料建置中</div>`;
+  $("#alist-all").innerHTML = all.length ? all.map(p => acardHtml(p, false)).join("") : `<div class="section-sub">此區暫無場所,資料建置中</div>`;
   $("#alist-src").innerHTML = all.map(p => `
     <details class="srcbox">
       <summary>${p.name} <span class="badge">${(p.evidence || []).length} 個來源</span><span class="badge">確認 ${p.last_verified}</span></summary>
       ${(p.evidence || []).map(e => `<div class="srcitem">${srcTag(e.source_type)} <a href="${e.url}" target="_blank" rel="noopener">${e.url}</a><br><span class="sd">${e.date} · ${e["摘要"]}</span></div>`).join("")}
     </details>`).join("");
 }
-/* 行政區 chip:由資料生成 */
-function initDistricts() {
-  const ds = [...new Set(PLACES.map(p => p.district).filter(Boolean))].sort();
-  $("#distrow").insertAdjacentHTML("beforeend", ds.map(d => `<button class="chip" data-dist="${d}" aria-pressed="false">${d}</button>`).join(""));
+/* 城市 zone chip(由資料生成) */
+function initAzones() {
+  $("#azonerow").insertAdjacentHTML("beforeend", AZONES.map(z => `<button class="chip" data-zone="${z}" aria-pressed="${String(z === astate.zone)}">${z}</button>`).join(""));
+}
+/* 行政區 chip:依所選城市重繪 */
+function renderADistricts() {
+  const ds = [...new Set(AZV().map(p => p.district).filter(Boolean))].sort();
+  $("#distrow").innerHTML = '<span class="flabel">區域</span><button class="chip" data-dist="any" aria-pressed="true">不限</button>'
+    + ds.map(d => `<button class="chip" data-dist="${d}" aria-pressed="false">${d}</button>`).join("");
+  astate.dist = "any";
 }
 function bindAdult() {
   $$(".ascard").forEach(c => c.addEventListener("click", () => {
@@ -806,11 +836,21 @@ function bindAdult() {
     $$(".ascard").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.ascen === astate.scen)));
     renderAStage();
   }));
-  $$(".chip[data-dist]").forEach(c => c.addEventListener("click", () => {
-    astate.dist = c.dataset.dist;
-    $$(".chip[data-dist]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.dist === astate.dist)));
+  // 城市切換(委派)
+  $("#azonerow").addEventListener("click", e => {
+    const b = e.target.closest(".chip[data-zone]"); if (!b) return;
+    astate.zone = b.dataset.zone;
+    $$("#azonerow .chip").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === astate.zone)));
+    renderADistricts();
+    renderAStage(); renderALists();
+  });
+  // 行政區(委派,因會隨城市重繪)
+  $("#distrow").addEventListener("click", e => {
+    const b = e.target.closest(".chip[data-dist]"); if (!b) return;
+    astate.dist = b.dataset.dist;
+    $$("#distrow .chip").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.dist === astate.dist)));
     renderAStage();
-  }));
+  });
   $$(".chip[data-price]").forEach(c => c.addEventListener("click", () => {
     astate.price = c.dataset.price;
     $$(".chip[data-price]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.price === astate.price)));
@@ -834,7 +874,8 @@ function bindAdult() {
     document.getElementById(btn.dataset.apanel).classList.add("active");
   }));
 }
-initDistricts();
+initAzones();
+renderADistricts();
 bindAdult();
 renderALists();
 

@@ -8934,5 +8934,3277 @@
       "同場騎車",
       "放大鏡觀察家"
     ]
+  },
+  {
+    "id": "tc-nmns-science-museum",
+    "name": "國立自然科學博物館(科博館)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北區館前路1號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "主要展廳全室內冷氣,雨天晴熱皆宜"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內博物館不能騎滑步車;動線平緩可推車,綜合服務中心提供娃娃車借用(假日可能借完)"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "設幼兒科學園(3-8歲)與 BF 達達的魔法樂園親子互動區,家庭客多;但一般展廳仍需輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "多為靜態展示,達達魔法樂園部分可爬玩,推車賞展為主"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "幼兒科學園 3 歲起開放、恐龍廳暴龍震撼、達達魔法樂園互動"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "科學探索互動展區、機械恐龍、木乃伊,適合探索期幼兒"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "太空劇場、科學展區知識量足,低年級可深度學習"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "館內公共廁所設尿布台"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內餐飲區兒童椅未於來源查得"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "館內設哺集乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "博館路/植物園/西屯路 3 處停車場,小型車半小時 15 元、上限 180 元;植物園場有電梯利於娃娃車"
+      },
+      "廁所": {
+        "value": true,
+        "note": "各展區皆有"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.nmns.edu.tw/ch/visit/traffic/index.html",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方交通與停車:3 處停車場、植物園場設電梯供娃娃車、可借推車與寄物"
+      },
+      {
+        "url": "https://bobowin.blog/taichung-nmns/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "親子實記:恐龍廳暴龍、全館冷氣室內動線友善、適合遛小孩雨天備案"
+      },
+      {
+        "url": "https://bjsmile.tw/nmns/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "攻略:6 歲以下免票、門票與交通、幼兒科學園介紹"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-nmns-botanical-garden",
+    "name": "科博館植物園(熱帶雨林溫室)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北區館前路1號(植物園入口於博館路)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "熱帶雨林溫室為全玻璃帷幕罩頂、植物茂密涼爽;戶外園區大面積樹蔭"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "溫室內為棧道與斜坡不宜騎乘;戶外園區步道平緩可推車慢行"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外開放園區、家庭客多;溫室室內展示空間需輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車賞綠意、看水池魚類,雨林景觀刺激感官"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "溫室像小亞馬遜雨林,找植物、看魚適合探索期"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "分區主題(超高樹/棕櫚坡/低地雨林)可觀察學習"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生態與植物知識豐富,適合自然觀察與課外延伸"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "科博館園區設尿布台,植物園入口內部未於來源明列"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "植物園內無餐飲,兒童椅不適用"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "綜合服務中心提供服務,哺乳室位置未於來源明列"
+      },
+      "停車": {
+        "value": true,
+        "note": "設超大地下停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設公共廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.nmns.edu.tw/ch/exhibitions/galleries/botanical-garden/tropical-rain-forest-greenhouse/index.html",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方:懸吊式鋼構玻璃帷幕溫室,直徑 56 公尺、約 500 種植物分區展示"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/nmns-plant",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "親子實記:鬧區裡熱帶雨林、水族箱,提供推車借用、地下停車場"
+      },
+      {
+        "url": "https://bunnyann.tw/botanical-garden/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "門票 20 元、像小亞馬遜雨林,溫室綠意涼爽適合幼兒一日遊"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-beitun-childrens-park",
+    "name": "北屯兒童公園",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北屯區興安路一段162號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "沙坑上方設遮陽棚、四周多樹蔭乘涼;部分攀爬遊具無遮蔽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "公園步道開闊平坦,適合推車與滑步車放電;林間探索場為攀爬地形"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開放公園,幼兒奔跑喧鬧無妨"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "沙坑、搖搖馬、鞦韆可玩;林間攀爬遊具偏大童需陪同"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "沙坑與溜滑梯適齡,遮陽棚下玩沙不曬"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "林間探索遊戲場鑽籠爬網、波浪棧橋適合放電"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "逾一層樓高旋轉溜滑梯、高空橋攀爬挑戰性足"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公園廁所/園內圖書館尿布台未於來源明列"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無餐飲設施"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "園旁臺中市立圖書館興安分館可能設哺乳空間,待現場確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "周邊停車格,或停城市車旅三光站步行約 10 分鐘"
+      },
+      "廁所": {
+        "value": true,
+        "note": "公園設公共廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://bobowin.blog/beitun-park/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "30 年老公園升級林間探索遊戲場,沙坑遮陽棚、樹蔭多,園內有圖書館可雨天備案"
+      },
+      {
+        "url": "https://ptfmfamily.com/taichung-beitunchildrenpark/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "翻新為森林探索主題遊戲場,旋轉溜滑梯、鞦韆、沙坑,親子放電好去處"
+      },
+      {
+        "url": "https://lyes.tw/32991958-%E5%8C%97%E5%B1%AF%E5%85%92%E7%AB%A5%E5%85%AC%E5%9C%92/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "明列可作免費雨天備案:園內室內遊戲室與圖書館,雨停再玩溜滑梯沙坑鞦韆"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-carton-king-dakeng",
+    "name": "紙箱王創意園區(大坑店)",
+    "type": "觀光工廠",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北屯區東山路二段2巷2號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北屯區 大坑 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "園區有樹屋、蘑菇屋、棚架與紙箱王主題餐廳室內空間半遮;步道造景多為開放"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "園區為造景步道含天空步道與階梯,不適合騎滑步車;推車大致可進但有坡"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子取向觀光園區,設兒童遊具、家庭客為主"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "餵魚看松鼠、戲水池玩水;溜滑梯與階梯偏大童需陪同"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "松鼠/蘑菇溜滑梯、可搭乘紙小火車、夏天小戲水池"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "紙雕造景、天空步道、DIY 手作適合探索期"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "紙製主題與 DIY、環遊世界建築地標拍照具知識趣味"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "主題餐廳洗手間設尿布台"
+      },
+      "兒童椅": {
+        "value": true,
+        "note": "主題餐廳提供兒童椅"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "設哺乳室,備消毒酒精、沙發,泡奶熱水可洽櫃台"
+      },
+      "停車": {
+        "value": true,
+        "note": "大門口停車場與第二停車場,汽機車停車便利"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設多處廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://cartonking.com.tw/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官方園區介紹:紙雕花園、紙火車、天空步道、溜滑梯、主題餐廳"
+      },
+      {
+        "url": "https://bobowin.blog/cartonking/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "親子實記:樹屋溜滑梯、蘑菇屋、戲水池、餐廳洗手間有尿布台、哺乳室備沙發熱水"
+      },
+      {
+        "url": "https://fullfenblog.tw/cartonking/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "門票 230 起含紙小火車、松鼠溜滑梯、停車便利,親子一日遊景點"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-island-aurora",
+    "name": "小島3.5度親子餐廳(台中冒險館)",
+    "type": "親子餐廳",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北屯區經貿三路二段82號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 北屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內冷氣空間,晴熱與雨天皆宜"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "二樓遊戲區設嚕嚕車可館內騎乘,但非戶外滑步車放電場地"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子專門餐廳,二樓整層為主題遊戲區,不怕孩子吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 3,
+        "reason": "設軟墊、室內沙池與球池,80cm 以下免費,嬰幼友善"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "球池溜滑梯、家家酒、化妝沙龍、益智區適齡"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "七大主題遊戲區(火山/森林/海灣)不限時放電"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "遊具偏幼兒向,低年級可玩但較快膩"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "一、二樓哺乳室內可換尿布"
+      },
+      "兒童椅": {
+        "value": true,
+        "note": "用餐區提供兒童椅"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "一、二樓皆設哺乳室"
+      },
+      "停車": {
+        "value": false,
+        "note": "無專屬停車場,周邊有路邊停車格"
+      },
+      "廁所": {
+        "value": true,
+        "note": "廁所設幼兒小馬桶與兒童高度洗手檯"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://dramastory2019.com/islandaurora/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "2026 最新菜單:夢幻球池溜滑梯、室內沙池、益智區、家家酒、嚕嚕車,全室內台中冒險館"
+      },
+      {
+        "url": "https://lyes.tw/32427445-%E5%B0%8F%E5%B3%B63-5%E5%BA%A6/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "室內沙坑與主題遊戲區、需先預約,附菜單"
+      },
+      {
+        "url": "https://ivychi.com/island35/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "不限時遊戲區、抓周派對場地,哺乳室/尿布台/幼兒馬桶齊全、無專屬停車場路邊停車"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-qiuhonggu-park",
+    "name": "秋紅谷景觀生態公園",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西屯區朝富路30號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "園區有變色葉樹林與周邊喬木提供部分樹蔭,但大片下凹草坪與環湖步道開闊處近乎無遮蔽,正午偏曬"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "下凹式地形坡道與階梯多、緊臨湖泊需全程看顧,木屑步道與草坪不利滑步車;推車可走環湖平緩步道但整體偏散步賞景非放電場"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開放式生態公園,幼兒喧鬧無干擾他人顧慮"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "主步道可推車,但下凹地形有階梯坡道且環湖臨水,無幼兒遊具,較不便"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "綠草坪可跑跳、餵魚看湖景,但無溜滑梯沙坑等固定遊具,臨湖須緊盯"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "適合走景觀橋、環湖散步與自然觀察,遊玩深度有限"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "可散步賞景、拍照,缺乏挑戰性遊具,停留時間短"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公園公廁是否設尿布台待現場確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無用餐兒童椅,周邊有餐廳"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見官方哺乳室資訊,待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "設地下停車場,汽機車收費(費率待現場確認)"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設公共廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/818",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台中觀光旅遊網官方景點頁:西屯區朝富路30號、24小時開放、下凹式生態公園,含湖泊/綠草坪/木棧步道"
+      },
+      {
+        "url": "https://bobbytravel.tw/qiuhonggu-square/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "波比看世界:七期豪宅中綠洲,有停車場、周邊美食,環湖木屑步道柔軟好走(適齡/推車線索)"
+      },
+      {
+        "url": "https://shin.tw/autumn-red-valley/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "都市綠洲、四季皆美,湖景樹海花叢與草坪並存,遮蔭以樹林為主、開闊草坪無遮蔽"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-shoes-wonderland",
+    "name": "鞋寶觀光工廠",
+    "type": "觀光工廠",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西屯區工業區八路11號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 2,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "主體為室內冷氣展館(全遮蔽),另有小面積戶外草皮"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內展館平坦、推車可進出,但為導覽與DIY場域不宜騎滑步車;戶外草皮面積小僅供短暫跑跳"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "親子取向觀光工廠、家庭客為主且有DIY,但室內導覽時仍需留意音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以參觀展品與導覽為主,DIY過難,幼兒僅能推車看巨型鞋裝置"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "巨型鞋拍照、戶外草皮跑跳,部分DIY需家長全程協助"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "可完成蝶古巴特帆布鞋/袋包DIY、聽鞋故事導覽,參與度高"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "DIY與鞋類知識導覽具學習性,適合低年級動手做"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "觀光工廠多設尿布台,實際待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內餐飲/DIY區兒童椅待確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "哺乳室設置待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "位工業區、附設/鄰近停車(免費與否待確認)"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://shoeswonderland.bestmotion.com/",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "鞋寶官網:營業9:30-17:00、每月最後一週週二休、最後入園16:00,票價與DIY項目"
+      },
+      {
+        "url": "https://travelblog.tw/shoeswonderland/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "小潔趴趴走:全台最大巨人鞋、趣味導覽與親子DIY,戶外有草皮可玩(親子/雨天室內線索)"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/803",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台中觀光旅遊網官方頁:地址工業區八路11號、鞋主題故事館、建議停留約2小時"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-national-taichung-theater",
+    "name": "臺中國家歌劇院",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西屯區惠來路二段101號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "室內公共空間有冷氣遮蔽,但6樓空中花園完全無遮蔭、正午偏熱"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "無障礙動線佳、推車可順利進出各層與空中花園,但屬藝文場館不宜騎滑步車"
+    },
+    "noise_tolerance": {
+      "score": 1,
+      "basis": "藝文表演場館偏安靜成人向,表演廳需維持安靜;大廳與頂樓花園較能容忍但仍非親子專門場所"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "空間可推車但無幼兒遊具,主要看建築,適玩性低"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "頂樓花園白色圓丘可短暫走跳拍照,需避正午曝曬"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "曲牆孔洞建築與空中花園可探索,偶有親子表演/活動"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "適合建築觀察、藝文導覽或觀賞演出,靜態為主"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "大型公共場館多設親子廁所/尿布台,實際待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "館內餐廳兒童椅待確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "哺乳室設置待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "設地下停車場(收費)"
+      },
+      "廁所": {
+        "value": true,
+        "note": "各樓層設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.npac-ntt.org/visit/transportation",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "歌劇院官方開館資訊:惠來路二段101號、開館時段(週一休)、交通與停車"
+      },
+      {
+        "url": "https://bobowin.blog/taichung-theater/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "寶寶溫:6樓頂樓花園白色圓頂山丘,無遮蔭正午偏熱,推車/輪椅可達(遮蔭/推車線索)"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/942",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "台中觀光旅遊網:曲牆孔洞建築、免門票公共區與空中花園,館內設餐廳"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-tongyou-forest",
+    "name": "童遊森林館-台中西屯分館",
+    "type": "室內樂園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西屯區重慶路99號5F-1",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 2,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內冷氣空間(5樓)"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內親子樂園,推車可搭電梯進入;內部為球池/沙坑/木製玩具區,非滑步車或騎乘場地"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子專門室內樂園、設遊戲區與主題館,幼兒喧鬧為常態"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 3,
+        "reason": "6個月起可入館,設嬰幼兒木製玩具、琉璃沙坑與原木球池,有軟墊、圍欄與工作人員看顧"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "德國/瑞典進口木製玩具、角色扮演與森林/城堡主題館,正中幼兒放電需求"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "主題館與手作/烘焙課程可玩,部分木玩偏低齡"
+      },
+      "6-9": {
+        "score": 1,
+        "reason": "以幼兒木玩與球池為主,大童較易玩膩"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "館內規劃尿布台"
+      },
+      "兒童椅": {
+        "value": true,
+        "note": "提供餐椅,店員會再次消毒"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "館內設哺乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "無專屬停車場,鄰近Times台中四川一街、何厝停車場需付費,假日較難停"
+      },
+      "廁所": {
+        "value": true,
+        "note": "設廁所,洗手台附增高墊供孩子自行清洗"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://baofamily.tw/post-466509449/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "來飽寶家ba:西屯重慶路99號5F-1,琉璃沙坑、原木球池、德瑞進口木玩,森林/城堡/水族/精靈主題館(適齡/室內線索)"
+      },
+      {
+        "url": "https://www.abic.com.tw/place/view/id/11711",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "愛貝客親子遊:營業時段、票價、6個月起入館規則,設哺乳室、尿布台、餐椅消毒(收費/設施線索)"
+      },
+      {
+        "url": "https://travel.yam.com/article/115728",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "輕旅行報導:原木球池與角色扮演、親子手作/烘焙課程,餐點另計,工作人員全程巡視看顧"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-civic-park",
+    "name": "市政公園(七期)",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西屯區文心路二段(市政府與市議會之間、近市政北七路)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西屯區 七期定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "開闊草皮與藝術造景廣場為主,喬木稀疏、遮蔭零星,正午偏曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "地面平坦開闊的草皮與廣場,適合滑步車與推車放電,動線寬敞"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開放式都會草坪廣場,幼兒喧鬧無干擾顧慮"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "有小玩沙池與旁邊水龍頭可清洗,平坦草皮可爬行,但無專屬幼兒遊具"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "開闊草皮跑跳、玩沙、練滑步車,腹地大好放電"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "適合騎滑步車/騎車與球類活動,固定遊具少"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "腹地開闊可騎車、玩球、放風箏,但缺挑戰性遊具"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公園公廁尿布台待確認"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無用餐兒童椅"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "哺乳室待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "市政公園地下停車場(汽車約899席、機車約400席),24小時收費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設公共廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://tripadvisor.com/Attraction_Review-g13808534-d14125157-Reviews-Civic_Park-Xitun_Taichung.html",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "Tripadvisor旅客評論:西屯區市政府/市議會間的市政公園,地面平坦、草皮維護佳,適合散步跑跳"
+      },
+      {
+        "url": "https://www.taichung.gov.tw/957949/post",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台中市府新聞:西屯區市政公園停車場實施停車收費,設地下停車場(定位/停車線索)"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/slippery-taichung",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "Nini and Blue台中特色公園整理:市政公園地上草皮、藝術造景,旁有小玩沙池與清洗水龍頭"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-rainbow-village",
+    "name": "彩虹眷村",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市南屯區春安路56巷25號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 南屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "戶外彩繪巷弄,遮蔭少;部落格明言園區無太多遮蔭、日曬強不建議中午前往"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "彩繪巷弄狹窄且假日人潮多,不適合騎滑步車;推車可勉強進入但擁擠,停車場旁另有彩虹溜滑梯與沙坑可放電"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外開放式觀光景點,遊客與家庭客混雜,幼兒喧鬧影響小;另設兒童溜滑梯與沙坑"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "需抱或推車,巷弄窄且人多,主要看彩繪、參與度低"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "停車場旁彩虹溜滑梯與沙坑可玩,沙坑旁有水龍頭沖洗,需大人看顧"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "溜滑梯、沙坑加彩繪拍照,能玩一陣子"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "以拍照打卡為主,園區小停留時間短"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "新增公廁但未見尿布台明確資訊"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "僅小吃攤販,無餐廳兒童椅"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "旁有大型收費停車場,約 30 元/時"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區改造後新增乾淨公廁"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0001112&id=A12-00236",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "交通部觀光署官方頁:南屯區春安路56巷,開放週二至週日9-17時、週一休館,免費參觀"
+      },
+      {
+        "url": "https://2hyperlife.com/rainbowvillage/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "彩虹眷村再進化,新增彩虹溜滑梯加沙坑很適合溜小孩、新增停車場與乾淨公廁"
+      },
+      {
+        "url": "https://travelss.net/2024/12/29/",
+        "source_type": "blog",
+        "date": "2024-12",
+        "摘要": "全攻略提到園區遮蔭少、日曬強,不建議中午前往,附交通與停車指南"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-fengle-sculpture-park",
+    "name": "豐樂雕塑公園",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市南屯區向心南路與文心南五路口",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 南屯區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "舊兒童遊戲區與森林步道有樹蔭;新沙坑與磨石子溜滑梯區無遮陽,建議早上或傍晚前往"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "6公頃大公園、平坦步道與大片草皮,適合滑步車、推車與放電;另設全台第一個跑酷練習場"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外共融公園,兒童遊戲場、沙坑、跑酷場,幼兒可盡情跑跳喧鬧"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "近南屯活動中心旁舊遊戲區有樹蔭、遊具偏學齡前,草皮可爬行"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "超大沙坑、磨石子溜滑梯、圓盤鞦韆、蹺蹺板適齡好玩"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "磨石子溜滑梯、跑酷練習場、親水區放電充足"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "跑酷練習場與大型磨石子溜滑梯挑戰性適合大童"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "園內有公廁,尿布台未見明確資訊"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "公園無餐飲座位,無兒童椅"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未見哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "旁有豐樂停車場(停104、停100),收費"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園內設公廁,內有動物彩繪"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/Attractions/Intro/136/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "臺中觀光旅遊網:全國首座公立雕塑公園、6公頃,設親水區、兒童遊戲場、步道,24小時開放"
+      },
+      {
+        "url": "https://cmeyy.tw/blog/post/20171113",
+        "source_type": "blog",
+        "date": "2017",
+        "摘要": "兒童遊樂設施:磨石子溜滑梯、共融式溜滑梯、跑酷、玩沙、野餐,舊區有樹蔭可遮陽"
+      },
+      {
+        "url": "https://bobowin.blog/fengle-park/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "大沙坑、磨石子溜滑梯、跑酷練習場;新沙坑區無遮陽建議早點到或傍晚玩,有停車場"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-ntmofa-children",
+    "name": "國立臺灣美術館 臺灣兒童藝術基地(含兒童繪本區)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西區五權西路一段2號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內冷氣美術館,兒童專區不受日曬與下雨影響"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內展區與繪本區不可騎乘,可寄放推車;館外美術園道草坪與林蔭可另行放電"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "設兒童專屬互動體驗空間與兒童繪本區(說故事、幼幼區),為親子專門場域;唯繪本閱讀區仍需輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "兒童繪本區設幼幼區與乾淨環境,互動空間部分適齡"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "互動體驗空間與繪本說故事場次適齡,可寄放推車"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "從互動遊戲體驗藝術、繪本閱讀,啟蒙性強"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "互動裝置、繪本與美術館展覽適合大童藝術啟蒙"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "美術館親子友善,尿布台待現場確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "未見兒童椅明確資訊"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "部落格提及可哺乳、餵奶、安撫,設親子服務空間"
+      },
+      "停車": {
+        "value": true,
+        "note": "美術園區/美村/土庫/民生等停車場,約 20 元/時"
+      },
+      "廁所": {
+        "value": true,
+        "note": "兒藝基地設兒童專用小馬桶、乾淨舒適"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.ntmofa.gov.tw/child/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "國美館兒童專區官方頁:兒藝基地分教育展示、互動體驗、兒童繪本三區,皆免門票,互動空間每日3場需預約"
+      },
+      {
+        "url": "https://fishappyworld.com/ntmofa-2/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "台中親子免費室內景點,臺灣兒童藝術基地與兒童繪本區,高品質陪伴、冷氣室內"
+      },
+      {
+        "url": "https://baofamily.tw/child-ntmofa/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "兒藝基地互動遊戲體驗藝術,親子友善設施:可寄放推車、哺乳餵奶安撫、兒童專用小馬桶"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-caowu-greenway",
+    "name": "草悟道(含勤美誠品綠園道・草悟道兒童公園)",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市西區草悟道沿線(市民廣場—勤美誠品綠園道—國美館一帶)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 西區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "沿途為林蔭大道,大面積樹蔭遮陽佳;無戲水與冷氣"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "草悟道兒童公園設兒童輪車專用道、市民廣場整片草地可放風箏放電,平坦步道好推車"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "開放式戶外綠園道與兒童公園,幼兒可盡情跑跳喧鬧"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "平坦林蔭步道推車散步、草地爬行安全"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "兒童公園輪車專用道與草地放電適齡"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "多元攀爬挑戰遊具與輪車道、草地放風箏"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "攀爬遊具偏中小型,大童可搭配商圈逛街"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "沿線勤美誠品綠園道商場內設施較齊,綠園道本體待確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "沿線餐廳多有兒童椅,綠園道本體無"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "勤美商場多設哺乳室,綠園道本體待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "周邊多付費停車場與路邊停車格,勤美設地下停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "勤美誠品綠園道商場與公園公廁可用"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://niniandblue.com/blog/post/caowu-ctpark",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "草悟道兒童公園在勤美誠品綠園道旁,設多元攀爬遊具與兒童輪車專用道,適合溜小孩"
+      },
+      {
+        "url": "https://bobbytravel.tw/calligraphy-greenway/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "草悟道逛街地圖:草悟廣場、勤美誠品、審計新村等,沿途林蔭步道好推車、餐飲咖啡林立"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/786",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "臺中觀光旅遊網:草悟道串聯市民廣場與美術館的綠園道,沿途林蔭遮陽、老少咸宜"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-taichung-park",
+    "name": "台中公園",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市北區雙十路一段65號(公園橫跨中/北區交界)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中區 定位(台中火車站步行可達),外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "百年老樹大面積樹蔭與湖畔綠地,但非全遮棚,主步道仍有曝曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園內步道平坦寬闊、推車好走,滑步車可在鋪面步道騎行,惟需避讓遊客並遠離臨湖護欄"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外開放空間,孩子跑跳追松鼠不擾人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可推車散步、近距離看不怕人的松鼠,但遊具偏大童,0-2以散步為主"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "有溜滑梯、盪鞦韆等遊具與開闊草地,適合跑跳放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "遊戲場+湖心亭划船同樂,活動多元"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "可划船、跑酷/競合體驗遊戲場、騎車運動"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公廁近期大改裝,是否設尿布台未查得"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園,無"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "停車": {
+        "value": true,
+        "note": "地下停車場,半小時15元、非假日一日上限120元"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園內有公廁,近期已大改裝"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://awei45.tw/taichung-park/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格記錄划船、野餐、松鼠不怕人,適合帶小孩踏青放電"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/362988",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "媒體介紹台中最古老公園、湖心亭市定古蹟與划船經典體驗"
+      },
+      {
+        "url": "https://bobbytravel.tw/taichung-park/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "整理停車場資訊、划船營業時間與周邊美食"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-4th-credit-union",
+    "name": "台中市第四信用合作社(宮原眼科二代店)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市中區中山路72號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 中區 定位,鄰宮原眼科,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內(老屋改建冰品甜點店),冷氣空間"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內排隊與用餐空間、人潮擁擠,推車進出不便,不適合滑步車"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "觀光客與家庭客眾多、環境本就喧鬧,帶幼兒不突兀,但非親子專門場所、2樓用餐座位緊湊"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "可嚐冰但無兒童設施,人潮擁擠推車不便,需全程抱看"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "吃冰淇淋、鬆餅嚐鮮體驗,但無遊戲區、須大人看顧"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "銀行改建吃冰場景新奇、口味多,適合短時停留"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "打卡吃冰、認識老屋建築,停留時間有限"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "停車": {
+        "value": "待確認",
+        "note": "店家無專屬停車,周邊為中區路邊/民營收費停車"
+      },
+      "廁所": {
+        "value": "待確認",
+        "note": "2樓有用餐區,店內廁所配置未明確查得"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://mimigo.tw/tc4cbank/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "詳列冰淇淋價目表,說明到銀行改建空間吃冰喝下午茶的體驗"
+      },
+      {
+        "url": "https://bunnyann.tw/blog-post_17-5/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "介紹宮原眼科二代店老屋改建、1-2樓用餐,人潮眾多"
+      },
+      {
+        "url": "https://www.abic.com.tw/place/view/id/14512",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子遊網站收錄為台中親子景點,說明冰品甜點與環境"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-cultural-heritage-park",
+    "name": "文化部文化資產園區(舊台中酒廠)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市南區復興路三段362號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "園區大樹與老倉庫提供遮蔽,但主廣場開闊、夏日曝曬,可入室內展館避暑"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "5.6公頃開闊園區、平坦步道與廣場,推車好走、可跑跳放電,滑步車需避讓行人"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外園區開闊、孩子跑跳不擾人;室內展館內需放低音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車動線好走、可看松鼠,但展覽偏靜態"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "開闊廣場放電、追松鼠、彩繪大酒桶拍照,不定期有親子市集"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "互動遊戲、繪本、藝術裝置與歷史建築探索"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "文創展覽、老酒廠歷史建築與市集,知性又能走動"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園內有咖啡輕食館,兒童椅配置未查得"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "停車": {
+        "value": true,
+        "note": "合作街收費停車場,小型車平日半小時20元、假日25元;周邊亦有路邊停車"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區設公共廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://yuki.tw/read-118893.html",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "親子部落格:免費入場、松鼠萌翻、可溜小孩,展覽精彩"
+      },
+      {
+        "url": "https://sunnylife.tw/taichung-tourism/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "描述5.6公頃超大園區、1916文創工坊為親子假期好去處"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/798",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "台中觀光旅遊網官方頁:地址、開放時間與園區介紹"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-showtime-station-front",
+    "name": "秀泰生活台中站前店",
+    "type": "室內樂園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市東區南京路76號&66號(S1/S2館)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 東區 定位(干城重劃區、台中火車站商圈),外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內購物中心、冷氣空間"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "室內百貨,不適合滑步車;有電梯/電扶梯推車可行,遊樂區集中於館內"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "湯姆熊歡樂世界與樂米樂園為親子遊樂專區,孩子玩鬧不擾人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "樂米樂園有大型球池與安全設施適合幼童,惟湯姆熊部分機台偏大童"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "球池、幼童互動設施、親子遊樂區可放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "湯姆熊機台、樂園與電影院選擇多"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "電玩機台、電影、S2館小書房閱讀空間"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "百貨商場一般設置,惟未查得明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "美食街/餐廳應有,未查得明確資訊"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "百貨商場一般設置,惟未查得明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "百貨地下停車場,消費可折抵"
+      },
+      "廁所": {
+        "value": true,
+        "note": "商場各樓層設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://awei45.tw/showtime/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "有吃有玩、有親子遊樂還有電影院,明確點名為下雨天好去處"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/221865117",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "介紹S2館小書房、遊樂園、電影院等親子設施"
+      },
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E7%A7%80%E6%B3%B0%E7%94%9F%E6%B4%BB%E5%8F%B0%E4%B8%AD%E7%AB%99%E5%89%8D%E5%BA%97",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "維基:位於東區南京路、干城重劃區,分S1/S2館,主力為秀泰影城"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-nlpi-library",
+    "name": "國立公共資訊圖書館(國資圖)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市南區五權南路100號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 南區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "全室內、冷氣空間"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "圖書館室內需保持安靜,不可滑步車;兒童學習中心為閱讀/靜態活動空間"
+    },
+    "noise_tolerance": {
+      "score": 1,
+      "basis": "圖書館整體需安靜;僅1樓兒童學習中心設幼兒區/故事屋較能容納孩童,但仍須輕聲"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "幼兒區與繪本可親子共讀,但需維持安靜"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "故事屋、AR擴增實境閱讀、繪本,適合學齡前啟蒙"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "兒童學習中心以知識森林為主題,12歲以下適用"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "電腦檢索、閱讀區與兒童活動,知識性強"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得"
+      },
+      "停車": {
+        "value": true,
+        "note": "地下收費停車,汽車每30分10元、機車每次10元"
+      },
+      "廁所": {
+        "value": true,
+        "note": "館內設廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.nlpi.edu.tw/ReaderService/FocusArea/Child/Child1.htm",
+        "source_type": "官網",
+        "date": "待確認",
+        "摘要": "官網兒童學習中心服務簡介:位1樓、知識森林主題、設幼兒區/故事屋/AR閱讀,12歲以下適用"
+      },
+      {
+        "url": "https://bookmarktrip.com/taichung-travel/city-national-taichung-library/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "部落格介紹為親子互動學習園地、白色建築與兒童閱讀空間"
+      },
+      {
+        "url": "https://reading.udn.com/read/story/7009/9266637",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "媒體開箱兒童學習中心,為學齡孩童打造的知識樂園"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-lihpao-land",
+    "name": "麗寶樂園(探索世界+馬拉灣)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市后里區福容路8號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 后里區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "探索世界以戶外遊樂設施為主,遮蔭零星、夏季曝曬;惟有室內娃娃城堡與夏季馬拉灣戲水區可消暑,故非全曝曬"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "主題樂園為遊樂設施動線,不適合自帶滑步車;園內走道平坦好推嬰兒車,並有嬰兒車租借"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "親子主題樂園,設娃娃城堡兒童專屬遊戲區與多項幼兒設施,家庭客為主,不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "娃娃城堡90cm以下須成人陪同、旋轉木馬等溫和設施可搭,但多數大型設施仍不適合"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "未滿90/100cm有多項專屬設施(飛象藍天、小蝸牛、歡樂鐵道、娃娃城堡),3歲以下未滿100cm免費入園"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "120cm內設施豐富,水陸皆可玩,馬拉灣有兒童專用戲水區(思瑪湖、彩虹滑道)"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "身高足夠可玩更多刺激設施與馬拉灣泳圈滑道(110cm以上)"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "大型樂園多設有,惟本次未查到明確位置"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園區餐廳多提供,未明確查證"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "相鄰麗寶Outlet二期確認有哺乳室,樂園內位置待確認"
+      },
+      "停車": {
+        "value": true,
+        "note": "大型停車場,汽車約40元/小時,園區消費可折抵"
+      },
+      "廁所": {
+        "value": true,
+        "note": ""
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://fullfenblog.tw/lihpaoresort/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025麗寶一日遊攻略:探索世界門票、馬拉灣、熊大麗寶小鎮設施與親子遊玩重點"
+      },
+      {
+        "url": "https://bobowin.blog/mala-bay/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "馬拉灣水樂園兒童戲水區(思瑪湖)、彩虹滑道兒童專用、泳圈滑道110cm限制與親子攻略"
+      },
+      {
+        "url": "https://www.lihpaoresort.com/LihpaolandApp/Home/Discover",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "探索世界官網:90cm以下幼兒可玩設施清單、娃娃城堡兒童專用、3歲未滿100cm免費入園"
+      },
+      {
+        "url": "https://pupuwawa.com/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實測帶孩童遊探索世界,適合120cm內,分享適齡設施、娃娃城堡與人潮排隊心得"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-lihpao-outlet",
+    "name": "麗寶OUTLET MALL(含天空之夢摩天輪)",
+    "type": "室內樂園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市后里區月眉東路二段488號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 后里區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "二期為室內樓層+全台最大室內樂園(湯姆熊)、木育森林,遮蔭充足;惟部分商場中庭為露天動線,雨天需撐傘往返"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "商場內不宜騎滑步車;走道寬平好推嬰兒車,並可租借嬰兒車/超大兒童車"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "設全台最大室內樂園、木育森林、二樓親子遊戲室,家庭客為主,不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "二樓設親子遊戲室與哺乳室、可租嬰兒車,環境友善好推車,惟多數遊樂設施需較大孩子"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "木育森林、旋轉設施、部分室內樂園項目適合學步至幼兒"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "室內樂園、木育森林、天空之夢摩天輪皆適合"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "湯姆熊、秀泰影城、木育森林可玩一整天"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "商場設哺乳室(內多附尿布台),確切位置待現場確認"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "美食街/餐廳多提供,未逐一查證"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "二樓設哺乳室與親子遊戲室(部落格實訪確認)"
+      },
+      "停車": {
+        "value": true,
+        "note": "約3200車位,汽車40元/時,消費滿500折抵1小時、單日上限200元"
+      },
+      "廁所": {
+        "value": true,
+        "note": ""
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.lihpaooutlet.com.tw/Traffic",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "官網館內/交通資訊:約3200車位、停車40元/時、消費折抵規則"
+      },
+      {
+        "url": "https://sunnylife.tw/lihpao-outletmall/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "麗寶二期實訪:全台最大室內樂園湯姆熊、木育森林、星巴克,假日室內親子好去處"
+      },
+      {
+        "url": "https://lucharger.com/%E9%BA%97%E5%AF%B6outlet-mall/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "實訪:二樓親子遊戲室與哺乳室、嬰兒車/超大兒童車租借服務"
+      },
+      {
+        "url": "https://www.lihpaoresort.com/lihpaolandapp/home/skydream",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "天空之夢摩天輪官網:高約120公尺,營業時段與票價資訊"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-houli-horse-farm",
+    "name": "后里馬場(后里馬馬樂園)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市后里區寺山路41號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 后里區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "以戶外草地與騎乘場為主,零星樹蔭,夏季較曬;部分遊園列車/棚內活動有遮蔽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區草地開闊、步道平坦,可讓孩子跑跳放電並推嬰兒車;鋪面區可騎滑步車,主打騎馬與餵馬動物體驗"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外親子動物/馬場園區,家庭客為主,孩子跑跳不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "可近距離看馬、餵小馬紅蘿蔔、搭遊園列車與旋轉木馬,惟騎乘體驗需較大孩子"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "餵小馬、恐龍列車、旋轉木馬、草地放電皆合適"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "可體驗騎小馬、園區多項遊樂設施"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "騎馬體驗與園區設施皆適合較大孩子"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園區餐飲兒童椅未查證"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "停車費100元/次(一次性)"
+      },
+      "廁所": {
+        "value": true,
+        "note": ""
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.houlimamaland.tw/ticket",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "后里馬馬樂園官網門票資訊,園區設施(恐龍列車、旋轉木馬、餵馬騎馬體驗)"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/65",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "臺中觀光旅遊網:后里馬場歷史與園區介紹,地址寺山路41號"
+      },
+      {
+        "url": "https://hk.trip.com/moments/poi-houli-equestrian-92947/",
+        "source_type": "blog",
+        "date": "2025-12",
+        "摘要": "2025旅遊攻略:營業週四至週二09:30-17:00、騎馬體驗時段、停車100元"
+      },
+      {
+        "url": "https://baofamily.tw/houli/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "后里景點懶人包含馬場親子設施、餵小馬與遊樂設施介紹"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-zhongshe-flower",
+    "name": "中社觀光花市",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市后里區三豐路五段333號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 后里區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "6公頃花海步道多為開放空間、遮蔭零星、夏季曝曬;烤肉區有棚可避雨遮陽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "步道完善平坦好推車,園區開闊可讓孩子跑跳;另有投幣式小火車與電動車"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外開闊,設親子遊樂場與烤肉區,家庭客多、聲量容忍高,非安靜場所"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "地形平坦好推車,可賞花與搭投幣小火車,惟主要活動為賞花拍照"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "花海奔跑、親子遊樂場、電動車與投幣小火車適合幼兒放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "親子遊樂場、騎電動車、賞花拍照皆合適"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "遊樂場設施偏幼兒,較大孩子以賞花拍照、烤肉活動為主"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "烤肉區用餐兒童椅未查證"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查到明確資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "免費停車場,車位多"
+      },
+      "廁所": {
+        "value": true,
+        "note": ""
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/206",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "臺中觀光旅遊網:中社觀光花市介紹,地址三豐路五段333號、四季花海"
+      },
+      {
+        "url": "https://bobowin.blog/houli-flower/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "火炎山下歐風花園,親子賞花與烤肉、一年四季皆可賞花"
+      },
+      {
+        "url": "http://egoldenyears.com/70857/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "6公頃花海365天有花、親子遊樂場、投幣小火車/電動車、烤肉費用"
+      },
+      {
+        "url": "https://momoblog.tw/chungshe/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "交通停車(免費停車位多)、門票收費、園區花卉地圖介紹"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-waipu-wangyou-valley",
+    "name": "外埔忘憂谷(鄰金仔坑公園)",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市外埔區溪底路一帶(田園秘境)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 外埔區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 0,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 0,
+      "basis": "稻田秘境全開放無遮蔽、夏日酷曬;消暑建議轉往緊鄰的金仔坑公園,位國道三號橋下有天然遮蔭並有玩水設施"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "田間道路寬平,適合騎自行車/推車散步;旁金仔坑公園有溜滑梯、沙池、玩水設施可放電"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "全開放戶外田野,無室內顧慮,孩子跑跳不擾人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "以稻浪拍照/推車散步為主,幼兒可看風景但活動有限,夏季須嚴防曝曬"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "忘憂谷本體以散步拍照為主;可在旁金仔坑公園玩沙、玩水、溜滑梯"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可騎自行車遊田野,金仔坑公園有溜滑梯與玩水設施"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "適合騎單車環遊金黃稻浪,金仔坑公園有速度感溜滑梯與攀爬設施"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "稻田秘境無公共設施;金仔坑公園未查證"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "現地無餐飲店家"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "稻田秘境無設施;金仔坑公園未查證"
+      },
+      "停車": {
+        "value": true,
+        "note": "田邊寬路/空地可暫停(勿影響農作與交通),金仔坑公園有停車空間"
+      },
+      "廁所": {
+        "value": true,
+        "note": "稻田本體無廁所;緊鄰金仔坑公園設有完善廁所(部落格實訪確認)"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/1437",
+        "source_type": "官網",
+        "date": "2026",
+        "摘要": "臺中觀光旅遊網:外埔忘憂谷介紹,溪底路田園秘境、金色稻浪"
+      },
+      {
+        "url": "https://taiwantour.net/valley-of-forgetfulness/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "金仔坑公園x忘憂谷:橋下天然遮蔭、溜滑梯/沙池/玩水設施,親子與鐵馬族必訪"
+      },
+      {
+        "url": "https://izzychou.com/wangyu/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "金色稻浪最佳觀賞季節(7月/11月中前)、交通與拍照攻略、田邊停車注意事項"
+      },
+      {
+        "url": "https://ichiro0910.pixnet.net/blog/posts/1031723509",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "2025外埔忘憂谷金黃稻浪與波斯菊花海、拍攝點GPS座標與路線"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-xinshe-castle",
+    "name": "新社古堡莊園(新社莊園休閒農場)",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市新社區協成里協中街23號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新社區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "大面積綠地與櫻花林/楓樹林山林提供部分樹蔭,主花園草地開闊處較無遮蔽"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "設無障礙通道,主要平坦步道可推嬰兒車/輪椅;部分坡道路段較難推,滑步車空間有限"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外歐式花園,家庭客多、空間開闊音量壓力小;城堡餐廳室內需留意幼兒音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "推車可進主要平坦步道,魚池草地可觀賞餵魚;部分坡道較難推,無幼兒專屬遊具"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "開闊草地可跑跳放電、餵魚看花,但無遊戲設施需大人陪同"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "可探索城堡/迷霧瀑布/虹橋等造景並在草地奔跑,以觀賞拍照為主"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "適合走步道賞落羽松與花季拍照,較無挑戰型遊具,刺激度中等"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": ""
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "園區設酒莊/餐廳,兒童椅未見來源明示"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": ""
+      },
+      "停車": {
+        "value": true,
+        "note": "園區停車場,清潔費50元/輛,假日易滿建議提早"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區內有廁所,設無障礙通道"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.summit-resort.com/info.php",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方門票350/半票250/停車50元,營業平日9-18假日8-18,門票可折抵100元餐飲"
+      },
+      {
+        "url": "https://www.travelking.com.tw/tourguide/scenery102727.html",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "園區寬敞有魚池草地可讓小孩放電,設無障礙通道與廁所方便推車輪椅,部分路段較不好推"
+      },
+      {
+        "url": "https://fullfenblog.tw/summit-resort/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "停車需50元清潔費、假日車位易滿建議提早;有落羽松/城堡/瀑布造景與大面積綠地"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-lavender-forest",
+    "name": "薰衣草森林 台中新社店",
+    "type": "親子咖啡",
+    "zone": "台中",
+    "location": {
+      "address": "台中市新社區中和里中興街20號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新社區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "森林林蔭與曲徑步道遮蔭佳,花田開闊段較曬;另有餐廳/香草鋪室內空間"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "森林步道與花田平緩段可推車;山坡地形部分階梯,滑步車不建議"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "森林景觀餐廳,家庭客多;香草鋪與用餐區偏靜態,需留意幼兒音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "森林步道平緩段可推車,香草花田環境舒適;2024年初大型旋轉木馬已撤,幼兒設施有限"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "12歲以下免費入園CP高,森林步道與花田開闊可放電,設有親子森林區"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "可參與香草手作、森林探索與花田拍照,適齡體驗豐富"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "香草DIY與步道健行適合,但對大孩子刺激度中等"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": ""
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "設景觀餐廳,兒童椅未見來源明示"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": ""
+      },
+      "停車": {
+        "value": true,
+        "note": "園區設有停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區內有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/Attractions/Intro/372/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台中觀光旅遊網收錄,新社中興街20號,滿山花田與森林香草環境"
+      },
+      {
+        "url": "https://yiwulife.tw/lavendercottage/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "門票200含入園禮可折抵100,12歲以下免費入園,平日10:30-18:30假日10:00-18:30"
+      },
+      {
+        "url": "https://fullfenblog.tw/tc-lavender/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "親子森林王國、繡球花季/雞冠花海;2024年初大型旋轉木馬已撤除,林蔭步道好走"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-dongshi-forest",
+    "name": "東勢林場遊樂區",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市東勢區勢林街6-1號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 東勢區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "森林步道遮蔭佳,兒童遊戲場與體能場較開闊但設有樹蔭座椅供家長休息"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "主步道平坦好走適合推車,放電空間大;兒童遊戲場為沙坑地面,園區坡道較多"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外森林遊樂區,家庭與團體客多,放電空間大、音量壓力小"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "有白沙坑與低矮兒童遊戲設施,家長樹蔭座椅方便看顧;體能場主設施偏大孩"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "兒童遊戲場沙坑/溜滑梯/攀爬繩與彈跳平台適齡,平坦步道好放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "體能訓練場A/B/C闖關與天空森の道700公尺步道刺激,放電效果佳"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "三座巨型攀爬體能區具挑戰性,另有射箭/生態導覽適合學齡童"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": ""
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": ""
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "森林渡假別墅1樓服務中心設哺乳室"
+      },
+      "停車": {
+        "value": true,
+        "note": "園區停車場,停車費50元"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區內有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://www.tsfa.com.tw/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "東勢區勢林街6-1號,海拔500-700m,體能訓練場/濯足園/露營;全票250、停車50"
+      },
+      {
+        "url": "https://supertaste.tvbs.com.tw/kids/349911",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "食尚玩家台中親子景點,門票交通與必玩設施,體能訓練場A/B/C加兒童遊戲場"
+      },
+      {
+        "url": "https://almablog.tw/blog/post/tsfa2024",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "兒童遊戲場白沙坑/溜滑梯/攀爬繩,上方樹蔭座椅供家長,步道平坦;1樓服務中心設哺乳室"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-muxinquan-farm",
+    "name": "沐心泉休閒農場",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市新社區中興街60號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新社區 定位(海拔約600-900m花卉農場),外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "花田開闊少遮蔽,僅零星涼亭與黃金楓/白雪木林區提供遮蔭"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "步道完善可推車、老人小孩可輕鬆遊園;山坡農場有坡度,滑步車受地形限制,開闊草地可跑跳"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "戶外花卉農場,家庭與網美客混合,戶外空間音量壓力小;景觀餐廳內需留意"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "主步道可推車賞花,山坡地形部分較陡需留意;無幼兒專屬遊具"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "開闊草地花田可跑跳,涼亭可休息;無專屬遊戲設施需大人陪同"
+      },
+      "4-6": {
+        "score": 2,
+        "reason": "四季賞花與步道探索,夏季金針花與螢火蟲季適合觀察體驗"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "山坡步道健行與賞景/生態觀察,挑戰度中等"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": ""
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "設景觀餐廳,兒童椅未見來源明示"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": ""
+      },
+      "停車": {
+        "value": true,
+        "note": "附免費停車場"
+      },
+      "廁所": {
+        "value": true,
+        "note": "園區有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/212",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "台中觀光旅遊網收錄,新社中興街60號,海拔600-900m、8公頃花卉農場、四季賞花"
+      },
+      {
+        "url": "https://yiwulife.tw/tc-springmountain/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "門票200(抵100)、半票100、6歲以下免費,免費停車;景觀餐廳火鍋排餐"
+      },
+      {
+        "url": "https://bunnyann.tw/525_25/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "步道完善老人小孩可輕鬆賞花,可帶推車與寵物,多涼亭休息,花田開闊少遮蔭"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-baigu-manor",
+    "name": "新社百菇莊",
+    "type": "觀光工廠",
+    "zone": "台中",
+    "location": {
+      "address": "台中市新社區協中街2-1號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以 新社區 定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 2,
+      "小雨": 2,
+      "大雨": 2
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "DIY教室與餐廳為室內,採菇棚半遮蔽,餵雞撿蛋區露天"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "園區平坦可推車,以採菇/餵雞/DIY體驗與用餐為主,非滑步車放電場"
+    },
+    "noise_tolerance": {
+      "score": 2,
+      "basis": "親子DIY導覽農場,主打親子食農體驗、家庭客多;餐廳用餐區需留意幼兒音量"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "採菇/蒸蛋DIY需操作,幼兒參與有限;可看餵雞撿蛋,全程需家長協助"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "餵雞撿蛋、採香菇適合體驗放電,但DIY步驟需大人陪同"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "自採香菇/撿蛋/茶碗蒸DIY可自己動手,食農教育適齡有成就感"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生態循環再生導覽與多種DIY適合學齡童動手學習"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": ""
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "設菇料理餐廳,兒童椅未見來源明示"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": ""
+      },
+      "停車": {
+        "value": true,
+        "note": "附設免費停車場,停車方便"
+      },
+      "廁所": {
+        "value": true,
+        "note": "設餐廳與體驗館,園區有廁所"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://lyes.tw/33355361-%E7%99%BE%E8%8F%87%E8%8E%8A/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "採香菇/餵雞撿蛋/蒸蛋DIY與香菇流沙包,親子一日遊,門口專屬免費停車場"
+      },
+      {
+        "url": "https://supertaste.tvbs.com.tw/kids/343479",
+        "source_type": "news",
+        "date": "2024",
+        "摘要": "食尚玩家台中親子景點,假日限定DIY:採香菇、採雞蛋、現做茶碗蒸"
+      },
+      {
+        "url": "https://sant.tw/baigu-chuang/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "香菇生態循環再生體驗,採菇/餵雞/蒸蛋/蛋捲DIY,小孩走進開心農場實地體驗"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-gaomei-wetland",
+    "name": "高美濕地",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市清水區美堤街8號(高美濕地遊客服務中心);高美野生動物保護區",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以清水海線定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 0,
+      "basis": "木棧道全程無遮陽、曝曬強;僅遊客中心室內有遮蔭,主景潮間帶完全曝曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "木棧道推車可進(需看潮汐與開放時間),但假日人多、木棧道滑步車不適合;停車場步行到木棧道約20分"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "開闊戶外濕地,不怕吵到他人"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "推車可上木棧道看風景,但幼兒無專屬設施,木棧道部分無護欄需全程看顧"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "可牽走木棧道看招潮蟹、彈塗魚,生態觀察有趣但需防曬防跌"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "能自行走完木棧道、觀察潮間帶生態,適合自然教育"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "生態觀察加夕陽海景,體力足可下灘踩泥玩水"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "遊客中心設施未明確查得"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "遊客中心有咖啡館,兒童椅未確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得明確哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "遊客中心收費停車場每次約50元,周邊私人停車場多"
+      },
+      "廁所": {
+        "value": true,
+        "note": "停車場/遊客中心有乾淨廁所,設無障礙廁所"
+      }
+    },
+    "rain_backup_id": "tc-mitsui-outlet-port",
+    "evidence": [
+      {
+        "url": "https://bobowin.blog/gaomei/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "推車可進木棧道、停車每次約50元、遊客中心咖啡館與親子互動遊戲,木棧道無遮陽需做好防曬"
+      },
+      {
+        "url": "https://gaomei.com.tw/faq/traffic-parking/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "交通停車資訊:多處停車場、Ubike租借站,停車場步行至木棧道約20分"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/1416",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "遊客服務中心09:00-18:00,有親子互動遊戲、360度環繞劇場、觀景台;停車場設乾淨廁所含無障礙"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-aofeng-gulu-park",
+    "name": "鰲峰山運動公園(谷溜遊戲場)",
+    "type": "戶外公園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市清水區鰲峰路(鰲峰山運動公園)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以清水海線定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 1,
+      "晴涼": 3,
+      "小雨": 1,
+      "大雨": 0
+    },
+    "shade_score": {
+      "score": 1,
+      "basis": "遊戲場無太多遮蔽物、夏日需防曬;周邊步道有樹但主遊具區曝曬"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "腹地開闊可大量跑跳放電;觀景平台與步道平坦滑步車可騎,主遊具為攀爬地形"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外特色親子公園,親子客為主不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "34道滑梯與攀爬網、8米高塔多為大孩設計,0-2多只能玩沙坑或由大人陪抱"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "有較緩滑梯與滾輪沙坑可玩,但攀爬網與高塔需家長全程貼身陪同"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "球型攀爬網、大樹之塔、多樣特色滑軌正適齡,放電效果佳"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "34道特色滑軌與競合體驗遊戲場挑戰性足,大孩玩到沒電"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "公園型場地,尿布台未查得"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "戶外公園無供餐"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "建議停自由車場再走觀景步道;假日車位不足需早到,周邊亦有路邊停車"
+      },
+      "廁所": {
+        "value": true,
+        "note": "公園設有公廁"
+      }
+    },
+    "rain_backup_id": "tc-mitsui-outlet-port",
+    "evidence": [
+      {
+        "url": "https://myjourney.tw/aofeng-hill-park/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "免費親子公園、多樣遊具、天空步道與停車攻略,適合帶小孩放電"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/gulu-park",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "谷溜遊戲場34道溜滑梯、互動音效排笛滑梯、巨型攀爬網,小孩滑到沒電"
+      },
+      {
+        "url": "https://travel.udn.com/travel/story/7207/9485117",
+        "source_type": "news",
+        "date": "2025",
+        "摘要": "谷溜遊戲場5/7開放,34條滑軌、8米高大樹之塔、滾輪沙坑;遊戲場無太多遮蔽夏日務必防曬"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-mitsui-outlet-port",
+    "name": "三井 OUTLET 台中港(MITSUI OUTLET PARK 台中港)",
+    "type": "室內樂園",
+    "zone": "台中",
+    "location": {
+      "address": "台中市梧棲區台灣大道十段168號",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以梧棲海線定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 3,
+      "晴涼": 3,
+      "小雨": 3,
+      "大雨": 3
+    },
+    "shade_score": {
+      "score": 3,
+      "basis": "大面積室內商場、ASOBI SQUARE全室內冷氣;戶外特色公園另有遮蔭"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "戶外特色公園有波浪溜滑梯可放電;室內走道寬可推車,滑步車限戶外遊戲區"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "ASOBI SQUARE親子室內樂園、美食街設兒童遊戲區與親子用餐區,親子客為主"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "室內樂園有大球池、氣墊軟質區,0-2可玩但大型氣墊闖關溜滑梯偏大孩"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "ASOBI大型積木、球池、氣墊闖關與戶外波浪溜滑梯都合適"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "室內樂園闖關、VR、摩天輪與戶外遊具皆可盡興"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "VR、摩天輪、益智積木加購物美食,大孩不無聊"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": true,
+        "note": "各廁所旁設哺集乳室,含尿布更換台"
+      },
+      "兒童椅": {
+        "value": true,
+        "note": "美食街與餐廳提供"
+      },
+      "哺乳室": {
+        "value": true,
+        "note": "隱密哺乳室,提供冷溫熱水及盥洗台"
+      },
+      "停車": {
+        "value": true,
+        "note": "免費停車場(平日10:00起、假日09:30起可用)"
+      },
+      "廁所": {
+        "value": true,
+        "note": "親子廁所寬敞乾淨"
+      }
+    },
+    "rain_backup_id": "無備案",
+    "evidence": [
+      {
+        "url": "https://fupo.tw/blog/post/mitsuioutlet",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "戶外特色公園、波浪溜滑梯、60米摩天輪、親子遊樂區與親子用餐區,可玩整天"
+      },
+      {
+        "url": "https://dongwa.tw/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "60公尺海景摩天輪、ASOBI SQUARE兒童室內遊戲區,台中梧棲親子景點"
+      },
+      {
+        "url": "https://baofamily.tw/post-469495868/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "ASOBI SQUARE室內樂園、免費波浪親子設施、免費接駁車到高美濕地,海線一日遊"
+      },
+      {
+        "url": "https://lovefree365.pixnet.net/blog/posts/11405944471",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "親子廁所、哺乳室、尿布更換台乾淨寬敞,提供冷溫熱水可沖泡奶粉"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-wuqi-fishing-port",
+    "name": "梧棲觀光漁港(含梧棲漁寮公園)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市梧棲區北堤路30號(梧棲觀光漁港);梧棲漁寮公園鄰近",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以梧棲海線定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "觀光漁市為棚頂建築;梧棲漁寮公園自然通風遮陽設施大面積遮蔭"
+    },
+    "ride_ok": {
+      "ok": true,
+      "note": "漁寮公園腹地開闊、有戲水區與遊具可放電;漁市走道平坦可推車,滑步車限公園區"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "漁市與親子戲水公園,人聲鼎沸不怕吵"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 2,
+        "reason": "漁寮公園有親子鞦韆與遮蔭戲水區,0-2可玩水但需全程看顧;漁市地面濕滑"
+      },
+      "2-4": {
+        "score": 3,
+        "reason": "航海主題遊戲場、戲水區與捕魚遊戲高塔適合2-4放電"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "帆船遊戲區、捕魚遊戲高塔加戲水,4-6玩得盡興"
+      },
+      "6-9": {
+        "score": 2,
+        "reason": "遊戲場略偏幼齡,大孩可看漁船、吃海鮮、玩水為主"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "漁港設施未明確查得"
+      },
+      "兒童椅": {
+        "value": "待確認",
+        "note": "代客料理餐廳可能有,未確認"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "第一/第二停車場,入場清潔費50元/次"
+      },
+      "廁所": {
+        "value": true,
+        "note": "觀光漁市設有公廁;梧棲漁寮公園本身未設廁所,需至鄰近三王府"
+      }
+    },
+    "rain_backup_id": "tc-mitsui-outlet-port",
+    "evidence": [
+      {
+        "url": "https://mumu416.pixnet.net/blog/post/177670054",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "梧棲漁寮公園2025/2啟用,海線首座航海主題戲水遊戲場、帆船遊戲區、遮棚戲水區,水陸設施一次滿足"
+      },
+      {
+        "url": "https://bunnyann.tw/gowuqi-fishing-port/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "梧棲漁港現撈螃蟹、龍蝦、鮮蚵,全台最大觀光漁市與代客料理"
+      },
+      {
+        "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0001016&id=9409",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "交通部觀光署介紹梧棲觀光漁港,結合漁業與觀光、假日市集表演"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-qingshui-ghost-cave",
+    "name": "清水鬼洞(橫山戰備坑道)",
+    "type": "其他",
+    "zone": "台中",
+    "location": {
+      "address": "台中市清水區鰲峰里鰲峰山公園北側(鰲峰路)",
+      "lat": null,
+      "lng": null,
+      "drive_min": null,
+      "coord_basis": "以清水海線定位,外縣市不計宜蘭車程"
+    },
+    "weather_fit": {
+      "晴熱": 2,
+      "晴涼": 3,
+      "小雨": 2,
+      "大雨": 1
+    },
+    "shade_score": {
+      "score": 2,
+      "basis": "通往坑道的木棧步道兩側整排大樹遮蔭涼爽;坑道內全遮蔽但低矮悶熱"
+    },
+    "ride_ok": {
+      "ok": false,
+      "note": "平坦木棧步道推車可行(約走10分到洞口),但坑道低矮狹窄迷宮式需彎腰,推車與滑步車無法進洞"
+    },
+    "noise_tolerance": {
+      "score": 3,
+      "basis": "戶外步道與開放坑道不怕吵;但坑道昏暗,部分幼兒會怕"
+    },
+    "age_fit": {
+      "0-2": {
+        "score": 1,
+        "reason": "步道好走可推車,但坑道低矮陰暗、地面不平,0-2需全程抱且易受驚"
+      },
+      "2-4": {
+        "score": 2,
+        "reason": "平坦步道適合散步,坑道探險新奇但低矮昏暗需家長牽,部分孩子會怕黑"
+      },
+      "4-6": {
+        "score": 3,
+        "reason": "迷宮式戰備坑道探險對4-6很有吸引力,可初步認識歷史"
+      },
+      "6-9": {
+        "score": 3,
+        "reason": "坑道探險與軍事遺跡(儲藏室、寢室、狙擊區、機槍堡),適合大孩探索"
+      }
+    },
+    "facilities": {
+      "尿布台": {
+        "value": "待確認",
+        "note": "坑道景點未查得"
+      },
+      "兒童椅": {
+        "value": false,
+        "note": "景點無供餐"
+      },
+      "哺乳室": {
+        "value": "待確認",
+        "note": "未查得哺乳室資訊"
+      },
+      "停車": {
+        "value": true,
+        "note": "道路兩旁免費路邊停車格,附近有停車場"
+      },
+      "廁所": {
+        "value": "待確認",
+        "note": "鰲峰山公園有公廁,洞口鄰近廁所未明"
+      }
+    },
+    "rain_backup_id": "tc-mitsui-outlet-port",
+    "evidence": [
+      {
+        "url": "https://adontrip.com/blog/48979/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "串聯平坦好走木棧步道、免費參觀日治時期戰備坑道,順遊鰲峰山運動公園,道路兩旁可免費停車"
+      },
+      {
+        "url": "https://fullfenblog.tw/qingshui-ghost-cave/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "鰲峰山隱藏版迷宮、日治時期戰備隧道,坑道低矮高個者慎入"
+      },
+      {
+        "url": "https://www.construction.taichung.gov.tw/media/426343/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "臺中市建設局清水鬼洞開放要點:週六日例假日9:00-16:00開放,平日團體預約,週一不開放"
+      },
+      {
+        "url": "https://evelynlife.com/gueidong-chingshuei/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "橫山戰備坑道位鰲峰山運動公園旁,日治軍事戰備地道免費參觀"
+      }
+    ],
+    "family_log": [],
+    "last_verified": "2026-07-19",
+    "status": "active"
   }
 ]

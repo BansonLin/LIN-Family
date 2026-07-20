@@ -4978,5 +4978,2542 @@
     ],
     "last_verified": "2026-07-19",
     "status": "active"
+  },
+  {
+    "id": "tc-hecho-cafe-wine",
+    "name": "做咖啡 HECHO cafe & wine",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "西區",
+    "location": {
+      "address": "台中市西區美村路一段149巷12號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 西區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$350–600",
+      "basis": "部落格點餐:經典法式吐司240、手撕豬班尼迪克蛋380,人均約350–600"
+    },
+    "meal_type": [
+      "早午餐",
+      "咖啡",
+      "晚餐",
+      "酒",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "兩層樓工業風老宅、全日供應咖啡,可獨坐氛圍自在;惟插座/是否可久坐辦公未見明確資料"
+      },
+      "date": {
+        "score": 3,
+        "reason": "多篇部落格點名適合約會聊天,勤美巷弄老宅氛圍佳,並有調酒與西班牙街邊自然酒"
+      },
+      "group": {
+        "score": 2,
+        "reason": "兩層樓木桌木椅可容多人聚餐,生意好建議先訂位,但非包廂型"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至22:30,有調酒/自然酒可小酌,但非深夜宵夜場"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "老宅工業風",
+      "有自然酒調酒",
+      "勤美巷弄",
+      "建議訂位"
+    ],
+    "open_late": {
+      "value": "22:30",
+      "basis": "Threads @eatchiang__ 與部落格:營業 10:00–22:30"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "upssmile/Threads:生意超好建議先訂位"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "老宅可久坐,但插座與是否限時無明確資料"
+    },
+    "signature": "西班牙街邊自然酒概念的全日咖啡餐酒,手撕豬班尼迪克蛋、法式吐司",
+    "evidence": [
+      {
+        "url": "https://keedan.com/track/2025/07/07/hecho-cafe-wine-taichung-bistro/",
+        "source_type": "news",
+        "date": "2025-07",
+        "摘要": "HECHO 新型態登場,以西班牙街邊自然酒吧為靈感,全日咖啡到宵夜的餐酒館"
+      },
+      {
+        "url": "https://www.shoppingdesign.com.tw/post/view/12277",
+        "source_type": "news",
+        "date": "2025",
+        "摘要": "HECHO 重新開張,主打白天也能微醺的老咖啡館,咖啡到自然酒"
+      },
+      {
+        "url": "https://vickylife.com/hecho-cafe-wine/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "地址西區美村路一段149巷12號,兩層樓工業風老宅,手撕豬佛卡夏、氣炸羽衣甘藍沙拉"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-liyu-cafe",
+    "name": "離域 Café",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "西區",
+    "location": {
+      "address": "台中市西區昇平街67號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 西區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–400",
+      "basis": "咖啡+甜點/鹹點,依品項估算;精確均消待確認"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "一樓有吧檯座位、老宅深夜氛圍安靜,適合一人;惟插座/辦公資訊未明確"
+      },
+      "date": {
+        "score": 2,
+        "reason": "老宅二樓有自然光、甜點有名,適合兩人深夜小聚談心"
+      },
+      "group": {
+        "score": 1,
+        "reason": "座位多在二樓、空間不大且採現場候位,多人較不便"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨00:00,為台中少數深夜咖啡廳;以咖啡甜點為主,酒類待確認"
+      }
+    },
+    "vibe": [
+      "深夜咖啡",
+      "老宅",
+      "甜點強",
+      "近審計新村",
+      "現場候位"
+    ],
+    "open_late": {
+      "value": "凌晨 00:00(24:00)",
+      "basis": "khithok/candylife:平日15:00–24:00、假日14:00–24:00"
+    },
+    "reservation": {
+      "value": "不接受訂位(現場候位)",
+      "basis": "飛天璇/糖糖:已改為現場候位、無訂位"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "深夜可久坐,一樓吧檯、二樓座位;插座資訊未明確"
+    },
+    "signature": "開到凌晨的老宅深夜咖啡,開心果/草莓系甜點驚艷",
+    "evidence": [
+      {
+        "url": "https://khithok.com/liyucafe/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "台中深夜咖啡老宅改建,近審計新村草悟道,2025最新菜單、草莓大餐"
+      },
+      {
+        "url": "https://flyblog.cc/liyu-cafe/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "西區昇平街開到深夜的咖啡館,審計新村下午茶甜點,一樓吧檯二樓座位"
+      },
+      {
+        "url": "https://candylife.tw/liyucafe/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "營業至凌晨十二點,現場候位無訂位,開心果甜點超驚艷"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-coffee-decade",
+    "name": "拾年咖啡 Coffee Decade",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "西區",
+    "location": {
+      "address": "台中市西區向上路一段289巷2號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 西區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–400",
+      "basis": "咖啡+每日甜點/鹹食,依品項估算;精確均消待確認"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "部落格明示適合帶筆電專心工作/閱讀,有插座(需付20元)+WIFI 不限時,安靜輕聲低語"
+      },
+      "date": {
+        "score": 1,
+        "reason": "需輕聲低語、不宜放聲聊天大笑,約會互動受限,偏個人靜心空間"
+      },
+      "group": {
+        "score": 1,
+        "reason": "每組最多4人、不接待12歲以下、空間安靜,不適合多人熱鬧聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "最晚僅營業至19:00且無酒,不適合宵夜小酌"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "有插座",
+      "有WIFI",
+      "不限時",
+      "適合辦公閱讀",
+      "輕聲低語"
+    ],
+    "open_late": {
+      "value": "18:00(週末19:00)",
+      "basis": "eaters/部落格:週三–五 12:00–18:00、週末 12:00–19:00"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "未見訂位相關資訊,推測以現場為主"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "有插座(需付20元)+WIFI 不限時;每組最多4人,使用3C設備需戴耳機、維護輕聲低語"
+    },
+    "signature": "向上市場巷弄的沉靜工作系咖啡,戚風蛋糕好吃",
+    "evidence": [
+      {
+        "url": "https://niniandblue.com/blog/post/cafe10",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "向上市場附近很安靜的咖啡館,適合看書、用電腦,不限時、有插座WIFI"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/371809",
+        "source_type": "媒體",
+        "date": "待確認",
+        "摘要": "閱讀系不限時咖啡廳,有插座與WIFI,近向上市場"
+      },
+      {
+        "url": "https://blue74.net/79909/coffee-decade/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "地址西區向上路一段289巷2號,巷弄安靜適合專心工作;插座需20元、每組最多4人、3C需戴耳機"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-uzuki-izakaya",
+    "name": "卯月居酒屋",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "西區",
+    "location": {
+      "address": "台中市西區中美街462號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 西區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$200–400(含酒)",
+      "basis": "部落格均消約$200,無低消、含10%服務費"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "居酒屋以多人小酌為主,一人可去但非主打(單人吧檯座資訊待確認)"
+      },
+      "date": {
+        "score": 1,
+        "reason": "昏暗日式氛圍可小酌,但偏熱鬧聚餐、隱私一般"
+      },
+      "group": {
+        "score": 3,
+        "reason": "部落格明推公司/朋友聚餐,可容約20人,串燒下酒菜可分食,建議提前訂位"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00(週五六03:00),生啤與串燒下酒菜,深夜宵夜首選"
+      }
+    },
+    "vibe": [
+      "深夜居酒屋",
+      "串燒生啤",
+      "聚餐熱鬧",
+      "平價",
+      "近廣三SOGO",
+      "建議訂位"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00(週五六 03:00)",
+      "basis": "奈理/pixnet:週日–四 17:30–01:00、週五六至03:00,週一公休"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "愛食記/pixnet:座位不多、建議提前訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋昏暗熱鬧環境,不適合辦公"
+    },
+    "signature": "廣三SOGO後方深夜居酒屋,雞皮串、酥炸生蠔、生啤",
+    "evidence": [
+      {
+        "url": "https://nellysdaily.pixnet.net/blog/post/122690635",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "西區中美街462號,營業至凌晨的深夜食堂,近勤美/SOGO,串燒烤物下酒菜生啤,週日–四01:00、五六03:00"
+      },
+      {
+        "url": "https://ifoodie.tw/post/61700d05cd99576b53d6ecc9",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "廣三SOGO後方最強深夜居酒屋,大口吃喝、聚餐首選,可容約20人"
+      },
+      {
+        "url": "https://penny800302.pixnet.net/blog/post/334510785",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "宵夜新選擇,不限用餐時間適合聚餐,鄰近SOGO的平價日式居酒屋"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-tao-natural-wine",
+    "name": "Tao Natural Wine 自然派葡萄酒",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "西區",
+    "location": {
+      "address": "台中市西區中興街275號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 西區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000",
+      "basis": "包場平日低消6000(6–8人)≈每人約750起;單杯自然酒偏中高,精確單杯價待確認"
+    },
+    "meal_type": [
+      "酒",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "氛圍放鬆的小酒館,一人品酒自在;非辦公久坐空間"
+      },
+      "date": {
+        "score": 3,
+        "reason": "部落格多推約會小酌,氛圍寧靜、燈光放鬆,自然酒選擇多(紅白粉橘),近勤美綠園道/PARK2"
+      },
+      "group": {
+        "score": 2,
+        "reason": "提供包場(適合6–8人,平日低消6000)適合好友聚會,惟非大桌熱炒型"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨00:00且專門供應自然酒,適合喝一杯"
+      }
+    },
+    "vibe": [
+      "自然酒",
+      "氣氛佳",
+      "放鬆寧靜",
+      "可包場",
+      "近勤美PARK2",
+      "約會小酌"
+    ],
+    "open_late": {
+      "value": "凌晨 00:00",
+      "basis": "部落格:15:00–00:00,週一、週二公休"
+    },
+    "reservation": {
+      "value": "建議預約/可包場",
+      "basis": "lizzzstyle:包場需低消(6–8人),建議先預約"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "酒吧氛圍,非辦公久坐空間"
+    },
+    "signature": "勤美綠園道旁自然派葡萄酒小酒館,少見的橘酒選擇",
+    "evidence": [
+      {
+        "url": "https://lizzzstyle.tw/%E5%8B%A4%E7%BE%8E%E9%85%92%E5%90%A7-tao-natural-wine/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "勤美SOGO旁自然派葡萄酒,好友聚會可包場,氛圍放鬆寧靜的西區酒吧"
+      },
+      {
+        "url": "https://bigsharkgogogo.tw/tao-natural-wine/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "自然派葡萄酒,天然無負擔不宿醉,紅白粉橘多款選擇"
+      },
+      {
+        "url": "https://woman.udn.com/woman/story/123162/8337827",
+        "source_type": "news",
+        "date": "待確認",
+        "摘要": "台中綠園道SOGO旁專門提供自然酒的酒吧,好友聚會包場、自在放鬆首選"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-woo-great-coffee",
+    "name": "WOO GREAT Coffee",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "北區",
+    "location": {
+      "address": "台中市北區錦新街32-5號(星漾商旅旁)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以北區益民一中商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$150–300(手沖咖啡+甜點)",
+      "basis": "sant.tw/kenji.life:以一中鬧區來說價格親民,咖啡+甜點"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "不限時、免費wifi,二樓質感座位後方多附插座,冠軍賽豆自家烘焙手沖,適合一人久坐辦公讀書"
+      },
+      "date": {
+        "score": 2,
+        "reason": "二樓環境有質感適合兩人,但屬白天café(18:00打烊)"
+      },
+      "group": {
+        "score": 1,
+        "reason": "店面座位不多,較適合1–2人,多人聚餐選擇有限"
+      },
+      "late": {
+        "score": 0,
+        "reason": "營業10:00–18:00且週四公休,不適合宵夜"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "自家烘焙",
+      "安靜可久坐",
+      "質感"
+    ],
+    "open_late": {
+      "value": "18:00(10:00–18:00,週四公休)",
+      "basis": "sant.tw/kenji.life"
+    },
+    "reservation": {
+      "value": "免預約/待確認",
+      "basis": "部落格未提及訂位,以現場入座為主"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "有插座+免費wifi、不限時、二樓座位後方多附插座,適合辦公讀書"
+    },
+    "signature": "國際冠軍賽豆自家烘焙手沖咖啡與法式奶油甜點",
+    "evidence": [
+      {
+        "url": "https://sant.tw/woo-great/",
+        "source_type": "blog",
+        "date": "待確認(約2023–2024)",
+        "摘要": "北區益民一中商圈,不限時、有附插座,店家為烘豆冠軍,價格以鬧區來說親民"
+      },
+      {
+        "url": "https://kenji.life/woo-great-coffee/",
+        "source_type": "blog",
+        "date": "待確認(約2023–2024)",
+        "摘要": "錦新街32-5號星漾商旅旁,可頌甜點手沖水準佳,附免費wifi及插座、不限時"
+      },
+      {
+        "url": "https://www.eaters.tw/place/cafe/taichung/3666",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "營業時間10:00–18:00、菜單與評價彙整"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-nobunaga-ronghua",
+    "name": "織田信長串燒酒場 榮華分舖",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "北區",
+    "location": {
+      "address": "台中市北區榮華街210號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以北區定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$500–800(串燒+酒,中高價位)",
+      "basis": "marifoodie/rlaidiary:整體屬中高價位,食材品質佳"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "日式串燒酒場,一人小酌尚可,但多為多人座、以聚會小酌為主"
+      },
+      "date": {
+        "score": 2,
+        "reason": "日式居酒屋氛圍佳可兩人小酌,但較熱鬧非安靜約會型"
+      },
+      "group": {
+        "score": 3,
+        "reason": "串燒品項多可分食,聚會小酌好選擇,適合朋友多人;Google 4.9、可訂位"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業18:00–01:00,有酒有串燒,宵夜續攤首選"
+      }
+    },
+    "vibe": [
+      "日式居酒屋",
+      "聚會小酌",
+      "串燒",
+      "可訂位",
+      "營業至凌晨"
+    ],
+    "open_late": {
+      "value": "凌晨01:00(18:00–01:00)",
+      "basis": "threads dodofoodie/rlaidiary"
+    },
+    "reservation": {
+      "value": "建議預約/可訂位",
+      "basis": "threads:可訂位、Google 4.9,假日建議先訂"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "深夜聚餐小酌場所,不適合辦公"
+    },
+    "signature": "承襲日本師傅的道地日式串燒酒場,招牌明太子雞肉串、龍蝦沙拉雞肉串",
+    "evidence": [
+      {
+        "url": "https://rlaidiary.com/nobunaga-ronghua/",
+        "source_type": "blog",
+        "date": "待確認(約2025)",
+        "摘要": "北區榮華分舖食記,日式串燒居酒屋,聚會小酌好選擇"
+      },
+      {
+        "url": "https://moptt.tw/p/Food.M.1751172562.A.3B7",
+        "source_type": "ptt",
+        "date": "2025-06",
+        "摘要": "PTT Food板 台中北區織田信長榮華分舖食記"
+      },
+      {
+        "url": "https://www.threads.com/@dodofoodie_taichung/post/DJvjDMaSHR5/",
+        "source_type": "blog",
+        "date": "待確認(約2025)",
+        "摘要": "列出各分舖地址,榮華分舖為北區榮華街210號、營業18:00–01:00、Google4.9、可訂位"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-rankushi-yizhong",
+    "name": "燃手串 一中店",
+    "type": "串燒",
+    "zone": "台中",
+    "district": "北區",
+    "location": {
+      "address": "台中市北區育才北路52號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以北區一中商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$300–500(串燒約45–65元/支,平價銅板價)",
+      "basis": "houpiblog/sant:串45–65元、宵夜銅板價、免費雞湯喝到飽"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "串燒店不限時,一人吃串、喝免費雞湯自在,氛圍不尷尬"
+      },
+      "date": {
+        "score": 2,
+        "reason": "文青設計、食尚玩家稱一中最美串燒,兩人小酌氛圍佳,但店面不大偏熱鬧"
+      },
+      "group": {
+        "score": 3,
+        "reason": "品項50多種可分食、免費雞湯喝到飽,朋友聚餐宵夜熱門"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至00:30(週五、六延至01:00),平價宵夜串燒首選"
+      }
+    },
+    "vibe": [
+      "平價",
+      "文青",
+      "不限時",
+      "免費雞湯",
+      "宵夜"
+    ],
+    "open_late": {
+      "value": "00:30(週五、六至01:00;17:30起營業)",
+      "basis": "houpiblog/sant"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "部落格多為現場候位,未明確提及訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "熱門串燒宵夜店,不適合辦公"
+    },
+    "signature": "食尚玩家推薦一中最美文青串燒,免費雞湯喝到飽,伊比利豬、風流小卷",
+    "evidence": [
+      {
+        "url": "https://sant.tw/taichungrankushi/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "一中平價人氣串燒,食尚玩家推薦、文青日式,夜貓宵夜美食"
+      },
+      {
+        "url": "https://houpiblog.tw/rankushi/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "育才北路52號,17:30–00:30(五六到01:00),不限時、雞湯喝到飽,串45–65元"
+      },
+      {
+        "url": "https://www.walkerland.com.tw/article/view/351282",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "食尚玩家推薦一中平價人氣串燒店食記"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-hecho-dade",
+    "name": "Hecho 做咖啡 Lite&Deli 大德店",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "北區",
+    "location": {
+      "address": "台中市北區大德街49-2號(大德街與大雅路100巷口、全家旁)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以北區中國醫商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$195–350(主餐190–295,可+90升套餐)",
+      "basis": "ivychi/2afoodie:早午餐200元有找、主餐190–295、免服務費"
+    },
+    "meal_type": [
+      "早午餐",
+      "咖啡",
+      "甜點",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "環境舒適、有wifi免服務費、低消一份餐,一人用餐自在;白天可久坐但非專門辦公café"
+      },
+      "date": {
+        "score": 3,
+        "reason": "森林系綠植、大面窗明亮,多被推薦約會與聚餐,環境優"
+      },
+      "group": {
+        "score": 3,
+        "reason": "挑高裝潢空間、中國醫商圈聚餐好地點,可多人聚餐分食"
+      },
+      "late": {
+        "score": 0,
+        "reason": "營業約至20:00,無宵夜、無酒,不適合喝一杯"
+      }
+    },
+    "vibe": [
+      "森林系",
+      "綠植",
+      "免服務費",
+      "有wifi",
+      "明亮好拍"
+    ],
+    "open_late": {
+      "value": "約20:00(各來源10:00–20:00 / 10:30–20:30 略有出入,建議致電確認)",
+      "basis": "threads lttangsl/demi.tw"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "部落格未強調訂位,低消一份餐"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "有wifi、免服務費、環境舒適可久坐,但未見插座數量/是否限時的明確資訊"
+    },
+    "signature": "中國醫商圈森林系全日早午餐,200元有找手作早午餐與義式料理",
+    "evidence": [
+      {
+        "url": "https://ivychi.com/hecho/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中國醫旁森林系咖啡廳,全天候供應200元有找早午餐"
+      },
+      {
+        "url": "https://2afoodie.com/hecho/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "北區鄰近中國附醫,平價手作早午餐,主餐190–295、免服務費、停車便利"
+      },
+      {
+        "url": "https://demi.tw/hecholite/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中國醫商圈質感早午餐義式料理,提供WIFI、免服務費、環境舒適"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-huchuan-chiyo-jianxing",
+    "name": "虎川千代居酒屋 健行學士店",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "北區",
+    "location": {
+      "address": "台中市北區尚德街2號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以北區中國醫商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000(低消400/人、開瓶費300/瓶、外加一成服務費,實際客單通常較高)",
+      "basis": "candylife/niniandblue:低消400、+10%服務費"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "低消400、以聚餐約會為主,一人前往較不划算"
+      },
+      "date": {
+        "score": 3,
+        "reason": "日式老宅庭園、紅燈籠石板路夜晚浪漫,多被推薦情侶約會,Google 4.8"
+      },
+      "group": {
+        "score": 3,
+        "reason": "老宅空間、烤炸鍋物刺身品項多可分食,朋友聚餐熱門;4人以上建議電話訂位"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00(00:00最後點餐),深夜食堂小酌宵夜"
+      }
+    },
+    "vibe": [
+      "日式老宅",
+      "庭園造景",
+      "氣氛浪漫",
+      "高評價",
+      "營業至凌晨"
+    ],
+    "open_late": {
+      "value": "凌晨01:00(17:30–01:00,00:00最後點餐)",
+      "basis": "opentable/candylife"
+    },
+    "reservation": {
+      "value": "建議預約(可線上訂位;4人以上請電話聯繫)",
+      "basis": "ifoodie線上訂位/官方訂位說明"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "夜間居酒屋、有低消與服務費,不適合辦公"
+    },
+    "signature": "60年老宅改建日式庭園居酒屋,招牌痛風鍋、生食級牡蠣與干貝",
+    "evidence": [
+      {
+        "url": "https://travelclub.blog/2025/04/04/7907/",
+        "source_type": "blog",
+        "date": "2025-04",
+        "摘要": "北區日式酒屋式餐廳,台日創意料理氣氛佳,宵夜好選擇"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/huchuan",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "中國醫商圈日式庭園老宅,尚德街2號,營業至凌晨1點"
+      },
+      {
+        "url": "https://candylife.tw/tigersizakayanews/",
+        "source_type": "blog",
+        "date": "待確認",
+        "摘要": "高評價居酒屋,營業至凌晨一點,痛風鍋、生食級牡蠣干貝,低消400+一成服務費"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-raven-coffee-fengjia",
+    "name": "Raven Coffee 渡鴉咖啡（逢甲店）",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "西屯區",
+    "location": {
+      "address": "台中市西屯區河南路二段301巷58號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以西屯區逢甲/福星公園商圈定位，座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$120–250",
+      "basis": "菜單飲品/輕食/鬆餅落在 $60–250，外帶再減 $40（eaters/bigsharkgogogo 菜單）"
+    },
+    "meal_type": [
+      "咖啡",
+      "早午餐",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "不限時、每桌幾乎有插座、免費 WiFi，二樓大落地窗正對福星公園，多篇部落格明示適合帶筆電工作/打報告"
+      },
+      "date": {
+        "score": 2,
+        "reason": "藍色系沉穩裝潢、公園景觀、鬧中取靜，環境舒適可兩人小聚，但屬日間明亮咖啡廳非浪漫約會氛圍"
+      },
+      "group": {
+        "score": 2,
+        "reason": "座位可容數人小聚、寵物友善，但空間非大型聚會取向"
+      },
+      "late": {
+        "score": 0,
+        "reason": "營業僅至 19:00，早打烊、無酒，不適合宵夜或喝一杯"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "有插座",
+      "不限時",
+      "免費WiFi",
+      "公園景觀",
+      "寵物友善",
+      "平價"
+    ],
+    "open_late": {
+      "value": "19:00",
+      "basis": "多篇部落格與 eaters/愛食記：每日 09:00–19:00、無公休"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "咖啡廳性質、部落格未提訂位制，愛食記有線上訂位但一般現場入座即可"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "有插座、免費 WiFi、不限時，二樓落地窗座位適合帶筆電久坐辦公"
+    },
+    "signature": "夢幻漸層氣泡飲與咖啡拉花，公園景觀的不限時插座咖啡廳",
+    "evidence": [
+      {
+        "url": "https://erin.tw/raven-coffee_2021/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "近福星公園、公園景觀不限時咖啡、超美咖啡拉花、寵物友善"
+      },
+      {
+        "url": "https://vocus.cc/article/62eb7703fd897800014972c3",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "西屯近福星公園，明示『不限時、有插座、WIFI 的咖啡廳』、漸層氣泡飲"
+      },
+      {
+        "url": "https://www.eaters.tw/place/cafe/taichung/4425",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "逢甲店營業時間 09:00–19:00、地址河南路二段301巷58號、菜單與評價"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-weixun-guanglang-ws",
+    "name": "微醺光廊WS 餐酒館",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "西屯區",
+    "location": {
+      "address": "台中市西屯區文心路二段558-1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以西屯區文心路二段（近捷運水安宮站）定位，座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000",
+      "basis": "低消 $500/人＋10% 服務費，另有調酒/餐點；滿 $6000 可客製化投影（kikifunlife/nellysdaily）。完整均消部落格未明列，估中高價位"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "有吧台區可獨坐，但屬夜間沉浸式投影餐酒館、昏暗氛圍與低消偏聚會/約會取向，一人尚可但非主打"
+      },
+      "date": {
+        "score": 3,
+        "reason": "沉浸式環繞投影＋每桌月球燈、昏暗浪漫燈光、可客製化投影，多篇明示求婚/慶生/約會首選，氣氛與隱私俱佳"
+      },
+      "group": {
+        "score": 3,
+        "reason": "有露營風包廂、沙發區、餐桌區可選，適合三五好友下班聚會、辦趴慶生"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 03:00，有創意調酒與 SHOT，深夜喝一杯首選"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "昏暗浪漫",
+      "沉浸式投影",
+      "露營風包廂",
+      "打卡",
+      "慶生求婚"
+    ],
+    "open_late": {
+      "value": "凌晨03:00",
+      "basis": "多篇部落格：營業 18:00–03:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "可預約選擇座位類型（吧台/沙發/包廂），求婚慶生包場需預約"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "夜間餐酒館、燈光昏暗、有低消與服務費，不適合辦公"
+    },
+    "signature": "全台首創沉浸式環繞投影＋月球燈的網美餐酒館，創意調酒",
+    "evidence": [
+      {
+        "url": "https://kikifunlife.com/wwss/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "西屯文心路、水安宮站美食、沉浸式投影餐酒館、露營風包廂、營業至凌晨、創意調酒"
+      },
+      {
+        "url": "https://mymarcy.tw/wwss/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "西屯區酒吧、首創沉浸式投影餐酒館、地址文心路二段558-1號、兩小時徜佯深海沙灘星空"
+      },
+      {
+        "url": "https://woman.udn.com/woman/story/123162/7551583",
+        "source_type": "news",
+        "date": "2023",
+        "摘要": "udn 女子漾報導沈浸式餐酒館、露營風包廂、光影流動氛圍"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-hellow-craft-beer",
+    "name": "禾樂精釀所（新光遠百門市）",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "西屯區",
+    "location": {
+      "address": "台中市西屯區台灣大道三段226號（大遠百對面）",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以西屯區台灣大道商圈定位，座標待確認；有部落格標『南屯區新光遠百周邊』，行政區以官網/愛食記『西屯區』為準"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–700",
+      "basis": "精釀啤酒約 $180–250/杯＋輕食小菜，另有無限暢飲方案（yuki180cm/官網）"
+    },
+    "meal_type": [
+      "酒",
+      "晚餐",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "一樓有吧台可獨自小酌，店員專業可推薦酒款，一人喝精釀自在，但整體偏聚會取向"
+      },
+      "date": {
+        "score": 2,
+        "reason": "三樓『秘境天台』有市區夜景、晚風愜意、燈光美氣氛佳，適合兩人小酌（天台無冷氣，季節性）"
+      },
+      "group": {
+        "score": 3,
+        "reason": "二樓專為會議/多人聚會打造，自釀精釀可暢飲、輕食下酒，適合下班朋友聚餐小酌"
+      },
+      "late": {
+        "score": 3,
+        "reason": "週一至四營業至 24:00、週五六至凌晨 01:00，供應自家精釀啤酒，深夜小酌合適"
+      }
+    },
+    "vibe": [
+      "精釀啤酒",
+      "頂樓天台夜景",
+      "氣氛佳",
+      "多人聚會",
+      "下班小酌"
+    ],
+    "open_late": {
+      "value": "週一~四 24:00 / 週五~六 凌晨01:00 / 週日 23:00",
+      "basis": "搜尋結果與愛食記營業時間"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "三樓天台區座位有限、需事先預約（tequila1990/1989wolfe）"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "精釀啤酒吧氛圍、夜間營業，不適合辦公"
+    },
+    "signature": "自家在地釀造多款創意精釀啤酒，三樓秘境天台看夜景",
+    "evidence": [
+      {
+        "url": "https://hellowbrewery.com.tw/",
+        "source_type": "官網",
+        "date": "2024",
+        "摘要": "禾樂精釀所官網，精釀啤酒釀造專家、在地釀造全程冷藏直送"
+      },
+      {
+        "url": "https://yuki180cm.pixnet.net/blog/post/12807200",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "西屯酒吧、在地手工釀製創意啤酒、無限暢飲、含菜單、吧台與樓層介紹"
+      },
+      {
+        "url": "https://www.1989wolfe.com/2020/06/HelloWCraftBeer.html",
+        "source_type": "blog",
+        "date": "2020-06",
+        "摘要": "新光遠百店、三樓浪漫秘境天台看城市夜景、放鬆忘憂慵懶時光"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-chill-play",
+    "name": "Chill Play 去憂不累",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "西屯區",
+    "location": {
+      "address": "台中市西屯區市政北二路18-1號4樓（蔦屋書店 TSUTAYA 樓上）",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以西屯區七期市政北二路（近台中國家歌劇院、秋紅谷）定位，座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$500–800",
+      "basis": "主餐（威靈頓牛排/炒飯/炭烤豬肋排）＋調酒，部落格未明列均消，估小資至中價位（i17fun/2afoodie），完整均消待確認"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "設有吧檯（越晚人越多、吧檯一位難求要早來），一人可坐吧檯小酌，氛圍熱鬧不尷尬"
+      },
+      "date": {
+        "score": 2,
+        "reason": "豪宅區叢林/帳篷野餐網美風、燈光隨區變換、餐點好吃好拍，適合兩人；但偏熱鬧非私密約會"
+      },
+      "group": {
+        "score": 3,
+        "reason": "各區氛圍不同、可分食主餐與開胃菜、可包場，明示適合三五好友/姊妹/兄弟聚餐小酌"
+      },
+      "late": {
+        "score": 3,
+        "reason": "西式居酒屋，週五六營業至凌晨 03:00、平日至 01:00，有調酒與宵夜時段"
+      }
+    },
+    "vibe": [
+      "網美打卡",
+      "叢林帳篷風",
+      "有吧檯",
+      "越晚越熱鬧",
+      "寵物友善",
+      "可包場"
+    ],
+    "open_late": {
+      "value": "凌晨01:00（週五六至03:00）",
+      "basis": "週一~四18:00–01:00、週五18:00–03:00、週六12:00–03:00、週日12:00–01:00（另有資料稱17:30/中午開店，開店時間待確認）"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "吧檯一位難求要早來、可包場慶生（taiwan17go/2afoodie），FunNow 可線上預訂"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "夜間餐酒館、氛圍熱鬧，不適合久坐辦公"
+    },
+    "signature": "七期豪宅區浮誇叢林帳篷網美餐酒館，好喝調酒、越晚越熱鬧",
+    "evidence": [
+      {
+        "url": "https://i17fun.tw/chill-play/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "藏在七期豪宅區的餐酒館、低調奢華叢林風/帳篷野餐風、處處美拍角度"
+      },
+      {
+        "url": "https://2afoodie.com/chill-play/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "市政北二路18-1號4樓、營業到宵夜時段的西式居酒屋、適合下班小酌/慶生聚會包場"
+      },
+      {
+        "url": "https://taiwan17go.com/chillplay/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "熱血台中熱血採訪：越晚人越多、搭帳棚野餐、吧檯總是一位難求要早來"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-xiangmeng-izakaya",
+    "name": "饗夢居酒屋",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "西屯區",
+    "location": {
+      "address": "台中市西屯區西屯路二段273-2號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以西屯區逢甲商圈外圍（西屯路二段近文華路）定位，座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–700",
+      "basis": "平價高 CP 串燒居酒屋，串燒＋熱炒＋酒（travelclub/alicefoodntravel 稱高 CP、平價）"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "一樓以料理吧台（板前）為主，一人可坐吧台吃串燒喝一杯，氛圍自在"
+      },
+      "date": {
+        "score": 2,
+        "reason": "挑高有質感日式環境、二樓牆面櫻花與富士山布置，氣氛好可兩人用餐小酌"
+      },
+      "group": {
+        "score": 3,
+        "reason": "二樓半開放式日式包廂可容 6–10 人，適合朋友聚會/家庭聚餐/小型慶生，串燒可分食好聊"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨 02:00（最後點餐 01:00），有酒（週五『啤酒暢飲之夜』），串燒宵夜合適"
+      }
+    },
+    "vibe": [
+      "日式昭和",
+      "挑高質感",
+      "板前吧台",
+      "半開放包廂",
+      "串燒",
+      "深夜"
+    ],
+    "open_late": {
+      "value": "凌晨02:00（最後點餐 01:00）",
+      "basis": "搜尋結果與部落格：18:00–02:00"
+    },
+    "reservation": {
+      "value": "建議預約",
+      "basis": "提供現場與電話訂位（04-3604-5502），假日晚間建議提前訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋夜間營業、聚餐小酌取向，不適合辦公"
+    },
+    "signature": "職人炭火串燒、厚切蔥鹽牛舌，挑高日式昭和環境",
+    "evidence": [
+      {
+        "url": "https://travelclub.blog/2025/03/30/14472/",
+        "source_type": "blog",
+        "date": "2025-03",
+        "摘要": "逢甲夜市高 CP 串燒店、挑高日式環境、多人聚餐也 OK"
+      },
+      {
+        "url": "https://qwe6325551.pixnet.net/blog/post/366939496",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "西屯饗夢居酒屋、一秒到日本的深夜串燒店、營業至深夜"
+      },
+      {
+        "url": "https://money.udn.com/money/story/124067/8895578",
+        "source_type": "news",
+        "date": "2025",
+        "摘要": "經濟日報：饗夢居酒屋打造西屯日式料理日常、二樓半開放包廂、招牌串燒"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-bambino-bistro",
+    "name": "斑比諾 Bar&Restaurant 餐酒館",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "南屯區",
+    "location": {
+      "address": "台中市南屯區大墩路653-3號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南屯區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–600",
+      "basis": "平日每人低消300、假日500,均消約400,另收開瓶費與10%服務費(現在夯什麼)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "以聚餐、看賽事、駐唱為主的餐酒館,一人可坐小酌但非單人辦公型場所"
+      },
+      "date": {
+        "score": 2,
+        "reason": "純木系老英格蘭鄉村酒吧氛圍佳,適合兩人小酌;但有現場駐唱、空間開放,私密度中等"
+      },
+      "group": {
+        "score": 3,
+        "reason": "座位多、有包廂,百款精釀啤酒與Pizza/義大利麵/燉飯可分食,投影大螢幕看賽事,聚餐首選"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00、週五六至01:30,有酒與下酒菜"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "精釀啤酒多",
+      "可看賽事駐唱",
+      "聚餐包廂",
+      "營業到深夜"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00(週五六至 01:30),週一公休",
+      "basis": "阿新筆記 / 官網 bambino-bistro.com"
+    },
+    "reservation": {
+      "value": "建議預約(訂位電話 04-23209063)",
+      "basis": "官網與部落格皆列訂位電話,假日熱門"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "夜間營業、有酒與駐唱音樂,非久坐辦公場所,未見以插座辦公為訴求"
+    },
+    "signature": "百款世界精釀啤酒配美式/義式料理,木質老英格蘭酒吧氛圍",
+    "evidence": [
+      {
+        "url": "https://shin.tw/bambino1/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "純木系老英格蘭鄉村酒吧風,收藏百款世界啤酒,餐點水準高、座位多,適合小酌聚餐"
+      },
+      {
+        "url": "https://nowhot01.com/bambino-bistro-restaurant/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "南屯大墩路653-3號餐酒館,平日低消300/假日500+10%服務費,精釀啤酒、特調、下酒菜"
+      },
+      {
+        "url": "https://bambino-bistro.com/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官網定位美式義式料理、精釀啤酒,主打聚餐包廂約會,營業至凌晨,證實仍營業"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-sigma-bistro",
+    "name": "Sigma 西閣餐酒館",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "南屯區",
+    "location": {
+      "address": "台中市南屯區大墩十五街11號(部分資料記9號,待確認)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南屯區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$500–800",
+      "basis": "均消約500、單點品項200–680以上,實際落在400–800(質人星球/愛玩記)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "有吧檯、女調酒師互動友善,新客也能快速融入,一人小酌自在;但屬夜間酒場非辦公"
+      },
+      "date": {
+        "score": 3,
+        "reason": "隱藏巷弄、低調奢華高質感,燈光氛圍佳、私密度高,無酒單可客製調酒,多被推薦約會"
+      },
+      "group": {
+        "score": 2,
+        "reason": "被推為姊妹夜晚聚會好去處,可多人小酌;但巷弄小店座位有限,不適合大團"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨02:00、週五六至03:00,有酒,週日公休"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "隱密低調",
+      "客製調酒",
+      "適合約會",
+      "營業到深夜"
+    ],
+    "open_late": {
+      "value": "凌晨 02:00(週五六至 03:00),週日公休",
+      "basis": "質人星球等;部分部落格記18/19點開至01:00,時段有出入待確認"
+    },
+    "reservation": {
+      "value": "建議預約(無電話,以 Facebook 私訊訂位)",
+      "basis": "質人星球:目前沒有電話,可用臉書預訂,建議事先預約"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "純夜間餐酒館,以調酒與餐點為主,無久坐辦公/插座訴求"
+    },
+    "signature": "女調酒師無酒單客製調酒,依季節設計歐陸燉煮與燒烤餐點",
+    "evidence": [
+      {
+        "url": "https://sosense.tw/sigma/",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "大墩十五街隱藏巷弄餐酒館,女調酒師客製調酒、以經典為基底創新,酒食主義高質感"
+      },
+      {
+        "url": "https://jeson.tw/sigma-bistro/",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "西閣餐酒館美食美酒兼具,均消約500,環境低調有特色"
+      },
+      {
+        "url": "https://lionfun.tw/blog/post/462848900",
+        "source_type": "blog",
+        "date": "2020",
+        "摘要": "南屯隱藏巷弄餐酒館,女調酒師好威、餐點與酒有特色,鬧中取靜"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-jioujhuo-izakaya",
+    "name": "久酌居酒屋",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "南屯區",
+    "location": {
+      "address": "台中市南屯區東興路二段121之1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南屯區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000",
+      "basis": "每人低消$400,含串燒/熱炒/鍋物與清酒生啤消費,尖峰時段加收10%服務費(現在夯什麼/阿君)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "有吧檯可一人小酌,但以聚餐為主、每人低消$400,一人稍不划算"
+      },
+      "date": {
+        "score": 2,
+        "reason": "深夜食堂氛圍、創意日料有記憶點,兩人可小酌;但較熱鬧非私密約會型"
+      },
+      "group": {
+        "score": 3,
+        "reason": "有包廂,串燒/熱炒/鍋物可分食、清酒生啤選擇齊全,寵物友善,南屯聚餐推薦"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨03:00(最後收客01:30),有酒與宵夜串燒"
+      }
+    },
+    "vibe": [
+      "深夜食堂",
+      "串燒宵夜",
+      "包廂聚餐",
+      "寵物友善",
+      "營業到凌晨"
+    ],
+    "open_late": {
+      "value": "凌晨 03:00(最後收客 01:30)",
+      "basis": "現在夯什麼:營業18:00–03:00、最後收客01:30"
+    },
+    "reservation": {
+      "value": "建議預約(愛食記/FunNow 可線上訂位)",
+      "basis": "愛食記線上訂位頁、FunNow 預訂頁"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋聚餐宵夜場,尖峰用餐限時2小時,不適合辦公"
+    },
+    "signature": "創意職人串燒與熱炒的隱藏版深夜食堂,必點鹽烤雞里肌、紫蘇炸干貝",
+    "evidence": [
+      {
+        "url": "https://ajunfun.tw/230818/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "南屯創意日料結合職人串燒,隱藏版深夜食堂,師傅出身知名居酒屋,菜色廣、變化多"
+      },
+      {
+        "url": "https://nowhot01.com/nantun-izakaya-skewers/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "東興路二段121-1號,營業到凌晨三點,每人低消$400、尖峰限時2小時+10%,包廂聚餐"
+      },
+      {
+        "url": "https://ifoodie.tw/restaurant/650c6a7a8d3df331d391dddd-%E4%B9%85%E9%85%8C%E5%B1%85%E9%85%92%E5%B1%8B",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "愛食記南屯居酒屋線上訂位頁,列營業與訂位資訊,佐證店家現營運"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-zeller-coffee-dadun",
+    "name": "Zeller Coffee 宅樂咖啡 大墩店",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "南屯區",
+    "location": {
+      "address": "台中市南屯區大墩十一街154號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南屯區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–450",
+      "basis": "薄餅220、紅酒燉牛肉飯380,每人低消一杯飲品、不收服務費(妮妮布魯/涼子是也)"
+    },
+    "meal_type": [
+      "早午餐",
+      "咖啡",
+      "甜點",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "插座數量充足、免費WIFI,每人低消一杯飲品,日系質感採光佳、可久坐,適合一人辦公"
+      },
+      "date": {
+        "score": 2,
+        "reason": "日系簡約質感、採光佳,夜晚暖黃燈光化身氛圍餐酒館,白天下午茶或夜晚小酌兩人皆宜"
+      },
+      "group": {
+        "score": 2,
+        "reason": "空間寬敞、二樓可場地租借辦活動,多人可坐;偏咖啡輕食聚會非正餐大團"
+      },
+      "late": {
+        "score": 1,
+        "reason": "打烊早(各來源記約17:00–21:00不一),非深夜宵夜場"
+      }
+    },
+    "vibe": [
+      "安靜可久坐",
+      "有插座",
+      "免費WIFI",
+      "日系採光佳",
+      "低消一杯飲品"
+    ],
+    "open_late": {
+      "value": "約 10:00–21:00(各來源略有出入,以官方最新為準)",
+      "basis": "部落格記10:00–21:00、9:00–17:00等,打烊時間待確認"
+    },
+    "reservation": {
+      "value": "免預約(假日人氣早午餐建議提早)",
+      "basis": "部落格描述為排隊人氣早午餐店,未見強制訂位"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "插座充足+免費WIFI+低消一杯飲品,日系安靜;唯限時政策各家不一(部分稱不限時、部分稱限時2小時),待確認"
+    },
+    "signature": "日系質感全日供應早午餐與咖啡,夜晚轉為氛圍餐酒館",
+    "evidence": [
+      {
+        "url": "https://lyes.tw/zeller-coffee-%E5%AE%85%E6%A8%82%E5%92%96%E5%95%A1/",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "大墩旗艦店,日系簡約質感、全日早午餐,附最新菜單,南屯咖啡館推薦"
+      },
+      {
+        "url": "https://ningl.tw/%E5%AE%85%E6%A8%82%E5%92%96%E5%95%A1%E5%A4%A7%E5%A2%A9%E5%BA%97/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "大墩十一街154號,日式工業風有插座、早午餐全日供應"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/menu-zeller1",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "菜單價位(薄餅220、紅酒燉牛肉飯380),有插座近公益路、低消一杯飲品、不收服務費"
+      },
+      {
+        "url": "https://sansa.tw/zeller-coffee/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "南屯日系美學咖啡廳,夜晚化身氛圍餐酒館,下班放鬆好去處"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-kazama-yakiniku",
+    "name": "燒肉風間 Kazama 公益本店",
+    "type": "燒肉",
+    "zone": "台中",
+    "district": "南屯區",
+    "location": {
+      "address": "台中市南屯區公益路二段171-1號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 南屯區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$900–1500",
+      "basis": "以套餐為主(如1880元套餐/2–3人份)並有和牛、厚切等高級單點(薏仁一個人/妮妮布魯)"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "以2人/3人套餐為主,一人較不划算;有代烤服務但非單人取向"
+      },
+      "date": {
+        "score": 3,
+        "reason": "燈光柔和、氛圍舒適,套餐精緻可吃到和牛,多篇推薦情侶約會、慶生"
+      },
+      "group": {
+        "score": 3,
+        "reason": "套餐制+專人代烤、大口吃肉喝酒,壽星整桌免費活動,聚餐慶生熱門"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至00:00(午夜),有酒,但非深夜宵夜場"
+      }
+    },
+    "vibe": [
+      "氣氛佳",
+      "精緻燒肉",
+      "套餐聚餐",
+      "適合約會慶生",
+      "燈光柔和"
+    ],
+    "open_late": {
+      "value": "00:00(午夜);11:30–16:00、17:30–00:00,週二僅晚間",
+      "basis": "妮妮布魯/官網營業資訊"
+    },
+    "reservation": {
+      "value": "建議預約(熱門燒肉套餐需訂位)",
+      "basis": "多篇部落格提醒需提前訂位,官網/愛食記提供線上訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "燒肉套餐制、桌邊燒烤,不適合辦公久坐"
+    },
+    "signature": "關西流精緻燒肉套餐,和牛與厚切牛排,適合聚餐、約會慶生",
+    "evidence": [
+      {
+        "url": "https://niniandblue.com/blog/post/kazama",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "公益店10年老店回訪,關西流人氣燒肉、服務一樣好,證實仍營業"
+      },
+      {
+        "url": "https://www.kazama.com.tw/",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官網公益本店資訊、套餐與訂位,佐證品牌現營運"
+      },
+      {
+        "url": "https://tong5410.pixnet.net/blog/post/352339066",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "公益路精緻燒烤,2人/3人套餐、可吃高級和牛,燈光氛圍佳,可停星巴克後停車場折抵2小時"
+      },
+      {
+        "url": "https://fun.taichung.gov.tw/shop/view/31440",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "2025台中購物節合作店家『燒肉風間 公益本店』,政府頁面佐證營業中"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-central-bookstore-1927",
+    "name": "中央書局",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "中區",
+    "location": {
+      "address": "台中市中區台灣大道一段235號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–400(低消200,每人一份茶泡飯或甜點)",
+      "basis": "bring-you:低消200,每人一份茶泡飯或甜點"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "二樓咖啡區採光好、環境安靜可獨坐看書,惟插座偏少、有低消200,長時間辦公普通"
+      },
+      "date": {
+        "score": 2,
+        "reason": "1927年老宅文青氛圍、明亮寧靜適合兩人小聚,但僅營業到19:00且非私密燈光"
+      },
+      "group": {
+        "score": 1,
+        "reason": "書店閱讀取向空間需保持安靜,不適合多人熱聊聚餐"
+      },
+      "late": {
+        "score": 0,
+        "reason": "19:00 打烊,週一、週二公休,無宵夜與酒"
+      }
+    },
+    "vibe": [
+      "老宅文青",
+      "安靜可久坐",
+      "採光好",
+      "書香氛圍"
+    ],
+    "open_late": {
+      "value": "19:00",
+      "basis": "候選『11:00–19:00 週一二公休』與多數來源『週三至週一11:00–19:00、週二公休』有出入,建議以官方FB為準重新確認"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "各部落格未載明訂位政策"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "插座偏少、屬安靜閱讀空間, 有低消200, 不太適合長時間打筆電(space.wordslive)"
+    },
+    "signature": "百年書店二樓的咖啡、茶泡飯與手作甜點,文青必訪",
+    "evidence": [
+      {
+        "url": "https://www.bigfang.tw/blog/post/centralbook1927-taichung",
+        "source_type": "blog",
+        "date": "2021",
+        "摘要": "近百年老屋改建,二樓為咖啡下午茶空間,環境寧靜文青"
+      },
+      {
+        "url": "https://www.bring-you.info/zh-tw/central-bookstore-taichung",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "三層樓,二樓咖啡廳,低消200每人一份茶泡飯或甜點,營業11-19週一二公休"
+      },
+      {
+        "url": "https://space.wordslive.com.tw/taichung-study-cafe/",
+        "source_type": "blog",
+        "date": "2026",
+        "摘要": "讀書咖啡懶人包提到中央書局插座偏少、不太適合久坐打筆電"
+      },
+      {
+        "url": "https://travel.taichung.gov.tw/zh-tw/attractions/intro/1501",
+        "source_type": "官網",
+        "date": "2024",
+        "摘要": "台中觀光旅遊網收錄,1927創立百年書店老建築"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-4th-credit-cooperative",
+    "name": "第四信用合作社(宮原眼科二店)",
+    "type": "甜點店",
+    "zone": "台中",
+    "district": "中區",
+    "location": {
+      "address": "台中市中區中山路72號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$150–300(冰淇淋、低消約100)",
+      "basis": "after-sleep:每人低消約100;冰品單價百元上下"
+    },
+    "meal_type": [
+      "甜點",
+      "咖啡",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "觀光冰店人多熱鬧,一人可吃冰但氛圍非單人辦公取向"
+      },
+      "date": {
+        "score": 1,
+        "reason": "古蹟老銀行裝潢好拍,但觀光客多、偏喧鬧,約會氛圍普通"
+      },
+      "group": {
+        "score": 3,
+        "reason": "三層樓、二樓約142座位且不限時,50多種冰淇淋可分食好聊,很適合三五好友聚餐吃冰"
+      },
+      "late": {
+        "score": 1,
+        "reason": "約營業到21:00(部分來源列22:00,待確認),無酒、談不上宵夜"
+      }
+    },
+    "vibe": [
+      "古蹟老銀行",
+      "座位多不限時",
+      "觀光熱門",
+      "適合聚餐拍照"
+    ],
+    "open_late": {
+      "value": "21:00",
+      "basis": "多來源一致 10:00–21:00"
+    },
+    "reservation": {
+      "value": "免預約",
+      "basis": "after-sleep:內用自行找位、櫃檯點餐"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "座位多、不限時但觀光客多、氛圍熱鬧, 非辦公取向, 插座待確認"
+    },
+    "signature": "老銀行裡吃冰,50多種冰淇淋、芒果口味必點",
+    "evidence": [
+      {
+        "url": "https://bobbyfun.tw/2023-07-12-2483/",
+        "source_type": "blog",
+        "date": "2023-07",
+        "摘要": "宮原眼科內用分店,舊銀行改建,有舒服內用空間可坐著吃冰"
+      },
+      {
+        "url": "https://after-sleep.com/tc4cbank/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "二樓約142座位、不限時,每人低消約100,適合朋友聚會吃冰"
+      },
+      {
+        "url": "https://safood.tw/tc4cbank",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "菜單含冰淇淋、鬆餅,復古老銀行建築"
+      },
+      {
+        "url": "https://mimigo.tw/tc4cbank/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "最新冰淇淋價目表,中山路72號,銀行裡吃冰喝下午茶"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-mijin-cafe",
+    "name": "覓靚 mijin",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "中區",
+    "location": {
+      "address": "台中市中區中山路257巷14號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–500(低消一杯飲料,另有無菜單料理)",
+      "basis": "travelclub:低消一杯飲料;無菜單料理實際價位待確認"
+    },
+    "meal_type": [
+      "咖啡",
+      "酒",
+      "晚餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "柳川古道百年老宅安靜可久坐、低消僅一杯飲料,一人自在,惟座位少且一週僅開4天"
+      },
+      "date": {
+        "score": 3,
+        "reason": "隱密百年老宅、氣氛佳,每日更換無菜單料理配咖啡或啤酒,適合兩人約會慢坐"
+      },
+      "group": {
+        "score": 1,
+        "reason": "同時間僅容約15人,不利多人聚餐"
+      },
+      "late": {
+        "score": 2,
+        "reason": "營業至22:00且有啤酒與下酒菜可小酌,但非深夜宵夜"
+      }
+    },
+    "vibe": [
+      "柳川老宅",
+      "隱密",
+      "無菜單",
+      "氣氛佳",
+      "可小酌"
+    ],
+    "open_late": {
+      "value": "22:00(僅週四~週日營業)",
+      "basis": "travelclub:週四五14-22、週六日12-22,一週4天"
+    },
+    "reservation": {
+      "value": "不提供預約(免預約直接前往)",
+      "basis": "官方IG:不提供預約、用餐時間90分鐘"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "老宅安靜可久坐但座位少、一週僅4天, 低消一杯飲料, 插座待確認"
+    },
+    "signature": "柳川古道百年老宅,每日更換的無菜單料理配咖啡或啤酒",
+    "evidence": [
+      {
+        "url": "https://travelclub.blog/2024/09/26/12528/",
+        "source_type": "blog",
+        "date": "2024-09",
+        "摘要": "隱藏柳川古道日式老宅,無菜單料理、低消一杯飲料、有啤酒與下酒菜,營業至22點"
+      },
+      {
+        "url": "https://shinysusu.com/tag/%E5%8F%B0%E4%B8%AD%E6%9F%B3%E5%B7%9D%E7%BE%8E%E9%A3%9F/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "台中柳川美食標籤收錄覓靚,柳川一帶老宅餐飲"
+      },
+      {
+        "url": "https://linktr.ee/mijin.cafe",
+        "source_type": "官網",
+        "date": "2025",
+        "摘要": "官方 linktree,中山路257巷14號,週四五14-22、週六日12-22"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-jinding-izakaya",
+    "name": "金町深夜酒食居",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "中區",
+    "location": {
+      "address": "台中市中區台灣大道一段376號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$600–1000(低消400,生蠔、串燒、清酒)",
+      "basis": "niniandblue:每人低消400、免服務費;生蠔串燒清酒單價偏高"
+    },
+    "meal_type": [
+      "宵夜",
+      "晚餐",
+      "酒"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "深夜居酒屋可一人小酌吃生蠔串燒,不限時免服務費,惟低消400、氛圍熱鬧,一人消費略高"
+      },
+      "date": {
+        "score": 2,
+        "reason": "日式老宅氛圍有情調,但以宵夜聚飲為主、客人熱鬧,私密度普通"
+      },
+      "group": {
+        "score": 3,
+        "reason": "老宅居酒屋主打生蠔、串燒、熱炒可分食,免服務費不限時,適合多人深夜聚飲"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業21:00–凌晨05:00(LO04:00),有近十種日本直送生蠔與清酒啤酒,深夜宵夜首選"
+      }
+    },
+    "vibe": [
+      "深夜居酒屋",
+      "生蠔串燒",
+      "營業到天亮",
+      "熱鬧好聊",
+      "第二市場對面"
+    ],
+    "open_late": {
+      "value": "凌晨 05:00(最後點餐 04:00)",
+      "basis": "niniandblue/alicefoodntravel:21:00–05:00"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "各來源未明載訂位政策,建議先詢問"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "深夜居酒屋、熱鬧聚飲場所,不適合辦公"
+    },
+    "signature": "第二市場對面、開到凌晨5點,近十種日本直送生蠔配串燒宵夜",
+    "evidence": [
+      {
+        "url": "https://niniandblue.com/blog/post/jd",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "台灣大道一段376號中區,營業21:00-05:00,主打生蠔串燒,低消400免服務費不限時"
+      },
+      {
+        "url": "https://alicefoodntravel.com/jindingizakaya/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "台中中區美食,晚上9點開到早上5點,提供近十種生蠔"
+      },
+      {
+        "url": "https://sunnylife.tw/jd/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "第二市場對面好吃生蠔串燒,營業到凌晨5點不限時免服務費"
+      },
+      {
+        "url": "https://travel.ettoday.net/article/2554758.htm",
+        "source_type": "news",
+        "date": "2023",
+        "摘要": "夜貓族深夜居酒屋,以生蠔串燒為主打,熔岩唐揚雞必點"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-peacocks-coffee",
+    "name": "孔雀咖啡 Peacocks Coffee",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "中區",
+    "location": {
+      "address": "台中市中區大誠街5號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 中區 定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$250–400(手沖咖啡+甜點,估算)",
+      "basis": "部落格提及手沖咖啡與生乳酪/提拉米蘇,單價估算,待確認"
+    },
+    "meal_type": [
+      "咖啡",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "柳川旁孔雀藍老宅咖啡館可獨坐喝手沖,環境清幽,惟插座待確認、僅營業到18:00"
+      },
+      "date": {
+        "score": 3,
+        "reason": "孔雀藍老宅、二樓綠意寬敞氣氛佳又好拍,適合兩人喝咖啡約會下午茶"
+      },
+      "group": {
+        "score": 2,
+        "reason": "二樓空間意外寬敞可容數人,但屬安靜咖啡館、非熱鬧聚餐取向"
+      },
+      "late": {
+        "score": 0,
+        "reason": "18:00 打烊,無宵夜與酒"
+      }
+    },
+    "vibe": [
+      "柳川水岸",
+      "孔雀藍老宅",
+      "綠意",
+      "氣氛佳好拍",
+      "手沖咖啡"
+    ],
+    "open_late": {
+      "value": "18:00(FB另列 09:00–18:00,最後點餐17:30)",
+      "basis": "flyblog/官方FB:營業至18:00"
+    },
+    "reservation": {
+      "value": "待確認",
+      "basis": "各部落格未載明訂位政策"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "咖啡館氛圍佳、二樓寬敞可久坐, 但插座待確認、僅營業到18:00"
+    },
+    "signature": "柳川旁孔雀藍老宅,手沖咖啡配花卷式肉桂捲",
+    "evidence": [
+      {
+        "url": "https://flyblog.cc/peacocks-coffee/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "台中中區柳川河岸旁,大誠街5號,手沖咖啡、花卷式肉桂捲老饕必點"
+      },
+      {
+        "url": "https://niniandblue.com/blog/post/peacocks-coffee",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "中區第二市場、柳川藍帶水岸旁的神秘孔雀藍咖啡館"
+      },
+      {
+        "url": "https://www.viviyu.com/archives/37314",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "第二市場附近、柳川水岸旁,環境舒適宜人"
+      },
+      {
+        "url": "https://enlifesun.com/blog/post/120278512-",
+        "source_type": "blog",
+        "date": "2022",
+        "摘要": "中區柳川旁迷人咖啡屋,孔雀藍外觀與內在,二樓寬敞綠意"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-jiutua-taiwanese",
+    "name": "酒ㄊㄨㄚ(酒攤)",
+    "type": "餐酒館",
+    "zone": "台中",
+    "district": "北屯區",
+    "location": {
+      "address": "台中市北屯區昌平路二段22-5號(崇德九路口)",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北屯區 崇德/昌平路商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–700(無菜單合菜,單品豬油飯20、蘿蔔糕90、白斬雞280、炒海瓜子350,依人數配菜)",
+      "basis": "fonfood 及部落格列出招牌菜單價,人均為合菜推估"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 1,
+        "reason": "無菜單台式合菜,偏多人共享,一人前往不划算"
+      },
+      "date": {
+        "score": 2,
+        "reason": "老宅大院、紅燈籠廟會氛圍復古有情調,惟屬熱炒合菜非精緻約會場"
+      },
+      "group": {
+        "score": 3,
+        "reason": "無菜單合菜由老闆配菜、依人數調整份量,室內外座位,適合三五好友/家庭聚餐圍爐"
+      },
+      "late": {
+        "score": 2,
+        "reason": "多篇部落格(晴天散步、boo2k、蘋果話日常)記營業至凌晨01:00且主打續攤宵夜深夜食堂;惟飛天璇部落格記22:00,打烊時間需電話確認"
+      }
+    },
+    "vibe": [
+      "復古老宅",
+      "紅燈籠氛圍",
+      "適合聚餐宵夜",
+      "無菜單合菜",
+      "需預約"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00(部分部落格記 22:00,建議電話 04-24221331 確認)",
+      "basis": "feliz.tw / boo2k.com / apoarea.tw 記 PM5:00–AM1:00;flyblog.cc 記 17:00–22:00,資料不一"
+    },
+    "reservation": {
+      "value": "建議預約(平日以預約為主,不太接臨時過路客)",
+      "basis": "flyblog.cc 提及平常只接預約客;fonfood 建議事先訂位"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "無菜單合菜餐酒館、宵夜續攤取向,不適合辦公久坐"
+    },
+    "signature": "無菜單古早味台菜,招牌魷魚螺肉蒜、炭火火鍋、豬油拌飯,老宅紅燈籠續攤宵夜氛圍",
+    "evidence": [
+      {
+        "url": "https://flyblog.cc/wine-stand/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "飛天璇的口袋:昌平路二段22-5號(崇德九路口),復古老宅無菜單台菜,適合三五好友/家庭聚餐,平常只接預約客"
+      },
+      {
+        "url": "https://feliz.tw/feast/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "晴天散步:定位為『適合聚餐宵夜的深夜食堂』,無菜單古早味熱炒合菜私房菜,營業至凌晨"
+      },
+      {
+        "url": "https://boo2k.com/archives/38903",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "無菜單式古早味餐廳、食尚玩家報導,聚餐喝酒、圍爐火鍋、續攤消夜好去處,PM5:00–AM1:00"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-gizakaya-m3",
+    "name": "吉酒屋",
+    "type": "居酒屋",
+    "zone": "台中",
+    "district": "北屯區",
+    "location": {
+      "address": "台中市北屯區旱溪西路三段258巷69號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北屯區(近松竹/崇德商圈)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$400–700(單品 $40–280,另收10%服務費)",
+      "basis": "yinyan.tw 列價位帶 $40–280、收10%服務費,人均為小酌配串推估"
+    },
+    "meal_type": [
+      "晚餐",
+      "酒",
+      "宵夜"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 2,
+        "reason": "狐狸金部落格明述『一個人也能輕鬆小酌的療癒串燒店』,單人友善但無明示辦公插座"
+      },
+      "date": {
+        "score": 2,
+        "reason": "二樓包廂溫潤高雅色調、放鬆愜意,可兩人小酌,惟整體偏熱鬧"
+      },
+      "group": {
+        "score": 3,
+        "reason": "二樓兩間包廂:小包廂8–10人、大包廂15–20人含一桶啤酒,深夜聚餐首選、可分食串燒熱炒"
+      },
+      "late": {
+        "score": 3,
+        "reason": "營業至凌晨01:00,有各式串燒、調酒、大份量啤酒,球賽轉播+下班宵夜小酌"
+      }
+    },
+    "vibe": [
+      "日式居酒屋",
+      "有包廂",
+      "深夜營業",
+      "球賽轉播",
+      "可小酌分食"
+    ],
+    "open_late": {
+      "value": "凌晨 01:00(2025/6起 18:00–01:00)",
+      "basis": "yinyan.tw / 官方 Threads 記調整後營業時間 18:00–01:00"
+    },
+    "reservation": {
+      "value": "建議預約(訂位專線 04-24368967,上班時間才有人接;包廂需訂位)",
+      "basis": "chungdiary.com / yinyan.tw 列訂位資訊與包廂配置"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "居酒屋晚間營業、以小酌聚餐為主,不適合辦公"
+    },
+    "signature": "職人串燒、炸起司玉子燒、自家熟成午仔魚一夜干,包廂深夜聚餐小酌",
+    "evidence": [
+      {
+        "url": "https://yinyan.tw/gizakayam3/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "瀠羊樂源:旱溪西路三段258巷69號,職人串燒炸物煮物、二樓包廂8–10/15–20人,價位$40–280收10%服務費"
+      },
+      {
+        "url": "https://chungdiary.com/gizakaya_m3/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "承錠旅行日記:北屯居酒屋,球賽轉播+晚餐宵夜,下班小酌好去處,含交通停車與訂位專線"
+      },
+      {
+        "url": "https://ajunfun.tw/yoshijiuya/",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "阿君的玩食天堂:奶油啤酒、特色串炸,主打『深夜聚餐首選』,含交通停車資訊"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-cafe-today",
+    "name": "今咖啡 Cafe Today",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "北屯區",
+    "location": {
+      "address": "台中市北屯區軍福十三路88號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北屯區 軍功/軍福商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 1,
+      "per_person": "約 NT$150–350(每人低消$100,餐點另計,不收服務費)",
+      "basis": "love840904.pixnet.net 記低消$100、輕食燉飯義大利麵餐點"
+    },
+    "meal_type": [
+      "咖啡",
+      "早午餐"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "不限時、部分座位有插座、有wifi、低消僅$100,多篇列為適合一人辦公讀書的咖啡廳,下午光線佳"
+      },
+      "date": {
+        "score": 1,
+        "reason": "溫馨不吵雜但屬日常辦公型咖啡,非約會氛圍"
+      },
+      "group": {
+        "score": 1,
+        "reason": "可坐但空間屬個人工作取向,非聚餐熱門"
+      },
+      "late": {
+        "score": 0,
+        "reason": "18:00 打烊,無宵夜/酒"
+      }
+    },
+    "vibe": [
+      "不限時",
+      "有插座",
+      "有wifi",
+      "適合辦公讀書",
+      "寵物友善",
+      "安靜不吵雜"
+    ],
+    "open_late": {
+      "value": "18:00(無公休)",
+      "basis": "love840904.pixnet.net / ifoodie.tw 記營業 9:00–18:00"
+    },
+    "reservation": {
+      "value": "免預約(來源未特別提及訂位,一般咖啡廳性質)",
+      "basis": "各部落格未提及需訂位"
+    },
+    "work_ok": {
+      "value": true,
+      "note": "明示不限時、部分座位有插座、有wifi,多篇Dcard/部落格列為辦公讀書咖啡"
+    },
+    "signature": "不限時有插座的溫馨咖啡廳,義大利麵/燉飯/海陸熱壓吐司/巴斯克蛋糕,下午光線美適合辦公",
+    "evidence": [
+      {
+        "url": "https://love840904.pixnet.net/blog/post/347453809",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "海帶部落格:軍福十三路88號,店面顯眼溫馨不吵雜,低消$100不限時、部分座位有插座有wifi,適合辦公"
+      },
+      {
+        "url": "https://ifoodie.tw/review/683dc406927f8058f6c218fd",
+        "source_type": "blog",
+        "date": "2025",
+        "摘要": "愛食記 4星評論:今咖啡 cafe today,餐點多樣、下午光線美很適合辦公"
+      },
+      {
+        "url": "https://www.dcard.tw/f/taichung/p/256946321",
+        "source_type": "ptt",
+        "date": "2025",
+        "摘要": "Dcard 台中『有插座不限時咖啡廳懶人包 Part3』收錄今咖啡 Cafe Today,標示有插座、可久坐辦公"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-greensepal-159",
+    "name": "綠萼159 地中海南法料理",
+    "type": "餐廳",
+    "zone": "台中",
+    "district": "北屯區",
+    "location": {
+      "address": "台中市北屯區山西路三段159號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北屯區(近崇德路三段仁和公園)定位,座標待確認"
+    },
+    "price_band": {
+      "level": 3,
+      "per_person": "約 NT$500–1000(單點主餐$320–1280、雙人套餐$1380、四人$2380,每人低消一份主餐、加收10%服務費)",
+      "basis": "kenji.life / 搜尋菜單列主餐與套餐價、每人低消一主餐+10%"
+    },
+    "meal_type": [
+      "晚餐",
+      "早午餐",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 0,
+        "reason": "以雙人/四人/六人套餐、每人低消一份主餐為主,不適合一人"
+      },
+      "date": {
+        "score": 3,
+        "reason": "多篇明述純白挑高歐式空間、燈光美氣氛佳的浪漫約會餐廳,可提前預約送慶生小蛋糕"
+      },
+      "group": {
+        "score": 3,
+        "reason": "雙人/四人/六人套餐可分享,提供公司聚餐、生日派對、婚宴的包場服務"
+      },
+      "late": {
+        "score": 0,
+        "reason": "最晚約21:00打烊、週二公休,無宵夜/酒吧取向"
+      }
+    },
+    "vibe": [
+      "歐式網美空間",
+      "氣氛佳適合約會",
+      "可包場聚餐",
+      "寵物友善",
+      "萌兔駐店",
+      "週二公休"
+    ],
+    "open_late": {
+      "value": "平日至20:30、假日至21:00(週二公休)",
+      "basis": "搜尋營業資訊:平日11:30–15:00/17:00–20:30、假日11:00–15:00/17:00–21:00"
+    },
+    "reservation": {
+      "value": "建議預約(可線上訂位,包場/慶生需提前)",
+      "basis": "官方 FB 與 table.yo-svip 線上訂位頁"
+    },
+    "work_ok": {
+      "value": false,
+      "note": "約會/聚餐取向餐廳,低消一主餐、有時段,不適合辦公"
+    },
+    "signature": "台中北屯最美純白歐式空間+萌兔,南法排餐/義大利麵,燈光美氣氛佳的約會與慶生聚餐餐廳",
+    "evidence": [
+      {
+        "url": "https://kenji.life/159bunnygarden/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "帶著心去旅行:山西路三段159號,台中最美歐式餐廳、療癒萌兔寵物友善,採光明亮歐式風格"
+      },
+      {
+        "url": "https://ivychi.com/159bunnygarden/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "艾薇覓食趣:『燈光美氣氛佳的約會餐廳』,還能跟萌兔玩耍"
+      },
+      {
+        "url": "https://ajunfun.tw/159bunnygarden/",
+        "source_type": "blog",
+        "date": "2024",
+        "摘要": "阿君的玩食天堂:含菜單,雙人/四人/六人套餐、單點主餐,適合約會、家庭聚餐、慶生包場"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
+  },
+  {
+    "id": "tc-thirteen-cafe",
+    "name": "蒔杉咖啡 Thirteen Cafe",
+    "type": "咖啡廳",
+    "zone": "台中",
+    "district": "北屯區",
+    "location": {
+      "address": "台中市北屯區軍福十八路275號",
+      "lat": null,
+      "lng": null,
+      "coord_basis": "以 北屯區 軍福/軍功商圈定位,座標待確認"
+    },
+    "price_band": {
+      "level": 2,
+      "per_person": "約 NT$200–400(咖啡+酸種麵包三明治/早午餐;來源未列明確價目,區間為推估)",
+      "basis": "cindypark.cc / blue74.net 描述咖啡、酸種麵包三明治、甜點、早午餐,精確價位待確認"
+    },
+    "meal_type": [
+      "咖啡",
+      "早午餐",
+      "甜點"
+    ],
+    "scene_fit": {
+      "solo": {
+        "score": 3,
+        "reason": "隸屬敘禾室內設計的複合咖啡館,簡約設計空間舒心可放鬆久坐、空間不小,見於Dcard有插座不限時咖啡清單,適合一人"
+      },
+      "date": {
+        "score": 2,
+        "reason": "設計感簡約空間、氛圍佳,適合兩人喝咖啡吃下午茶/早午餐"
+      },
+      "group": {
+        "score": 1,
+        "reason": "空間雖不小但屬安靜咖啡取向,非多人聚餐熱門"
+      },
+      "late": {
+        "score": 0,
+        "reason": "18:00 打烊、週一公休,無宵夜/酒"
+      }
+    },
+    "vibe": [
+      "室內設計工作室複合",
+      "簡約設計感",
+      "舒心可久坐",
+      "酸種麵包",
+      "週一公休"
+    ],
+    "open_late": {
+      "value": "18:00(週一公休)",
+      "basis": "cindypark.cc / bezif.com 記營業 9:00–18:00、週一公休"
+    },
+    "reservation": {
+      "value": "免預約(來源未特別提及訂位)",
+      "basis": "各部落格未提及需訂位"
+    },
+    "work_ok": {
+      "value": "待確認",
+      "note": "空間簡約舒心可久坐,並見於Dcard『有插座不限時咖啡廳』清單,惟個別插座數量/是否限時,單篇部落格未明述,待實測確認"
+    },
+    "signature": "結合敘禾室內設計的複合咖啡館,天然菌種酸種麵包三明治、限定番茄牛肉濃湯與甜點,簡約舒心可久坐",
+    "evidence": [
+      {
+        "url": "https://cindypark.cc/blog/post/thirteen-cafe",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "Cindy的秘密花園:軍福十八路住宅大樓一樓,結合室內設計工作室,提供酸種麵包三明治與甜點,空間舒心放鬆"
+      },
+      {
+        "url": "https://bezif.com/%E5%8F%B0%E4%B8%AD%E5%8C%97%E5%B1%AF13%E8%92%94%E6%9D%89%E5%92%96%E5%95%A1/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "bezif:13蒔杉咖啡,結合敘禾設計的複合式咖啡廳,軍福十八路275號、9:00–18:00週一公休"
+      },
+      {
+        "url": "https://blue74.net/64976/thirteencafe13/",
+        "source_type": "blog",
+        "date": "2023",
+        "摘要": "藍色起士的美食主義:複合式咖啡館,適合早午餐或下午茶的北屯推薦地點"
+      },
+      {
+        "url": "https://www.dcard.tw/f/taichung/p/256946321",
+        "source_type": "ptt",
+        "date": "2025",
+        "摘要": "Dcard 台中『有插座不限時咖啡廳懶人包 Part3』收錄蒔杉咖啡,列為有插座可久坐"
+      }
+    ],
+    "last_verified": "2026-07-19",
+    "status": "active"
   }
 ]

@@ -377,17 +377,31 @@ fs.writeFileSync(path.join(DIST, 'manifest.json'), JSON.stringify({
 }, null, 2));
 
 const CACHE = 'lin-family-' + Date.now();
+// SW v2:對 Cloudflare .html 307 轉址韌性(重建回應以可快取)、導覽 network-first、
+// 絕不 respondWith(undefined)(修正快取未命中+網路瞬斷 → ERR_FAILED),離線回退到已快取頁或 503。
 fs.writeFileSync(path.join(DIST, 'sw.js'), [
   'const C = ' + JSON.stringify(CACHE) + ';',
   "const ASSETS = ['./', './index.html', './time.html', './manifest.json', './icon-192.png', './icon-512.png'];",
-  "self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())); });",
+  "async function clean(r) { const b = await r.blob(); return new Response(b, { status: 200, headers: { 'Content-Type': r.headers.get('Content-Type') || '' } }); }",
+  "async function precache() { const c = await caches.open(C); await Promise.allSettled(ASSETS.map(async a => { try { const r = await fetch(a, { redirect: 'follow' }); if (r && r.ok) await c.put(a, await clean(r)); } catch (e) {} })); }",
+  "self.addEventListener('install', e => { e.waitUntil(precache().then(() => self.skipWaiting())); });",
   "self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k)))).then(() => self.clients.claim())); });",
   "self.addEventListener('fetch', e => {",
-  "  if (e.request.method !== 'GET') return;",
-  "  e.respondWith(caches.match(e.request).then(cached => {",
-  "    const fresh = fetch(e.request).then(r => { if (r && r.ok && new URL(e.request.url).origin === location.origin) { const cl = r.clone(); caches.open(C).then(x => x.put(e.request, cl)); } return r; }).catch(() => cached);",
-  "    return cached || fresh;",
-  "  }));",
+  "  const req = e.request;",
+  "  if (req.method !== 'GET') return;",
+  "  if (new URL(req.url).origin !== location.origin) return;",
+  "  if (req.mode === 'navigate') {",
+  "    e.respondWith((async () => {",
+  "      try { const r = await fetch(req, { redirect: 'follow' }); if (r && r.ok) { const cl = await clean(r); caches.open(C).then(c => c.put(req, cl.clone())); return cl; } return r; }",
+  "      catch (err) { return (await caches.match(req)) || (await caches.match('./index.html')) || (await caches.match('./')) || new Response('離線中,連網後重試。', { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } }); }",
+  "    })());",
+  "    return;",
+  "  }",
+  "  e.respondWith((async () => {",
+  "    const cached = await caches.match(req);",
+  "    if (cached) { fetch(req).then(r => { if (r && r.ok && !r.redirected) caches.open(C).then(c => c.put(req, r.clone())); }).catch(() => {}); return cached; }",
+  "    try { const r = await fetch(req); if (r && r.ok && !r.redirected) { const c = await caches.open(C); c.put(req, r.clone()); } return r; } catch (err) { return new Response('', { status: 504 }); }",
+  "  })());",
   "});",
 ].join('\n'));
 

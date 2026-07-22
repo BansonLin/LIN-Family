@@ -31,7 +31,8 @@
   header{padding:26px 0 10px;animation:fadeUp .5s ease both}
   .eyebrow{font-size:12px;letter-spacing:.35em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
   .ver{background:var(--ink);color:#fff;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
-  .xlink{background:var(--park);color:#fff;font-size:11px;letter-spacing:.08em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700}
+  .eyebrow{flex-wrap:wrap}
+  .xlink{background:#2E7D74;color:#fff;font-size:11px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700;white-space:nowrap;flex-shrink:0}
   .xlink.disney{margin-left:auto;background:#7A4FA0}
   h1{font-family:'LXGW WenKai TC',serif;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.3}
   .today{font-size:13px;color:var(--ink-soft);margin-top:2px}
@@ -201,7 +202,22 @@
   #logbar button{border:none;border-radius:999px;padding:9px 15px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
   #logbar .lb-go{background:var(--ink);color:#fff}
   #logbar .lb-copy{background:#EFEAE0;color:var(--ink-soft)}
-  .lf-toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;z-index:50;opacity:0;transition:opacity .25s ease;pointer-events:none}
+  .lf-toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;z-index:50;opacity:0;transition:opacity .25s ease;pointer-events:none;max-width:86vw;text-align:center}
+  /* 天氣三鍵(主要動作,置頂放大) */
+  .wrow{display:flex;gap:8px;margin:12px 0 0}
+  .wrow .chip{flex:1;padding:12px 6px;font-size:15.5px;font-weight:700;border-radius:12px;text-align:center}
+  /* 推薦卡理由截 2 行,全文在「詳細」 */
+  .vcard .how{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  /* 大人行政區:單行橫向滑動 */
+  #distrow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  #distrow::-webkit-scrollbar{display:none}
+  #distrow .chip,#distrow .flabel{flex-shrink:0}
+  /* 名稱搜尋 */
+  .searchrow{margin-top:16px}
+  .searchrow input{width:100%;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;background:#FDFBF7;color:var(--ink);font-family:inherit}
+  .searchrow input:focus{outline:none;border-color:var(--park)}
+  /* 回到頂部 */
+  #toTop{position:fixed;right:14px;bottom:84px;z-index:45;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(80,60,30,.15)}
   .lf-toast.show{opacity:1}
   body.has-bar{padding-bottom:120px}
 </style>
@@ -223,6 +239,11 @@
   <div id="kidsMode">
   <section class="draw" aria-label="今天去哪裡">
     <h2>今天去哪裡？<small id="libStats">—</small></h2>
+    <div class="wrow" role="group" aria-label="天氣">
+      <button class="chip" data-group="weather" data-val="hot" aria-pressed="false">☀️ 晴熱</button>
+      <button class="chip" data-group="weather" data-val="rain" aria-pressed="false">🌧 下雨</button>
+      <button class="chip" data-group="weather" data-val="cool" aria-pressed="false">🍃 舒服</button>
+    </div>
     <div class="scenrow" role="group" aria-label="情境卡">
       <button class="scard" data-scen="nap"><div class="si">😴⚡</div><div class="st">午睡後快閃</div></button>
       <button class="scard" data-scen="rainplay"><div class="si">🌧🔋</div><div class="st">雨天放電</div></button>
@@ -232,12 +253,6 @@
       <button class="scard" data-scen="eatplay"><div class="si">🍽🎪</div><div class="st">吃飯順便玩</div></button>
     </div>
     <div class="filters">
-      <div class="fgroup" role="group" aria-label="天氣">
-        <span class="flabel">天氣</span>
-        <button class="chip" data-group="weather" data-val="hot" aria-pressed="false">☀️ 晴熱</button>
-        <button class="chip" data-group="weather" data-val="rain" aria-pressed="false">🌧 下雨</button>
-        <button class="chip" data-group="weather" data-val="cool" aria-pressed="false">🍃 舒服</button>
-      </div>
       <div class="fgroup" role="group" aria-label="條件">
         <span class="flabel">條件</span>
         <button class="chip" data-flag="free" aria-pressed="false">💰 免費優先</button>
@@ -259,6 +274,9 @@
     </div>
     <div class="principle-line">排序:<b>天氣適性 × 孩子適齡 × 資料新鮮度</b> · 晴熱日優先遮蔭 ≥ 2</div>
   </section>
+
+  <div class="searchrow"><input id="vsearch" type="search" placeholder="🔍 搜尋景點名稱(跨城市直達,回報評價超快)" autocomplete="off"></div>
+  <div id="vsearchout"></div>
 
   <nav class="tabs" aria-label="手冊分頁">
     <div class="tabs-inner" role="tablist">
@@ -421,6 +439,9 @@
       <div class="principle-line">排序:<b>情境適配 × 資料新鮮度</b> · 每筆皆附 ≥2 獨立來源與價位依據</div>
     </section>
 
+    <div class="searchrow"><input id="asearch" type="search" placeholder="🔍 搜尋店名(跨城市直達)" autocomplete="off"></div>
+    <div id="asearchout"></div>
+
     <nav class="tabs" aria-label="大人分頁">
       <div class="tabs-inner" role="tablist">
         <button class="tab-btn" role="tab" aria-selected="true" data-apanel="a-cafe">☕ 咖啡・久坐</button>
@@ -471,6 +492,7 @@
   <button class="lb-go" onclick="LF.report()">回報 →</button>
 </div>
 <div class="lf-toast" id="lfToast"></div>
+<button id="toTop" hidden aria-label="回到頂部">↑</button>
 
 <script>
 const VENUES = __VENUES__;
@@ -479,6 +501,22 @@ const PLACES = __PLACES__;
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const state = { weather: null, scenario: null, zone: "宜蘭", drive: "any", free: false, meal: false, coffee: false };
+
+/* UI 偏好記憶:上次的模式與城市(下次打開直接還原) */
+const PREF_KEY = "lf-ui-v1";
+let PREF = {};
+try { PREF = JSON.parse(localStorage.getItem(PREF_KEY) || "{}"); } catch (e) {}
+const savePref = p => { Object.assign(PREF, p); try { localStorage.setItem(PREF_KEY, JSON.stringify(PREF)); } catch (e) {} };
+{ const zs = new Set(VENUES.map(v => v.zone || "宜蘭")); if (PREF.zone && zs.has(PREF.zone)) state.zone = PREF.zone; }
+
+/* 選完天氣/情境自動捲到答案(答案在畫面外時) */
+function scrollToResults(sel) {
+  const el = document.querySelector(sel); if (!el) return;
+  const r = el.getBoundingClientRect();
+  if (r.top < 0 || r.top > window.innerHeight * 0.45) {
+    window.scrollTo({ top: r.top + window.scrollY - 60, behavior: "smooth" });
+  }
+}
 
 /* ========== 林家實測・順手回報 ==========
    現場:卡片上點星等+選填一句 → 立即存 localStorage(離線可用、卡片馬上顯示)。
@@ -607,6 +645,7 @@ const LF = (() => {
     rerender() {
       try { renderStage(); renderLists(); } catch (e) {}
       try { renderAStage(); renderALists(); } catch (e) {}
+      try { ["#vsearch", "#asearch"].forEach(s => { const i = $(s); if (i && i.value.trim()) i.dispatchEvent(new Event("input")); }); } catch (e) {}
       api.renderBar();
     },
   };
@@ -783,11 +822,12 @@ function renderStage() {
   const sug = relaxSuggestions();
   stage.innerHTML = `<div class="draw-empty">這個組合沒有景點。放寬建議:<br>${sug.length ? sug.map(s => `解除「${s.label}」→ 可得 ${s.n} 個`).join("<br>") : "取消情境卡或條件試試"}</div>`;
 }
-$$(".scard").forEach(c => c.addEventListener("click", () => {
+$$(".scard:not(.ascard)").forEach(c => c.addEventListener("click", () => {
   const s = c.dataset.scen;
   state.scenario = state.scenario === s ? null : s;
-  $$(".scard").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.scen === state.scenario)));
+  $$(".scard:not(.ascard)").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.scen === state.scenario)));
   renderStage();
+  if (state.scenario) scrollToResults("#stage");
 }));
 $$(".chip[data-group]").forEach(c => c.addEventListener("click", () => {
   const g = c.dataset.group;
@@ -795,6 +835,7 @@ $$(".chip[data-group]").forEach(c => c.addEventListener("click", () => {
   state[g === "weather" ? "weather" : "drive"] = c.dataset.val;
   $$('.chip[data-group="' + g + '"]').forEach(x => x.setAttribute("aria-pressed", x === c ? "true" : "false"));
   renderStage();
+  if (g === "weather") scrollToResults("#stage");
 }));
 $$(".chip[data-flag]").forEach(c => c.addEventListener("click", () => {
   const f = c.dataset.flag;
@@ -806,9 +847,10 @@ $$(".chip[data-flag]").forEach(c => c.addEventListener("click", () => {
 /* ---------- 地區(zone) ---------- */
 const ZONES = [...new Set(VENUES.map(v => v.zone || "宜蘭"))].sort((a, b) => (a === "宜蘭" ? -1 : b === "宜蘭" ? 1 : 0));
 $("#zonerow").insertAdjacentHTML("beforeend", ZONES.map(z => `<button class="chip" data-zone="${z}" aria-pressed="${String(z === state.zone)}">${z === "宜蘭" ? "🏠 宜蘭" : z}</button>`).join(""));
-$$(".chip[data-zone]").forEach(c => c.addEventListener("click", () => {
+$$("#zonerow .chip[data-zone]").forEach(c => c.addEventListener("click", () => {
   state.zone = c.dataset.zone;
-  $$(".chip[data-zone]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === state.zone)));
+  savePref({ zone: state.zone });
+  $$("#zonerow .chip[data-zone]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === state.zone)));
   applyKidsZoneUI();
   renderStage(); renderLists();
 }));
@@ -872,7 +914,7 @@ const AZONES = [...new Set(PLACES.map(p => p.zone || "台北"))].sort((a, b) => 
   const ia = AZONE_ORDER.indexOf(a), ib = AZONE_ORDER.indexOf(b);
   return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
 });
-const astate = { zone: AZONES[0] || "台北", scen: null, dist: "any", price: "any", ameal: new Set(), work: false };
+const astate = { zone: (PREF.azone && AZONES.includes(PREF.azone)) ? PREF.azone : (AZONES[0] || "台北"), scen: null, dist: "any", price: "any", ameal: new Set(), work: false };
 const ASCEN = { solo: "出差一人", date: "兩人約會", group: "朋友聚餐", late: "喝一杯・宵夜" };
 const PRICE_LABEL = { 1: "💵 平價", 2: "💰 小資", 3: "💎 中高", 4: "👑 高級" };
 const anum = x => typeof x === "number" ? x : 0.5;
@@ -1012,11 +1054,13 @@ function bindAdult() {
     astate.scen = astate.scen === s ? null : s;
     $$(".ascard").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.ascen === astate.scen)));
     renderAStage();
+    if (astate.scen) scrollToResults("#aStage");
   }));
   // 城市切換(委派)
   $("#azonerow").addEventListener("click", e => {
     const b = e.target.closest(".chip[data-zone]"); if (!b) return;
     astate.zone = b.dataset.zone;
+    savePref({ azone: astate.zone });
     $$("#azonerow .chip").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.zone === astate.zone)));
     renderADistricts();
     renderAStage(); renderALists();
@@ -1065,10 +1109,35 @@ function setMode(adult) {
   $("#mode-kids").setAttribute("aria-pressed", String(!adult));
   $("#mode-adult").setAttribute("aria-pressed", String(adult));
   $("#appTitle").textContent = adult ? "林家・大人時間" : "林家出遊手冊";
+  savePref({ mode: adult ? "adult" : "kids" });
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 $("#mode-kids").addEventListener("click", () => setMode(false));
 $("#mode-adult").addEventListener("click", () => setMode(true));
+if (PREF.mode === "adult") setMode(true);
+
+/* ---------- 名稱搜尋(跨城市直達) ---------- */
+function bindSearch(inpSel, outSel, navSel, panelSel, items, html) {
+  const inp = $(inpSel), out = $(outSel); if (!inp || !out) return;
+  inp.addEventListener("input", () => {
+    const q = inp.value.trim().toLowerCase();
+    const on = q.length > 0;
+    const nav = $(navSel); if (nav) nav.style.display = on ? "none" : "";
+    $$(panelSel).forEach(p => p.style.display = on ? "none" : "");
+    if (!on) { out.innerHTML = ""; return; }
+    const hits = items().filter(v => (v.name || "").toLowerCase().includes(q)).slice(0, 15);
+    out.innerHTML = hits.length ? hits.map(html).join("") : '<div class="section-sub" style="padding:10px 4px">找不到符合的名稱</div>';
+  });
+}
+bindSearch("#vsearch", "#vsearchout", "#kidsMode nav.tabs", "#kidsMode .panel", () => VENUES.filter(v => v.status !== "closed"), v => vcardHtml(v, false));
+bindSearch("#asearch", "#asearchout", "#adultMode nav.tabs", "#adultMode .panel", () => PLACES.filter(p => p.status !== "closed"), p => acardHtml(p, false));
+
+/* ---------- 回到頂部 ---------- */
+const toTop = $("#toTop");
+if (toTop) {
+  window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 600; }, { passive: true });
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
 
 /* 林家實測待回報列(依 localStorage 初始化) */
 LF.renderBar();

@@ -218,6 +218,39 @@ h1{color:#3F5D2C}
       </ul>
     </div>
   </div>
+  <div class="section-title">官方照護窗口(健檢/視力/牙齒/日常)</div>
+  <div class="section-sub">兩孩位置由出生年月即時計算;全部僅付掛號費或免費。</div>
+  <div class="rule-card">
+    <h3>🩺 兒童預防保健(健檢)——2026-07-01 起 7 次改 9 次</h3>
+    <ul>
+      <li>新制「7+2」:原 4–10 個月拆為 4–6 月+6–12 月、原 3–7 歲拆為 <b>3–5 歲</b>與 <b>5–7 歲</b>各 1 次;可與發展篩檢同診執行。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/5020/19967/n">國健署新聞稿</a></li>
+      <li id="hc-kids"></li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h3>👀 視力</h3>
+    <ul>
+      <li><b>首檢</b>:3 歲半–4 歲是眼科視力檢查的理想時機(單眼弱視無明顯症狀,要主動就檢);先用手冊 E/C 視標圖在家練習。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=5020&amp;pid=19933">國健署</a><a class="evlink" target="_blank" rel="noopener" href="https://health99.hpa.gov.tw/theme/content/1381">健康九九</a></li>
+      <li><b>之後</b>:護眼123——每年檢查視力 1–2 次;未滿 2 歲避免螢幕、2 歲以上每日 ≤1 小時;用眼 30 分鐘休息 10 分鐘、每日戶外 120 分鐘(3010120)。<a class="evlink" target="_blank" rel="noopener" href="https://www.mohw.gov.tw/cp-3794-41061-1.html">護眼123</a><a class="evlink" target="_blank" rel="noopener" href="https://www.mohw.gov.tw/cp-5270-70420-1.html">3010120</a></li>
+      <li id="vis-kids"></li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h3>🦷 牙齒</h3>
+    <ul>
+      <li><b>塗氟</b>:未滿 6 歲每半年 1 次免費(帶健保卡+手冊)。<a class="evlink" target="_blank" rel="noopener" href="https://health.gov.taipei/cp.aspx?n=E180267349925598">北市衛生局</a><a class="evlink" target="_blank" rel="noopener" href="https://www.mohw.gov.tw/dl-15541-8735f195-2be2-4934-af9e-2790d30a51e1.html">衛福部注意事項</a></li>
+      <li><b>窩溝封填</b>:已滿 6 歲未滿 9 歲國小學童,第一大臼齒健保免費(最多 4 顆,完全萌出後施作;6/12 個月回診)。<a class="evlink" target="_blank" rel="noopener" href="https://www.mohw.gov.tw/cp-3204-21759-1.html">衛福部</a></li>
+      <li id="teeth-kids"></li>
+    </ul>
+  </div>
+  <div class="rule-card">
+    <h3>🏃 日常守則(持續型)</h3>
+    <ul>
+      <li>身體活動:5–17 歲每天至少 60 分鐘中等費力以上(可分段累積);小學另有在校 SH150(每週 150 分鐘)。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=571&amp;pid=14174">國健署(引 WHO)</a><a class="evlink" target="_blank" rel="noopener" href="https://www.moe.gov.tw/News_Content.aspx?n=9E7AC85F1954DDA8&amp;sms=169B8E91BB75571F&amp;s=B03FE5BED4108059">體育署 SH150</a></li>
+      <li>睡眠:官方頁面引美國 NSF 建議 6–13 歲 9–11 小時(台灣自訂標準<span class="tag pend">待確認</span>);本土官方調查:睡不足 9 小時,近視風險增 9.04 倍。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=1405&amp;pid=9556">國健署</a></li>
+    </ul>
+  </div>
+
   <div class="section-title">入口與下載</div>
   <div id="screenLinks">
     <div class="tblwrap"><table class="tbl">
@@ -505,6 +538,12 @@ function renderMap() {
     const past = Object.values(KIDS).every(k => k.mo > w.to);
     return "<tr><td>" + (i + 1) + "</td><td>" + w.label + "</td><td>" + (marks ? "👉 " + marks + " 現在在此窗口" : (past ? "已過" : "—")) + "</td></tr>";
   }).join("");
+  // 照護窗口的兩孩位置(由出生年月即時算)
+  const _el = id => document.getElementById(id);
+  const _kid = (k, fn) => KIDS[k] ? fn(KIDS[k], birthYm(KIDS[k].birth)) : "";
+  if (_el("hc-kids")) _el("hc-kids").innerHTML = "👉 " + [_kid("big", (kid, b) => kid.name + ":5–7 歲次(可做到 " + ymStr(b + 83) + ")"), _kid("lil", (kid, b) => kid.name + ":3–5 歲次(可做到 " + ymStr(b + 59) + ")")].filter(Boolean).join(";") + "——與發展篩檢同一診最省事";
+  if (_el("vis-kids")) _el("vis-kids").innerHTML = "👉 " + [_kid("lil", (kid, b) => kid.name + " 首檢窗口 " + ymStr(b + 42) + " – " + ymStr(b + 48)), _kid("big", kid => kid.name + " 已屆學齡:每年檢查 1–2 次")].filter(Boolean).join(";");
+  if (_el("teeth-kids")) _el("teeth-kids").innerHTML = "👉 " + [_kid("lil", (kid, b) => kid.name + " 塗氟至 " + ymStr(b + 71) + "(滿 6 歲前)每半年 1 次"), _kid("big", (kid, b) => kid.name + " 窩溝封填窗口 " + ymStr(b + 72) + " – " + ymStr(b + 107) + "(未滿 9 歲)")].filter(Boolean).join(";");
   // 兩孩下一窗口卡
   $("#kidScreens").innerHTML = ["big", "lil"].filter(k => KIDS[k]).map(k => {
     const kid = KIDS[k];

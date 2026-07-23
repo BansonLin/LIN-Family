@@ -1,0 +1,210 @@
+[
+  {
+    "band": "2-3歲", "domain": "粗大動作",
+    "source_note": "本帶條目主要出自縣市「學前兒童發展檢核表」(家長自填初篩,非診斷)與國健署衛教;檢核表判讀通則:任 2 題落網底、或★題落網底 → 轉介進一步檢查。全部條目檢索於 2026-07,原文待核。",
+    "typical": [
+      { "item": "蹲下(或彎腰)玩玩具時幾乎不需扶東西", "evidence": { "url": "https://www.pwr.org.tw/sites/default/files/page/file/15.%E5%8F%B0%E5%8C%97%E5%B8%82%E5%AD%B8%E5%89%8D%E5%85%92%E7%AB%A5%E7%99%BC%E5%B1%95%E6%AA%A2%E6%A0%B8%E8%A1%A8.pdf.pdf", "date": "檢索 2026-07", "label": "北市檢核表2歲", "摘要": "臺北市學前兒童發展檢核表 2 歲題項" } },
+      { "item": "搬(拿)大型物品行走不會跌倒", "evidence": { "url": "https://www.pwr.org.tw/sites/default/files/page/file/15.%E5%8F%B0%E5%8C%97%E5%B8%82%E5%AD%B8%E5%89%8D%E5%85%92%E7%AB%A5%E7%99%BC%E5%B1%95%E6%AA%A2%E6%A0%B8%E8%A1%A8.pdf.pdf", "date": "檢索 2026-07", "label": "北市檢核表2歲", "摘要": "同上 2 歲題項" } },
+      { "item": "能雙腳離地跳躍(雙腳同時離地、同時著地)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/349/relfile/0/86279/62de670d-6001-44c8-b8ab-ce8ae59aabc0.pdf", "date": "檢索 2026-07", "label": "檢核表2歲半", "摘要": "學前兒童發展檢核表 2 歲半題項" } }
+    ],
+    "red_flags": [
+      { "item": "滿 3 歲仍不會一階一階上下樓梯、不能用雙腳從最後一階跳下;跳不好、平衡感差、容易跌倒 → 接受專業評估", "evidence": { "url": "https://health99.hpa.gov.tw/article/18627", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "「孩子3歲了!重要發展指標」官方就醫指標" } }
+    ],
+    "parent_role": "營造語言互動環境:0–3 歲是語言發展黃金期,親子共讀多用開放式問句引導完整句子;日常遊戲帶孩子練跳(跳房子就很好)。",
+    "next_preview": "3–5 歲帶:語句變長、自理起飛;約 3 歲的「上幼兒園四能力」(溝通、如廁、湯匙、作息)是準備方向。"
+  },
+  {
+    "band": "2-3歲", "domain": "精細動作",
+    "typical": [
+      { "item": "可以模仿畫一條平穩的垂直線(3 歲題,本帶尾端適用)", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表3歲", "摘要": "臺北市檢核表 3 歲題項(2歲11月16天起適用)" } }
+    ],
+    "red_flags": [],
+    "gap_note": "2 歲/2 歲半的精細動作專屬題項未能自公開摘要取得,待確認(不推估)。"
+  },
+  {
+    "band": "2-3歲", "domain": "語言認知",
+    "typical": [
+      { "item": "會使用至少 10 個穩定的單字;能正確指認至少一張圖片", "evidence": { "url": "https://www.pwr.org.tw/sites/default/files/page/file/15.%E5%8F%B0%E5%8C%97%E5%B8%82%E5%AD%B8%E5%89%8D%E5%85%92%E7%AB%A5%E7%99%BC%E5%B1%95%E6%AA%A2%E6%A0%B8%E8%A1%A8.pdf.pdf", "date": "檢索 2026-07", "label": "北市檢核表2歲", "摘要": "2 歲題項" } },
+      { "item": "大多數時候能用兩個語詞組成句子表達(如「媽媽-抱抱」「要-喝水」)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/9bb56b9a-24dd-4f11-94df-f8442e0bf90b.pdf", "date": "檢索 2026-07", "label": "檢核表乙表", "摘要": "乙表(1歲3月–2歲半)題項" } },
+      { "item": "說得出的語詞多到數不清,且大多不是單音(說「蘋果」不是「果」)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/9bb56b9a-24dd-4f11-94df-f8442e0bf90b.pdf", "date": "檢索 2026-07", "label": "檢核表乙表", "摘要": "乙表題項" } },
+      { "item": "通常能一問一答持續對話,用 2–3 個單詞的短句(3 歲題,本帶尾端適用)", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表3歲", "摘要": "3 歲題項" } }
+    ],
+    "red_flags": []
+  },
+  {
+    "band": "2-3歲", "domain": "社會情緒",
+    "typical": [
+      { "item": "會模仿做家事或使用大多數家用器具(掃地、擦東西、玩鍋碗筷匙等)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/9bb56b9a-24dd-4f11-94df-f8442e0bf90b.pdf", "date": "檢索 2026-07", "label": "檢核表乙表", "摘要": "乙表題項(確切年齡列待核)" } },
+      { "item": "能持續與照顧者眼神接觸,逗弄時會注視互動", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/9bb56b9a-24dd-4f11-94df-f8442e0bf90b.pdf", "date": "檢索 2026-07", "label": "檢核表乙表", "摘要": "互動類題項(年齡列待核)" } }
+    ],
+    "red_flags": [
+      { "item": "★警訊題:通常獨自一人玩、對大人重複叫喚常不理睬、不會轉頭注視叫他的人 → 帶至兒童發展評估中心詳細評估", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表", "摘要": "★題落網底即需轉介之官方判讀規則" } }
+    ]
+  },
+  {
+    "band": "2-3歲", "domain": "生活自理",
+    "typical": [],
+    "red_flags": [],
+    "gap_note": "此帶生活自理之官方題項與警訊題未查得,待確認(不推估);可先以遊戲互動觀察「生活處理」表現(國健署篩檢方案用語,https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4824)。"
+  },
+
+  {
+    "band": "3-5歲", "domain": "粗大動作",
+    "source_note": "本帶條目出自國健署衛教與縣市檢核表丙表(3–4 歲);判讀通則:任 2 題落網底或★題落網底 → 轉介。官方第 5 次篩檢窗口(3–5 歲)進行中。全部條目檢索於 2026-07,原文待核。",
+    "typical": [
+      { "item": "能自己一階一階上下樓梯(不需牽扶),並能用雙腳從最後一階跳下來(3 歲指標)", "evidence": { "url": "https://health99.hpa.gov.tw/article/18627", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "「孩子3歲了!重要發展指標」" } },
+      { "item": "能不扶東西輕易蹲下玩玩具再站起;能雙腳離地連續跳躍", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/1b75c112-df89-439e-88d9-01dff2ad7aae.pdf", "date": "檢索 2026-07", "label": "檢核表丙表", "摘要": "丙表(3 歲–4 歲)題項" } }
+    ],
+    "red_flags": [
+      { "item": "3 歲仍跳不好、平衡感差、容易跌倒 → 接受專業評估,盡快找出原因、早期療育", "evidence": { "url": "https://health99.hpa.gov.tw/article/18627", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "官方明示就醫指標" } }
+    ],
+    "parent_role": "給時間讓孩子自己做:出門提早準備讓他練穿外套襪鞋;交代事情後遠處觀察、不代勞;完成時多肯定、標準不要訂過高。",
+    "next_preview": "5–7 歲帶:最後一次官方篩檢窗口(5–未滿 7 歲),重點移向團體規則、仿寫動作與小一銜接。"
+  },
+  {
+    "band": "3-5歲", "domain": "精細動作",
+    "typical": [
+      { "item": "模仿畫一條平穩的橫線(3 歲半實作題)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/1b75c112-df89-439e-88d9-01dff2ad7aae.pdf", "date": "檢索 2026-07", "label": "檢核表丙表", "摘要": "3 歲半實作題:線條兩端連接、大體不斷裂即通過" } },
+      { "item": "能看圖樣仿畫 ┼□△◇ 等基本圖形(4–5 歲;確切歸屬年齡待核)", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表", "摘要": "4–5 歲題項,歸屬待核" } }
+    ],
+    "red_flags": []
+  },
+  {
+    "band": "3-5歲", "domain": "語言認知",
+    "typical": [
+      { "item": "通常能一問一答持續對話,用 3–4 個單詞的短句、回答切題(3 歲半)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/1b75c112-df89-439e-88d9-01dff2ad7aae.pdf", "date": "檢索 2026-07", "label": "檢核表丙表", "摘要": "丙表 3 歲半題項" } },
+      { "item": "能說出至少三種東西的用途(杯子、鞋子、鑰匙、鉛筆)(3 歲半實作題)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/1b75c112-df89-439e-88d9-01dff2ad7aae.pdf", "date": "檢索 2026-07", "label": "檢核表丙表", "摘要": "丙表實作題" } },
+      { "item": "健檢發展診察參考:會跳、會蹲、畫圓圈、說自己名字、瞭解口語指示、說話清楚、辨認形狀或顏色", "evidence": { "url": "https://health99.hpa.gov.tw/theme/tab/305/1295", "date": "檢索 2026-07", "label": "健康九九・幼兒篇", "摘要": "引兒童健康手冊第 7 次檢查之發展診察項目" } }
+    ],
+    "red_flags": [
+      { "item": "兒童健康手冊家長紀錄表紅字「※」警訊題:未達到即落後 90% 同齡幼兒,應積極就醫評估(分齡逐題文字待核)", "evidence": { "url": "https://www.mohw.gov.tw/cp-16-58340-1.html", "date": "檢索 2026-07", "label": "衛福部", "摘要": "手冊改版新增分齡發展警訊,以紅字※標示" } }
+    ]
+  },
+  {
+    "band": "3-5歲", "domain": "社會情緒",
+    "typical": [
+      { "item": "能玩有情境的扮家家酒、跟同伴一起玩;能用完整句子回答問題(官方 3–5 歲篩檢量表社會面向)", "evidence": { "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4821", "date": "檢索 2026-07", "label": "國健署篩檢量表", "摘要": "兒童發展篩檢量表 3–5 歲社會發展面向" } },
+      { "item": "上幼兒園前(約 3 歲)能溝通表達自己的需求", "evidence": { "url": "https://health99.hpa.gov.tw/article/18623", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "「上幼兒園前須具備的四種基本能力」" } }
+    ],
+    "red_flags": [
+      { "item": "★社交互動警訊(叫名不理睬、無眼神注視)落網底 → 至兒童發展評估中心詳細評估", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表", "摘要": "官方判讀規則" } }
+    ]
+  },
+  {
+    "band": "3-5歲", "domain": "生活自理",
+    "typical": [
+      { "item": "上幼兒園前(約 3 歲):自己上廁所、自己用湯匙(加上正常作息與足夠體力)", "evidence": { "url": "https://health99.hpa.gov.tw/article/18623", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "上幼兒園四能力" } },
+      { "item": "3 歲多已有不錯的基本自理能力,可練習穿外套、襪子、鞋子", "evidence": { "url": "https://health99.hpa.gov.tw/article/18626", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "「訓練小孩自理能力 爸媽可以這樣做」" } },
+      { "item": "邁向 5 歲:可自行刷牙、洗臉,如廁後自己擦拭乾淨(帶尾端)", "evidence": { "url": "https://health99.hpa.gov.tw/article/18678", "date": "檢索 2026-07", "label": "國健署健康九九", "摘要": "「幼兒 5 歲」單元" } }
+    ],
+    "red_flags": [],
+    "gap_note": "此帶生活自理之官方警訊題未查得,待確認(不推估)。"
+  },
+
+  {
+    "band": "5-7歲", "domain": "粗大動作",
+    "source_note": "本帶條目主要出自縣市檢核表丁表(5–6 歲)與官方量表使用規則(家長自填初篩,非診斷);粗大/精細/自理面向的單項★警訊題原文待核,通用規則:★題 1 題或非★題 2 題未通過 → 洽兒童發展通報轉介中心。全部條目檢索於 2026-07,原文待核。",
+    "typical": [
+      { "item": "能單腳跳 4 步(兩腳均能做到)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表(5–6 歲)題項" } },
+      { "item": "能雙腳離地連續跳躍(同時離地、同時落地)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表題項" } },
+      { "item": "能不扶東西輕易蹲下玩玩具、再恢復站姿", "evidence": { "url": "https://born.taipei/cp.aspx?n=47FCA98829CC51C0", "date": "檢索 2026-07", "label": "北市檢核表5歲", "摘要": "臺北市 5 歲檢核表題項" } }
+    ],
+    "red_flags": [],
+    "parent_role": "家長是第一線「監測者」:平時用兒童健康手冊的家長紀錄事項觀察記錄,5–未滿 7 歲窗口帶手冊+健保卡完成最後一次官方篩檢——監測(家長)→篩檢(醫師)→評估(聯評)三步驟缺一不可。",
+    "next_preview": "7–9 歲帶:官方學前篩檢功成身退,守備交棒學校——小一入學即全面健檢(教育部規定),重心轉向學校生活適應與健康習慣。"
+  },
+  {
+    "band": "5-7歲", "domain": "精細動作",
+    "typical": [
+      { "item": "能看圖樣仿畫;能正確畫出三角形或菱形", "evidence": { "url": "https://born.taipei/cp.aspx?n=47FCA98829CC51C0", "date": "檢索 2026-07", "label": "北市檢核表5歲", "摘要": "5 歲實作題(仿畫圖形內容待核);兒福聯盟整理同指標" } },
+      { "item": "能將紙大致對摺(6 歲題)", "evidence": { "url": "https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&sms=FEDD3204A66CD37D&s=341720F573D7CFC9", "date": "檢索 2026-07", "label": "北市檢核表6歲", "摘要": "6 歲題項" } },
+      { "item": "能模仿寫簡單的字(仿寫動作題,三字照寫全對才通過——是動作能力,不是識字指標)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/135/relfile/10317/195223/0f3680a6-f429-41b1-8ff0-6da29796e62d.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表/北市 6 歲實作題" } }
+    ],
+    "red_flags": []
+  },
+  {
+    "band": "5-7歲", "domain": "語言認知",
+    "typical": [
+      { "item": "能向別人述說發生在自己身上的事(如轉述老師交代的話)", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表題項" } },
+      { "item": "能說出四種顏色的名稱", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表題項" } },
+      { "item": "有「七個」的數量概念", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表題項" } }
+    ],
+    "red_flags": [
+      { "item": "已能用句子表達,但明顯不流暢:10 句話裡有 2 句結巴,且持續半年以上", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "丁表警訊項目" } },
+      { "item": "口齒不清,說話連最親近的大人也聽不懂", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "警訊項目" } }
+    ]
+  },
+  {
+    "band": "5-7歲", "domain": "社會情緒",
+    "typical": [
+      { "item": "會玩有簡單規則的遊戲(如捉迷藏),能遵守規則、排隊輪流", "evidence": { "url": "https://early.kcg.gov.tw/cp.aspx?n=BF08F44DC890E132", "date": "檢索 2026-07", "label": "高雄兒童發展量表", "摘要": "身邊處理及社會性指標;另見社家署量表頁" } },
+      { "item": "可以跟同伴一起玩扮家家酒", "evidence": { "url": "https://early.kcg.gov.tw/cp.aspx?n=BF08F44DC890E132", "date": "檢索 2026-07", "label": "高雄兒童發展量表", "摘要": "同上" } }
+    ],
+    "red_flags": [
+      { "item": "上課無法維持在座椅上,在團體中因特定行為顯得突出", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "團體行為警訊項目" } },
+      { "item": "與同學或老師常起爭執、對立衝突而被孤立、排斥", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "同上" } },
+      { "item": "通常自己一個人玩,不會主動交朋友", "evidence": { "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/77/RelFile/10048/13677/636020336833597337.pdf", "date": "檢索 2026-07", "label": "檢核表丁表", "摘要": "同上" } }
+    ]
+  },
+  {
+    "band": "5-7歲", "domain": "生活自理",
+    "typical": [
+      { "item": "5 歲:能自己穿襪子、用牙刷刷牙、拉上或解開拉鍊", "evidence": { "url": "https://early.kcg.gov.tw/News_Content.aspx?n=FD6A8CEC750926D4&sms=5BBEAC4B4315A3A8&s=8D48820CD4665696", "date": "檢索 2026-07", "label": "高雄兒童發展量表", "摘要": "2–6 歲量表之 5 歲身邊處理項" } },
+      { "item": "6 歲:會自己穿脫沒有鞋帶的鞋子", "evidence": { "url": "https://early.kcg.gov.tw/News_Content.aspx?n=FD6A8CEC750926D4&sms=5BBEAC4B4315A3A8&s=8D48820CD4665696", "date": "檢索 2026-07", "label": "高雄兒童發展量表", "摘要": "6 歲項" } }
+    ],
+    "red_flags": [
+      { "item": "量表使用規則:有兩項以上表現不符合 → 至聯合評估中心或醫院由專科醫師進一步檢查,或洽早療服務單位", "evidence": { "url": "https://early.kcg.gov.tw/News_Content.aspx?n=FD6A8CEC750926D4&sms=5BBEAC4B4315A3A8&s=8D48820CD4665696", "date": "檢索 2026-07", "label": "高雄兒童發展量表", "摘要": "就醫指引" } }
+    ]
+  },
+
+  {
+    "band": "7-9歲", "domain": "粗大動作",
+    "source_note": "滿 7 歲後官方學前篩檢結束,本帶無單一官方量尺:typical 多為教育文件(課程期望,非發展常模)與衛教轉述,紅旗類(就醫指標)證據力最強;境外機構來源已標示。全部條目檢索於 2026-07,原文待核。",
+    "typical": [
+      { "item": "低年級體育以基本動作技能為主:穩定性(平衡、彎伸、扭轉)、移動性(走跑跳爬)、操作性(投接踢打、運球)——穩定性是後兩者的基礎(課程期望,非常模)", "evidence": { "url": "https://e108in.knsh.com.tw/article01.asp?ID=13", "date": "檢索 2026-07", "label": "健體領綱(轉述)", "摘要": "十二年國教健體領綱動作技能三分類;領綱 PDF 原文待核" } }
+    ],
+    "red_flags": [
+      { "item": "動作協調明顯低於同齡、且已影響寫字/體育課與日常活動 → 至復健科或兒童發展評估中心評估(發展協調障礙 DCD 線索)", "evidence": { "url": "https://wd.vghtpe.gov.tw/PMREIP/Fpage.action?muid=4107&fid=3398", "date": "檢索 2026-07", "label": "台北榮總復健部", "摘要": "「何謂發展協調障礙」衛教" } }
+    ],
+    "parent_role": "低年級的家長角色從「教」轉為「放手+觀察」:練新技能採漸進式減少協助(肢體→口語→圖示,逐步退場);持續觀察情緒、行為、學校表現的「變化」——有變化就是求助訊號。"
+  },
+  {
+    "band": "7-9歲", "domain": "精細動作",
+    "typical": [
+      { "item": "手部小肌肉約 4–6 歲逐漸成熟穩定;入學後書寫成為主要精細動作任務", "evidence": { "url": "https://www.cch.org.tw/edm_3.aspx?Id=342", "date": "檢索 2026-07", "label": "彰基衛教", "摘要": "「學前兒的握筆運筆迷思大解密」" } }
+    ],
+    "red_flags": [
+      { "item": "寫字明顯歪扭、書寫困難已影響學校功能或同儕相處 → 可經兒童復健科轉介職能治療評估", "evidence": { "url": "http://www.cmuch.org.tw/NewsInfo/NewsArticle?no=633", "date": "檢索 2026-07", "label": "中國醫大兒醫", "摘要": "「寫字歪歪扭扭—解密孩子的書寫困難」" } }
+    ]
+  },
+  {
+    "band": "7-9歲", "domain": "語言認知",
+    "typical": [
+      { "item": "約 6–7 歲起進入「具體運思期」(至約 11–12 歲):能藉具體經驗做邏輯思考、理解不同觀點,思考仍需具體事物支持", "evidence": { "url": "https://sch.smh.org.tw/?aid=540&pid=0&page_name=detail&iid=508", "date": "檢索 2026-07", "label": "惠民醫院衛教", "摘要": "「談嬰幼兒認知的發展」皮亞傑階段" } }
+    ],
+    "red_flags": [
+      { "item": "至少約 5% 學齡兒童有明顯語言問題,會影響溝通、學習與人際——及早發現、適當介入很重要", "evidence": { "url": "https://health.ntuh.gov.tw/health/new/6512.html", "date": "檢索 2026-07", "label": "台大醫院衛教", "摘要": "「孩子說話卡卡~談語言障礙」(數字原文待核)" } }
+    ]
+  },
+  {
+    "band": "7-9歲", "domain": "社會情緒",
+    "typical": [
+      { "item": "6–12 歲的發展任務是「勤勉 vs. 自卑」:順利完成學校生活與任務可獲得能力感(艾瑞克森理論)", "evidence": { "url": "https://pedia.cloud.edu.tw/Entry/WikiContent?title=%E8%89%BE%E7%91%9E%E5%85%8B%E6%A3%AE%EF%BC%88E._Erikson%EF%BC%89%E4%BA%BA%E6%A0%BC%E7%99%BC%E5%B1%95%E8%AB%96&search=%E8%89%BE%E7%91%9E%E5%85%8B%E6%A3%AE%EF%BC%88E._Erikson%EF%BC%89%E4%BA%BA%E6%A0%BC%E7%99%BC%E5%B1%95%E8%AB%96", "date": "檢索 2026-07", "label": "教育部教育百科", "摘要": "艾瑞克森人格發展論條目" } },
+      { "item": "約 6–8 歲起能與朋友溝通心情、關心對方、分享合作;人際需求增加、開始渴望友誼(情緒起伏仍大)", "evidence": { "url": "https://parents.hsin-yi.org.tw/Library/Article/26776", "date": "檢索 2026-07", "label": "信誼基金會", "摘要": "「渴望友誼的年紀~小一孩子的社交發展」(機構衛教)" } }
+    ],
+    "red_flags": [
+      { "item": "觀察「變化」:表情愁苦、睡眠變差、自我照顧退步、拒學懼學、常喊頭痛肚子痛 → 可能是情緒警訊,可至兒童心智科就醫", "evidence": { "url": "https://wd.vghtpe.gov.tw/vghpsy/Fpage.action?muid=453&fid=107", "date": "檢索 2026-07", "label": "台北榮總精神部", "摘要": "「兒童青少年情緒障礙及治療」警訊列舉" } },
+      { "item": "好動不專心不一定是 ADHD;若持續逾六個月、12 歲前開始、在兩種以上環境出現且影響學業社交 → 由兒童心智科/小兒神經科評估", "evidence": { "url": "https://www.cmuh.cmu.edu.tw/HealthEdus/Detail?no=6613", "date": "檢索 2026-07", "label": "中國醫大附醫", "摘要": "ADHD 衛教;另見衛福部心理健康司懶人包" } }
+    ]
+  },
+  {
+    "band": "7-9歲", "domain": "生活自理",
+    "typical": [
+      { "item": "學齡自理範圍擴大:個人面(進食、如廁、穿衣、梳洗)+學校面(收拾個人物品、管理文具書本聯絡簿、運用時間表)", "evidence": { "url": "https://www.heephong.org/child-development-and-training/useful-advice/self-care-ability/100097", "date": "檢索 2026-07", "label": "香港協康會", "摘要": "「辨識孩子的自理能力」(境外專業機構)" } },
+      { "item": "綁鞋帶約 5–6 歲起可開始練、入小學前後能自己處理(職能治療師建議)", "evidence": { "url": "https://kid-pro.com/games-box-shoelace/", "date": "檢索 2026-07", "label": "職能治療師團隊", "摘要": "KidPro「綁鞋帶怎麼教」" } }
+    ],
+    "red_flags": [
+      { "item": "自我照顧能力「變差(退步)」是情緒警訊之一(與睡眠、拒學、身體抱怨並列)→ 建議就醫評估", "evidence": { "url": "https://wd.vghtpe.gov.tw/vghpsy/Fpage.action?muid=453&fid=107", "date": "檢索 2026-07", "label": "台北榮總精神部", "摘要": "情緒障礙觀察警訊" } }
+    ]
+  }
+]

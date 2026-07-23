@@ -380,6 +380,24 @@ fs.writeFileSync(path.join(DIST, 'food.html'), foodHtml);
 fs.mkdirSync(path.join(DIST, 'assets'), { recursive: true });
 fs.copyFileSync(path.join(R, 'assets/tokens.css'), path.join(DIST, 'assets/tokens.css'));
 
+// 成長地圖(grow-template.html + stages/decisions/systems → dist/grow.html)
+const readJson = (p, fb) => { try { return JSON.parse(fs.readFileSync(path.join(R, p), 'utf8')); } catch (e) { return fb; } };
+const stages = readJson('data/stages.json', []);
+const decisions = readJson('data/decisions.json', []);
+const systems = readJson('data/systems.json', []);
+// 鐵律(程式面強制):制度安裝表「安裝中」同時只允許一筆
+const installing = systems.filter(s => s.status === '安裝中');
+if (installing.length > 1) {
+  throw new Error('制度安裝表鐵律:「安裝中」只允許一筆,目前 ' + installing.length + ' 筆:' + installing.map(s => s.name).join('、'));
+}
+let growHtml = fs.readFileSync(path.join(R, 'grow-template.html'), 'utf8');
+growHtml = growHtml.replace('__STAGES__', () => JSON.stringify(stages))
+  .replace('__DECISIONS__', () => JSON.stringify(decisions))
+  .replace('__SYSTEMS__', () => JSON.stringify(systems))
+  .replace('__FAMILY__', () => JSON.stringify(family))
+  .replaceAll('__BUILD_DATE__', TODAY);
+fs.writeFileSync(path.join(DIST, 'grow.html'), growHtml);
+
 fs.writeFileSync(path.join(DIST, 'manifest.json'), JSON.stringify({
   name: '林家出遊手冊', short_name: '出遊手冊',
   start_url: './index.html', scope: './', display: 'standalone',
@@ -395,7 +413,7 @@ const CACHE = 'lin-family-' + Date.now();
 // 絕不 respondWith(undefined)(修正快取未命中+網路瞬斷 → ERR_FAILED),離線回退到已快取頁或 503。
 fs.writeFileSync(path.join(DIST, 'sw.js'), [
   'const C = ' + JSON.stringify(CACHE) + ';',
-  "const ASSETS = ['./', './index.html', './time.html', './disney.html', './food.html', './assets/tokens.css', './manifest.json', './icon-192.png', './icon-512.png'];",
+  "const ASSETS = ['./', './index.html', './time.html', './disney.html', './food.html', './grow.html', './assets/tokens.css', './manifest.json', './icon-192.png', './icon-512.png'];",
   "async function clean(r) { const b = await r.blob(); return new Response(b, { status: 200, headers: { 'Content-Type': r.headers.get('Content-Type') || '' } }); }",
   "async function precache() { const c = await caches.open(C); await Promise.allSettled(ASSETS.map(async a => { try { const r = await fetch(a, { redirect: 'follow' }); if (r && r.ok) await c.put(a, await clean(r)); } catch (e) {} })); }",
   "self.addEventListener('install', e => { e.waitUntil(precache().then(() => self.skipWaiting())); });",

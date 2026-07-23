@@ -1,0 +1,122 @@
+[
+  {
+    "id": "lil-screen-35",
+    "child": "lil",
+    "title": "官方 3–5 歲發展篩檢(若未做)",
+    "window_start": "auto",
+    "window_end": "auto",
+    "why_now": "官方免費篩檢窗口進行中;篩檢是替孩子開路,不是替爸媽打分數",
+    "options": ["就近兒科預約發展篩檢(帶兒童健康手冊)", "下次健兒門診/看診時一併完成"],
+    "suggestion": "是否已做:狀態待填;未做則近期預約",
+    "status": "待填",
+    "links": { "篩檢資訊": "#tab-screen" }
+  },
+  {
+    "id": "lil-kindergarten",
+    "child": "lil",
+    "title": "幼兒園入園時點與園所選擇",
+    "window_start": null,
+    "window_end": null,
+    "why_now": "2026-09 已具小班資格;是否入園、何時入園需依現況決定",
+    "options": ["2026-09 小班入園", "延後半年–一年再入園", "先短時數/共學形式過渡"],
+    "suggestion": "狀態待填:等林家口述現況(意向與報名進度)",
+    "status": "待填",
+    "links": {}
+  },
+  {
+    "id": "lil-toilet",
+    "child": "lil",
+    "title": "如廁訓練收尾",
+    "window_start": null,
+    "window_end": null,
+    "why_now": "收尾時點與入園安排相關;原則:不催、不比較",
+    "options": ["日間已完成,收尾夜間", "白天仍在練習,維持步調", "尚未開始,從固定時段起步"],
+    "suggestion": "狀態待填:等林家口述現況",
+    "status": "待填",
+    "links": {}
+  },
+  {
+    "id": "big-screen-57",
+    "child": "big",
+    "title": "官方 5–未滿 7 歲發展篩檢(若未做)",
+    "window_start": "auto",
+    "window_end": "auto",
+    "why_now": "至滿 7 歲前有效;建議小一開學前完成,入學後行程更難排",
+    "options": ["暑假就近兒科完成(帶兒童健康手冊)", "開學後第一個長假補做"],
+    "suggestion": "是否已做:狀態待填;未做建議 8 月內完成",
+    "status": "待填",
+    "links": { "篩檢資訊": "#tab-screen" }
+  },
+  {
+    "id": "big-talent",
+    "child": "big",
+    "title": "才藝試探策略",
+    "window_start": "2027-02",
+    "window_end": "2028-07",
+    "why_now": "小一下學期起廣試不深耕;三年級後再收斂",
+    "options": ["每學期試 1–2 樣短期課", "先從單堂/免費體驗開始", "暫不安排,先顧作息"],
+    "suggestion": "依才藝三問決定去留;退出機制開課前講好",
+    "status": "未到",
+    "links": { "才藝三問": "#tab-mind" }
+  },
+  {
+    "id": "big-allowance",
+    "child": "big",
+    "title": "零用錢制度啟動",
+    "window_start": "2026-09",
+    "window_end": "2027-01",
+    "why_now": "小一上啟動三罐子制;金錢的錯誤要趁便宜的時候犯",
+    "options": ["開學即啟動(週給)", "適應一個月後啟動", "固定額度、與家事脫鉤"],
+    "suggestion": "三罐子制;排程見制度安裝表",
+    "status": "未到",
+    "links": { "制度安裝表": "#tab-sys" }
+  },
+  {
+    "id": "big-3c",
+    "child": "big",
+    "title": "3C 家庭公約",
+    "window_start": "2026-09",
+    "window_end": "2027-01",
+    "why_now": "公約先於設備——規則在拿到螢幕之前立好",
+    "options": ["開學首月全家共訂公約", "等有設備需求再訂(不建議)"],
+    "suggestion": "小一上學期先立約;全家含大人同一規格,修改只走家庭會議",
+    "status": "未到",
+    "links": { "制度安裝表": "#tab-sys" }
+  },
+  {
+    "id": "big-room",
+    "child": "big",
+    "title": "分房睡評估",
+    "window_start": null,
+    "window_end": null,
+    "why_now": "依孩子意願與空間現況評估,沒有官方時程",
+    "options": ["先分床不分房", "佈置好房間讓她自己選時點", "暫不變動"],
+    "suggestion": "狀態待填:等林家口述現況",
+    "status": "待填",
+    "links": {}
+  },
+  {
+    "id": "both-body",
+    "child": "both",
+    "title": "身體自主權教育",
+    "window_start": "2026-07",
+    "window_end": null,
+    "why_now": "即刻、持續性;不是單次課程,是日常語言",
+    "options": ["洗澡/就醫時自然帶入身體部位正名", "繪本共讀切入", "家規:任何人的碰觸都可以說不"],
+    "suggestion": "即刻開始、持續進行;兩個孩子都適用",
+    "status": "開窗",
+    "links": {}
+  },
+  {
+    "id": "both-meeting",
+    "child": "both",
+    "title": "家庭會議引入",
+    "window_start": "2027-02",
+    "window_end": "2027-07",
+    "why_now": "建議姊姊小一下引入;之後 3C 公約修改、零用錢調整都走這裡",
+    "options": ["每週固定 15 分鐘", "隔週一次,從輕鬆議題開始"],
+    "suggestion": "姊姊小一下啟動;弟弟旁聽即可",
+    "status": "未到",
+    "links": { "制度安裝表": "#tab-sys" }
+  }
+]

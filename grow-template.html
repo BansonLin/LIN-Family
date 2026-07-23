@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家成長地圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#557A3C">
+<style>
+/* ===== 成長地圖頁面專屬樣式(共用層見 assets/tokens.css) ===== */
+h1{color:#3F5D2C}
+.bandtag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px;background:#E7EFDD;color:#3F5D2C}
+/* 現在位置雙孩卡(上下堆疊,不並排比較) */
+.nowcard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:12px}
+.nowcard .nc-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.nowcard .nc-name{font-family:'LXGW WenKai TC',serif;font-size:20px;font-weight:700}
+.nowcard.sis .nc-name{color:var(--sis-deep)} .nowcard.bro .nc-name{color:var(--bro-deep)}
+.nowcard .nc-age{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:15px;color:var(--ink)}
+.nowcard ul{list-style:none;margin-top:8px}
+.nowcard li{font-size:13.5px;padding:3px 0 3px 18px;position:relative;color:#4A443B}
+.nowcard li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:2px;background:#557A3C;transform:rotate(8deg)}
+.nc-count{margin-top:10px;font-size:13px;background:var(--warn-bg);color:#8F3A2E;border-radius:8px;padding:6px 10px;font-weight:700}
+.nc-count.calm{background:#E7EFDD;color:#3F5D2C}
+/* 決策時間軸 */
+.tlwrap{overflow-x:auto;margin-top:12px;border:1.5px solid var(--line);border-radius:16px;background:var(--card);padding:14px 12px}
+.tl{min-width:680px}
+.tl-axis{display:flex;border-bottom:1.5px solid var(--line);padding-bottom:4px;margin-bottom:8px}
+.tl-axis span{flex:1;font-size:10px;color:var(--ink-soft);text-align:left;white-space:nowrap}
+.tl-row{display:flex;align-items:center;gap:0;margin:7px 0;cursor:pointer}
+.tl-label{width:150px;flex-shrink:0;font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.35;padding-right:8px}
+.tl-label .who{font-size:10.5px;font-weight:700;border-radius:999px;padding:1px 7px;margin-right:4px}
+.who.sis{background:var(--sis-bg);color:var(--sis-deep)} .who.bro{background:var(--bro-bg);color:var(--bro-deep)} .who.fam{background:var(--farm-bg);color:var(--farm-deep)}
+.tl-track{position:relative;flex:1;height:22px;background:#F4F0E8;border-radius:6px}
+.tl-bar{position:absolute;top:3px;bottom:3px;border-radius:5px;background:#C9D8B4;min-width:8px}
+.tl-bar.open{background:#557A3C;box-shadow:0 0 0 2px #E7EFDD}
+.tl-bar.cont::after{content:"→";position:absolute;right:-2px;top:-1px;color:#557A3C;font-size:11px}
+.tl-now{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--warn)}
+.tl-note{font-size:11.5px;color:var(--ink-soft);margin-top:8px}
+#tlDetail{margin-top:12px}
+.optrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.opt{font-size:12.5px;border:1.5px solid var(--line);border-radius:999px;padding:4px 12px;background:#FDFBF7;color:var(--ink)}
+/* 發展地圖 */
+.bandrow{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;margin-top:12px}
+.bandrow::-webkit-scrollbar{display:none}
+.bandrow .chip{flex-shrink:0}
+.dm-dom{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:10px}
+.dm-dom h3{font-family:'LXGW WenKai TC',serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.dm-dom ul{list-style:none}
+.dm-dom li{font-size:13.5px;padding:3px 0 3px 18px;position:relative;color:#4A443B}
+.dm-dom li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:2px;background:#557A3C;transform:rotate(8deg)}
+.dm-dom li.rf::before{background:var(--warn)}
+.dm-dom .role{font-size:12.5px;color:#3F5D2C;background:#E7EFDD;border-radius:8px;padding:5px 10px;margin-top:8px}
+.dm-rf{margin-top:8px;border-top:1.5px dashed var(--line);padding-top:8px}
+.dm-rf .rft{font-size:12px;font-weight:700;color:var(--warn);margin-bottom:2px}
+.evlink{font-size:10.5px;color:var(--indoor);text-decoration:none;border-bottom:1px dotted var(--indoor);white-space:nowrap;margin-left:4px}
+.tag.pend{background:var(--warn-bg);color:var(--warn)}
+.nextprev{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+/* 制度安裝表 */
+.sysgroup{margin-top:12px}
+.sys{display:flex;align-items:flex-start;gap:10px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;margin-top:8px}
+.sys .s-badge{flex-shrink:0;font-size:11px;font-weight:700;border-radius:999px;padding:2px 10px;margin-top:2px}
+.s-badge.on{background:#E7EFDD;color:#3F5D2C}
+.s-badge.doing{background:#557A3C;color:#fff}
+.s-badge.queue{background:#EFEAE0;color:var(--ink-soft)}
+.sys .s-name{font-weight:700;font-size:14.5px}
+.sys .s-meta{font-size:12px;color:var(--ink-soft);margin-top:1px}
+/* 篩檢 */
+.kid-screen{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin-top:10px}
+.kid-screen .ks-head{font-family:'LXGW WenKai TC',serif;font-size:17px;font-weight:700}
+.kid-screen.sis .ks-head{color:var(--sis-deep)} .kid-screen.bro .ks-head{color:var(--bro-deep)}
+.kid-screen .ks-win{font-size:14px;margin-top:4px}
+.kid-screen .ks-win b{color:#3F5D2C}
+.kid-screen .ks-note{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">成長版</span><a class="xlink first" href="index.html">🚗 出遊</a><a class="xlink time" href="time.html">⏳ 時光</a><a class="xlink food" href="food.html">🍳 餐食</a></div>
+  <h1>林家成長地圖</h1>
+  <div class="today">接下來 6–36 個月會發生什麼、該提前準備什麼・資料 __BUILD_DATE__</div>
+  <div class="kids">
+    <div class="kid sis"><span class="who">姊姊</span><span class="age" id="ageSis">—</span><span class="note" id="noteSis"></span></div>
+    <div class="kid bro"><span class="who">弟弟</span><span class="age" id="ageBro">—</span><span class="note" id="noteBro"></span></div>
+  </div>
+</header>
+
+<nav class="tabs"><div class="tabs-inner">
+  <button class="tab-btn" data-tab="now" aria-selected="true">📍 現在位置</button>
+  <button class="tab-btn" data-tab="tl" aria-selected="false">🗓 決策時間軸</button>
+  <button class="tab-btn" data-tab="map" aria-selected="false">🗺 發展地圖</button>
+  <button class="tab-btn" data-tab="sys" aria-selected="false">🧩 制度安裝</button>
+  <button class="tab-btn" data-tab="screen" aria-selected="false">🩺 官方篩檢</button>
+  <button class="tab-btn" data-tab="mind" aria-selected="false">🧭 時機心法</button>
+</div></nav>
+
+<!-- ===== 現在位置 ===== -->
+<section class="panel active" id="panel-now">
+  <div class="section-title">現在位置</div>
+  <div class="section-sub">發展是範圍,不是賽道——孩子只跟上個月的自己比。兩張卡各看各的,不比較。</div>
+  <div id="nowCards"></div>
+  <div class="callout fam"><b>這頁在管什麼</b>時光手冊管「本週怎麼陪」(現在式);成長地圖管「時機與準備」(未來式)。小一準備的 8 週執行清單在 <a href="time.html" style="color:inherit;font-weight:700">⏳ 時光手冊</a>,這裡只放時間軸節點。</div>
+</section>
+
+<!-- ===== 決策時間軸 ===== -->
+<section class="panel" id="panel-tl">
+  <div class="section-title">決策時間軸 <span class="cnt" id="tlCnt"></span></div>
+  <div class="section-sub">未來 18 個月;<b style="color:#557A3C">深綠=開窗中</b>,淺綠=時間窗,紅線=今天。點一列看選項。</div>
+  <div class="tlwrap"><div class="tl" id="tl"></div></div>
+  <div class="tl-note" id="tlPendNote"></div>
+  <div id="tlDetail"></div>
+  <div class="section-title">決策紀錄</div>
+  <div class="section-sub">已決的卡片收在這裡(含選項與日期)——家庭版決策日誌。</div>
+  <div id="decidedList"></div>
+</section>
+
+<!-- ===== 發展地圖 ===== -->
+<section class="panel" id="panel-map">
+  <div class="section-title">發展地圖</div>
+  <div class="section-sub">帶 × 五面向。目的是找紅旗,不是排名;紅旗之外的快慢都在正常範圍。每條都附來源;7–9 歲帶官方篩檢已結束,改引教育端與兒科來源(來源性質不同,已標註)。</div>
+  <div class="bandrow" id="bandrow"></div>
+  <div id="mapOut"></div>
+  <div class="callout warn"><b>有疑慮怎麼辦</b>找兒科醫師或兒童發展聯合評估中心(入口見「🩺 官方篩檢」)——不是搜尋引擎,更不是 AI。此頁為一般性資訊,需專業人士最終確認。</div>
+</section>
+
+<!-- ===== 制度安裝表 ===== -->
+<section class="panel" id="panel-sys">
+  <div class="section-title">制度安裝表</div>
+  <div class="section-sub">鐵律:「安裝中」同時只允許一筆——裝穩一個月,才排下一個。</div>
+  <div id="sysOut"></div>
+</section>
+
+<!-- ===== 官方篩檢 ===== -->
+<section class="panel" id="panel-screen">
+  <div class="section-title">官方兒童發展篩檢</div>
+  <div class="section-sub" id="screenIntro">未滿 7 歲共 6 次免費篩檢;窗口與下一次時點由出生年月即時計算。</div>
+  <div id="kidScreens"></div>
+  <div class="section-title">六次篩檢窗口</div>
+  <div class="tblwrap"><table class="tbl" id="winTbl"></table></div>
+  <div id="screenFacts">
+    <div class="rule-card">
+      <h3>制度重點(官方)</h3>
+      <ul>
+        <li>113-07-01(2024-07-01)起,未滿 7 歲共 <b>6 次免費發展篩檢</b>,可配合 7 次兒童預防保健一併做。<a class="evlink" target="_blank" rel="noopener" href="https://www.mohw.gov.tw/cp-16-79140-1.html">衛福部新聞稿</a><a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&amp;pid=18221">國健署</a></li>
+        <li>篩檢四面向:<b>粗大動作、精細動作、語言認知、社會發展</b>;用標準化「兒童發展篩檢量表」。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4821">量表專頁</a></li>
+        <li>執行者:兒科/家醫專科醫師,或受訓之幼兒專責醫師(均另受量表使用訓練)。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4824">方案專頁</a></li>
+        <li>當天帶:<b>兒童健康手冊+健保卡</b>。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4856">篩檢懶人包</a></li>
+        <li>篩檢未通過:醫師以健保電子轉診平台轉介,<b>30 日內</b>至「兒童發展聯合評估中心」就診。<a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4824">方案專頁</a></li>
+        <li>名稱別搞混:醫師執行的「兒童發展<b>篩檢量表</b>」與家長自填的「學前兒童發展<b>檢核表</b>」是兩種工具——前者是給付篩檢,後者是家庭日常初篩。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title">入口與下載</div>
+  <div id="screenLinks">
+    <div class="tblwrap"><table class="tbl">
+      <tr><th>入口</th><th>連結/窗口</th></tr>
+      <tr><td>篩檢特約機構名單</td><td><a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4816">國健署・兒童發展篩檢服務專區</a></td></tr>
+      <tr><td>聯評中心查詢</td><td><a class="evlink" target="_blank" rel="noopener" href="https://healthforkids.mohw.gov.tw/HospitalMap/?id=47bd252c33cc4ff68a49f772f69e02f6">衛福部兒童就醫地圖</a> ・ <a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1601">國健署專區</a> ・ <a class="evlink" target="_blank" rel="noopener" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=1602&amp;pid=548">名單頁</a></td></tr>
+      <tr><td>宜蘭・通報轉介中心</td><td>一粒麥子基金會受託,專線 <b>(03)933-4040</b>(宜蘭市同慶街 95 號,樓層待確認)<a class="evlink" target="_blank" rel="noopener" href="https://sntroot.e-land.gov.tw/cp.aspx?n=FE82836D1AFC45B1">縣府社會處</a></td></tr>
+      <tr><td>宜蘭・聯評中心</td><td>陽明交大附醫 03-932-5192#72261 ・ 羅東聖母 03-954-4106#8355<a class="evlink" target="_blank" rel="noopener" href="https://www.hosp.nycu.edu.tw/departments/medical-centers/child-development.html">陽明交大附醫</a><a class="evlink" target="_blank" rel="noopener" href="https://www.smh.org.tw/?aid=100&amp;pid=110">羅東聖母</a></td></tr>
+      <tr><td>宜蘭・學前檢核表</td><td><span class="tag pend">待確認</span> 縣自設下載頁未尋獲,建議致電 (03)933-4040 問現行版本;過渡可用 <a class="evlink" target="_blank" rel="noopener" href="https://health.gov.taipei/News_Content.aspx?n=890BB287E6A590F0&amp;sms=FEDD3204A66CD37D&amp;s=341720F573D7CFC9">臺北市 Taipei-II 下載</a> ・ <a class="evlink" target="_blank" rel="noopener" href="https://www.theme.gov.taipei/tpeirrc/webapplication/webcheckform.aspx">線上檢核</a>(家長自填初篩,非診斷)</td></tr>
+      <tr><td>全國通報/個管查詢</td><td><a class="evlink" target="_blank" rel="noopener" href="https://system.sfaa.gov.tw/cecm/">社家署・發展遲緩兒童通報暨個管服務網</a></td></tr>
+    </table></div>
+    <div class="section-sub">以上皆檢索於 2026-07,原文以官方頁為準;樓層、名單細節等 8 項待確認見建置紀錄。</div>
+  </div>
+  <div class="callout warn"><b>固定聲明</b>篩檢與檢核表是初篩工具,不是診斷;任何疑慮請找兒科醫師或兒童發展聯合評估中心,需專業人士最終確認。</div>
+</section>
+
+<!-- ===== 時機心法(最終稿,直接排版) ===== -->
+<section class="panel" id="panel-mind">
+  <div class="section-title">時機三原則</div>
+  <div class="three">
+    <div class="p-card"><div class="no">01</div><div class="p-t">發展是範圍,不是賽道</div><div class="p-d">檢核表存在的目的是找紅旗,不是排名。紅旗之外的快慢,都在正常範圍裡——孩子只跟上個月的自己比。</div></div>
+    <div class="p-card"><div class="no">02</div><div class="p-t">準備在前,出手在後</div><div class="p-d">爸媽的工作是佈置環境、選對時機(擺好書、留好空白、約好篩檢),不是推進度。時機對了,一句話就夠;時機不對,一百句都是噪音。</div></div>
+    <div class="p-card"><div class="no">03</div><div class="p-t">一次一制度</div><div class="p-d">制度安裝表只有一個「安裝中」欄位。裝穩一個月,才排下一個——公司和家裡,這條鐵律通用。</div></div>
+  </div>
+
+  <div class="section-title">決策心法</div>
+  <div class="rule-card"><ul>
+    <li><b>才藝三問</b>:①下課後他還會自己主動碰嗎?②教的人是在點燃還是澆熄?③退出機制開課前講好(以學期為單位,不情緒勒索)。原則:小一到小二廣試不深耕,三年級後再收斂。</li>
+    <li><b>3C 公約</b>:公約先於設備——規則在拿到螢幕之前立好,全家(含大人)同一規格,修改只走家庭會議。</li>
+    <li><b>零用錢</b>:給的是「練習犯錯的額度」,不是薪水。金錢的錯誤要趁便宜的時候犯。</li>
+    <li><b>比較防火牆</b>:差三歲的兩個孩子,永遠有一個看起來「比較慢」。禁句「你看姊姊/弟弟」——已是家規,這裡再鎖一次。</li>
+  </ul></div>
+
+  <div class="section-title">紅旗使用守則</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li>縣市學前檢核表一年至少對一次;官方免費篩檢在窗口內去做(帶兒童健康手冊)。</li>
+    <li>有疑慮,找的是兒科醫師與聯合評估中心——不是搜尋引擎,更不是 AI。早療的成本曲線:越早越便宜。</li>
+    <li>篩檢是替孩子開路,不是替爸媽打分數。</li>
+  </ul></div>
+
+  <div class="section-title">特殊狀態</div>
+  <div class="rule-card"><ul>
+    <li><b>大變動期</b>(開學、搬家):行為倒退是神經系統重整,不是退步——標準降一階,制度不加新的。</li>
+    <li><b>爸爸出差高峰</b>:制度暫停不硬撐,回來重啟。制度為人服務。</li>
+  </ul></div>
+</section>
+
+<footer>
+  <span class="fam-name">林家成長地圖</span><br>
+  準備在前,出手在後・發展是範圍,不是賽道<br>
+  資料 __BUILD_DATE__・每半年隨 /age-review 更新一次
+</footer>
+
+</div>
+<button id="toTop" hidden aria-label="回到頂端">↑</button>
+
+<script>
+const STAGES = __STAGES__;
+const DECISIONS = __DECISIONS__;
+const SYSTEMS = __SYSTEMS__;
+const FAMILY = __FAMILY__;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- 年齡與帶(唯一來源 family.json,不寫死) ---------- */
+function monthsOf(birth) { const [y, m] = birth.split("-").map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); }
+function ageText(mo) { return Math.floor(mo / 12) + " 歲 " + (mo % 12) + " 個月"; }
+const BANDS = [
+  { key: "2-3歲", from: 24, to: 35 },
+  { key: "3-5歲", from: 36, to: 59 },
+  { key: "5-7歲", from: 60, to: 83 },
+  { key: "7-9歲", from: 84, to: 107 },
+];
+function bandOf(mo) { const b = BANDS.find(b => mo >= b.from && mo <= b.to); return b ? b.key : (mo < 24 ? "未滿 2 歲" : "9 歲以上"); }
+const KIDS = {};
+FAMILY.children.forEach(c => {
+  const mo = monthsOf(c.birth);
+  const k = c.nickname === "姊姊" ? "big" : "lil";
+  KIDS[k] = { name: c.nickname, birth: c.birth, mo, band: bandOf(mo), cls: k === "big" ? "sis" : "bro" };
+});
+(function renderKidsHead() {
+  if (KIDS.big) { $("#ageSis").textContent = ageText(KIDS.big.mo); $("#noteSis").textContent = "現在階段帶:" + KIDS.big.band; }
+  if (KIDS.lil) { $("#ageBro").textContent = ageText(KIDS.lil.mo); $("#noteBro").textContent = "現在階段帶:" + KIDS.lil.band; }
+})();
+
+/* ---------- 年月工具 ---------- */
+function ymNow() { const d = new Date(); return d.getFullYear() * 12 + d.getMonth(); }           // 月序號
+function ymFrom(str) { const [y, m] = str.split("-").map(Number); return y * 12 + (m - 1); }     // "YYYY-MM" → 月序號
+function ymStr(n) { return Math.floor(n / 12) + "-" + String((n % 12) + 1).padStart(2, "0"); }
+function birthYm(birth) { return ymFrom(birth); }
+
+/* ---------- 官方篩檢窗口(6 次;由出生年月即時計算) ---------- */
+const SCREEN_WINDOWS = [
+  { label: "出生後 6–10 個月", from: 6, to: 9 },
+  { label: "10 個月–1 歲 6 個月", from: 10, to: 17 },
+  { label: "1 歲 6 個月–2 歲", from: 18, to: 23 },
+  { label: "2–3 歲", from: 24, to: 35 },
+  { label: "3–5 歲", from: 36, to: 59 },
+  { label: "5–未滿 7 歲", from: 60, to: 83 },
+];
+function screenNow(kid) {
+  const w = SCREEN_WINDOWS.find(w => kid.mo >= w.from && kid.mo <= w.to);
+  if (!w) return null;
+  const endYm = birthYm(kid.birth) + w.to; // 窗口最後一個月
+  return { w, endYm };
+}
+
+/* ---------- 決策卡窗口解析(auto = 篩檢窗口,由 family.json 算) ---------- */
+function resolveWindow(d) {
+  if (d.window_start === "auto") {
+    const kid = KIDS[d.child]; if (!kid) return null;
+    const s = screenNow(kid);
+    if (!s) return null;
+    return { start: Math.max(ymNow(), birthYm(kid.birth) + s.w.from), end: s.endYm, ongoing: false };
+  }
+  if (!d.window_start) return null;
+  return { start: ymFrom(d.window_start), end: d.window_end ? ymFrom(d.window_end) : null, ongoing: !d.window_end };
+}
+function windowState(win) {
+  if (!win) return "待填";
+  const now = ymNow();
+  if (now < win.start) return "未到";
+  if (win.end === null || now <= win.end) return "開窗";
+  return "已過";
+}
+
+/* ---------- 現在位置 ---------- */
+function stageRows(band) { return STAGES.filter(s => s.band === band); }
+const DOMAIN_ORDER = ["粗大動作", "精細動作", "語言認知", "社會情緒", "生活自理"];
+function highlights(band) {
+  const rows = stageRows(band);
+  const out = [];
+  for (const dom of ["語言認知", "社會情緒", "生活自理"]) {
+    const r = rows.find(x => x.domain === dom);
+    if (r && r.typical && r.typical.length) out.push(dom + ":" + r.typical[0].item);
+    if (out.length >= 3) break;
+  }
+  return out;
+}
+function nearestDecision(kidKey) {
+  const now = ymNow();
+  let best = null;
+  DECISIONS.forEach(d => {
+    if (d.child !== kidKey && d.child !== "both") return;
+    if (d.status === "已決" || typeof d.status === "object") return;
+    const win = resolveWindow(d); if (!win) return;
+    const st = windowState(win);
+    const rank = st === "開窗" ? 0 : (st === "未到" ? 1 : 9);
+    if (rank === 9) return;
+    const dist = st === "開窗" ? (win.end === null ? 999 : win.end - now) : win.start - now;
+    if (!best || rank < best.rank || (rank === best.rank && dist < best.dist)) best = { d, win, st, rank, dist };
+  });
+  return best;
+}
+(function renderNow() {
+  const order = ["big", "lil"];
+  $("#nowCards").innerHTML = order.filter(k => KIDS[k]).map(k => {
+    const kid = KIDS[k];
+    const hl = highlights(kid.band);
+    const nd = nearestDecision(k);
+    let count = "";
+    if (nd) {
+      if (nd.st === "開窗") count = '<div class="nc-count">⏳ 開窗中:' + esc(nd.d.title) + (nd.win.end !== null ? "(剩約 " + (nd.win.end - ymNow() + 1) + " 個月)" : "(持續)") + "</div>";
+      else count = '<div class="nc-count calm">🗓 下一張決策卡:' + esc(nd.d.title) + "(約 " + (nd.win.start - ymNow()) + " 個月後開窗)</div>";
+    }
+    return '<div class="nowcard ' + kid.cls + '"><div class="nc-head"><span class="nc-name">' + kid.name + '</span><span class="nc-age">' + ageText(kid.mo) + '</span><span class="bandtag">' + kid.band + " 帶</span></div>"
+      + (hl.length ? "<ul>" + hl.map(h => "<li>" + esc(h) + "</li>").join("") + "</ul>" : '<div class="section-sub" style="margin:6px 0 0">本帶重點:<span class="tag pend">待確認</span>(發展地圖建置中)</div>')
+      + count + "</div>";
+  }).join("");
+})();
+
+/* ---------- 決策時間軸 ---------- */
+const HORIZON = 18;
+function renderTimeline() {
+  const now = ymNow();
+  const withWin = [], pend = [], decided = [];
+  DECISIONS.forEach(d => {
+    if (typeof d.status === "object" && d.status.choice) { decided.push(d); return; }
+    const win = resolveWindow(d);
+    if (!win) { pend.push(d); return; }
+    withWin.push({ d, win, st: windowState(win) });
+  });
+  withWin.sort((a, b) => (a.win.start - b.win.start));
+  $("#tlCnt").textContent = withWin.length + " 張";
+  // 軸:半年一格標籤
+  let axis = '<div class="tl-axis">';
+  for (let i = 0; i < HORIZON; i += 3) axis += "<span>" + ymStr(now + i) + "</span>";
+  axis += "</div>";
+  const rows = withWin.map((x, i) => {
+    const s = Math.max(0, x.win.start - now);
+    const e = x.win.ongoing || x.win.end === null ? HORIZON : Math.min(HORIZON, x.win.end - now + 1);
+    const left = (s / HORIZON * 100).toFixed(1), width = (Math.max(0.6, e - s) / HORIZON * 100).toFixed(1);
+    const whoCls = x.d.child === "big" ? "sis" : (x.d.child === "lil" ? "bro" : "fam");
+    const whoTxt = x.d.child === "big" ? "姊" : (x.d.child === "lil" ? "弟" : "倆");
+    return '<div class="tl-row" data-i="' + i + '"><div class="tl-label"><span class="who ' + whoCls + '">' + whoTxt + "</span>" + esc(x.d.title) + "</div>"
+      + '<div class="tl-track"><div class="tl-bar' + (x.st === "開窗" ? " open" : "") + (x.win.ongoing ? " cont" : "") + '" style="left:' + left + "%;width:" + width + '%"></div><div class="tl-now" style="left:0%"></div></div></div>';
+  }).join("");
+  $("#tl").innerHTML = axis + rows;
+  $("#tlPendNote").innerHTML = pend.length ? "📝 現況待填(等林家口述,不上軸):" + pend.map(d => esc(d.title)).join("、") : "";
+  $("#decidedList").innerHTML = decided.length
+    ? decided.map(d => '<div class="vcard"><div class="name" style="font-size:17px">' + esc(d.title) + '</div><div class="vfoot">已決:' + esc(d.status.choice) + "(" + esc(d.status.date) + ")</div></div>").join("")
+    : '<div class="draw-empty" style="min-height:70px">還沒有已決的卡——第一筆會自動收在這裡</div>';
+  $$("#tl .tl-row").forEach(row => row.addEventListener("click", () => showDecision(withWin[+row.dataset.i])));
+}
+function showDecision(x) {
+  const d = x.d;
+  const stBadge = d.status === "待填" ? '<span class="tag pend">現況待填</span>' : '<span class="tag ' + (x.st === "開窗" ? "sis" : "meta") + '">' + x.st + "</span>";
+  const winTxt = x.win ? (ymStr(x.win.start) + " – " + (x.win.end === null ? "持續" : ymStr(x.win.end))) : "—";
+  $("#tlDetail").innerHTML = '<div class="vcard enter"><div class="tags">' + stBadge + '<span class="tag meta">窗口 ' + winTxt + "</span></div>"
+    + '<div class="name" style="font-size:19px">' + esc(d.title) + "</div>"
+    + '<div class="how" style="-webkit-line-clamp:unset">為什麼是現在:' + esc(d.why_now) + "</div>"
+    + '<div class="optrow">' + d.options.map(o => '<span class="opt">' + esc(o) + "</span>").join("") + "</div>"
+    + '<div class="vfoot">建議:' + esc(d.suggestion) + "</div>"
+    + (Object.keys(d.links || {}).length ? '<div class="actrow">' + Object.entries(d.links).map(([t, h]) => '<a class="abtn nav" href="' + esc(h) + '" onclick="return jumpLink(this)">' + esc(t) + "</a>").join("") + "</div>" : "")
+    + "</div>";
+  $("#tlDetail").scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+function jumpLink(a) {
+  const h = a.getAttribute("href");
+  if (h && h.startsWith("#tab-")) { switchTab(h.slice(5)); return false; }
+  return true;
+}
+renderTimeline();
+
+/* ---------- 發展地圖 ---------- */
+let curBand = null;
+(function initBands() {
+  const present = BANDS.map(b => b.key);
+  const kidBands = Object.values(KIDS).map(k => k.band);
+  curBand = kidBands.find(b => present.includes(b)) || present[0];
+  $("#bandrow").innerHTML = present.map(b => '<button class="chip" data-band="' + b + '" aria-pressed="' + String(b === curBand) + '">' + b + (kidBands.includes(b) ? "・" + Object.values(KIDS).filter(k => k.band === b).map(k => k.name).join("") : "") + "</button>").join("");
+  $("#bandrow").addEventListener("click", e => {
+    const ch = e.target.closest(".chip"); if (!ch) return;
+    curBand = ch.dataset.band;
+    $$("#bandrow .chip").forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+    renderMap();
+  });
+  renderMap();
+})();
+function evA(ev) { return ev && ev.url ? ' <a class="evlink" target="_blank" rel="noopener" href="' + esc(ev.url) + '">' + esc(ev.label || "來源") + "</a>" : ' <span class="tag pend">待確認</span>'; }
+function renderMap() {
+  const rows = stageRows(curBand);
+  if (!rows.length) { $("#mapOut").innerHTML = '<div class="draw-empty">此帶內容<b>待確認</b>——研究建置中,先看官方篩檢分頁</div>'; return; }
+  const srcNote = rows.find(r => r.source_note);
+  $("#mapOut").innerHTML = (srcNote ? '<div class="callout cafe"><b>來源性質</b>' + esc(srcNote.source_note) + "</div>" : "")
+    + DOMAIN_ORDER.map(dom => {
+      const r = rows.find(x => x.domain === dom);
+      if (!r) return "";
+      return '<div class="dm-dom"><h3>' + dom + "</h3>"
+        + (r.typical && r.typical.length ? "<ul>" + r.typical.map(t => "<li>" + esc(t.item) + evA(t.evidence) + "</li>").join("") + "</ul>" : "")
+        + (r.gap_note ? '<div class="section-sub" style="margin:4px 0 0"><span class="tag pend">待確認</span> ' + esc(r.gap_note) + "</div>" : "")
+        + (r.red_flags && r.red_flags.length ? '<div class="dm-rf"><div class="rft">🚩 紅旗(有其一 → 找兒科/聯評,不自行判讀)</div><ul>' + r.red_flags.map(t => '<li class="rf">' + esc(t.item) + evA(t.evidence) + "</li>").join("") + "</ul></div>" : "")
+        + "</div>";
+    }).join("")
+    + (rows.find(r => r.parent_role) ? '<div class="dm-dom"><div class="role">爸媽角色:' + esc(rows.find(r => r.parent_role).parent_role) + "</div></div>" : "")
+    + (rows.find(r => r.next_preview) ? '<div class="nextprev">⏭ 下一帶預告:' + esc(rows.find(r => r.next_preview).next_preview) + "</div>" : "");
+}
+
+/* ---------- 制度安裝表(鐵律:安裝中限一筆,程式面強制) ---------- */
+(function renderSys() {
+  const groups = { "安裝中": [], "已安裝": [], "排隊": [] };
+  SYSTEMS.forEach(s => (groups[s.status] || groups["排隊"]).push(s));
+  let warn = "";
+  if (groups["安裝中"].length > 1) {
+    const extra = groups["安裝中"].splice(1);
+    extra.forEach(s => groups["排隊"].unshift(s));
+    warn = '<div class="callout warn"><b>鐵律生效</b>「安裝中」只允許一筆;多出的 ' + extra.map(s => esc(s.name)).join("、") + " 已自動視為排隊。請先裝穩再排下一個。</div>";
+  }
+  const badge = { "已安裝": "on", "安裝中": "doing", "排隊": "queue" };
+  $("#sysOut").innerHTML = warn + ["安裝中", "排隊", "已安裝"].map(g => {
+    const list = groups[g];
+    return '<div class="sysgroup"><div class="section-sub" style="margin:10px 0 0"><b>' + g + "</b>(" + list.length + ")</div>"
+      + (list.length ? list.map(s => '<div class="sys"><span class="s-badge ' + badge[g] + '">' + g + '</span><div><div class="s-name">' + esc(s.name) + '</div><div class="s-meta">前置:' + esc(s["前置條件"]) + " ・ 時點:" + esc(s["建議時點"]) + "</div></div></div>").join("")
+        : '<div class="draw-empty" style="min-height:56px;margin-top:6px">' + (g === "安裝中" ? "目前沒有安裝中的制度——可從排隊區挑一個" : "無") + "</div>")
+      + "</div>";
+  }).join("");
+})();
+
+/* ---------- 官方篩檢 ---------- */
+(function renderScreen() {
+  // 窗口表
+  $("#winTbl").innerHTML = "<tr><th>次序</th><th>窗口</th><th>兩孩位置</th></tr>" + SCREEN_WINDOWS.map((w, i) => {
+    const marks = Object.values(KIDS).filter(k => k.mo >= w.from && k.mo <= w.to).map(k => k.name).join("、");
+    const past = Object.values(KIDS).every(k => k.mo > w.to);
+    return "<tr><td>" + (i + 1) + "</td><td>" + w.label + "</td><td>" + (marks ? "👉 " + marks + " 現在在此窗口" : (past ? "已過" : "—")) + "</td></tr>";
+  }).join("");
+  // 兩孩下一窗口卡
+  $("#kidScreens").innerHTML = ["big", "lil"].filter(k => KIDS[k]).map(k => {
+    const kid = KIDS[k];
+    const s = screenNow(kid);
+    if (!s) return '<div class="kid-screen ' + kid.cls + '"><div class="ks-head">' + kid.name + '</div><div class="ks-win">官方 6 次篩檢窗口已結束(滿 7 歲後)</div><div class="ks-note">後續發展關注改引教育端與兒科來源,見發展地圖 7–9 歲帶。</div></div>';
+    const monthsLeft = s.endYm - ymNow() + 1;
+    const extra = (k === "big" && s.w.from === 60) ? "建議小一開學前完成,入學後行程更難排。" : "";
+    return '<div class="kid-screen ' + kid.cls + '"><div class="ks-head">' + kid.name + '</div><div class="ks-win">現在窗口:<b>' + s.w.label + "</b>・可做到 <b>" + ymStr(s.endYm) + "</b>(剩約 " + monthsLeft + ' 個月)</div><div class="ks-note">若已做過此窗口的篩檢即完成;是否已做:狀態待填。' + extra + "帶兒童健康手冊至合約院所。</div></div>";
+  }).join("");
+})();
+
+/* ---------- 分頁 ---------- */
+function switchTab(key) {
+  $$(".tab-btn").forEach(x => x.setAttribute("aria-selected", String(x.dataset.tab === key)));
+  $$(".panel").forEach(p => p.classList.toggle("active", p.id === "panel-" + key));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+$$(".tab-btn").forEach(b => b.addEventListener("click", () => switchTab(b.dataset.tab)));
+
+/* ---------- 回頂 / SW ---------- */
+const toTop = $("#toTop");
+window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 600; }, { passive: true });
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+</body>
+</html>

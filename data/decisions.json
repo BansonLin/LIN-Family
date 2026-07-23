@@ -48,6 +48,30 @@
     "links": { "篩檢資訊": "#tab-screen" }
   },
   {
+    "id": "big-afterschool",
+    "child": "big",
+    "title": "小一課後安排(課照/安親/家人接)",
+    "window_start": "2026-07",
+    "window_end": "2026-09",
+    "why_now": "小一放學時間比幼兒園早,開學前必須定案;各選項的申請/報名有時限",
+    "options": ["學校課後照顧班", "安親班", "家人接送+自排活動"],
+    "suggestion": "狀態待填:等林家口述現況(意向與已申請項目)",
+    "status": "待填",
+    "links": {}
+  },
+  {
+    "id": "big-commute",
+    "child": "big",
+    "title": "通學方式與路線",
+    "window_start": "2026-08",
+    "window_end": "2026-09",
+    "why_now": "開學前把路線走熟:陪走演練、認路口與危險點,9 月就不慌",
+    "options": ["大人全程接送", "陪走練習固定路線(過渡)", "與同學結伴(之後)"],
+    "suggestion": "8 月中起實地陪走 2–3 次;現況待填",
+    "status": "待填",
+    "links": {}
+  },
+  {
     "id": "big-talent",
     "child": "big",
     "title": "才藝試探策略",

@@ -1,7 +1,7 @@
 # 林家出遊手冊(lin-family-outing)
 
 ## 一句話定位
-林家的「情境決策引擎」,雙受眾單一 App:①親子出遊——依當天天氣與孩子當前年齡,10 秒輸出 2–3 個最適景點與就近雨天備案;②大人時間——出差/約會/朋友聚餐/宵夜臨時想吃哪,依情境×地區×價位 10 秒給答案。這不是清單,是決策工具。涵蓋宜蘭/台北/台中/台南四城。
+林家的「情境決策引擎」,雙受眾單一 App:①親子出遊——依當天天氣與孩子當前年齡,10 秒輸出 2–3 個最適景點與就近雨天備案;②大人時間——出差/約會/朋友聚餐/宵夜臨時想吃哪,依情境×地區×價位 10 秒給答案。這不是清單,是決策工具。涵蓋宜蘭/台北/台中/台南四城。第三模組「餐食手冊」(food.html,2026-07-23 核准):解決「今天煮什麼」與「孩子不吃怎麼辦」,規格見下方餐食手冊章節。
 
 ## 最高原則(必須遵守,優先於一切)
 1. **禁止捏造**:每個評分與設施資訊必須附 evidence(來源連結+日期);查不到就標「待確認」,不得推測給分。
@@ -29,9 +29,14 @@ CLAUDE.md
 config/family.json      # 孩子出生年月、home 座標(由我手動填,你只讀取)
 data/venues.json        # 親子景點資料庫
 data/places-adult.json  # 大人模式餐飲資料庫(2026-07-19 核准新增,大人 schema 見下)
-.claude/commands/       # weekend / research / refresh / age-review / log
-index.html              # 單檔決策頁(手機優先;親子/大人雙模式切換)
+data/recipes.json       # 餐食手冊食譜庫(2026-07-23 核准新增,schema 見下)
+.claude/commands/       # weekend / research / refresh / age-review / log / sync-logs
+assets/tokens.css       # 共用設計層(2026-07-23 核准 P0-0:代幣+抽卡/chips/tabs/卡片元件,三模組共用)
+template.html           # 出遊手冊模板 → build.js 產出 dist/index.html(資料內嵌)
+food-template.html      # 餐食手冊模板 → build.js 產出 dist/food.html(資料內嵌)
+time.html               # 時光手冊(靜態單檔)
 disney.html             # 東京迪士尼旅行手冊(2026-07-21 核准新增;一次性旅行頁,離線可用)
+build.js                # 由 JSON 產出 dist/(index/food/sw/manifest);wrangler 部署 dist/
 docs/decisions.md       # 重大設計決策紀錄
 ```
 
@@ -73,6 +78,38 @@ docs/decisions.md       # 重大設計決策紀錄
 
 **大人 scene_fit 評分基準**:solo(出差一人)3=有吧檯/單人友善且可久坐辦公;date(兩人約會)3=氣氛/隱私/燈光俱佳;group(朋友聚餐)3=多人/包廂/可分食且好聊;late(喝一杯宵夜)3=營業至深夜且有酒或宵夜。
 
+## 餐食手冊(food.html・2026-07-23 核准新增)
+定位:解決「今天煮什麼」與「孩子不吃怎麼辦」的家用決策工具,不是食譜大全。邊界:家常料理/備餐/挑食/便當歸本模組;親子餐廳與外食歸出遊手冊;小廚師遊戲歸時光手冊(只以 kid_task 互引)。
+
+### 餐食紅線(任何功能不得違反)
+1. **不做熱量計算、不做體重管理、不評身材**——本工具不出現任何孩子的體重、BMI、熱量目標欄位。
+2. **不用食物當獎懲**:不設計「吃完正餐才能吃甜點」類機制(會降低孩子對正餐本身的喜好)。
+3. **不逼食、不追餵**:所有文案不得出現催促、比較、恐嚇式語句。
+4. **營養建議一律引官方來源**,禁止模型自行推估份量;查不到標「待確認」。
+5. **過敏、生長發育、疾病飲食**:頁面只提供一般性資訊並標註「需專業人士(兒科/營養師)最終確認」,不做個別化醫療建議。
+
+### data/recipes.json schema(單筆欄位)
+| 欄位 | 說明 |
+|---|---|
+| id / name | 唯一鍵/菜名 |
+| type | 主食/主菜/配菜/湯品/早餐/點心/飲品 |
+| prep_min | 從開火到上桌的分鐘數(含備料) |
+| difficulty | 1–3(1=不用顧、3=需全程站爐) |
+| who | ["big","lil","all"] 主要為誰而煮(大寶/小寶/全家) |
+| ingredients | 主要食材陣列(供「冰箱有什麼」反查) |
+| steps | 步驟(每步一句,手機好讀) |
+| kid_task | 孩子可參與的工序 {lil, big}——與時光手冊的接點 |
+| plate | 對應「我的餐盤」六大類覆蓋,例 ["全穀雜糧","豆魚蛋肉","蔬菜"] |
+| tags | 快手/免顧/一鍋到底/可冷凍/便當可/病人餐/挑食友善 |
+| family_log | [{date, 姊姊接受度 1–5, 弟弟接受度 1–5, 備註, ts?}] 本庫最高價值資料,權重高於一切網路食譜;ts 為 App 去重鍵 |
+| source | 來源(自家/書名/網址),自創標「自家」;提案未確認標「範例・待林家確認」 |
+
+### 建庫與維護
+- 建庫順序(P2):先由林家口述 20–30 道常煮的菜為核心 → 依 tags 缺口補 → 每次實作後 /log 回填接受度。**禁止從食譜網站批量抄錄**。
+- v1 種子 42 道全標「範例・待林家確認」,等林家清單來汰換。
+- 食譜不會倒閉——**本模組不需要半年重驗機制**(無 last_verified 欄位)。
+- 營養頁數字:每個數字必附官方來源(hpa.gov.tw/mohw.gov.tw);2026 新版指南在定案前只能以「草案」呈現。
+
 ## 評分基準(所有研究必須用同一把尺)
 - **noise_tolerance**:3=官方明示親子友善或設遊戲區;2=評論多見家庭客;1=一般客群混合;0=官網或評論強調安靜、成人向。
 - **shade_score**:3=全室內或全遮棚;2=大面積樹蔭/半棚;1=零星遮蔭;0=無遮蔽。
@@ -98,8 +135,8 @@ docs/decisions.md       # 重大設計決策紀錄
 - **/research {景點名}**:依研究 SOP 新增或更新單一 venue。
 - **/refresh**:列出 last_verified 超過 6 個月的 venue,逐一重驗(歇業、改裝、價格)。
 - **/age-review**:每半年執行。計算每個孩子未來 6 個月將進入的年齡帶 → 研究新增 5–10 個該年齡帶高分景點 → 將全年齡帶 age_fit ≤ 1 的景點標記「畢業」。
-- **/log {景點} {1–5} {心得}**:手打寫入 family_log 並更新 last_verified。
-- **/sync-logs**:把 App「📝 我去過」順手回報(GitHub family-log issue 或貼上的 JSON)批次吃進 family_log,以 ts 去重、更新 last_verified、close issue。
+- **/log {景點} {1–5} {心得}**:手打寫入 family_log 並更新 last_verified。餐食版:/log {菜名} 姊{1–5} 弟{1–5} {備註} → 寫入 data/recipes.json 的 family_log(不動 last_verified,食譜庫沒有此欄)。
+- **/sync-logs**:把 App 順手回報(GitHub family-log issue 或貼上的 JSON)批次吃進 family_log,以 ts 去重、close issue。kind=kids→venues.json、kind=adult→places-adult.json(皆更新 last_verified);kind=recipe→recipes.json(accept.big=姊姊接受度、accept.lil=弟弟接受度,不動 last_verified)。
 
 ## 停止條件(每次任務)
 - 完成指令定義的產出即停止,輸出:✅ 完成項目、⚠️ 待確認清單、下一步建議一行。

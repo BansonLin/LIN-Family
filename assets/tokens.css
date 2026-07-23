@@ -1,0 +1,152 @@
+/* ============================================================
+   林家手冊 共用設計層 tokens.css(P0-0 平台化)
+   代幣 + 四大共用元件:抽卡 draw / chips / tabs / card
+   值 1:1 取自 index(出遊)現行樣式;新模組直接引用,舊頁漸進遷移
+   ============================================================ */
+:root{
+  --paper:#F7F3EC; --card:#FFFFFF;
+  --ink:#33302A; --ink-soft:#6F675C; --line:#E6DED0;
+  /* 模組主色(出遊沿用) */
+  --park:#2E7D74; --park-bg:#E2EFEC; --park-deep:#1F5B54;
+  --cafe:#D9932A; --cafe-bg:#FBEDD6; --cafe-deep:#8A5A10;
+  --indoor:#3D6FA8; --indoor-bg:#E4EBF5; --indoor-deep:#31517A;
+  --farm:#8C5B33; --farm-bg:#F0E4D6; --farm-deep:#6B4322;
+  /* 分齡色(規格:姊姊/弟弟/全家;與時光手冊 sis/bro/fam 同值) */
+  --sis:#2E7D74; --sis-bg:#E2EFEC; --sis-deep:#1F5B54;
+  --bro:#D9932A; --bro-bg:#FBEDD6; --bro-deep:#8A5A10;
+  --fam:#8C5B33; --fam-bg:#F0E4D6; --fam-deep:#6B4322;
+  --warn:#B0483A; --warn-bg:#F6E3E0;
+  --radius:14px;
+}
+
+/* ---------- 基底 ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;padding-bottom:64px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.96)}100%{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- 頁首與共用導覽 ---------- */
+header{padding:26px 0 10px;animation:fadeUp .5s ease both}
+.eyebrow{font-size:12px;letter-spacing:.35em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ver{background:var(--ink);color:#fff;font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:999px}
+.xlink{background:#2E7D74;color:#fff;font-size:11px;letter-spacing:.06em;padding:3px 10px;border-radius:999px;text-decoration:none;font-weight:700;white-space:nowrap;flex-shrink:0}
+.xlink.first{margin-left:auto}
+.xlink.time{background:#31517A}
+.xlink.food{background:#B0483A}
+.xlink.disney{background:#7A4FA0}
+h1{font-family:'LXGW WenKai TC',serif;font-size:32px;font-weight:700;letter-spacing:.06em;line-height:1.3}
+.today{font-size:13px;color:var(--ink-soft);margin-top:2px}
+
+/* ---------- 分齡卡(kids row) ---------- */
+.kids{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.kid{flex:1;min-width:150px;border-radius:var(--radius);padding:12px 14px;display:flex;flex-direction:column;gap:2px;border:1.5px solid transparent}
+.kid.sis{background:var(--sis-bg);border-color:#CBE0DB}
+.kid.bro{background:var(--bro-bg);border-color:#F0DCB6}
+.kid .who{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px}
+.kid.sis .who{color:var(--sis-deep)} .kid.bro .who{color:var(--bro-deep)}
+.kid .age{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:20px;line-height:1.2}
+.kid .note{font-size:12px;color:var(--ink-soft)}
+
+/* ---------- 抽卡 draw ---------- */
+.draw{margin-top:20px;background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px 16px 20px;box-shadow:0 6px 18px rgba(80,60,30,.06);animation:fadeUp .5s .08s ease both}
+.draw h2{font-family:'LXGW WenKai TC',serif;font-size:22px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.draw h2 small{font-family:'Noto Sans TC';font-size:12px;color:var(--ink-soft);font-weight:400}
+.draw-stage{min-height:120px;position:relative}
+.draw-empty{display:flex;align-items:center;justify-content:center;min-height:110px;color:var(--ink-soft);font-size:14px;border:1.5px dashed var(--line);border-radius:16px;text-align:center;padding:0 20px}
+.principle-line{margin-top:12px;text-align:center;font-size:12.5px;color:var(--ink-soft)}
+.principle-line b{color:var(--ink)}
+.bigdraw{width:100%;border:none;border-radius:14px;background:var(--ink);color:#fff;font-family:inherit;font-size:17px;font-weight:700;padding:14px;cursor:pointer;margin:12px 0 2px;transition:transform .1s ease}
+.bigdraw:active{transform:scale(.98)}
+
+/* ---------- 情境卡 scenrow ---------- */
+.scenrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 2px}
+.scard{border:1.5px solid var(--line);background:#FDFBF7;border-radius:12px;padding:9px 4px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s ease}
+.scard .si{font-size:17px;line-height:1.2}
+.scard .st{font-size:12px;font-weight:700;color:var(--ink);margin-top:2px}
+.scard[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+.scard[aria-pressed="true"] .st{color:#fff}
+
+/* ---------- chips 篩選 ---------- */
+.filters{display:flex;flex-direction:column;gap:8px;margin:12px 0 14px}
+.fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.flabel{font-size:12px;color:var(--ink-soft);width:34px;flex-shrink:0}
+.chip{border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s ease;font-family:inherit}
+.chip:hover{border-color:#C9BFAC}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip:focus-visible{outline:2.5px solid var(--park);outline-offset:2px}
+
+/* ---------- tabs 分頁 ---------- */
+nav.tabs{position:sticky;top:0;z-index:20;background:linear-gradient(var(--paper) 88%,rgba(247,243,236,0));padding:12px 0 10px;margin-top:22px}
+.tabs-inner{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.tabs-inner::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s ease}
+.tab-btn[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab-btn:focus-visible{outline:2.5px solid var(--park);outline-offset:2px}
+.panel{display:none;animation:fadeUp .35s ease both}
+.panel.active{display:block}
+
+/* ---------- 標題/說明/呼籲/表格 ---------- */
+.section-title{font-family:'LXGW WenKai TC',serif;font-size:21px;font-weight:700;margin:22px 0 4px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:"";flex:1;height:1.5px;background:var(--line)}
+.section-title .cnt{font-family:'M PLUS Rounded 1c',sans-serif;font-size:13px;color:var(--ink-soft);font-weight:800}
+.section-sub{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+.callout{border-radius:var(--radius);padding:14px 16px;margin-top:12px;font-size:14px}
+.callout.park,.callout.sis{background:var(--park-bg);color:var(--park-deep)}
+.callout.cafe,.callout.bro{background:var(--cafe-bg);color:var(--cafe-deep)}
+.callout.indoor{background:var(--indoor-bg);color:var(--indoor-deep)}
+.callout.farm,.callout.fam{background:var(--farm-bg);color:var(--farm-deep)}
+.callout.warn{background:var(--warn-bg);color:var(--warn)}
+.callout b{display:block;font-family:'LXGW WenKai TC',serif;font-size:16px;margin-bottom:3px}
+.tblwrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+.tbl th{background:#EFEAE0;text-align:left;padding:6px 9px;font-size:12px;color:var(--ink-soft)}
+.tbl td{border-bottom:1px solid var(--line);padding:7px 9px;vertical-align:top}
+
+/* ---------- 卡片 card ---------- */
+.vcard{border-radius:16px;padding:15px 16px 14px;border:1.5px solid var(--line);background:#FDFBF6;margin-bottom:10px}
+.vcard.enter{animation:pop .38s cubic-bezier(.2,.9,.3,1.2) both}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px}
+.tag.park,.tag.sis{background:var(--park-bg);color:var(--park-deep)}
+.tag.cafe,.tag.bro{background:var(--cafe-bg);color:var(--cafe-deep)}
+.tag.indoor{background:var(--indoor-bg);color:var(--indoor-deep)}
+.tag.farm,.tag.fam{background:var(--farm-bg);color:var(--farm-deep)}
+.tag.meta{background:#EFEAE0;color:var(--ink-soft)}
+.tag.warn{background:#F6E3E0;color:var(--warn)}
+.vcard .name{font-family:'LXGW WenKai TC',serif;font-size:23px;font-weight:700;line-height:1.35}
+.vcard .how{font-size:14px;color:#4A443B;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vcard .vfoot{font-size:12px;color:var(--ink-soft);margin-top:8px}
+.actrow{display:flex;gap:8px;margin-top:10px}
+.abtn{flex:1;text-align:center;font-size:13px;font-weight:700;padding:9px 4px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;cursor:pointer;font-family:inherit}
+.abtn.nav{border-color:var(--park);color:var(--park-deep)}
+.exp{display:none;margin-top:11px;border-top:1.5px dashed var(--line);padding-top:10px;font-size:13px;line-height:1.7}
+.vcard.open .exp{display:block}
+.exp h4{font-size:12.5px;color:var(--ink-soft);margin:9px 0 3px;font-weight:700;letter-spacing:.05em}
+
+/* ---------- 心法排版(p-card / rule-card) ---------- */
+.three{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+@media(min-width:560px){.three{grid-template-columns:repeat(3,1fr)}}
+.p-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:14px 15px}
+.p-card .no{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;color:var(--indoor);letter-spacing:.1em}
+.p-card .p-t{font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:17px;margin:2px 0 4px}
+.p-card .p-d{font-size:13px;color:#575145}
+.rule-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:15px 16px;margin-top:10px}
+.rule-card h3{font-family:'LXGW WenKai TC',serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.rule-card ul{list-style:none}
+.rule-card li{font-size:14px;padding:5px 0 5px 20px;position:relative;color:#4A443B}
+.rule-card li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:2.5px;background:var(--indoor);transform:rotate(8deg)}
+.rule-card li b{color:var(--ink)}
+.warn-list li::before{background:var(--cafe)}
+
+/* ---------- 搜尋 / 回頂 ---------- */
+.searchrow{margin-top:16px}
+.searchrow input{width:100%;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;background:#FDFBF7;color:var(--ink);font-family:inherit}
+.searchrow input:focus{outline:none;border-color:var(--park)}
+#toTop{position:fixed;right:14px;bottom:84px;z-index:45;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(80,60,30,.15)}
+
+/* ---------- footer ---------- */
+footer{margin-top:40px;padding-top:16px;border-top:1.5px solid var(--line);font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.9}
+footer .fam-name{font-family:'LXGW WenKai TC',serif;font-size:14px;color:var(--ink)}

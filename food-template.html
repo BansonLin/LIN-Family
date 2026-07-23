@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家餐食手冊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#B0483A">
+<style>
+/* ===== 餐食手冊頁面專屬樣式(共用層見 assets/tokens.css) ===== */
+h1{color:#8F3A2E}
+.reason{font-size:13px;font-weight:700;color:#8F3A2E;background:var(--warn-bg);border-radius:8px;padding:5px 10px;margin-bottom:8px;line-height:1.5}
+.ktrow{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.7}
+.ktrow b{font-weight:700;color:var(--ink)}
+.stagehead{font-size:13px;color:var(--ink-soft);margin:2px 0 10px}
+.stagehead b{color:var(--ink)}
+.relaxnote{font-size:12.5px;color:#8F3A2E;background:var(--warn-bg);border-radius:8px;padding:6px 10px;margin-bottom:10px}
+#fridgebox{margin:10px 0 4px}
+#fridgebox .fhint{font-size:12px;color:var(--ink-soft);margin-top:5px}
+#fridgebox input{width:100%;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;background:#FDFBF7;color:var(--ink);font-family:inherit}
+#fridgebox input:focus{outline:none;border-color:var(--warn)}
+.typerow{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;margin-top:10px}
+.typerow::-webkit-scrollbar{display:none}
+.typerow .chip{flex-shrink:0}
+/* 步驟清單 */
+.exp ol{padding-left:20px}
+.exp ol li{font-size:13.5px;padding:2px 0}
+/* 快評表單(接受度)*/
+.logform{display:none;margin-top:10px;border-top:1.5px dashed var(--line);padding-top:11px;animation:fadeUp .25s ease both}
+.vcard.logging .logform{display:block}
+.logform .lf-q{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+.qrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+.qrow .ql{font-size:13.5px;font-weight:500;color:var(--ink);flex-shrink:0}
+.qrow .ql i{font-style:normal;font-size:10.5px;color:var(--ink-soft);margin-left:4px;background:#EFEAE0;border-radius:999px;padding:1px 7px}
+.stars{display:flex;gap:6px;font-size:26px}
+.stars .st{cursor:pointer;color:#D9CFBC;transition:transform .1s ease}
+.stars .st.on{color:#E8A61E}
+.stars .st:active{transform:scale(1.2)}
+.lf-note{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13.5px;background:#fff;color:var(--ink);font-family:inherit;margin:4px 0 8px}
+.lf-note:focus{outline:none;border-color:var(--cafe)}
+.lf-actions{display:flex;gap:8px}
+.lf-save{flex:2;background:var(--cafe);color:#fff;border:none;border-radius:10px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.lf-save[disabled]{opacity:.45;cursor:default}
+.lf-cancel{flex:1;background:#EFEAE0;color:var(--ink-soft);border:none;border-radius:10px;padding:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.famline{font-size:12.5px;color:var(--cafe-deep);background:var(--cafe-bg);border-radius:8px;padding:5px 10px;margin-top:8px}
+/* 待回報列與 toast */
+#logbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1.5px solid var(--line);box-shadow:0 -4px 16px rgba(80,60,30,.1);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto}
+#logbar[hidden]{display:none}
+#logbar .lb-t{font-size:13.5px;font-weight:700;color:var(--ink);flex:1;line-height:1.4}
+#logbar .lb-t b{color:var(--cafe-deep)}
+#logbar button{border:none;border-radius:999px;padding:9px 15px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
+#logbar .lb-go{background:var(--ink);color:#fff}
+#logbar .lb-copy{background:#EFEAE0;color:var(--ink-soft)}
+body.has-bar{padding-bottom:120px}
+#lfToast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:96px;z-index:50;background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;padding:10px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s ease;max-width:86vw;text-align:center}
+#lfToast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* 我的餐盤視覺 */
+.platewrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px;margin-top:12px}
+.plate{width:190px;height:190px;border-radius:50%;flex-shrink:0;margin:0 auto;position:relative;background:conic-gradient(var(--farm) 0 30%,var(--park) 30% 60%,var(--cafe) 60% 80%,var(--indoor) 80% 100%);box-shadow:0 6px 18px rgba(80,60,30,.15)}
+.plate::after{content:"我的餐盤";position:absolute;inset:33%;background:var(--card);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'LXGW WenKai TC',serif;font-weight:700;font-size:15px;color:var(--ink)}
+.plegend{flex:1;min-width:230px}
+.plegend .pl{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:13.5px}
+.plegend .dot{width:12px;height:12px;border-radius:4px;flex-shrink:0;margin-top:5px}
+.plegend .pl b{font-weight:700}
+.plegend .pl .kw{color:var(--ink-soft);font-size:12.5px}
+.evlink{font-size:11px;color:var(--indoor);text-decoration:none;border-bottom:1px dotted var(--indoor);white-space:nowrap}
+.pnote{font-size:11.5px;color:var(--ink-soft);margin-top:10px;width:100%}
+.tag.pend{background:var(--warn-bg);color:var(--warn)}
+.nutfoot{font-size:12px;color:var(--ink-soft);margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">餐食版</span><a class="xlink first" href="index.html">🚗 出遊</a><a class="xlink time" href="time.html">⏳ 時光</a></div>
+  <h1>林家餐食手冊</h1>
+  <div class="today">解決「今天煮什麼」與「孩子不吃怎麼辦」・資料 __BUILD_DATE__・食譜 __NR__ 道</div>
+  <div class="kids">
+    <div class="kid sis"><span class="who">姊姊</span><span class="age" id="ageSis">—</span><span class="note" id="noteSis"></span></div>
+    <div class="kid bro"><span class="who">弟弟</span><span class="age" id="ageBro">—</span><span class="note" id="noteBro"></span></div>
+  </div>
+</header>
+
+<!-- ===== 今天吃什麼(抽卡) ===== -->
+<section class="draw">
+  <h2>今天吃什麼?<small>選條件抽 Top 3,或點情境卡直達</small></h2>
+  <div class="filters">
+    <div class="fgroup"><span class="flabel">時間</span>
+      <button class="chip" data-g="time" data-v="15">15 分內</button>
+      <button class="chip" data-g="time" data-v="30">30 分</button>
+      <button class="chip" data-g="time" data-v="any" aria-pressed="true">不限</button>
+    </div>
+    <div class="fgroup"><span class="flabel">對象</span>
+      <button class="chip" data-g="who" data-v="fam" aria-pressed="true">全家</button>
+      <button class="chip" data-g="who" data-v="kids">只有孩子</button>
+      <button class="chip" data-g="who" data-v="lil">弟弟優先</button>
+    </div>
+    <div class="fgroup"><span class="flabel">類型</span>
+      <button class="chip" data-g="type" data-v="meal" aria-pressed="true">正餐</button>
+      <button class="chip" data-g="type" data-v="breakfast">早餐</button>
+      <button class="chip" data-g="type" data-v="snack">點心</button>
+      <button class="chip" data-g="type" data-v="bento">便當</button>
+    </div>
+  </div>
+  <button class="bigdraw" id="drawBtn">🎲 今天吃什麼?</button>
+  <div class="scenrow">
+    <button class="scard" data-scen="rush"><div class="si">🌆</div><div class="st">下班衝刺 20 分</div></button>
+    <button class="scard" data-scen="fridge"><div class="si">🧊</div><div class="st">冰箱清空日</div></button>
+    <button class="scard" data-scen="together"><div class="si">👨‍🍳</div><div class="st">假日一起做</div></button>
+    <button class="scard" data-scen="sick"><div class="si">🤒</div><div class="st">沒胃口/生病</div></button>
+    <button class="scard" data-scen="bento"><div class="si">🍱</div><div class="st">明天要帶便當</div></button>
+    <button class="scard" data-scen="picky"><div class="si">🥦</div><div class="st">挑食日</div></button>
+  </div>
+  <div id="fridgebox" hidden>
+    <input id="fridgeIn" list="ingList" placeholder="冰箱有什麼?輸入 1–3 樣,用頓號或空格分開(例:番茄 雞蛋)" autocomplete="off">
+    <datalist id="ingList"></datalist>
+    <div class="fhint">依食材命中數排序;命中越多排越前。</div>
+  </div>
+  <div class="draw-stage" id="stage"><div class="draw-empty">按上面的大按鈕抽 Top 3,或點一張情境卡</div></div>
+  <div class="principle-line">大人決定<b>吃什麼</b>,孩子決定<b>吃不吃、吃多少</b>——詳見「餐桌心法」</div>
+</section>
+
+<!-- ===== 分頁 ===== -->
+<nav class="tabs"><div class="tabs-inner">
+  <button class="tab-btn" data-tab="all" aria-selected="true">📖 全部食譜</button>
+  <button class="tab-btn" data-tab="mind" aria-selected="false">🍽 餐桌心法</button>
+  <button class="tab-btn" data-tab="plate" aria-selected="false">🥗 營養餐盤</button>
+  <button class="tab-btn" data-tab="lunch" aria-selected="false">🎒 小一午餐</button>
+  <button class="tab-btn" data-tab="src" aria-selected="false">📚 來源</button>
+</div></nav>
+
+<!-- ===== 全部食譜 ===== -->
+<section class="panel active" id="panel-all">
+  <div class="searchrow"><input id="rsearch" type="search" placeholder="🔍 搜菜名、食材、標籤(例:番茄、便當可)" autocomplete="off"></div>
+  <div class="typerow" id="typerow">
+    <button class="chip" data-type="全部" aria-pressed="true">全部</button>
+    <button class="chip" data-type="主食">主食</button>
+    <button class="chip" data-type="主菜">主菜</button>
+    <button class="chip" data-type="配菜">配菜</button>
+    <button class="chip" data-type="湯品">湯品</button>
+    <button class="chip" data-type="早餐">早餐</button>
+    <button class="chip" data-type="點心">點心</button>
+    <button class="chip" data-type="飲品">飲品</button>
+  </div>
+  <div class="section-title">全部食譜 <span class="cnt" id="allCnt"></span></div>
+  <div class="section-sub">v1 為提案清單,全部標「範例・待林家確認」;之後以林家真實菜色汰換、用「📝 做過了」回填兩個孩子的接受度。</div>
+  <div id="allList"></div>
+</section>
+
+<!-- ===== 餐桌心法(最終稿,直接排版) ===== -->
+<section class="panel" id="panel-mind">
+  <div class="section-title">餐桌分工原則</div>
+  <div class="section-sub">整本手冊的地基</div>
+  <div class="rule-card"><ul>
+    <li><b>大人的責任</b>:決定「吃什麼、什麼時候吃、在哪裡吃」。</li>
+    <li><b>孩子的責任</b>:決定「吃不吃、吃多少」。</li>
+    <li><b>越界就出事</b>:大人一旦接管「吃多少」,餐桌就變成戰場——你會發現逼得越兇,吃得越少。守住分工,八成的餐桌衝突自動消失。</li>
+  </ul></div>
+
+  <div class="section-title">三個原則</div>
+  <div class="three">
+    <div class="p-card"><div class="no">01</div><div class="p-t">只呈現,不推銷</div><div class="p-d">新食物放在盤子上就好,不介紹、不勸說、不觀察他吃不吃。孩子需要重複接觸許多次才會接受一樣新食物——每一次不吃,都是在累積次數,不是失敗。</div></div>
+    <div class="p-card"><div class="no">02</div><div class="p-t">餐桌不上課</div><div class="p-d">吃飯時間不檢討功課、不糾正禮儀細節、不談白天的衝突。餐桌一旦變成法庭,孩子就會用「不吃」來離席。</div></div>
+    <div class="p-card"><div class="no">03</div><div class="p-t">一起做的,特別好吃</div><div class="p-d">孩子參與過的菜,接受度明顯較高。每道菜都給他一個工序——這是挑食最有效的長期解方,也是本手冊每張卡都有 kid_task 的原因。</div></div>
+  </div>
+
+  <div class="section-title">分齡挑食對策</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th></th><th>弟弟(3 歲)</th><th>姊姊(快 6 歲)</th></tr>
+    <tr><td><b>主因</b></td><td>對新食物本能警戒的高峰期,加上「我自己決定」的自主期</td><td>同儕與外在影響變大:同學說難吃、想跟人一樣</td></tr>
+    <tr><td><b>有效做法</b></td><td>給二選一(花椰菜還是玉米?);同一樣食物換形狀、換醬;允許用手</td><td>讓她參與採買與備餐、寫菜單;把選擇權放大到「這週想吃什麼」</td></tr>
+    <tr><td><b>無效做法</b></td><td>講營養道理(聽不懂)、逼吃一口、追著餵</td><td>拿弟弟比較、說「你以前明明就吃」</td></tr>
+  </table></div>
+
+  <div class="section-title">餐桌話術表</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>場景</th><th>你可以說</th></tr>
+    <tr><td>「我不要吃這個」</td><td>「好,那你吃你想吃的。」——不評價、不追問,下次照放。</td></tr>
+    <tr><td>只吃白飯</td><td>「白飯很好吃。旁邊那盤放著,想吃再夾。」</td></tr>
+    <tr><td>吃兩口就說飽</td><td>「飽了就下桌,收拾好。廚房到睡前不再開。」——規則清楚,不用威脅。</td></tr>
+    <tr><td>一直起來跑</td><td>「坐著吃,或是這餐結束。你選。」</td></tr>
+    <tr><td>「我不喜歡青菜」</td><td>「你現在還不喜歡。」——一個字的差別,留了未來的門。</td></tr>
+    <tr><td>姊姊挑食影響弟弟</td><td>「每個人喜歡的不一樣。」——不評論姊姊,不讓餐桌變示範現場。</td></tr>
+    <tr><td>想吃零食</td><td>「點心時間是三點半。」——講時間,不講「不行」。</td></tr>
+  </table></div>
+
+  <div class="section-title">特殊狀態</div>
+  <div class="rule-card"><ul>
+    <li><b>生病沒胃口</b>:目標只有水分,不是營養。清淡好入口為主,恢復期食慾自然回來。</li>
+    <li><b>玩太累不吃</b>:先睡覺,不硬餵——累比餓大。</li>
+    <li><b>外食日</b>:不必補償、不必計算。一餐不決定什麼。</li>
+    <li><b>在別人家、餐廳</b>:只守安全,其他放寬;面子留給孩子。</li>
+    <li><b>開學適應期(9 月)</b>:食慾波動正常,早餐簡化到她願意吃的三樣輪流。</li>
+  </ul></div>
+
+  <div class="section-title">不做的事(家規層級)</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li>不用甜點交換正餐、不用食物當獎勵或處罰。</li>
+    <li>不在孩子面前談體重、身材、誰吃太多。</li>
+    <li>不逼吃「最後一口」。</li>
+    <li>不強迫「盤子清空」——那訓練的是忽略飽足感。</li>
+  </ul></div>
+</section>
+
+<!-- ===== 營養餐盤 ===== -->
+<section class="panel" id="panel-plate">
+  <div class="section-title">我的餐盤・六大類</div>
+  <div class="section-sub">框架:國健署「我的餐盤」(107 年公布)。圖為口訣關係示意,不是精確刻度。</div>
+  <div class="platewrap">
+    <div class="plate" aria-hidden="true"></div>
+    <div class="plegend">
+      <div class="pl"><span class="dot" style="background:var(--farm)"></span><div><b>全穀雜糧</b> <span class="kw">口訣:飯跟蔬菜一樣多</span></div></div>
+      <div class="pl"><span class="dot" style="background:var(--park)"></span><div><b>蔬菜</b> <span class="kw">口訣:菜比水果多一點;深色蔬菜達 1/3 以上</span></div></div>
+      <div class="pl"><span class="dot" style="background:var(--cafe)"></span><div><b>水果</b> <span class="kw">口訣:每餐水果拳頭大</span></div></div>
+      <div class="pl"><span class="dot" style="background:var(--indoor)"></span><div><b>豆魚蛋肉</b> <span class="kw">口訣:豆魚蛋肉一掌心;順序 豆 &gt; 魚 &gt; 蛋 &gt; 肉</span></div></div>
+      <div class="pl"><span class="dot" style="background:#9DB4CE"></span><div><b>乳品</b>(餐盤旁)<span class="kw">口訣:每天早晚一杯奶(1 杯 240ml)</span></div></div>
+      <div class="pl"><span class="dot" style="background:#C9A87C"></span><div><b>油脂與堅果種子</b>(餐盤旁)<span class="kw">口訣:堅果種子一茶匙</span></div></div>
+      <div class="pnote">六口訣為國健署原文。目的:一眼看出「今天哪一格太少」,不是算份數。
+        <a class="evlink" href="https://www.mohw.gov.tw/cp-3794-41108-1.html" target="_blank" rel="noopener">官方口訣原文(2018)</a>
+        <a class="evlink" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4686" target="_blank" rel="noopener">我的餐盤專區</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">分齡每日份量</div>
+  <div class="section-sub">只引官方來源,不推估;標「待確認」者為官方手冊原表逐字核對中。官方表依年齡帶與活動量分層,以下為一般範圍。</div>
+
+  <div class="rule-card">
+    <h3>🟠 弟弟——幼兒期 1–3 歲帶<span id="broBandNote" style="font-size:12px;font-weight:400;color:var(--ink-soft)"></span></h3>
+    <div class="tblwrap"><table class="tbl">
+      <tr><th>類別</th><th>每日</th><th>依據</th></tr>
+      <tr><td>全穀雜糧</td><td>1.5–2 碗</td><td rowspan="6"><a class="evlink" href="https://www.hpa.gov.tw/File/Attach/8340/File_7993.pdf" target="_blank" rel="noopener">國健署幼兒期營養參考手冊(2018)</a><br><a class="evlink" href="https://health99.hpa.gov.tw/article/18704" target="_blank" rel="noopener">健康九九・幼兒飲食</a></td></tr>
+      <tr><td>豆魚蛋肉</td><td>2–3 份</td></tr>
+      <tr><td>蔬菜</td><td>2 份</td></tr>
+      <tr><td>水果</td><td>2 份</td></tr>
+      <tr><td>乳品</td><td>2 杯(1 杯 240ml)</td></tr>
+      <tr><td>油脂與堅果種子</td><td>4 份</td></tr>
+    </table></div>
+    <div class="nutfoot">滿 4 歲改用 4–6 歲帶:全穀雜糧 2–3 碗、蔬菜 3 份、水果 2 份、乳品 2 杯;豆魚蛋肉與油脂堅果份數 <span class="tag pend">待確認</span>(原表分層核對中,不推估)。2 歲以下不宜低脂/脫脂乳品;果汁不能取代水果(官方原則)。</div>
+  </div>
+
+  <div class="rule-card">
+    <h3>🟢 姊姊——學童期 1–2 年級(9/1 起)</h3>
+    <div class="tblwrap"><table class="tbl">
+      <tr><th>類別</th><th>每日</th><th>依據</th></tr>
+      <tr><td>乳品</td><td>1.5 杯(1 杯 240ml,約 360ml)</td><td><a class="evlink" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4236&amp;pid=12633" target="_blank" rel="noopener">國健署・乳品類頁</a></td></tr>
+      <tr><td>其他五類</td><td><span class="tag pend">待確認</span> 學童手冊原表逐格數字未能證實,不推估</td><td><a class="evlink" href="https://www.hpa.gov.tw/File/Attach/8342/File_7995.pdf" target="_blank" rel="noopener">學童期 1-2 年級手冊(2018)</a></td></tr>
+    </table></div>
+    <div class="nutfoot">可先參考 107 年《每日飲食指南》<b>全人群總範圍</b>(非學童專屬):全穀 1.5–4 碗、豆魚蛋肉 3–8 份、蔬菜 3–5 份、水果 2–4 份、乳品 1.5–2 杯、油脂 3–7 茶匙+堅果 1 份。<a class="evlink" href="https://www.hpa.gov.tw/Pages/EBook.aspx?nodeid=1208" target="_blank" rel="noopener">每日飲食指南手冊</a></div>
+  </div>
+
+  <div class="section-title">「一份」白話對照</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>類別</th><th>大約是</th></tr>
+    <tr><td>乳品 1 杯</td><td>240 毫升,每天早晚各 1 杯</td></tr>
+    <tr><td>水果 1 份</td><td>約 1 個拳頭大;切塊約大半碗~1 碗</td></tr>
+    <tr><td>豆魚蛋肉 1 掌心</td><td>約 1.5–2 份;選擇順序 豆 &gt; 魚 &gt; 蛋 &gt; 肉</td></tr>
+    <tr><td>堅果種子</td><td>每餐 1 茶匙;每天 1 份 ≈ 1 湯匙</td></tr>
+  </table></div>
+  <div class="section-sub"><a class="evlink" href="https://www.mohw.gov.tw/cp-3794-41108-1.html" target="_blank" rel="noopener">出處:衛福部「我的餐盤」公布新聞稿(2018)</a></div>
+
+  <div class="callout indoor"><b>2026 新版指南:目前是草案</b>衛福部已預告新版《每日飲食指南》草案(乳品擬調整為每日 1 杯);截至 2026-07-23 尚未查得正式公告,現行仍以 107 年版為準。<a class="evlink" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=129&amp;pid=19883" target="_blank" rel="noopener" style="color:inherit;border-color:currentColor">官方草案預告頁</a></div>
+
+  <div class="callout warn"><b>固定聲明</b>本頁為一般性資訊;個別狀況(過敏、生長發育、疾病飲食)需兒科醫師或營養師最終確認,本手冊不做個別化醫療建議。</div>
+</section>
+
+<!-- ===== 小一午餐銜接 ===== -->
+<section class="panel" id="panel-lunch">
+  <div class="section-title">小一午餐銜接</div>
+  <div class="section-sub">姊姊 9/1 入學,學校營養午餐是新環境。8 月在家練,9 月就不慌。</div>
+
+  <div class="rule-card">
+    <h3>🏠 開學前練習(8 月,當遊戲不當考核)</h3>
+    <ul>
+      <li><b>20 分鐘吃完一餐</b>:用計時器當遊戲——「我們跟沙漏比賽」;時間到就結束,不催、不檢討。</li>
+      <li><b>自己收餐盤</b>:吃完把碗筷端到水槽,學校要自己收。</li>
+      <li><b>湯不灑</b>:練習端有湯的碗走五步。</li>
+      <li><b>自己開餐具、剝水果</b>:餐盒、水壺、香蕉橘子都自己來(家長經驗談彙整)。</li>
+      <li><b>開學前確認</b>:學校供餐方式與是否自備餐具(官方分類:自設廚房/中央餐廚/外訂餐盒)。</li>
+    </ul>
+  </div>
+
+  <div class="section-title">可能狀況與對策</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>狀況</th><th>先在家演練這句</th></tr>
+    <tr><td>吃不完被催</td><td>「我有在吃,我吃到時間到。」——在家練過時間感,被催也不慌;吃不完不是做錯事。</td></tr>
+    <tr><td>遇到不敢吃的菜</td><td>「這個我先吃一點點就好。」——不必硬吃,也不必道歉。</td></tr>
+    <tr><td>不敢說「還要」或「不夠」</td><td>「老師,我還想要一點。」——在家餐桌先演練,說出口過一次,學校就敢。</td></tr>
+  </table></div>
+
+  <div class="callout sis"><b>放學後怎麼問</b>問「今天午餐有什麼?」不問「你有沒有吃完?」——第一句話決定她願不願意講。</div>
+
+  <div class="rule-card">
+    <h3>📋 學校供餐(官方資訊)</h3>
+    <ul>
+      <li>供應方式三大類:<b>自設廚房/中央餐廚/外訂餐盒</b>。<a class="evlink" href="https://edu.law.moe.gov.tw/LawContent.aspx?id=FL030495" target="_blank" rel="noopener">教育部・學校午餐應行注意事項</a></li>
+      <li>菜單依「學校午餐食物內容及營養基準」(2020-12-28 修訂)以六大類食物份量呈現;低年級逐項份量<span class="tag pend">待確認</span>。</li>
+      <li>用餐時間長度無全國統一規定,各校作息自訂;家長經驗談約 40 分鐘內含盛飯、潔牙、整理(經驗談,非官方)。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 來源 ===== -->
+<section class="panel" id="panel-src">
+  <div class="section-title">食譜資料</div>
+  <div class="rule-card"><ul>
+    <li>v1 共 __NR__ 道,全部標「<b>範例・待林家確認</b>」——是 UI 測試用的提案清單,不是定稿。</li>
+    <li>建庫方法(P2):先由林家口述 20–30 道常煮的菜為核心,再依標籤缺口補;<b>禁止從食譜網站批量抄錄</b>。</li>
+    <li>每次實作後點「📝 做過了」記兩個孩子的接受度→ 回報 → <code>/sync-logs</code> 寫進 <code>data/recipes.json</code> 的 family_log。這份資料權重高於一切網路食譜。</li>
+    <li>食譜不會倒閉——本模組不需要半年重驗機制。</li>
+  </ul></div>
+
+  <div class="section-title">營養資訊來源</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>項目</th><th>來源</th><th>查證日</th></tr>
+    <tr><td>我的餐盤六大類+六口訣</td><td><a class="evlink" href="https://www.mohw.gov.tw/cp-3794-41108-1.html" target="_blank" rel="noopener">衛福部新聞稿</a>・<a class="evlink" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4686" target="_blank" rel="noopener">國健署專區</a></td><td>2026-07</td></tr>
+    <tr><td>幼兒期每日份量(1–3 歲/4–6 歲帶)</td><td><a class="evlink" href="https://www.hpa.gov.tw/File/Attach/8340/File_7993.pdf" target="_blank" rel="noopener">幼兒期營養參考手冊</a>・<a class="evlink" href="https://health99.hpa.gov.tw/article/18704" target="_blank" rel="noopener">健康九九</a></td><td>2026-07</td></tr>
+    <tr><td>學童期乳品 1.5 杯</td><td><a class="evlink" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4236&amp;pid=12633" target="_blank" rel="noopener">國健署乳品類頁</a></td><td>2026-07</td></tr>
+    <tr><td>107 年每日飲食指南總範圍</td><td><a class="evlink" href="https://www.hpa.gov.tw/Pages/EBook.aspx?nodeid=1208" target="_blank" rel="noopener">指南手冊</a>・<a class="evlink" href="https://www.mohw.gov.tw/cp-16-40152-1.html" target="_blank" rel="noopener">公告新聞稿</a></td><td>2026-07</td></tr>
+    <tr><td>2026 新版指南草案(未定案)</td><td><a class="evlink" href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=129&amp;pid=19883" target="_blank" rel="noopener">官方草案預告頁</a></td><td>2026-07-23</td></tr>
+    <tr><td>學校午餐制度</td><td><a class="evlink" href="https://edu.law.moe.gov.tw/LawContent.aspx?id=FL030495" target="_blank" rel="noopener">教育部法規</a></td><td>2026-07</td></tr>
+  </table></div>
+
+  <div class="section-title">待確認清單</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li>幼兒期 4–6 歲帶之豆魚蛋肉、油脂堅果份數(手冊原表分層核對中;1–3 歲帶與 4–6 歲其餘類別已多來源交叉證實)。</li>
+    <li>學童期 1–2 年級手冊除乳品外五類的逐格數字。</li>
+    <li>「蔬菜+水果約佔半盤」僅見轉述,官方原文待核對。</li>
+    <li>2026 新版指南定案時程——定期重查,定案後更新本頁。</li>
+    <li>學校午餐低年級每餐六大類逐項份量;午餐時間長度(僅經驗談約 40 分鐘)。</li>
+    <li>全部 __NR__ 道食譜等林家實際清單汰換確認。</li>
+  </ul></div>
+</section>
+
+<footer>
+  <span class="fam-name">林家餐食手冊</span><br>
+  大人決定吃什麼・孩子決定吃不吃、吃多少<br>
+  資料 __BUILD_DATE__・與出遊/時光手冊共用一套設計
+</footer>
+
+</div>
+
+<div id="logbar" hidden></div>
+<div id="lfToast"></div>
+<button id="toTop" hidden aria-label="回到頂端">↑</button>
+
+<script>
+const RECIPES = __RECIPES__;
+const FAMILY = __FAMILY__;
+const REPO = "BansonLin/LIN-Family";
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- 年齡(唯一來源 config/family.json,不寫死) ---------- */
+function months(birth) { const [y, m] = birth.split("-").map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); }
+function ageText(mo) { return Math.floor(mo / 12) + " 歲 " + (mo % 12) + " 個月"; }
+(function renderKids() {
+  const sis = FAMILY.children.find(c => c.nickname === "姊姊");
+  const bro = FAMILY.children.find(c => c.nickname === "弟弟");
+  if (sis) { const mo = months(sis.birth); $("#ageSis").textContent = ageText(mo); $("#noteSis").textContent = mo >= 72 ? "小一・學童期 1–2 年級" : "9/1 升小一・銜接學童期"; }
+  if (bro) { const mo = months(bro.birth); $("#ageBro").textContent = ageText(mo); $("#noteBro").textContent = mo < 48 ? "幼兒期 1–3 歲帶" : "幼兒期 4–6 歲帶"; const el = $("#broBandNote"); if (el && mo >= 48) el.textContent = "(已滿 4 歲,改看下方 4–6 歲帶)"; }
+})();
+
+/* ---------- 抽卡狀態 ---------- */
+const TYPESET = { meal: ["主食", "主菜", "配菜", "湯品"], breakfast: ["早餐"], snack: ["點心", "飲品"] };
+const DS = { time: "any", who: "fam", type: "meal" };
+try { Object.assign(DS, JSON.parse(localStorage.getItem("food-ui-v1") || "{}")); } catch (e) {}
+function savePref() { try { localStorage.setItem("food-ui-v1", JSON.stringify(DS)); } catch (e) {} }
+$$(".fgroup .chip").forEach(ch => {
+  if (DS[ch.dataset.g] === ch.dataset.v) { ch.closest(".fgroup").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", "false")); ch.setAttribute("aria-pressed", "true"); }
+  ch.addEventListener("click", () => {
+    DS[ch.dataset.g] = ch.dataset.v; savePref();
+    ch.closest(".fgroup").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+  });
+});
+
+/* ---------- 接受度資料(內嵌 family_log + 本機快評) ---------- */
+function localLogs(id) { return LF.for(id); }
+function acceptAvg(r) {
+  const rows = [];
+  (r.family_log || []).forEach(l => { if (l["姊姊接受度"]) rows.push(+l["姊姊接受度"]); if (l["弟弟接受度"]) rows.push(+l["弟弟接受度"]); });
+  localLogs(r.id).forEach(l => { if (l.accept && l.accept.big) rows.push(+l.accept.big); if (l.accept && l.accept.lil) rows.push(+l.accept.lil); });
+  if (!rows.length) return null;
+  return rows.reduce((a, b) => a + b, 0) / rows.length;
+}
+function famLine(r) {
+  const emb = r.family_log || [], loc = localLogs(r.id);
+  if (!emb.length && !loc.length) return "";
+  const pick = k => { const v = []; emb.forEach(l => l[k] && v.push(+l[k])); loc.forEach(l => { const kk = k === "姊姊接受度" ? "big" : "lil"; if (l.accept && l.accept[kk]) v.push(+l.accept[kk]); }); return v.length ? (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1) : "—"; };
+  const last = loc.length ? loc[loc.length - 1] : emb[emb.length - 1];
+  const note = last && (last.note || last["備註"]) ? "「" + esc(last.note || last["備註"]) + "」" : "";
+  return '<div class="famline">🏠 林家實測 ' + (emb.length + loc.length) + " 次:姊姊 ★" + pick("姊姊接受度") + "・弟弟 ★" + pick("弟弟接受度") + " " + note + "</div>";
+}
+
+/* ---------- 卡片 ---------- */
+const TYPECLS = { "主食": "fam", "主菜": "park", "配菜": "indoor", "湯品": "cafe", "早餐": "bro", "點心": "warn", "飲品": "indoor" };
+function ktShort(r) { const kt = r.kid_task || {}; return (DS.who === "lil" ? (kt.lil || kt.big) : (kt.big || kt.lil)) || "—"; }
+function reasonLine(r) { return "⏱" + r.prep_min + "分 · " + r.plate.join("+") + " · 孩子可做:" + esc(ktShort(r)); }
+function card(r, opts) {
+  opts = opts || {};
+  const kt = r.kid_task || {};
+  const diff = "●".repeat(r.difficulty) + "○".repeat(3 - r.difficulty);
+  return '<div class="vcard enter" data-id="' + r.id + '">'
+    + (opts.reason ? '<div class="reason">' + reasonLine(r) + (opts.extra ? " · " + opts.extra : "") + "</div>" : "")
+    + '<div class="tags"><span class="tag ' + (TYPECLS[r.type] || "meta") + '">' + r.type + '</span><span class="tag meta">⏱ ' + r.prep_min + ' 分</span><span class="tag meta">難度 ' + diff + "</span>"
+    + r.tags.map(t => '<span class="tag meta">' + t + "</span>").join("") + "</div>"
+    + '<div class="name">' + esc(r.name) + "</div>"
+    + '<div class="how">食材:' + r.ingredients.map(esc).join("、") + "</div>"
+    + '<div class="ktrow">🟢 <b>姊姊可做</b>:' + esc(kt.big || "—") + "<br>🟠 <b>弟弟可做</b>:" + esc(kt.lil || "—") + "</div>"
+    + '<div class="vfoot">餐盤:' + r.plate.join("+") + " · 來源:" + (r.source === "範例・待林家確認" ? '<span class="tag pend">範例・待林家確認</span>' : esc(r.source)) + "</div>"
+    + famLine(r)
+    + '<div class="actrow"><button class="abtn log" onclick="LF.toggle(\'' + r.id + '\',this)">📝 做過了</button><button class="abtn more" onclick="this.closest(\'.vcard\').classList.toggle(\'open\')">步驟 ▾</button></div>'
+    + '<div class="exp"><h4>步驟</h4><ol>' + r.steps.map(s => "<li>" + esc(s) + "</li>").join("") + "</ol></div>"
+    + '<div class="logform"><div class="lf-q">做過了?兩個孩子各給星,至少填一個 👇</div>'
+    + '<div class="qrow" data-k="big"><span class="ql">🟢 姊姊接受度</span><span class="stars">' + [1, 2, 3, 4, 5].map(v => '<span class="st" data-v="' + v + '">★</span>').join("") + "</span></div>"
+    + '<div class="qrow" data-k="lil"><span class="ql">🟠 弟弟接受度</span><span class="stars">' + [1, 2, 3, 4, 5].map(v => '<span class="st" data-v="' + v + '">★</span>').join("") + "</span></div>"
+    + '<input class="lf-note" placeholder="一句備註(選填,例:加了起司才肯吃)">'
+    + '<div class="lf-actions"><button class="lf-cancel" onclick="LF.toggle(\'' + r.id + '\',this)">取消</button><button class="lf-save" disabled onclick="LF.save(\'' + r.id + '\',this)">存下來</button></div></div>'
+    + "</div>";
+}
+
+/* ---------- 抽卡與情境 ---------- */
+function scrollToResults() {
+  const el = $("#stage"); if (!el) return;
+  const r = el.getBoundingClientRect();
+  if (r.top < 0 || r.top > window.innerHeight * 0.45) window.scrollTo({ top: r.top + window.scrollY - 60, behavior: "smooth" });
+}
+function baseFilter(relax) {
+  return RECIPES.filter(r => {
+    if (!relax.time && DS.time !== "any" && r.prep_min > +DS.time) return false;
+    if (DS.type === "bento") { if (!r.tags.includes("便當可")) return false; }
+    else if (!TYPESET[DS.type].includes(r.type)) return false;
+    if (!relax.who && DS.who === "kids" && !(r.who.includes("lil") || r.who.includes("big"))) return false;
+    return true;
+  });
+}
+function drawTop3() {
+  let relaxed = [];
+  let pool = baseFilter({});
+  if (pool.length < 3 && DS.time !== "any") { pool = baseFilter({ time: true }); relaxed.push("時間放寬到不限"); }
+  if (pool.length < 3 && DS.who === "kids") { pool = baseFilter({ time: relaxed.length > 0, who: true }); relaxed.push("對象放寬到全家"); }
+  const scored = pool.map(r => {
+    let s = Math.random() * 3;
+    const avg = acceptAvg(r); if (avg) s += avg * 0.6;
+    if (DS.who === "lil" && r.who.includes("lil")) s += 3;
+    if (r.who.includes("all")) s += 0.5;
+    return { r, s };
+  }).sort((a, b) => b.s - a.s);
+  const top = scored.slice(0, 3).map(x => x.r);
+  const head = relaxed.length ? '<div class="relaxnote">符合的不到 3 道,已' + relaxed.join("、") + ":</div>" : "";
+  render(top, '<div class="stagehead">🎲 今天的 <b>Top 3</b>(再按一次重抽)</div>' + head, { reason: true });
+}
+const SCEN = {
+  rush: { head: "🌆 下班衝刺:<b>20 分內、不用全程顧</b>", pick: () => RECIPES.filter(r => r.prep_min <= 20 && r.difficulty <= 2).sort((a, b) => a.prep_min - b.prep_min), relax: () => ({ note: "20 分內沒有符合的,放寬到 30 分:", list: RECIPES.filter(r => r.prep_min <= 30 && r.difficulty <= 2).sort((a, b) => a.prep_min - b.prep_min) }) },
+  together: { head: "👨‍🍳 假日一起做:<b>兩個孩子都有工序</b>,越花時間越好玩", pick: () => RECIPES.filter(r => r.kid_task && r.kid_task.lil && r.kid_task.big).sort((a, b) => b.prep_min - a.prep_min) },
+  sick: { head: "🤒 沒胃口/生病:<b>清淡好入口</b>;目標只有水分,不是營養", pick: () => RECIPES.filter(r => r.tags.includes("病人餐")).sort((a, b) => a.prep_min - b.prep_min) },
+  bento: { head: "🍱 明天要帶便當:<b>冷掉仍好吃、不出水</b>", pick: () => RECIPES.filter(r => r.tags.includes("便當可")).sort((a, b) => a.prep_min - b.prep_min) },
+  picky: { head: "🥦 挑食日:<b>挑食友善</b>,林家實測接受度高的排前面", pick: () => RECIPES.filter(r => r.tags.includes("挑食友善")).sort((a, b) => { const x = acceptAvg(a), y = acceptAvg(b); if ((x >= 4) !== (y >= 4)) return (y >= 4) - (x >= 4); if (x !== y) return (y || 0) - (x || 0); return a.prep_min - b.prep_min; }) },
+};
+function render(list, head, opts) {
+  const stage = $("#stage");
+  if (!list.length) { stage.innerHTML = (head || "") + '<div class="draw-empty">找不到符合的——放寬一個條件再試</div>'; scrollToResults(); return; }
+  stage.innerHTML = (head || "") + list.map(r => card(r, opts || {})).join("");
+  scrollToResults();
+}
+$("#drawBtn").addEventListener("click", () => { $("#fridgebox").hidden = true; $$(".scard").forEach(x => x.setAttribute("aria-pressed", "false")); drawTop3(); });
+$$(".scard").forEach(sc => sc.addEventListener("click", () => {
+  $$(".scard").forEach(x => x.setAttribute("aria-pressed", String(x === sc)));
+  const key = sc.dataset.scen;
+  if (key === "fridge") { $("#fridgebox").hidden = false; $("#fridgeIn").focus(); runFridge(); return; }
+  $("#fridgebox").hidden = true;
+  const s = SCEN[key];
+  let list = s.pick(), head = '<div class="stagehead">' + s.head + "(" + list.length + " 道)</div>";
+  if (!list.length && s.relax) { const rl = s.relax(); head += '<div class="relaxnote">' + rl.note + "</div>"; list = rl.list; }
+  render(list.slice(0, 6), head, { reason: true });
+}));
+/* 冰箱清空日:1–3 樣食材反查 */
+function runFridge() {
+  const raw = $("#fridgeIn").value.trim();
+  if (!raw) { $("#stage").innerHTML = '<div class="stagehead">🧊 冰箱清空日:輸入 1–3 樣食材,幫你反查能煮什麼</div><div class="draw-empty">先在上面輸入食材(例:番茄 雞蛋)</div>'; return; }
+  const toks = raw.split(/[,,、\s]+/).filter(Boolean).slice(0, 3);
+  const hits = RECIPES.map(r => {
+    const hit = toks.filter(t => r.ingredients.some(i => i.includes(t) || t.includes(i)));
+    return { r, n: hit.length, hit };
+  }).filter(x => x.n > 0).sort((a, b) => b.n - a.n || a.r.prep_min - b.r.prep_min);
+  const head = '<div class="stagehead">🧊 冰箱有:<b>' + toks.map(esc).join("、") + "</b> → 命中 " + hits.length + " 道</div>";
+  if (!hits.length) { $("#stage").innerHTML = head + '<div class="draw-empty">沒有命中——試試更常見的寫法(例:蛋 → 雞蛋),或少打一樣</div>'; return; }
+  $("#stage").innerHTML = head + hits.slice(0, 6).map(x => card(x.r, { reason: true, extra: "命中 " + x.n + "/" + toks.length + ":" + x.hit.map(esc).join("、") })).join("");
+}
+let ftimer; $("#fridgeIn") && $("#fridgeIn").addEventListener("input", () => { clearTimeout(ftimer); ftimer = setTimeout(runFridge, 250); });
+(function fillDatalist() {
+  const set = new Set(); RECIPES.forEach(r => r.ingredients.forEach(i => set.add(i)));
+  $("#ingList").innerHTML = Array.from(set).sort().map(i => '<option value="' + esc(i) + '">').join("");
+})();
+
+/* ---------- 全部食譜 ---------- */
+const TYPEORDER = ["主食", "主菜", "配菜", "湯品", "早餐", "點心", "飲品"];
+let curType = "全部";
+function renderAll() {
+  const q = $("#rsearch").value.trim();
+  let list = RECIPES.slice();
+  if (curType !== "全部") list = list.filter(r => r.type === curType);
+  if (q) list = list.filter(r => r.name.includes(q) || r.ingredients.some(i => i.includes(q)) || r.tags.some(t => t.includes(q)));
+  list.sort((a, b) => TYPEORDER.indexOf(a.type) - TYPEORDER.indexOf(b.type) || a.prep_min - b.prep_min);
+  $("#allCnt").textContent = list.length + " 道";
+  $("#allList").innerHTML = list.length ? list.map(r => card(r, {})).join("") : '<div class="draw-empty">沒有符合的——換個關鍵字或切回「全部」</div>';
+}
+$("#typerow").addEventListener("click", e => {
+  const ch = e.target.closest(".chip"); if (!ch) return;
+  curType = ch.dataset.type;
+  $$("#typerow .chip").forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+  renderAll();
+});
+let rtimer; $("#rsearch").addEventListener("input", () => { clearTimeout(rtimer); rtimer = setTimeout(renderAll, 200); });
+
+/* ---------- 分頁 ---------- */
+$$(".tab-btn").forEach(b => b.addEventListener("click", () => {
+  $$(".tab-btn").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+  $$(".panel").forEach(p => p.classList.toggle("active", p.id === "panel-" + b.dataset.tab));
+}));
+
+/* ---------- 順手回報(接受度)→ localStorage → GitHub issue → /sync-logs ---------- */
+const LF = (() => {
+  const KEY = "lf-food-v1";
+  let logs = [];
+  let confirmMode = false;
+  try { logs = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { logs = []; }
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(logs)); } catch (e) {} };
+  const today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  const api = {
+    for(id) { return logs.filter(l => l.id === id); },
+    pending() { return logs.filter(l => !l.synced); },
+    toggle(id, btn) {
+      const vc = btn.closest(".vcard");
+      const on = vc.classList.toggle("logging");
+      if (on) { const f = vc.querySelector(".logform"); f.querySelectorAll(".st").forEach(x => x.classList.remove("on")); f.querySelector(".lf-note").value = ""; f.querySelector(".lf-save").disabled = true; }
+    },
+    save(id, btn) {
+      const vc = btn.closest(".vcard"), f = vc.querySelector(".logform");
+      const val = k => { const row = f.querySelector('.qrow[data-k="' + k + '"]'); const on = row.querySelectorAll(".st.on"); return on.length ? on.length : null; };
+      const accept = {}; const b = val("big"), l = val("lil");
+      if (b) accept.big = b; if (l) accept.lil = l;
+      if (!b && !l) return;
+      const r = RECIPES.find(x => x.id === id);
+      logs.push({ id, kind: "recipe", name: r ? r.name : id, date: today(), accept, note: f.querySelector(".lf-note").value.trim(), ts: Date.now() });
+      persist(); api.toast("已存在手機裡,回頭一鍵回報 🙌"); api.rerender();
+    },
+    payload() { return api.pending().map(l => ({ id: l.id, kind: l.kind, name: l.name, date: l.date, accept: l.accept, note: l.note, ts: l.ts })); },
+    clipText() { return "請把以下林家餐食實測寫進 data/recipes.json 的 family_log(欄位:date、姊姊接受度=accept.big、弟弟接受度=accept.lil、備註=note,以 ts 去重):\n```json\n" + JSON.stringify(api.payload(), null, 2) + "\n```"; },
+    _clip(okMsg) {
+      const txt = api.clipText();
+      const after = () => { confirmMode = true; api.toast(okMsg); api.renderBar(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(after, () => api.toast("複製失敗,請長按選取內容"));
+      else after();
+    },
+    report() {
+      const p = api.payload(); if (!p.length) return;
+      const body = "林家餐食 App 產生的接受度回饋。請用 /sync-logs 吃進 data/recipes.json 對應 family_log(date、姊姊接受度=accept.big、弟弟接受度=accept.lil、備註=note),以 ts 去重。\n\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
+      const url = "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent("family-log 餐食 " + today() + "(" + p.length + " 筆)") + "&labels=" + encodeURIComponent("family-log") + "&body=" + encodeURIComponent(body);
+      if (url.length > 7000) { api._clip("筆數多、網址過長,已自動改用複製;貼到 Claude Code 即可"); return; }
+      window.open(url, "_blank", "noopener");
+      confirmMode = true; api.toast("送出 issue 後回來點「✓ 已回報」"); api.renderBar();
+    },
+    copy() { if (!api.pending().length) return; api._clip("已複製,貼到 Claude Code;完成後點「✓ 已回報」"); },
+    done() { api.pending().forEach(l => l.synced = true); persist(); confirmMode = false; api.toast("已清除待回報,謝謝 🙏"); api.rerender(); },
+    renderBar() {
+      const bar = $("#logbar"), n = api.pending().length;
+      if (!n) { bar.hidden = true; confirmMode = false; document.body.classList.remove("has-bar"); return; }
+      if (confirmMode) {
+        bar.innerHTML = '<span class="lb-t">送出後點 ✓ 清除;還沒送可<b>再回報</b></span><button class="lb-copy" onclick="LF.report()">再回報</button><button class="lb-go" onclick="LF.done()">✓ 已回報</button>';
+      } else {
+        bar.innerHTML = '<span class="lb-t">📝 有 <b>' + n + '</b> 筆接受度待回報</span><button class="lb-copy" onclick="LF.copy()">複製</button><button class="lb-go" onclick="LF.report()">回報 →</button>';
+      }
+      bar.hidden = false; document.body.classList.add("has-bar");
+    },
+    toast(msg) {
+      const t = $("#lfToast"); if (!t) return; t.textContent = msg; t.classList.add("show");
+      clearTimeout(api._tt); api._tt = setTimeout(() => t.classList.remove("show"), 2200);
+    },
+    rerender() { try { renderAll(); } catch (e) {} api.renderBar(); },
+  };
+  return api;
+})();
+/* 星星點選 */
+document.addEventListener("click", ev => {
+  const s = ev.target.closest(".logform .st"); if (!s) return;
+  const row = s.closest(".qrow"), form = s.closest(".logform"), v = +s.dataset.v;
+  row.querySelectorAll(".st").forEach(x => x.classList.toggle("on", +x.dataset.v <= v));
+  form.querySelector(".lf-save").disabled = !form.querySelector(".qrow .st.on");
+});
+
+/* ---------- 回頂 / SW ---------- */
+const toTop = $("#toTop");
+window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 600; }, { passive: true });
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+
+renderAll();
+LF.renderBar();
+</script>
+</body>
+</html>

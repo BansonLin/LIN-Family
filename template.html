@@ -7,22 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="出遊手冊">
 <style>
-  :root{
-    --paper:#F7F3EC; --card:#FFFFFF;
-    --ink:#33302A; --ink-soft:#6F675C; --line:#E6DED0;
-    --park:#2E7D74; --park-bg:#E2EFEC; --park-deep:#1F5B54;
-    --cafe:#D9932A; --cafe-bg:#FBEDD6; --cafe-deep:#8A5A10;
-    --indoor:#3D6FA8; --indoor-bg:#E4EBF5; --indoor-deep:#31517A;
-    --farm:#8C5B33; --farm-bg:#F0E4D6; --farm-deep:#6B4322;
-    --warn:#B0483A;
-    --radius:14px;
-  }
+  /* :root 代幣已抽至 assets/tokens.css(P0-0 共用層);本頁其餘樣式漸進遷移 */
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
   body{font-family:'Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;padding-bottom:64px}
@@ -226,7 +218,7 @@
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">出遊版</span><a class="xlink disney" href="disney.html">🏰 迪士尼</a><a class="xlink" href="time.html">⏳ 時光手冊</a></div>
+    <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">出遊版</span><a class="xlink disney first" href="disney.html">🏰 迪士尼</a><a class="xlink time" href="time.html">⏳ 時光</a><a class="xlink food" href="food.html">🍳 餐食</a></div>
     <h1 id="appTitle">林家出遊手冊</h1>
     <div class="today" id="todayLine">—</div>
     <div class="modeswitch" role="group" aria-label="模式切換">

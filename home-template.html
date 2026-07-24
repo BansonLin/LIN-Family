@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家親子宅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#8C5B33">
+<style>
+/* ===== 親子宅頁面專屬樣式(共用層見 assets/tokens.css) ===== */
+h1{color:#6B4322}
+/* 進度環 */
+.ringwrap{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:4px 2px;margin-top:12px}
+.ringwrap::-webkit-scrollbar{display:none}
+.ringcard{flex-shrink:0;width:104px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .15s ease}
+.ringcard[aria-pressed="true"]{border-color:var(--fam);box-shadow:0 0 0 2px var(--farm-bg)}
+.ring{position:relative;width:62px;height:62px;margin:0 auto 6px}
+.ring svg{transform:rotate(-90deg)}
+.ring .rt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
+.ringcard .rname{font-size:12.5px;font-weight:700;line-height:1.3}
+.ringcard .rsub{font-size:11px;color:var(--ink-soft);margin-top:1px}
+/* 健檢項目 */
+.chk{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:9px}
+.chk.done{background:#F4F7F0;border-color:#CFE0C0}
+.chk.todo{background:#FCF4F2;border-color:#EFD3CD}
+.chk .ctop{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
+.chk .citem{font-size:15px;font-weight:700;line-height:1.45;flex:1}
+.chk .cwhy{font-size:13px;color:#4A443B;margin-top:4px;line-height:1.6}
+.chk .cmeta{font-size:11.5px;color:var(--ink-soft);margin-top:6px}
+.stbtns{display:flex;gap:6px;margin-top:9px}
+.stbtn{flex:1;border:1.5px solid var(--line);background:#FDFBF7;color:var(--ink-soft);border-radius:9px;padding:7px 4px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.stbtn[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stbtn.ok[aria-pressed="true"]{background:#557A3C;border-color:#557A3C}
+.stbtn.bad[aria-pressed="true"]{background:var(--warn);border-color:var(--warn)}
+.fixnote{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:8px 11px;font-size:13px;background:#fff;color:var(--ink);font-family:inherit;margin-top:7px}
+.fixnote:focus{outline:none;border-color:var(--fam)}
+/* Top3 */
+.top3{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:16px;margin-top:14px;box-shadow:0 6px 18px rgba(80,60,30,.06)}
+.top3 h2{font-family:'LXGW WenKai TC',serif;font-size:21px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.top3 h2 small{font-family:'Noto Sans TC';font-size:12px;color:var(--ink-soft);font-weight:400}
+/* 空間卡 */
+.spcard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:10px}
+.spcard .spname{font-family:'LXGW WenKai TC',serif;font-size:20px;font-weight:700;color:var(--fam-deep)}
+.spcard .sprow{font-size:13.5px;margin-top:6px;line-height:1.65}
+.spcard .sprow b{color:var(--ink)}
+.spec-tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:9px}
+.spec-tbl td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+.spec-tbl td:first-child{color:var(--ink-soft);width:52%}
+.pure{background:#F0E4D6;color:#6B4322;font-weight:700;font-size:11.5px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.linkcard{display:inline-block;margin-top:9px;font-size:12.5px;font-weight:700;color:var(--park-deep);text-decoration:none;border-bottom:1.5px dotted var(--park)}
+/* 待回報列 */
+#logbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1.5px solid var(--line);box-shadow:0 -4px 16px rgba(80,60,30,.1);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto}
+#logbar[hidden]{display:none}
+#logbar .lb-t{font-size:13.5px;font-weight:700;color:var(--ink);flex:1;line-height:1.4}
+#logbar .lb-t b{color:var(--fam-deep)}
+#logbar button{border:none;border-radius:999px;padding:9px 15px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
+#logbar .lb-go{background:var(--ink);color:#fff}
+#logbar .lb-copy{background:#EFEAE0;color:var(--ink-soft)}
+body.has-bar{padding-bottom:120px}
+#lfToast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:96px;z-index:50;background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;padding:10px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s ease;max-width:86vw;text-align:center}
+#lfToast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.evlink{font-size:11px;color:var(--indoor);text-decoration:none;border-bottom:1px dotted var(--indoor);white-space:nowrap;margin-left:4px}
+.tag.pend{background:var(--warn-bg);color:var(--warn)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">親子宅</span><a class="xlink first" href="index.html">🚗 出遊</a><a class="xlink time" href="time.html">⏳ 時光</a><a class="xlink food" href="food.html">🍳 餐食</a><a class="xlink grow" href="grow.html">🌱 成長</a></div>
+  <h1>林家親子宅</h1>
+  <div class="today">把家當成可健檢、可升級的系統・資料 __BUILD_DATE__・健檢 __NC__ 項</div>
+  <div class="kids">
+    <div class="kid sis"><span class="who">姊姊</span><span class="age" id="ageSis">—</span><span class="note">空間以她的視線與臂展檢查</span></div>
+    <div class="kid bro"><span class="who">弟弟</span><span class="age" id="ageBro">—</span><span class="note">攀爬期:高處與邊角優先</span></div>
+  </div>
+</header>
+
+<!-- ===== 首屏:健檢進度 + 待改善 Top 3 ===== -->
+<section>
+  <div class="section-title">自宅健檢 <span class="cnt" id="allProg"></span></div>
+  <div class="section-sub">一季走一輪,每輪只修 Top 3。點區域看該區項目;狀態存在手機裡,回頭一鍵回報寫回資料庫。</div>
+  <div class="ringwrap" id="ringwrap"></div>
+  <div class="top3">
+    <h2>待改善 Top 3 <small>依兩個孩子現在的年齡排序</small></h2>
+    <div id="top3out"></div>
+  </div>
+</section>
+
+<nav class="tabs"><div class="tabs-inner">
+  <button class="tab-btn" data-tab="chk" aria-selected="true">🔍 自宅健檢</button>
+  <button class="tab-btn" data-tab="space" aria-selected="false">🧱 空間演進</button>
+  <button class="tab-btn" data-tab="stor" aria-selected="false">📦 收納系統</button>
+  <button class="tab-btn" data-tab="mind" aria-selected="false">🧭 空間心法</button>
+  <button class="tab-btn" data-tab="src" aria-selected="false">📚 來源</button>
+</div></nav>
+
+<!-- ===== 自宅健檢 ===== -->
+<section class="panel active" id="panel-chk">
+  <div class="searchrow"><input id="csearch" type="search" placeholder="🔍 搜項目(例:插座、窗、防傾倒)" autocomplete="off"></div>
+  <div class="filters" style="margin-top:10px">
+    <div class="fgroup"><span class="flabel">狀態</span>
+      <button class="chip" data-f="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="未檢">未檢</button>
+      <button class="chip" data-f="待改善">待改善</button>
+      <button class="chip" data-f="合格">合格</button>
+    </div>
+  </div>
+  <div id="chkout"></div>
+</section>
+
+<!-- ===== 空間演進 ===== -->
+<section class="panel" id="panel-space">
+  <div class="section-title">隨齡空間演進</div>
+  <div class="section-sub">現況由林家口述回填(標「待填」者尚未確認);尺寸一律等璞石設計團隊填入,不從網路抓。決策卡開窗時,對應空間自動亮「規劃中」。</div>
+  <div id="spaceout"></div>
+</section>
+
+<!-- ===== 收納系統 ===== -->
+<section class="panel" id="panel-stor">
+  <div class="section-title">全屋收納盤點</div>
+  <div class="section-sub">以兩個孩子的視線與臂展重走一遍;高度基準值為【璞石標準】,由設計團隊填入。此表為盤點框架,內容待林家實地走一輪回填。</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>位置</th><th>內容物</th><th>現行高度</th><th>孩子可及</th><th>建議動作</th></tr>
+    <tr><td>玄關・鞋櫃下層</td><td>孩子日常鞋</td><td><span class="pure">璞石標準・待填</span></td><td>待填</td><td>開放格下移至弟弟可及</td></tr>
+    <tr><td>客廳・可以亂區</td><td>當期外顯玩具</td><td><span class="pure">璞石標準・待填</span></td><td>待填</td><td>外顯量上限+輪替箱(見下)</td></tr>
+    <tr><td>兒童房・衣櫃</td><td>明日衣物/日常衣物</td><td><span class="pure">璞石標準・待填</span></td><td>待填</td><td>常穿層降到孩子自取高度</td></tr>
+    <tr><td>讀寫角</td><td>書、文具、作品</td><td><span class="pure">璞石標準・待填</span></td><td>待填</td><td>書封面朝外、動線上可取</td></tr>
+    <tr><td>廚房・高櫃</td><td>清潔劑/藥品(大人層)</td><td><span class="pure">璞石標準・待填</span></td><td>皆否(目標)</td><td>對照健檢「存放高度」項</td></tr>
+  </table></div>
+  <div class="section-title">玩具輪替制</div>
+  <div class="rule-card">
+    <ul>
+      <li><b>外顯量上限</b>:<span class="pure">璞石標準・待填</span>——看得到的玩具維持固定量,超過就進輪替箱。</li>
+      <li><b>輪替箱週期</b>:<span class="pure">待填</span>——到期換一批,舊的收起來,不用買新的就有新鮮感。</li>
+      <li><b>執行怎麼玩</b>:收玩具的遊戲化玩法在 <a class="linkcard" href="time.html">⏳ 時光手冊</a>,本頁只管硬體規格。</li>
+    </ul>
+  </div>
+  <div class="callout farm"><b>收納會過期</b>3 歲的收納到 6 歲就錯位。全屋收納每年隨 /age-review 重盤一次——寫進行事曆,不靠想起來。</div>
+</section>
+
+<!-- ===== 空間心法(最終稿,直接排版) ===== -->
+<section class="panel" id="panel-mind">
+  <div class="section-title">空間三原則</div>
+  <div class="three">
+    <div class="p-card"><div class="no">01</div><div class="p-t">空間是隱形的教養者</div><div class="p-d">你想要的行為,先問空間有沒有支持它——想要孩子自己收,收納就要在他的高度;想要多閱讀,書就要在動線上;想要少看電視,電視就不能坐在客廳 C 位。環境說話,比大人說話有效,而且不用重複第二次。</div></div>
+    <div class="p-card"><div class="no">02</div><div class="p-t">拿得到,才做得到</div><div class="p-d">自理能力的一半是硬體問題。孩子構不到的收納櫃,訓練出來的不是整齊,是「等大人」。全屋以孩子視線與臂展重新走一遍,是這本手冊的第一個作業。</div></div>
+    <div class="p-card"><div class="no">03</div><div class="p-t">家不是只為孩子</div><div class="p-d">保留大人的完整區域(你的書桌、嘉倩的角落)。全屋兒童化的家,犧牲的是父母的能量——而父母的狀態才是家裡最大的環境變數。</div></div>
+  </div>
+
+  <div class="section-title">常見誤區</div>
+  <div class="rule-card"><ul>
+    <li><b>豪華兒童房 ≠ 兒童友善</b>:孩子要的是可以弄亂的許可,不是雜誌級的房間。預算花在固定家具與安全,不花在造型。</li>
+    <li><b>安全 ≠ 無菌泡泡</b>:健檢處理的是「不可逆傷害」(傾倒、墜落、燙傷、誤食);跌倒擦傷是童年的一部分,過度包覆換來的是不會評估風險的孩子。</li>
+    <li><b>收納系統會過期</b>:3 歲的收納到 6 歲就錯位。全屋收納每年隨 /age-review 重盤一次——這是系統櫃世家的專業日常,寫進行事曆。</li>
+  </ul></div>
+
+  <div class="section-title">執行守則</div>
+  <div class="rule-card"><ul>
+    <li>健檢一季走一輪,每輪只修 Top 3——跟制度安裝表同一條鐵律:一次修一批,修完才排下一批。</li>
+    <li>空間改動前,先問使用者:姊姊的區域姊姊參與決定(她的讀寫角她選燈——時光手冊已在做)。</li>
+    <li>每次空間升級拍「前後照」入 log——這是家的 decisions.md。</li>
+  </ul></div>
+</section>
+
+<!-- ===== 來源 ===== -->
+<section class="panel" id="panel-src">
+  <div class="section-title">健檢項目的依據</div>
+  <div class="section-sub">每一條安全項目都附官方或專業來源;查不到的標「待確認」,不用模型知識生成安全建議。</div>
+  <div id="srcout"></div>
+
+  <div class="section-title">尺寸與規格</div>
+  <div class="rule-card"><ul>
+    <li>所有家具與檯面尺寸標 <span class="pure">璞石標準・待填</span>,由林家的設計團隊填入——**本手冊不從網路抓尺寸**。這個領域你是一手來源,資料品質該高於其他模組。</li>
+    <li>官方法規數值(如欄杆間距、防墜規定)另行標示法規名稱與出處,與璞石標準分開呈現。</li>
+  </ul></div>
+
+  <div class="section-title">私領域與商業轉化</div>
+  <div class="rule-card"><ul>
+    <li>自宅平面、照片、格局資訊屬敏感個資,僅存 private repo。</li>
+    <li><b>商業轉化(P2)為閘門機制:未經林家逐項授權,不產出任何對外內容</b>——lead magnet、品牌文章、到府服務問卷皆同。預設不流出。</li>
+  </ul></div>
+</section>
+
+<footer>
+  <span class="fam-name">林家親子宅</span><br>
+  空間是隱形的教養者・拿得到,才做得到<br>
+  資料 __BUILD_DATE__・健檢一季一輪,每輪只修 Top 3
+</footer>
+
+</div>
+
+<div id="logbar" hidden></div>
+<div id="lfToast"></div>
+<button id="toTop" hidden aria-label="回到頂端">↑</button>
+
+<script>
+const CHECKLIST = __CHECKLIST__;
+const SPACES = __SPACES__;
+const DECISIONS = __DECISIONS__;
+const FAMILY = __FAMILY__;
+const REPO = "BansonLin/LIN-Family";
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- 年齡(唯一來源 family.json) ---------- */
+function monthsOf(birth) { const [y, m] = birth.split("-").map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); }
+function ageText(mo) { return Math.floor(mo / 12) + " 歲 " + (mo % 12) + " 個月"; }
+const KIDS = {};
+FAMILY.children.forEach(c => { const k = c.nickname === "姊姊" ? "big" : "lil"; KIDS[k] = { name: c.nickname, mo: monthsOf(c.birth) }; });
+if (KIDS.big) $("#ageSis").textContent = ageText(KIDS.big.mo);
+if (KIDS.lil) $("#ageBro").textContent = ageText(KIDS.lil.mo);
+
+/* ---------- 健檢狀態:localStorage(離線可用)→ 一鍵回報 → /sync-logs 寫回 json ---------- */
+const HC = (() => {
+  const KEY = "home-check-v1";
+  let st = {};
+  let confirmMode = false;
+  try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { st = {}; }
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+  const today = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  const api = {
+    statusOf(c) { return (st[c.id] && st[c.id].status) || c.status || "未檢"; },
+    noteOf(c) { return (st[c.id] && st[c.id].fix_note !== undefined) ? st[c.id].fix_note : (c.fix_note || ""); },
+    dirty() { return Object.keys(st).filter(k => !st[k].synced); },
+    set(id, status) {
+      const c = CHECKLIST.find(x => x.id === id); if (!c) return;
+      st[id] = Object.assign({}, st[id], { status, fix_date: today(), ts: Date.now(), synced: false });
+      persist(); render(); api.renderBar();
+    },
+    note(id, txt) {
+      st[id] = Object.assign({}, st[id], { fix_note: txt, ts: Date.now(), synced: false });
+      persist(); api.renderBar();
+    },
+    payload() { return api.dirty().map(id => ({ id, kind: "home", status: st[id].status || "未檢", fix_note: st[id].fix_note || "", fix_date: st[id].fix_date || today(), ts: st[id].ts })); },
+    clipText() { return "請把以下自宅健檢狀態寫回 data/home_checklist.json(依 id 對應 status/fix_note/fix_date,以 ts 去重):\n```json\n" + JSON.stringify(api.payload(), null, 2) + "\n```"; },
+    _clip(msg) {
+      const txt = api.clipText();
+      const after = () => { confirmMode = true; api.toast(msg); api.renderBar(); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(after, () => api.toast("複製失敗,請長按選取內容"));
+      else after();
+    },
+    report() {
+      const p = api.payload(); if (!p.length) return;
+      const body = "林家親子宅健檢狀態更新。請用 /sync-logs 寫回 data/home_checklist.json(依 id 對應 status / fix_note / fix_date,以 ts 去重)。\n\n```json\n" + JSON.stringify(p, null, 2) + "\n```";
+      const url = "https://github.com/" + REPO + "/issues/new?title=" + encodeURIComponent("home-check " + today() + "(" + p.length + " 項)") + "&labels=" + encodeURIComponent("family-log") + "&body=" + encodeURIComponent(body);
+      if (url.length > 7000) { api._clip("項目多、網址過長,已自動改用複製;貼到 Claude Code 即可"); return; }
+      window.open(url, "_blank", "noopener");
+      confirmMode = true; api.toast("送出 issue 後回來點「✓ 已回報」"); api.renderBar();
+    },
+    copy() { if (!api.dirty().length) return; api._clip("已複製,貼到 Claude Code;完成後點「✓ 已回報」"); },
+    done() { api.dirty().forEach(id => st[id].synced = true); persist(); confirmMode = false; api.toast("已清除待回報,謝謝 🙏"); api.renderBar(); },
+    renderBar() {
+      const bar = $("#logbar"), n = api.dirty().length;
+      if (!n) { bar.hidden = true; confirmMode = false; document.body.classList.remove("has-bar"); return; }
+      bar.innerHTML = confirmMode
+        ? '<span class="lb-t">送出後點 ✓ 清除;還沒送可<b>再回報</b></span><button class="lb-copy" onclick="HC.report()">再回報</button><button class="lb-go" onclick="HC.done()">✓ 已回報</button>'
+        : '<span class="lb-t">🔧 有 <b>' + n + '</b> 項健檢狀態待回報</span><button class="lb-copy" onclick="HC.copy()">複製</button><button class="lb-go" onclick="HC.report()">回報 →</button>';
+      bar.hidden = false; document.body.classList.add("has-bar");
+    },
+    toast(msg) { const t = $("#lfToast"); if (!t) return; t.textContent = msg; t.classList.add("show"); clearTimeout(api._tt); api._tt = setTimeout(() => t.classList.remove("show"), 2200); },
+  };
+  return api;
+})();
+
+/* ---------- 區域進度環 ---------- */
+const AREAS = ["客廳", "廚房", "浴室", "兒童房", "主臥", "陽台窗戶", "樓梯走道"];
+let curArea = "全部", curFilter = "all";
+function areaStats(area) {
+  const list = CHECKLIST.filter(c => area === "全部" || c.area === area);
+  const ok = list.filter(c => HC.statusOf(c) === "合格").length;
+  return { ok, total: list.length, pct: list.length ? Math.round(ok / list.length * 100) : 0 };
+}
+function ringSvg(pct, color) {
+  const r = 26, c = 2 * Math.PI * r;
+  return '<svg width="62" height="62"><circle cx="31" cy="31" r="' + r + '" fill="none" stroke="#EFEAE0" stroke-width="6"></circle>'
+    + '<circle cx="31" cy="31" r="' + r + '" fill="none" stroke="' + color + '" stroke-width="6" stroke-linecap="round" stroke-dasharray="' + c + '" stroke-dashoffset="' + (c * (1 - pct / 100)) + '"></circle></svg>';
+}
+function renderRings() {
+  const areas = ["全部"].concat(AREAS.filter(a => CHECKLIST.some(c => c.area === a)));
+  $("#ringwrap").innerHTML = areas.map(a => {
+    const s = areaStats(a);
+    const color = s.pct === 100 ? "#557A3C" : (s.pct >= 50 ? "#8C5B33" : "#D9932A");
+    return '<button class="ringcard" data-area="' + a + '" aria-pressed="' + String(a === curArea) + '">'
+      + '<div class="ring">' + ringSvg(s.pct, color) + '<div class="rt">' + s.pct + "%</div></div>"
+      + '<div class="rname">' + a + '</div><div class="rsub">' + s.ok + " / " + s.total + "</div></button>";
+  }).join("");
+  const all = areaStats("全部");
+  $("#allProg").textContent = all.ok + " / " + all.total + " 合格";
+  $$("#ringwrap .ringcard").forEach(b => b.addEventListener("click", () => { curArea = b.dataset.area; render(); switchTab("chk"); }));
+}
+
+/* ---------- 健檢卡 ---------- */
+function ageMatch(c) {
+  const f = c.age_focus || [];
+  if (f.includes("通用")) return true;
+  if (KIDS.lil && KIDS.lil.mo < 60 && f.includes("3歲")) return true;
+  if (KIDS.big && KIDS.big.mo >= 60 && f.includes("6歲")) return true;
+  return false;
+}
+function chkCard(c) {
+  const s = HC.statusOf(c);
+  const cls = s === "合格" ? " done" : (s === "待改善" ? " todo" : "");
+  const ev = c.evidence && c.evidence.url
+    ? '<a class="evlink" target="_blank" rel="noopener" href="' + esc(c.evidence.url) + '">' + esc((c.evidence.label || "來源")) + "</a>"
+    : ' <span class="tag pend">待確認</span>';
+  return '<div class="chk' + cls + '" data-id="' + c.id + '">'
+    + '<div class="ctop"><div class="citem">' + esc(c.item) + "</div></div>"
+    + '<div class="cwhy">' + esc(c.why) + "</div>"
+    + '<div class="cmeta">' + esc(c.area) + " ・ " + (c.age_focus || []).join("/") + " ・ 依據:" + ev + "</div>"
+    + '<div class="stbtns">'
+    + ['未檢', '合格', '待改善'].map(v => '<button class="stbtn ' + (v === "合格" ? "ok" : (v === "待改善" ? "bad" : "")) + '" data-v="' + v + '" aria-pressed="' + String(s === v) + '">' + v + "</button>").join("")
+    + "</div>"
+    + (s === "待改善" ? '<input class="fixnote" placeholder="要怎麼修?(例:找璞石加固定片)" value="' + esc(HC.noteOf(c)) + '">' : "")
+    + "</div>";
+}
+function render() {
+  renderRings();
+  const q = ($("#csearch").value || "").trim();
+  let list = CHECKLIST.filter(c => curArea === "全部" || c.area === curArea);
+  if (curFilter !== "all") list = list.filter(c => HC.statusOf(c) === curFilter);
+  if (q) list = list.filter(c => c.item.includes(q) || c.why.includes(q) || c.area.includes(q));
+  $("#chkout").innerHTML = list.length
+    ? AREAS.filter(a => list.some(c => c.area === a)).map(a =>
+        '<div class="section-title" style="font-size:18px">' + a + '</div>' + list.filter(c => c.area === a).map(chkCard).join("")
+      ).join("")
+    : '<div class="draw-empty">沒有符合的項目——換個篩選或搜尋詞</div>';
+  // Top 3:待改善優先,其次未檢;年齡相符者優先
+  const rank = c => (HC.statusOf(c) === "待改善" ? 0 : (HC.statusOf(c) === "未檢" ? 1 : 9)) - (ageMatch(c) ? 0.5 : 0);
+  const top = CHECKLIST.slice().sort((a, b) => rank(a) - rank(b)).filter(c => HC.statusOf(c) !== "合格").slice(0, 3);
+  $("#top3out").innerHTML = top.length
+    ? top.map(chkCard).join("")
+    : '<div class="draw-empty" style="min-height:80px">這一輪都合格了 🎉 下一季再走一輪</div>';
+  renderSrc();
+}
+document.addEventListener("click", ev => {
+  const b = ev.target.closest(".stbtn"); if (!b) return;
+  const card = b.closest(".chk"); HC.set(card.dataset.id, b.dataset.v);
+});
+document.addEventListener("input", ev => {
+  const n = ev.target.closest(".fixnote"); if (!n) return;
+  HC.note(n.closest(".chk").dataset.id, n.value);
+});
+let ctimer; $("#csearch").addEventListener("input", () => { clearTimeout(ctimer); ctimer = setTimeout(render, 200); });
+$$(".fgroup .chip").forEach(ch => ch.addEventListener("click", () => {
+  curFilter = ch.dataset.f;
+  $$(".fgroup .chip").forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+  render();
+}));
+
+/* ---------- 空間演進(與成長地圖決策卡雙向連動) ---------- */
+function ymNow() { const d = new Date(); return d.getFullYear() * 12 + d.getMonth(); }
+function ymFrom(s) { const [y, m] = s.split("-").map(Number); return y * 12 + (m - 1); }
+function decWindowState(d) {
+  if (!d || !d.window_start || d.window_start === "auto") return null;
+  const now = ymNow(), s = ymFrom(d.window_start), e = d.window_end ? ymFrom(d.window_end) : null;
+  if (now < s) return "未到";
+  if (e === null || now <= e) return "開窗";
+  return "已過";
+}
+function renderSpaces() {
+  $("#spaceout").innerHTML = SPACES.map(sp => {
+    const dec = sp.trigger_decision_id ? DECISIONS.find(d => d.id === sp.trigger_decision_id) : null;
+    const wst = decWindowState(dec);
+    const auto = wst === "開窗" && sp.status !== "已升級";
+    const status = auto ? "規劃中" : sp.status;
+    const badge = status === "已升級" ? "sis" : (status === "規劃中" ? "cafe" : "meta");
+    return '<div class="spcard"><div class="tags"><span class="tag ' + badge + '">' + status + "</span>"
+      + (dec ? '<span class="tag meta">連動:' + esc(dec.title) + (wst ? "(" + wst + ")" : "") + "</span>" : "")
+      + (auto ? '<span class="tag warn">決策開窗中 → 自動亮規劃中</span>' : "")
+      + "</div>"
+      + '<div class="spname">' + esc(sp.space) + "</div>"
+      + '<div class="sprow"><b>現況</b>:' + esc(sp.current) + "</div>"
+      + '<div class="sprow"><b>下一階段</b>:' + esc(sp.next_stage) + "</div>"
+      + (sp.spec && sp.spec.length ? '<table class="spec-tbl">' + sp.spec.map(x => "<tr><td>" + esc(x["項目"]) + '</td><td><span class="pure">' + esc(x["數值"]) + "</span></td></tr>").join("") + "</table>" : "")
+      + (dec ? '<a class="linkcard" href="grow.html">→ 看成長地圖的「' + esc(dec.title) + "」決策卡</a>" : "")
+      + (sp.log && sp.log.length ? '<div class="cmeta" style="margin-top:8px">📸 升級紀錄 ' + sp.log.length + " 筆:" + sp.log.map(l => esc(l.date + " " + l.note)).join(";") + "</div>" : '<div class="cmeta" style="margin-top:8px">📸 升級紀錄:還沒有——下次改動記得拍前後照</div>')
+      + "</div>";
+  }).join("");
+}
+
+/* ---------- 來源清單 ---------- */
+function renderSrc() {
+  const rows = CHECKLIST.filter(c => c.evidence && c.evidence.url);
+  const pend = CHECKLIST.filter(c => !c.evidence || !c.evidence.url);
+  $("#srcout").innerHTML = '<div class="tblwrap"><table class="tbl"><tr><th>項目</th><th>來源</th><th>查證</th></tr>'
+    + rows.map(c => "<tr><td>" + esc(c.item) + '</td><td><a class="evlink" target="_blank" rel="noopener" href="' + esc(c.evidence.url) + '">' + esc(c.evidence.label || "來源") + "</a></td><td>" + esc(c.evidence.date || "") + "</td></tr>").join("")
+    + "</table></div>"
+    + (pend.length ? '<div class="callout warn"><b>待確認 ' + pend.length + " 項</b>" + pend.map(c => esc(c.item)).join("、") + "</div>" : "");
+}
+
+/* ---------- 分頁 ---------- */
+function switchTab(key) {
+  $$(".tab-btn").forEach(x => x.setAttribute("aria-selected", String(x.dataset.tab === key)));
+  $$(".panel").forEach(p => p.classList.toggle("active", p.id === "panel-" + key));
+}
+$$(".tab-btn").forEach(b => b.addEventListener("click", () => switchTab(b.dataset.tab)));
+
+/* ---------- 回頂 / SW ---------- */
+const toTop = $("#toTop");
+window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 600; }, { passive: true });
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("./sw.js").catch(() => {});
+
+render();
+renderSpaces();
+HC.renderBar();
+</script>
+</body>
+</html>

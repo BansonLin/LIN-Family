@@ -9,7 +9,7 @@ argument-hint: "(留空=讀 GitHub family-log issues;或直接貼上 App 複製�
 
 每筆回報格式:`{id, kind:"kids"|"adult", name, date, rating 1–5, scores?, note, ts}`;`scores` 為選填細項星等(親子:放電/友善/舒適;大人:食物/氣氛/CP值,各 1–5)。餐食回報格式:`{id, kind:"recipe", name, date, accept:{big? 1–5, lil? 1–5}, note, ts}`。逐筆處理:
 
-1. **定位**:kind=kids → 在 `data/venues.json` 依 id 找;kind=adult → 在 `data/places-adult.json` 依 id 找;kind=recipe → 在 `data/recipes.json` 依 id 找。**找不到就停下回報該筆,不得自行新增 venue/食譜**(禁止捏造)。
+1. **定位**:kind=kids → 在 `data/venues.json` 依 id 找;kind=adult → 在 `data/places-adult.json` 依 id 找;kind=recipe → 在 `data/recipes.json` 依 id 找;kind=home → 在 `data/home_checklist.json` 依 id 找(健檢狀態回寫:status / fix_note / fix_date,不新增項目)。**找不到就停下回報該筆,不得自行新增 venue/食譜/健檢項**(禁止捏造)。
 2. **去重**:若該 venue 的 family_log 已有相同 `ts` 的項目 → 跳過(冪等,重跑安全)。
 3. **寫入**:於該 venue 的 family_log 追加 `{date, 評分: rating, 心得: note, ts}`;若回報含 `scores` 則一併寫入 `細項: scores`(鍵名原樣保留)。adult 若無 family_log 欄位則先建 `[]`(大人 schema 補 family_log,與親子一致)。kind=recipe → 追加 `{date, 姊姊接受度: accept.big, 弟弟接受度: accept.lil, 備註: note, ts}`(缺哪個孩子就省略該鍵)。林家實測權重高於一切網路來源。細項可作對應欄位的核對線索(如 舒適=1 且心得提到太曬 → 檢視 shade_score)。
 4. **更新**:last_verified 取 max(原值, 該筆 date);kind=recipe 免(食譜庫無此欄)。

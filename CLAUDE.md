@@ -30,6 +30,8 @@ config/family.json      # 孩子出生年月、home 座標(由我手動填,你�
 data/venues.json        # 親子景點資料庫
 data/places-adult.json  # 大人模式餐飲資料庫(2026-07-19 核准新增,大人 schema 見下)
 data/recipes.json       # 餐食手冊食譜庫(2026-07-23 核准新增,schema 見下)
+data/home_checklist.json # 親子宅・自宅安全健檢(2026-07-24 核准新增,schema 見下)
+data/spaces.json        # 親子宅・隨齡空間演進(2026-07-24 核准新增,schema 見下)
 data/stages.json        # 成長地圖・發展階段(2026-07-23 核准新增,schema 見下)
 data/decisions.json     # 成長地圖・決策卡(2026-07-23 核准新增,schema 見下)
 data/systems.json       # 成長地圖・制度安裝表(2026-07-23 核准新增,schema 見下)
@@ -38,6 +40,7 @@ assets/tokens.css       # 共用設計層(2026-07-23 核准 P0-0:代幣+抽卡/c
 template.html           # 出遊手冊模板 → build.js 產出 dist/index.html(資料內嵌)
 food-template.html      # 餐食手冊模板 → build.js 產出 dist/food.html(資料內嵌)
 grow-template.html      # 成長地圖模板 → build.js 產出 dist/grow.html(資料內嵌)
+home-template.html      # 親子宅模板 → build.js 產出 dist/home.html(資料內嵌)
 time.html               # 時光手冊(靜態單檔)
 disney.html             # 東京迪士尼旅行手冊(2026-07-21 核准新增;一次性旅行頁,離線可用)
 build.js                # 由 JSON 產出 dist/(index/food/sw/manifest);wrangler 部署 dist/
@@ -138,6 +141,25 @@ docs/decisions.md       # 重大設計決策紀錄
 - 結構:以終為始反推卡/情緒家規/分齡情緒工具箱/大人的修行/日常儀式(接制度安裝表)/找專業指引。
 - 理念文案(情緒家規、大人的修行)屬林家家規層級,**2026-07-23 已經林家定稿核准**(頁面標「林家定稿 2026-07」);之後修改需再經林家。**分齡情緒發展描述依紅線 4 逐條附專業 evidence,查不到標待確認,禁止模型自行生成**。
 - 紅線補充:不做孩子情緒評分/情緒紀錄儀表板(延續紅線 3);持續性情緒困擾一律導向兒童心智科(延續紅線 1)。
+
+## 親子宅(home.html・2026-07-24 核准新增)
+定位:把「家」當成可健檢、可升級的系統——自宅安全健檢+隨齡空間演進的執行工具,不是文章庫,是待辦清單。邊界:讀寫角/扮演角「怎麼用」與收納遊戲歸時光手冊;分房睡與房間升級的「時機」歸成長地圖決策卡;空間的「規格與工法」+安全健檢歸本模組。
+**雙重身分**:私用工具 + 璞石好室/PURE HOUSE 潛在內容資產;v1 只做私用。
+
+### 親子宅紅線(任何功能不得違反)
+1. 兒童安全項目每條附官方 evidence(優先:國健署兒童居家安全與事故傷害防制、靖娟兒童安全文教基金會、標檢局家具與商品安全資訊);查不到標「待確認」,**禁止用模型知識生成安全建議**。
+2. 家具與檯面尺寸數字一律標【璞石標準】由林家設計團隊填入,或標【待填】——**不從網路抓尺寸**。官方法規數值(欄杆間距等)另區塊呈現並註明法規名稱。
+3. 自宅平面、照片、格局資訊屬敏感個資:僅存 private repo;商業引用需經 P2 閘門明確授權。
+4. **不販售焦慮**:文案不得出現「不做就危險」式恐嚇;健檢結果呈現待辦,不呈現風險分數。
+
+### data/home_checklist.json schema(單筆)
+`{id, area(客廳|廚房|浴室|兒童房|主臥|陽台窗戶|樓梯走道), item, why, age_focus:["3歲"|"6歲"|"通用"], evidence:{url,date,label,摘要}, status(未檢|合格|待改善), fix_note, fix_date}`。建檔 30–40 條由 /research 依官方來源產出,逐條附 evidence。
+
+### data/spaces.json schema(單筆)
+`{space, current, next_stage, trigger_decision_id(連 grow 決策卡 id,可為 null), spec:[{項目, 數值}](數值一律【璞石標準・待填】), status(現行|規劃中|已升級), log:[{date,note}]}`。決策卡開窗時對應空間自動亮「規劃中」;每次升級拍前後照入 log。
+
+### P2 商業轉化閘門(**未經林家逐項授權不得執行**)
+lead magnet(健檢表去個資化)、隨齡設計內容系列(創辦人自宅實驗是否具名另議)、到府服務前置問卷——三件套皆須逐項授權;私領域資料單向流出前必經林家審核,**預設不流出**。
 
 ## 評分基準(所有研究必須用同一把尺)
 - **noise_tolerance**:3=官方明示親子友善或設遊戲區;2=評論多見家庭客;1=一般客群混合;0=官網或評論強調安靜、成人向。

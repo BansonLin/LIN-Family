@@ -404,8 +404,11 @@ fs.writeFileSync(path.join(DIST, 'home.html'), homeHtml);
 
 // Switch 手冊(switch-template.html + data/game_coach.json → dist/switch.html)
 const talk = readJson('data/game_coach.json', []);
+const games = readJson('data/games.json', []);
 let swHtml = fs.readFileSync(path.join(R, 'switch-template.html'), 'utf8');
 swHtml = swHtml.replace('__TALK__', () => JSON.stringify(talk))
+  .replace('__GAMES__', () => JSON.stringify(games))
+  .replaceAll('__NG__', String(games.length))
   .replace('__FAMILY__', () => JSON.stringify(family))
   .replaceAll('__BUILD_DATE__', TODAY)
   .replaceAll('__NT__', String(talk.length));

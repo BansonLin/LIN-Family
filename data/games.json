@@ -1,0 +1,90 @@
+[
+  {
+    "id": "acnh", "name": "集合啦!動物森友會", "risk": "green",
+    "players": "同島最多 4 人同時(每人需 1 控制器)", "coop": "合作/共存,無對抗勝負", "assist": ["沒有失敗機制"], "motion": "待確認", "pause": "隨時可停", "rating": "ESRB E",
+    "handheld": "佳", "trip": "帶",
+    "who": { "big": "自己經營,識字不足處大人念", "lil": "抓蟲釣魚就好,不懂也不會輸" },
+    "note": "旅途唯一許可的睡前遊戲——沒有輸贏就沒有睡前情緒。一台就能兩人同島(Party Play)",
+    "evidence": { "url": "https://www.nintendo.com/hk/switch/animal_crossing_new_horizons/", "label": "任天堂官方(港)" }
+  },
+  {
+    "id": "yoshi", "name": "耀西的手工世界", "risk": "yellow",
+    "players": "本機 2 人協力(分享一支 Joy-Con 即可)", "coop": "合作", "assist": ["輕鬆模式 Mellow Mode:長翅膀可飛越障礙"], "motion": "待確認", "pause": "關卡間可停", "rating": "ESRB E",
+    "handheld": "佳", "trip": "帶",
+    "who": { "big": "找收集品當任務", "lil": "開輕鬆模式,節奏最慢、最不會卡" },
+    "note": "弟弟累的時候的安全牌:官方輕鬆模式讓他飛過所有卡關點",
+    "evidence": { "url": "https://www.nintendo.com/us/store/products/yoshis-crafted-world-switch/", "label": "任天堂官方" }
+  },
+  {
+    "id": "wonder", "name": "超級瑪利歐兄弟 驚奇", "risk": "yellow",
+    "players": "本機同螢幕最多 4 人(分享 Joy-Con)", "coop": "合作(命數共享,變幽靈可被救回)", "assist": ["耀西與阿奇不會受到傷害", "徽章:掉坑自動彈回、降落傘帽"], "motion": "待確認", "pause": "關卡間可停", "rating": "ESRB E",
+    "handheld": "佳", "trip": "帶",
+    "who": { "big": "正常角色,可用徽章調難度", "lil": "固定用耀西或阿奇——官方明示不會受傷" },
+    "note": "姊弟同玩主力:兩人各一組 Joy-Con,弟弟死不了、姊姊還能載他過關",
+    "evidence": { "url": "https://www.nintendo.com.hk/switch/aqmxa/products/soft.html", "label": "任天堂官方(港)" }
+  },
+  {
+    "id": "kirby-land", "name": "星之卡比 探索發現", "risk": "yellow",
+    "players": "本機 1–2 人(2P 為頭巾瓦豆魯迪,可隨時加入/離開)", "coop": "合作", "assist": ["春風模式 Spring-Breeze(較輕鬆)/ 狂野模式可切換"], "motion": "待確認", "pause": "關卡間可停", "rating": "ESRB E10+",
+    "handheld": "佳(手提模式 1 人)", "trip": "帶",
+    "who": { "big": "主控卡比", "lil": "當 2P,想玩就加入、累了就退出,不影響進度" },
+    "note": "弟弟的入門合作款:2P 隨時進出是這款最適合旅行的地方",
+    "evidence": { "url": "https://www.nintendo.com/hk/switch/arzga/products/soft.html", "label": "任天堂官方(港)" }
+  },
+  {
+    "id": "pikmin4", "name": "皮克敏 4", "risk": "blue",
+    "players": "TV/桌上 1–2 人、手提 1 人", "coop": "故事模式本機 2 人協力(2P 掩護射擊);另有對戰模式", "assist": ["時間倒轉:失敗可回到稍早重來", "活躍度調整:改原生生物強弱"], "motion": "待確認", "pause": "以「日」推進,待確認", "rating": "ESRB E10+",
+    "handheld": "普通(手提僅 1 人)", "trip": "看狀況",
+    "who": { "big": "自己探索,大人當顧問", "lil": "當 2P 掩護射擊,不用操作角色也有參與感" },
+    "note": "有官方「時間倒轉」可救失敗;但手提模式只有 1 人,雙人得靠桌上模式",
+    "evidence": { "url": "https://www.nintendo.com/tw/topics/article/28DZk3Ut0vVZcNLWf9r7GE", "label": "任天堂官方(台)" }
+  },
+  {
+    "id": "pkm-za", "name": "寶可夢傳說 Z-A", "risk": "blue",
+    "players": "單人 1 人;本機無線 2–4 人(是否需一人一機待確認)", "coop": "主線單人;多人為對戰", "assist": ["待確認"], "motion": "待確認", "pause": "待確認", "rating": "ESRB E10+(含遊戲內購買)",
+    "handheld": "待確認", "trip": "看狀況",
+    "who": { "big": "字多,需要大人陪讀", "lil": "不適合自己玩,可當觀眾" },
+    "note": "單人向、字多;旅行帶了通常只有姊姊在玩,弟弟會等到不耐煩",
+    "evidence": { "url": "https://www.nintendo.com/us/store/products/pokemon-legends-z-a-switch/", "label": "任天堂官方" }
+  },
+  {
+    "id": "pokopia", "name": "Pokémon Pokopia", "risk": "green",
+    "players": "單人 1 人・同一台主機無法多人同螢幕(本機無線需一人一機一片)", "coop": "合作/共存(需各自主機)", "assist": ["待確認"], "motion": "待確認", "pause": "非關卡制,隨時可停", "rating": "ESRB E(含遊戲內購買)",
+    "handheld": "待確認", "trip": "看狀況",
+    "who": { "big": "適合她一個人慢慢蓋", "lil": "只能看——這款同機不能兩人一起" },
+    "note": "無失敗的生活模擬,但官方明示同機不能雙人;旅行帶了會變成「姊姊玩弟弟等」",
+    "evidence": { "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/71349/", "label": "任天堂支援・多人說明" }
+  },
+  {
+    "id": "mk", "name": "瑪利歐賽車(8 豪華版/世界)", "risk": "red",
+    "players": "TV/桌上最多 4 人分割畫面(每人 1 控制器);手提 1 人", "coop": "競爭(玩家互相對抗)", "assist": ["智慧轉向", "自動加速", "傾斜操作可關閉"], "motion": "傾斜操作為選配,可關", "pause": "單場短,場間可停", "rating": "ESRB E",
+    "handheld": "佳(單人)", "trip": "看狀況",
+    "who": { "big": "正常操作", "lil": "開智慧轉向+自動加速,官方功能不是作弊" },
+    "note": "兩款都有智慧轉向與自動加速(《世界》為 Switch 2 專用、單場 24 人)。旅行期間限大人陪玩、非睡前",
+    "evidence": { "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22763/", "label": "任天堂支援・輔助設定" }
+  },
+  {
+    "id": "kirby-air", "name": "卡比的馭天飛行者", "risk": "red",
+    "players": "TV/桌上 1–4 人(2 人同機可選橫向或縱向分割);手提 1 人", "coop": "競爭為主(衝撞、競速、競技場)", "assist": ["官方:只用兩個按鍵就能玩(機體自動前進)"], "motion": "待確認", "pause": "City Trial 前半固定 5 分鐘", "rating": "ESRB E10+",
+    "handheld": "普通(手提 1 人)", "trip": "看狀況",
+    "who": { "big": "操作簡單,她應該很快上手", "lil": "兩鍵操作對他友善,但本質是互相衝撞的對抗" },
+    "note": "Switch 2 專用。操作門檻低是優點,但它是對抗型——旅行中不設為預設",
+    "evidence": { "url": "https://store.nintendo.com.hk/70010000103778", "label": "任天堂官方(港)" }
+  },
+  {
+    "id": "jamboree", "name": "超級瑪利歐派對 空前盛會(+空前盛會 TV)", "risk": "red",
+    "players": "本機 1–4 人(TV/桌上);手提 1 人", "coop": "競爭為主(雙陸+小遊戲);部分團隊賽", "assist": ["可調 CPU 難度", "明星讓分開關", "體感小遊戲可關閉"], "motion": "部分小遊戲用體感,官方可關", "pause": "一輪偏長,待確認", "rating": "ESRB E",
+    "handheld": "普通", "trip": "不帶",
+    "who": { "big": "小遊戲可以,雙六一輪太長", "lil": "多數小遊戲跟不上,容易變成陪跑" },
+    "note": "「空前盛會 TV」是 Switch 2 專用獨立商品(含本篇+奇諾比奧節目模式+相機玩法),要接電視與相機才發揮——留在家裡玩",
+    "evidence": { "url": "https://www.nintendo.com/us/store/products/super-mario-party-jamboree-nintendo-switch-2-edition-plus-jamboree-tv-switch-2/", "label": "任天堂官方" }
+  },
+  {
+    "id": "rabbids", "name": "瘋狂兔子:傳奇派對", "risk": "red",
+    "players": "本機最多 4 人", "coop": "競爭為主(50 個小遊戲、2v2 或混戰)", "assist": ["難度可調:Easy / Normal / Nightmare"], "motion": "需要體感操作(官方明示需 Joy-Con)", "pause": "待確認", "rating": "ESRB E",
+    "handheld": "不適合(體感)", "trip": "不帶",
+    "who": { "big": "在家玩很好笑", "lil": "體感小遊戲節奏快,容易輸到生氣" },
+    "note": "官方確認需要體感揮舞——飯店房間空間不足,這款留在家裡",
+    "evidence": { "url": "https://www.nintendo.com/us/store/products/rabbids-party-of-legends-switch/", "label": "任天堂官方" }
+  }
+]

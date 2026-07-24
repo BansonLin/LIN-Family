@@ -69,6 +69,54 @@ h1{color:#3F3FA8}
 .kpi li:last-child{border-bottom:none;font-weight:700;color:#2F2F7A}
 .modetbl td:first-child{font-weight:700;color:var(--ink)}
 #toTop{background:var(--card)}
+/* 日期列 */
+.dayrow{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;margin-top:10px}
+.dayrow::-webkit-scrollbar{display:none}
+.daybtn{flex-shrink:0;border:1.5px solid var(--line);background:#FDFBF7;border-radius:12px;padding:8px 11px;cursor:pointer;font-family:inherit;text-align:center;min-width:64px}
+.daybtn .dd{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:14px;color:var(--ink)}
+.daybtn .dw{font-size:10.5px;color:var(--ink-soft);margin-top:1px}
+.daybtn[aria-pressed="true"]{background:#5B5BD6;border-color:#5B5BD6}
+.daybtn[aria-pressed="true"] .dd,.daybtn[aria-pressed="true"] .dw{color:#fff}
+.daybtn.today{border-color:#5B5BD6;box-shadow:0 0 0 2px #EEEEFB}
+.daycard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:11px;animation:fadeUp .3s ease both}
+.daycard .dtitle{font-family:'LXGW WenKai TC',serif;font-size:20px;font-weight:700;color:#3F3FA8}
+.daycard .dctx{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.daycard .dblk{margin-top:10px}
+.daycard .dh{font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:3px}
+.daycard .don .dh{color:#3F6B2C}
+.daycard .doff .dh{color:var(--warn)}
+.daycard ul{list-style:none}
+.daycard li{font-size:14px;padding:3px 0 3px 17px;position:relative;line-height:1.6}
+.daycard li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:2px;background:#7A8B6A;transform:rotate(8deg)}
+.daycard .doff li::before{background:var(--warn)}
+.dpick{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.dpick .pk{font-size:12.5px;font-weight:700;background:#EEEEFB;color:#3F3FA8;border-radius:999px;padding:4px 12px}
+.dline{font-size:13px;color:var(--ink);background:#F7F5EF;border-radius:9px;padding:8px 11px;margin-top:10px}
+/* 遊戲卡 */
+.gcard{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:9px;border-left-width:5px}
+.gcard.green{border-left-color:#557A3C}
+.gcard.yellow{border-left-color:#D9932A}
+.gcard.blue{border-left-color:#3D6FA8}
+.gcard.red{border-left-color:#B0483A}
+.gcard .gname{font-family:'LXGW WenKai TC',serif;font-size:18px;font-weight:700;line-height:1.35}
+.gcard .gnote{font-size:13.5px;color:#4A443B;margin-top:4px;line-height:1.6}
+.gcard .gwho{font-size:12.5px;color:var(--ink-soft);margin-top:7px;line-height:1.7}
+.gcard .gwho b{color:var(--ink)}
+.gspecs{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.gspec{font-size:11px;background:#EFEAE0;color:var(--ink-soft);border-radius:999px;padding:2px 9px}
+.gspec.pend{background:var(--warn-bg);color:var(--warn)}
+.gtrip{font-size:11px;font-weight:700;border-radius:999px;padding:2px 10px;margin-right:6px}
+.gtrip.yes{background:#EEEEFB;color:#3F3FA8}
+.gtrip.no{background:#EFEAE0;color:var(--ink-soft)}
+.gtrip.maybe{background:var(--cafe-bg);color:var(--cafe-deep)}
+/* 打包清單 */
+.pk-item{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:7px;cursor:pointer}
+.pk-item.on{background:#F4F7F0;border-color:#CFE0C0}
+.pk-box{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff}
+.pk-item.on .pk-box{background:#557A3C;border-color:#557A3C}
+.pk-item .pk-t{font-size:14.5px;font-weight:700;line-height:1.45}
+.pk-item.on .pk-t{text-decoration:line-through;color:var(--ink-soft)}
+.pk-item .pk-n{font-size:12.5px;color:var(--ink-soft);margin-top:2px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -76,17 +124,41 @@ h1{color:#3F3FA8}
 
 <header>
   <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">Switch</span><a class="xlink first" href="index.html">🚗 出遊</a><a class="xlink time" href="time.html">⏳ 時光</a><a class="xlink food" href="food.html">🍳 餐食</a><a class="xlink grow" href="grow.html">🌱 成長</a><a class="xlink home" href="home.html">🏠 親子宅</a></div>
-  <h1>遊戲情緒教練手冊</h1>
-  <div class="today">電玩不是情緒地雷區,是情緒訓練場・資料 __BUILD_DATE__・話術 __NT__ 則</div>
+  <h1>林家 Switch 手冊</h1>
+  <div class="today">遊玩計畫 × 情緒教練・Switch 2(兩組 Joy-Con)・資料 __BUILD_DATE__・遊戲 __NG__ 款・話術 __NT__ 則</div>
   <div class="kids">
     <div class="kid sis"><span class="who">姊姊</span><span class="age" id="ageSis">—</span><span class="note">改敘事:把輸這局跟我是誰拆開</span></div>
     <div class="kid bro"><span class="who">弟弟</span><span class="age" id="ageBro">—</span><span class="note">改遊戲:能力不夠不是態度問題</span></div>
   </div>
 </header>
 
-<!-- ===== 首屏:現場三燈 ===== -->
+<!-- ===== 首屏:日本帶機・今天怎麼玩 ===== -->
+<section class="draw" id="tripsec">
+  <h2>🎌 日本七天・今天怎麼玩<small>7/25–7/31 東京</small></h2>
+  <div class="dayrow" id="dayrow"></div>
+  <div id="dayout"></div>
+  <div class="principle-line">旅行版的清單,不是把家裡<b>最好玩</b>的搬過去,是把<b>最不會出事</b>的搬過去。</div>
+</section>
+
+<!-- ===== 遊戲配置表 ===== -->
+<section>
+  <div class="section-title">🎮 遊戲配置 <span class="cnt" id="gcnt"></span></div>
+  <div class="section-sub">依情緒風險分層排,不依好不好玩排。點卡片看細節;規格查證中的標「待確認」,不猜。</div>
+  <div class="filters" style="margin-top:10px">
+    <div class="fgroup"><span class="flabel">情境</span>
+      <button class="chip" data-gf="trip" aria-pressed="true">🎌 旅行帶機</button>
+      <button class="chip" data-gf="all">全部 11 款</button>
+      <button class="chip" data-gf="green">🟢 無失敗</button>
+      <button class="chip" data-gf="yellow">🟡 合作</button>
+      <button class="chip" data-gf="red">🔴 對抗</button>
+    </div>
+  </div>
+  <div id="gameout"></div>
+</section>
+
+<!-- ===== 現場三燈 ===== -->
 <section class="draw">
-  <h2>現在是什麼燈?<small>先判斷階段,再決定做什麼</small></h2>
+  <h2>🚨 現在是什麼燈?<small>出事了才翻這裡</small></h2>
   <div class="lights">
     <button class="light" data-stage="y"><div class="li">🟡</div><div class="lt">升溫</div><div class="ls">還講得進話</div></button>
     <button class="light" data-stage="r"><div class="li">🔴</div><div class="lt">爆發</div><div class="ls">大腦斷線了</div></button>
@@ -104,7 +176,9 @@ h1{color:#3F3FA8}
 </section>
 
 <nav class="tabs"><div class="tabs-inner">
-  <button class="tab-btn" data-tab="why" aria-selected="true">🎯 核心論點</button>
+  <button class="tab-btn" data-tab="pack" aria-selected="true">🧳 帶機計畫</button>
+  <button class="tab-btn" data-tab="tripmind" aria-selected="false">🧠 旅行心法</button>
+  <button class="tab-btn" data-tab="why" aria-selected="false">🎯 核心論點</button>
   <button class="tab-btn" data-tab="setup" aria-selected="false">⚙️ 開機前設定</button>
   <button class="tab-btn" data-tab="after" aria-selected="false">🌙 賽後複盤</button>
   <button class="tab-btn" data-tab="praise" aria-selected="false">👏 稱讚公式</button>
@@ -113,8 +187,59 @@ h1{color:#3F3FA8}
   <button class="tab-btn" data-tab="quick" aria-selected="false">⚡ 一句話速查</button>
 </div></nav>
 
+<!-- ===== 帶機計畫 ===== -->
+<section class="panel active" id="panel-pack">
+  <div class="section-title">出發前檢查(今晚做完)</div>
+  <div class="section-sub">Switch 2・兩組 Joy-Con。勾選狀態存在手機裡。</div>
+  <div id="packout"></div>
+
+  <div class="section-title">帶什麼卡帶</div>
+  <div class="callout indoor"><b>建議只帶「旅行帶機」那幾片</b>把對抗型的留在家裡,不是因為不好玩,是因為飯店房間放不下那個情緒。清單見上方配置表 🎌 篩選。</div>
+
+  <div class="section-title">規定與設定</div>
+  <div id="ruleout"></div>
+</section>
+
+<!-- ===== 旅行心法 ===== -->
+<section class="panel" id="panel-tripmind">
+  <div class="section-title">旅行三原則</div>
+  <div class="three">
+    <div class="p-card"><div class="no">01</div><div class="p-t">帶最不會出事的</div><div class="p-d">旅行時孩子的挫折閾值是全年最低:累、作息亂、環境陌生、沒有自己的房間。而崩潰成本是全年最高:隔音差、隔天要早起、爸媽也在耗盡狀態。所以家裡表現最好的對抗型遊戲,在飯店房間是風險最高的。</div></div>
+    <div class="p-card"><div class="no">02</div><div class="p-t">用合作消滅輪流</div><div class="p-d">在家輪不到可以去玩別的,飯店房間裡沒有別的——輪流會是整趟最可預測的衝突點。兩組 Joy-Con 是你們最大的優勢:選兩人同時能玩的合作遊戲,直接讓「輪流」這個問題不存在。</div></div>
+    <div class="p-card"><div class="no">03</div><div class="p-t">電玩不是行程的替代品</div><div class="p-d">它是:移動時間的填充、回房後的降溫過渡、雨天備案。它不是:排隊的止哭工具(會養成「無聊=給螢幕」),也不是行程不順的補償。白天玩得夠,晚上才不會用電玩補回來。</div></div>
+  </div>
+
+  <div class="section-title">一台兩人的輪流機制</div>
+  <div class="rule-card"><ul>
+    <li><b>先問「能不能兩個人一起」</b>——合作款優先,輪流是最後手段</li>
+    <li><b>要輪流就用回合,不用分鐘</b>:「一關換手」比「十分鐘換手」少一半衝突(孩子的世界沒有分鐘,只有回合)</li>
+    <li><b>計時器當裁判,你當隊友</b>——手機計時器響就換,不是爸爸說換</li>
+    <li><b>等待的人有事做</b>:副駕駛(選角色、按開始、報怪物位置)比純等待好帶太多</li>
+  </ul></div>
+
+  <div class="section-title">分齡:同一台機器,兩種帶法</div>
+  <div class="tblwrap"><table class="tbl agetbl">
+    <tr><th></th><th>弟弟(3 歲 4 個月)</th><th>姊姊(快 6 歲)</th></tr>
+    <tr><td>旅行中的變化</td><td>累了之後手部操作更不穩,挫折來得比在家快</td><td>「輪不到」與「玩不夠」是主要爆點,不是遊戲難度</td></tr>
+    <tr><td>只給他</td><td>無失敗或合作款(動森、耀西輕鬆、卡比 2P)</td><td>可以單人挑戰,但睡前只給無失敗款</td></tr>
+    <tr><td>開機前先講</td><td>「玩到○○就收」(用畫面事件,不用時間)</td><td>「今天幾關/幾場」+「輪到弟弟時你做什麼」</td></tr>
+    <tr><td>收機話術</td><td>「跟耀西說掰掰。」</td><td>「這關打完就收。」</td></tr>
+  </table></div>
+
+  <div class="section-title">回房降溫,不一定要開機</div>
+  <div class="callout sis"><b>樂園日的替代方案</b>你們已經有「睡前三件好事」這個制度——把它換成<b>「今天最好玩的三件事」</b>,兩分鐘,比開機更能收心,而且不用面對「時間到要關機」那一關。真的要開,就 15 分鐘動森,設定好鬧鐘。</div>
+
+  <div class="section-title">旅行紅旗</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li><b>玩到睡不著、隔天起不來</b> → 隔天整天不開機,不是懲罰,是系統沒餘裕了</li>
+    <li><b>因為排隊無聊就拿出來</b> → 換成觀察遊戲(找米奇圖案、數幾種帽子)、拍照任務</li>
+    <li><b>崩潰過的那一天,剩下時間不再開機</b>(教練手冊鐵律,旅行照用)</li>
+    <li><b>螢幕時間</b>:官方建議 2 歲以上每日不超過 1 小時、用眼 30 分休息 10 分——旅行難免超標,回台北就回到基準,不用因此吵架</li>
+  </ul></div>
+</section>
+
 <!-- ===== 核心論點 ===== -->
-<section class="panel active" id="panel-why">
+<section class="panel" id="panel-why">
   <div class="section-title">電玩是挫折教育最好的道場</div>
   <div class="rule-card"><ul>
     <li>一般生活裡,孩子一天遇到的挫折可能三、五次,而且每次都拖很久、後果真實、無法重來。</li>
@@ -293,6 +418,7 @@ h1{color:#3F3FA8}
 
 <script>
 const TALK = __TALK__;
+const GAMES = __GAMES__;
 const FAMILY = __FAMILY__;
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
@@ -305,6 +431,135 @@ FAMILY.children.forEach(c => {
   const el = c.nickname === "姊姊" ? $("#ageSis") : $("#ageBro");
   if (el) el.textContent = ageText(monthsOf(c.birth));
 });
+
+/* ---------- 日本七天:今天怎麼玩 ---------- */
+const TRIP = [
+  { d: "07-25", dow: "五", t: "出發日・入住舞浜大倉", ctx: "飛機+電車移動,晚上 check-in;今天的疲勞是「移動累」不是「玩累」",
+    on: ["移動中:掌上模式、插耳機、一人一段輪流(用關卡不用分鐘)", "飯店安頓後:20 分鐘落地儀式,玩完就洗澡"],
+    off: ["起降時完全收好", "晚餐前不開機——開了就收不回來,明天要早起"],
+    pick: ["acnh", "yoshi"], line: "第一天先把規則講定:今天玩幾次、輪到誰、什麼時候收。後面六天都靠這一次。" },
+  { d: "07-26", dow: "六", t: "TDL 陸地全日", ctx: "高強度、走一整天,回房時兩個孩子都在臨界",
+    on: ["白天:不帶出門", "回房:動森 15 分鐘降溫,鬧鐘設好——或直接不開機"],
+    off: ["排隊時不拿出來(會養成「無聊=給螢幕」)", "睡前 30 分鐘不玩對抗型", "今天崩潰過就不再開機"],
+    pick: ["acnh"], line: "回房替代方案:睡前三件好事換成「今天最好玩的三件事」,兩分鐘,比開機更能收心。" },
+  { d: "07-27", dow: "日", t: "TDS 海洋全日", ctx: "第二個樂園日,累積疲勞比昨天更深",
+    on: ["同昨天:白天不帶", "回房只給無失敗款,或直接跳過"],
+    off: ["不用「昨天有玩今天也要」當理由——狀態不同,決定就不同", "累了、餓了不開機"],
+    pick: ["acnh"], line: "連兩天高強度,今晚不開機是正常操作,不是剝奪。" },
+  { d: "07-28", dow: "一", t: "移動日・戶塚 check-in", ctx: "拉行李換飯店,電車時間長",
+    on: ["電車上:掌上模式,姊姊單人款也可以(能隨時中斷的)", "新飯店安頓後:合作款一起玩 20–30 分鐘"],
+    off: ["月台與換乘時收起來(安全第一)", "行李還沒歸位前不開機"],
+    pick: ["wonder", "kirby-land"], line: "換飯店的晚上最適合合作款:兩人各一組 Joy-Con,沒有輪流問題。" },
+  { d: "07-29", dow: "二", t: "戶塚・彈性日", ctx: "行程較鬆,可以有一段完整遊戲時間",
+    on: ["白天有行程就照常;室內休息時段可以玩久一點(30–40 分)", "大人陪玩時段:賽車可以開,但要有人示範怎麼輸"],
+    off: ["還是不放睡前", "一天只開一次,分兩次會變成整天在等下一次"],
+    pick: ["wonder", "kirby-land", "mk"], line: "彈性日是唯一適合開對抗型的日子——因為明天不用早起。" },
+  { d: "07-30", dow: "三", t: "戶塚・彈性日", ctx: "旅程後段,兩個孩子的耐受度都在下降",
+    on: ["同昨天,但把時間再縮短一點", "雨天備案:合作款一路打到底"],
+    off: ["情緒已經緊繃的日子,直接跳過不開機"],
+    pick: ["yoshi", "acnh"], line: "旅程後段孩子會更黏、更盧——那是累,不是退步。標準降一階。" },
+  { d: "07-31", dow: "四", t: "回程日", ctx: "退房+移動+飛機;日本 7/8 起行動電源不可放頭頂置物櫃",
+    on: ["機場等待與機上:掌上模式", "落地前 30 分鐘收機,準備下飛機"],
+    off: ["行動電源記得放座位口袋不是上方置物櫃(日本新規)", "起降收好"],
+    pick: ["acnh", "yoshi"], line: "回家後第一天照常回到平日規則,旅行的寬鬆不延長——這比旅行中的任何一條都重要。" },
+];
+function todayStr() { const d = new Date(); return String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+let curDay = (TRIP.find(x => x.d === todayStr()) || TRIP[0]).d;
+function gName(id) { const g = GAMES.find(x => x.id === id); return g ? g.name : id; }
+function renderDays() {
+  const td = todayStr();
+  $("#dayrow").innerHTML = TRIP.map(x => '<button class="daybtn' + (x.d === td ? " today" : "") + '" data-d="' + x.d + '" aria-pressed="' + String(x.d === curDay) + '"><div class="dd">' + x.d.replace("-", "/") + '</div><div class="dw">' + x.dow + (x.d === td ? "・今天" : "") + "</div></button>").join("");
+  const x = TRIP.find(y => y.d === curDay);
+  $("#dayout").innerHTML = '<div class="daycard"><div class="dtitle">' + esc(x.t) + '</div><div class="dctx">' + esc(x.ctx) + "</div>"
+    + '<div class="dblk don"><div class="dh">▲ 可以這樣玩</div><ul>' + x.on.map(s => "<li>" + esc(s) + "</li>").join("") + "</ul></div>"
+    + '<div class="dblk doff"><div class="dh">✕ 今天不要</div><ul>' + x.off.map(s => "<li>" + esc(s) + "</li>").join("") + "</ul></div>"
+    + '<div class="dpick">' + x.pick.map(id => '<span class="pk">🎮 ' + esc(gName(id)) + "</span>").join("") + "</div>"
+    + '<div class="dline">' + esc(x.line) + "</div></div>";
+  $$("#dayrow .daybtn").forEach(b => b.addEventListener("click", () => { curDay = b.dataset.d; renderDays(); }));
+}
+renderDays();
+
+/* ---------- 遊戲配置表 ---------- */
+const RISKNAME = { green: "🟢 無失敗", yellow: "🟡 合作", blue: "🔵 單人挑戰", red: "🔴 對抗" };
+const RISKORDER = ["green", "yellow", "blue", "red"];
+let gFilter = "trip";
+function gameCard(g) {
+  const tripCls = g.trip === "帶" ? "yes" : (g.trip === "不帶" ? "no" : "maybe");
+  const spec = (label, v) => v ? '<span class="gspec' + (String(v).includes("待確認") ? " pend" : "") + '">' + label + ":" + esc(v) + "</span>" : "";
+  return '<div class="gcard ' + g.risk + '">'
+    + '<div class="gname"><span class="gtrip ' + tripCls + '">' + (g.trip === "帶" ? "🎌 帶去" : (g.trip === "不帶" ? "留家裡" : "看狀況")) + "</span>" + esc(g.name) + "</div>"
+    + '<div class="gnote">' + esc(g.note) + "</div>"
+    + '<div class="gwho">🟢 <b>姊姊</b>:' + esc(g.who.big) + "<br>🟠 <b>弟弟</b>:" + esc(g.who.lil) + "</div>"
+    + '<div class="gspecs">' + '<span class="gspec">' + RISKNAME[g.risk] + "</span>"
+    + spec("人數", g.players) + spec("性質", g.coop) + spec("中斷", g.pause) + spec("手持", g.handheld)
+    + (g.assist && g.assist.length ? '<span class="gspec' + (g.assist.join("").includes("待確認") ? " pend" : "") + '">輔助:' + esc(g.assist.join("/")) + "</span>" : "")
+    + spec("體感", g.motion) + spec("分級", g.rating)
+    + "</div>"
+    + (g.evidence && g.evidence.url ? '<div style="margin-top:7px"><a class="evlink" target="_blank" rel="noopener" href="' + esc(g.evidence.url) + '">' + esc(g.evidence.label || "官方頁") + "</a></div>" : "")
+    + "</div>";
+}
+function renderGames() {
+  let list = GAMES.slice();
+  if (gFilter === "trip") list = list.filter(g => g.trip === "帶");
+  else if (["green", "yellow", "red", "blue"].includes(gFilter)) list = list.filter(g => g.risk === gFilter);
+  list.sort((a, b) => RISKORDER.indexOf(a.risk) - RISKORDER.indexOf(b.risk));
+  $("#gcnt").textContent = list.length + " / " + GAMES.length + " 款";
+  $("#gameout").innerHTML = list.length ? list.map(gameCard).join("") : '<div class="draw-empty">這個篩選沒有遊戲</div>';
+}
+$$('.chip[data-gf]').forEach(ch => ch.addEventListener("click", () => {
+  gFilter = ch.dataset.gf;
+  $$('.chip[data-gf]').forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+  renderGames();
+}));
+renderGames();
+
+/* ---------- 出發前檢查清單(localStorage) ---------- */
+const PACK = [
+  { id: "pb-count", t: "行動電源:最多 2 個,只能手提、不可託運,機上全程禁止充電", n: "2026-04-08 起 ICAO 新制;機身沒有標示規格數值的一律不能帶。", ev: { u: "https://www.motc.gov.tw/ch/app/data/view?module=news&id=14&serno=c4831fc1-d527-40d0-af27-657cb0fce824", l: "交通部新制" } },
+  { id: "pb-jp", t: "回程注意:行動電源不可放頭頂置物櫃,要放座位口袋等隨手可及處", n: "日本 2026-07-08 起新規,7/31 回程正好適用;端子貼絕緣膠帶、放保護袋,不與金屬同袋。", ev: { u: "https://www.mlit.go.jp/report/press/kouku10_hh_000284.html", l: "日本國土交通省" } },
+  { id: "console-carry", t: "Switch 主機與卡帶隨身手提,不放託運行李", n: "官方沒有逐項點名 Switch(此為通則推論);含鋰電池裝置若真要託運,須完全關機而非睡眠模式。", ev: { u: "https://www.evaair.com/zh-tw/fly-prepare/baggage/additional-baggage-information/restrictions/", l: "長榮・限制物品" } },
+  { id: "adapter", t: "拍下 AC 變壓器銘牌,確認 INPUT 是 100–240V", n: "日本 100V、A 型雙扁孔,與台灣相同 → 不需轉接頭也不需變壓器。任天堂官方明示請勿使用電壓轉換器。", ev: { u: "https://en-americas-support.nintendo.com/app/answers/detail/a_id/17342/", l: "任天堂・變壓器" } },
+  { id: "update", t: "出發前在家把要帶的遊戲更新完、下載完", n: "飯店 Wi-Fi 慢又不穩,更新排在旅館等於整晚不能玩。(經驗建議,非官方規定)", ev: null },
+  { id: "cards", t: "只帶清單上那幾片卡帶+收納盒,主機貼名字", n: "對抗型留在家裡;卡帶小、掉了就沒了,收納盒比什麼都值得。", ev: null },
+  { id: "audio", t: "耳機兩副(或一個分音器)", n: "飛機、電車、飯店都用得到;不吵到別人也不吵到彼此。", ev: null },
+  { id: "strap", t: "拆手把玩一定戴腕帶,鎖扣往手腕方向滑緊", n: "任天堂官方安全要求:Joy-Con 當分離式控制器使用時務必裝腕帶、握牢不放手。飯店房間小,更要。", ev: { u: "https://en-americas-support.nintendo.com/app/answers/detail/a_id/28689/", l: "任天堂・健康與安全" } },
+  { id: "inflight", t: "機上把 Joy-Con 裝回本體、用掌上模式;登機時直接問組員", n: "任天堂官方要求機上使用前先向航空公司確認;長榮「各類遙控發射器」全程禁用是否涵蓋藍牙 Joy-Con 官網未說明,保守做法是有線裝回本體。飛航模式只能在掌上/桌上模式開。", ev: { u: "https://support.nintendo.com/sg/switch2/usage/inflight/index.html", l: "任天堂・機上使用" } },
+  { id: "timezone", t: "決定要不要把主機時間改成日本時間(+1 小時)", n: "動森的島上時間跟著主機時間走;官方明示改日期不會提前觸發限時活動。差一小時影響很小,建議照改就好、不要為了活動亂改。", ev: { u: "https://www.nintendo.com/hk/switch/animal_crossing_new_horizons/faq/", l: "動森官方 FAQ" } },
+  { id: "screen", t: "跟孩子講好旅行版的螢幕規則", n: "官方基準:2 歲以上每日不超過 1 小時、用眼 30 分休息 10 分、每日戶外 2–3 小時。旅行難免超標,回台北就回到基準。", ev: { u: "https://www.mohw.gov.tw/cp-3794-41061-1.html", l: "護眼123" } },
+  { id: "motion", t: "車上玩會暈的準備", n: "動暈症的機轉是視覺與前庭訊號衝突,2–12 歲是好發族群;不舒服就停下來看遠方、開窗通風。用藥請問醫師或藥師。", ev: { u: "https://www.tait.mohw.gov.tw/?aid=509&iid=530&page_name=detail&pid=86", l: "衛福部臺東醫院" } },
+];
+const PK = (() => {
+  const KEY = "switch-pack-v1";
+  let st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { st = {}; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+  const render = () => {
+    const done = PACK.filter(p => st[p.id]).length;
+    $("#packout").innerHTML = '<div class="section-sub" style="margin:0 0 8px"><b>' + done + " / " + PACK.length + "</b> 完成</div>"
+      + PACK.map(p => '<div class="pk-item' + (st[p.id] ? " on" : "") + '" data-p="' + p.id + '"><div class="pk-box">' + (st[p.id] ? "✓" : "") + "</div>"
+        + '<div><div class="pk-t">' + esc(p.t) + '</div><div class="pk-n">' + esc(p.n)
+        + (p.ev ? ' <a class="evlink" target="_blank" rel="noopener" href="' + esc(p.ev.u) + '" onclick="event.stopPropagation()">' + esc(p.ev.l) + "</a>" : "")
+        + "</div></div></div>").join("");
+    $$("#packout .pk-item").forEach(el => el.addEventListener("click", () => { const k = el.dataset.p; st[k] = !st[k]; save(); render(); }));
+  };
+  render();
+  return { render };
+})();
+
+/* ---------- 規定與設定(全部附官方出處) ---------- */
+$("#ruleout").innerHTML = '<div class="tblwrap"><table class="tbl">'
+  + "<tr><th>項目</th><th>規定/事實</th><th>出處</th></tr>"
+  + [
+    ["行動電源(去程)", "限 2 個、僅手提不可託運、機上禁充電(2026-04-08 起)", "https://www.motc.gov.tw/ch/app/data/view?module=news&id=14&serno=c4831fc1-d527-40d0-af27-657cb0fce824", "交通部"],
+    ["行動電源(回程)", "限 2 個(≤160Wh)、禁充電;2026-07-08 起不得放頭頂置物櫃", "https://www.mlit.go.jp/report/press/kouku10_hh_000310.html", "日本國土交通省"],
+    ["電壓/插座", "日本 100V、東京 50Hz、A 型雙扁孔;Switch 變壓器 100–240V 通用,勿用電壓轉換器", "https://www.japan.travel/en/plan/plug-and-electricity/", "JNTO/任天堂"],
+    ["機上使用", "使用前先向航空公司或客艙組員確認;飛航模式僅掌上/桌上模式可開", "https://support.nintendo.com/sg/switch2/usage/inflight/index.html", "任天堂"],
+    ["Joy-Con 腕帶", "分離使用時務必裝腕帶、鎖扣收緊、握牢不放手", "https://en-americas-support.nintendo.com/app/answers/detail/a_id/28689/", "任天堂"],
+    ["動森時間", "島上時間跟主機時間走;改日期不會提前觸發限時活動", "https://www.nintendo.com/hk/switch/animal_crossing_new_horizons/faq/", "任天堂 FAQ"],
+    ["螢幕時間", "2 歲以上每日 ≤1 小時;用眼 30 分休 10 分;每日戶外 2–3 小時", "https://www.mohw.gov.tw/cp-3794-41061-1.html", "衛福部・護眼123"],
+  ].map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + '</td><td><a class="evlink" target="_blank" rel="noopener" href="' + r[2] + '">' + r[3] + "</a></td></tr>").join("")
+  + "</table></div>"
+  + '<div class="callout warn"><b>出發前一兩天再確認一次</b>行動電源規則 2026 年已改三次(台灣 4/8、日本 4/24、日本 7/8),請於登機前再看一次航空公司公告。以上均為 2026-07 檢索之官方頁面摘要,原文待逐條核對。</div>';
 
 /* ---------- 情緒三階段 ---------- */
 const STAGES = {

@@ -30,6 +30,7 @@ config/family.json      # 孩子出生年月、home 座標(由我手動填,你�
 data/venues.json        # 親子景點資料庫
 data/places-adult.json  # 大人模式餐飲資料庫(2026-07-19 核准新增,大人 schema 見下)
 data/recipes.json       # 餐食手冊食譜庫(2026-07-23 核准新增,schema 見下)
+data/game_coach.json    # Switch 手冊・遊戲情緒教練話術庫(2026-07-24 核准新增,schema 見下)
 data/home_checklist.json # 親子宅・自宅安全健檢(2026-07-24 核准新增,schema 見下)
 data/spaces.json        # 親子宅・隨齡空間演進(2026-07-24 核准新增,schema 見下)
 data/stages.json        # 成長地圖・發展階段(2026-07-23 核准新增,schema 見下)
@@ -41,6 +42,7 @@ template.html           # 出遊手冊模板 → build.js 產出 dist/index.html
 food-template.html      # 餐食手冊模板 → build.js 產出 dist/food.html(資料內嵌)
 grow-template.html      # 成長地圖模板 → build.js 產出 dist/grow.html(資料內嵌)
 home-template.html      # 親子宅模板 → build.js 產出 dist/home.html(資料內嵌)
+switch-template.html    # Switch 手冊模板 → build.js 產出 dist/switch.html(資料內嵌)
 time.html               # 時光手冊(靜態單檔)
 disney.html             # 東京迪士尼旅行手冊(2026-07-21 核准新增;一次性旅行頁,離線可用)
 build.js                # 由 JSON 產出 dist/(index/food/sw/manifest);wrangler 部署 dist/
@@ -160,6 +162,13 @@ docs/decisions.md       # 重大設計決策紀錄
 
 ### P2 商業轉化閘門(**未經林家逐項授權不得執行**)
 lead magnet(健檢表去個資化)、隨齡設計內容系列(創辦人自宅實驗是否具名另議)、到府服務前置問卷——三件套皆須逐項授權;私領域資料單向流出前必經林家審核,**預設不流出**。
+
+## Switch 手冊(switch.html・2026-07-24 核准新增)
+定位:電玩情境的「情緒教練」——把電玩當挫折訓練場而非地雷區,現場翻的話術庫。邊界:非電玩的陪玩遊戲庫與玩法歸時光手冊;3C 家庭公約的**時機**歸成長地圖決策卡;電玩現場的情緒處理、難度設定、賽後複盤歸本模組。
+- **文案為林家定稿**(2026-07,遊戲情緒教練手冊主體),逐字排版;修改需再經林家。
+- **data/game_coach.json schema**:`{id, who: big|lil|both, scene, dont?, do?, say, why?}`。話術為家規層級文案,不需 evidence、不需重驗;新增場景由林家口述。
+- 頁面骨幹:三燈判斷(升溫/爆發/修復)→ 對應該做與不該做;話術庫依對象切換+跨孩子搜尋;分頁=核心論點/開機前設定/賽後複盤/稱讚公式/大人自己/紅旗與 KPI/一句話速查。
+- 紅線延伸:不做孩子的遊戲時數或情緒計分表;KPI 呈現「進步的樣子」,不做分數。
 
 ## 評分基準(所有研究必須用同一把尺)
 - **noise_tolerance**:3=官方明示親子友善或設遊戲區;2=評論多見家庭客;1=一般客群混合;0=官網或評論強調安靜、成人向。

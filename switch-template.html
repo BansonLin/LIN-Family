@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林家 Switch 手冊・遊戲情緒教練</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5B5BD6">
+<style>
+/* ===== Switch 手冊專屬樣式(共用層見 assets/tokens.css) ===== */
+h1{color:#3F3FA8}
+/* 紅黃綠燈 */
+.lights{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.light{border:1.5px solid var(--line);background:#FDFBF7;border-radius:14px;padding:12px 6px;text-align:center;cursor:pointer;font-family:inherit;transition:all .15s ease}
+.light .li{font-size:26px;line-height:1.1}
+.light .lt{font-size:13.5px;font-weight:700;margin-top:3px}
+.light .ls{font-size:11px;color:var(--ink-soft);margin-top:1px}
+.light[aria-pressed="true"]{border-color:var(--ink);background:var(--ink)}
+.light[aria-pressed="true"] .lt,.light[aria-pressed="true"] .ls{color:#fff}
+.stage{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:12px;animation:fadeUp .3s ease both}
+.stage.y{border-color:#E8C36A;background:#FDF8EC}
+.stage.r{border-color:#E0A79C;background:#FCF3F1}
+.stage.g{border-color:#B9D3A4;background:#F4F8F0}
+.stage h3{font-family:'LXGW WenKai TC',serif;font-size:19px;font-weight:700}
+.stage .sig{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.stage .doblock{margin-top:9px}
+.stage .dot{font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:2px}
+.stage .do .dot{color:#3F6B2C}
+.stage .no .dot{color:var(--warn)}
+.stage ul{list-style:none;margin-bottom:6px}
+.stage li{font-size:14px;padding:3px 0 3px 17px;position:relative;line-height:1.6}
+.stage li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:2px;background:#7A8B6A;transform:rotate(8deg)}
+.stage .no li::before{background:var(--warn)}
+/* 誰在崩潰 */
+.whorow{display:flex;gap:7px;margin-top:14px}
+.whorow .chip{flex:1;text-align:center}
+/* 話術卡 */
+.tcard{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:9px}
+.tcard .tscene{font-size:15.5px;font-weight:700;line-height:1.45}
+.tcard .tsay{font-family:'LXGW WenKai TC',serif;font-size:18px;line-height:1.55;color:#2F2F7A;background:#EEEEFB;border-radius:10px;padding:9px 12px;margin-top:8px}
+.tcard .tdo{font-size:13.5px;color:#3F6B2C;background:#F1F6EC;border-radius:9px;padding:7px 11px;margin-top:7px}
+.tcard .tdont{font-size:13px;color:var(--warn);margin-top:7px}
+.tcard .tdont b{font-weight:700}
+.tcard .twhy{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+.whotag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;margin-right:6px}
+.whotag.big{background:var(--sis-bg);color:var(--sis-deep)}
+.whotag.lil{background:var(--bro-bg);color:var(--bro-deep)}
+.whotag.both{background:var(--farm-bg);color:var(--farm-deep)}
+/* 對照表/速查 */
+.agetbl td:first-child{font-weight:700;width:26%;color:var(--ink-soft)}
+.quick{width:100%;border-collapse:collapse;font-size:14px}
+.quick td{border-bottom:1px solid var(--line);padding:9px 8px;vertical-align:top}
+.quick td:first-child{width:38%;color:var(--ink-soft);font-size:13px}
+.quick td:last-child{font-family:'LXGW WenKai TC',serif;font-weight:700;color:#2F2F7A}
+/* 儀式三句 */
+.ritual{display:grid;gap:8px;margin-top:10px}
+.rit{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;display:flex;gap:10px;align-items:flex-start}
+.rit .rn{font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;color:#5B5BD6;font-size:15px;flex-shrink:0}
+.rit .rq{font-size:14.5px;font-weight:700}
+.rit .ra{font-size:13px;color:var(--ink-soft);margin-top:2px}
+.rit .ra b{color:#2F2F7A}
+.kpi{counter-reset:k;list-style:none;margin-top:10px}
+.kpi li{position:relative;padding:8px 0 8px 34px;font-size:14.5px;border-bottom:1px dashed var(--line)}
+.kpi li::before{counter-increment:k;content:counter(k);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:#EEEEFB;color:#3F3FA8;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.kpi li:last-child{border-bottom:none;font-weight:700;color:#2F2F7A}
+.modetbl td:first-child{font-weight:700;color:var(--ink)}
+#toTop{background:var(--card)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">FAMILY PLAYBOOK <span class="ver">Switch</span><a class="xlink first" href="index.html">🚗 出遊</a><a class="xlink time" href="time.html">⏳ 時光</a><a class="xlink food" href="food.html">🍳 餐食</a><a class="xlink grow" href="grow.html">🌱 成長</a><a class="xlink home" href="home.html">🏠 親子宅</a></div>
+  <h1>遊戲情緒教練手冊</h1>
+  <div class="today">電玩不是情緒地雷區,是情緒訓練場・資料 __BUILD_DATE__・話術 __NT__ 則</div>
+  <div class="kids">
+    <div class="kid sis"><span class="who">姊姊</span><span class="age" id="ageSis">—</span><span class="note">改敘事:把輸這局跟我是誰拆開</span></div>
+    <div class="kid bro"><span class="who">弟弟</span><span class="age" id="ageBro">—</span><span class="note">改遊戲:能力不夠不是態度問題</span></div>
+  </div>
+</header>
+
+<!-- ===== 首屏:現場三燈 ===== -->
+<section class="draw">
+  <h2>現在是什麼燈?<small>先判斷階段,再決定做什麼</small></h2>
+  <div class="lights">
+    <button class="light" data-stage="y"><div class="li">🟡</div><div class="lt">升溫</div><div class="ls">還講得進話</div></button>
+    <button class="light" data-stage="r"><div class="li">🔴</div><div class="lt">爆發</div><div class="ls">大腦斷線了</div></button>
+    <button class="light" data-stage="g"><div class="li">🟢</div><div class="lt">修復</div><div class="ls">願意講話了</div></button>
+  </div>
+  <div id="stageout"></div>
+  <div class="whorow">
+    <button class="chip" data-who="big" aria-pressed="true">姊姊的話術</button>
+    <button class="chip" data-who="lil">弟弟的話術</button>
+    <button class="chip" data-who="both">兩人一起</button>
+  </div>
+  <div class="searchrow" style="margin-top:10px"><input id="tsearch" type="search" placeholder="🔍 現場搜尋(例:摔手把、輸給弟弟、不肯停)" autocomplete="off"></div>
+  <div id="talkout" style="margin-top:12px"></div>
+  <div class="principle-line">3 歲的挫折,<b>改遊戲</b>。6 歲的挫折,<b>改敘事</b>。</div>
+</section>
+
+<nav class="tabs"><div class="tabs-inner">
+  <button class="tab-btn" data-tab="why" aria-selected="true">🎯 核心論點</button>
+  <button class="tab-btn" data-tab="setup" aria-selected="false">⚙️ 開機前設定</button>
+  <button class="tab-btn" data-tab="after" aria-selected="false">🌙 賽後複盤</button>
+  <button class="tab-btn" data-tab="praise" aria-selected="false">👏 稱讚公式</button>
+  <button class="tab-btn" data-tab="self" aria-selected="false">🧍 大人自己</button>
+  <button class="tab-btn" data-tab="flag" aria-selected="false">🚩 紅旗與 KPI</button>
+  <button class="tab-btn" data-tab="quick" aria-selected="false">⚡ 一句話速查</button>
+</div></nav>
+
+<!-- ===== 核心論點 ===== -->
+<section class="panel active" id="panel-why">
+  <div class="section-title">電玩是挫折教育最好的道場</div>
+  <div class="rule-card"><ul>
+    <li>一般生活裡,孩子一天遇到的挫折可能三、五次,而且每次都拖很久、後果真實、無法重來。</li>
+    <li>電玩剛好相反:<b>失敗是安全的、可重來的、高頻率的。</b>一小時內可以失敗二十次,而每一次的代價只是重新開始。</li>
+    <li>這就是挫折韌性訓練的標準結構——<b>低風險、高頻率、立即重試</b>。</li>
+  </ul></div>
+  <div class="callout indoor"><b>整本手冊的立場</b>不要把電玩當成情緒地雷區,要把它當成情緒訓練場。孩子在遊戲裡崩潰,不是遊戲的問題,是他遇到了一個他還沒學會處理的情緒。那個情緒遲早要學會處理——在客廳學,比在教室或球場學便宜太多。</div>
+  <div class="callout warn"><b>你的角色不是裁判,是教練</b>裁判判定輸贏,教練陪他面對輸贏。這兩個角色不能同時當。</div>
+
+  <div class="section-title">同樣是「挫折」,兩個孩子完全不同</div>
+  <div class="tblwrap"><table class="tbl agetbl">
+    <tr><th></th><th>弟弟(3 歲 4 個月)</th><th>姊姊(快 6 歲)</th></tr>
+    <tr><td>挫折長什麼樣</td><td>大哭、丟手把、要人幫、僵住不動、「我不要玩了」</td><td>生氣、罵遊戲、自我攻擊(「我最爛」)、指責別人、改規則、耍賴要重來</td></tr>
+    <tr><td>底層原因</td><td><b>能力真的不夠</b>——雙搖桿的精細動作對 3 歲是硬體限制,不是態度問題</td><td><b>自我概念與能力綁在一起</b>——輸了不只是輸,是「我很爛、我很丟臉」</td></tr>
+    <tr><td>他還做不到什麼</td><td>無法自我調節、無法理解「練習會變好」、無法等待輪流</td><td>無法把「這局輸了」跟「我這個人」分開;煞車系統(前額葉)還在施工</td></tr>
+    <tr><td>核心解法</td><td><b>改環境,不是教心態</b>——降難度、換角色、換模式</td><td><b>分離身分與表現</b>——把「輸這局」與「我是誰」拆開</td></tr>
+    <tr><td>你的第一句話</td><td>「你好想自己過關。」</td><td>「你好想贏。」</td></tr>
+    <tr><td>絕對不要說</td><td>「這個很簡單啊」</td><td>「他比你小你要讓他」／「不過就是遊戲」</td></tr>
+  </table></div>
+  <div class="callout indoor"><b>一句話記法</b>3 歲的挫折,改遊戲。<br>6 歲的挫折,改敘事。</div>
+
+  <div class="section-title">姊姊的長期工程:三個關鍵句</div>
+  <div class="section-sub">反覆說,說到她自己會說</div>
+  <div class="rule-card"><ul>
+    <li><b>「你現在還不會。」</b>——「還」這個字是成長型思維的全部</li>
+    <li><b>「你剛剛試了三次都沒放棄。」</b>——讚過程,不讚天分(讚「你好聰明」會讓她在失敗時崩得更兇)</li>
+    <li><b>「輸了就說:再來一局!」</b>——賽前一起喊,輸的時候她會自己接上</li>
+  </ul></div>
+
+  <div class="section-title">弟弟的三個鐵則</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li><b>不當他的手</b>——不要搶手把幫他過關。你幫他過,他學到的是「難的事情有人會來解決」</li>
+    <li><b>不當他的教練</b>——3 歲不需要技巧指導,需要的是能力匹配的關卡</li>
+    <li><b>不比較</b>——永遠不說「姊姊三歲的時候就會了」</li>
+  </ul></div>
+</section>
+
+<!-- ===== 開機前設定 ===== -->
+<section class="panel" id="panel-setup">
+  <div class="section-title">八成的崩潰在開機前就決定了</div>
+  <div class="section-sub">現場處理是下策。真正有效的是設定。</div>
+
+  <div class="section-title" style="font-size:18px">1. 預設用合作,不用競爭(最重要的一條)</div>
+  <div class="section-sub">姊弟差三歲,任何直接對戰都是姊姊必贏、弟弟必敗,或姊姊輸給弟弟後雙倍羞辱。兩種結局都不好。</div>
+  <div class="tblwrap"><table class="tbl modetbl">
+    <tr><th>誰對誰</th><th>模式</th></tr>
+    <tr><td>姊姊 × 弟弟</td><td><b>一律合作模式</b>(瑪利歐驚奇、卡比探索發現、耀西手工世界)——共同對抗遊戲,不對抗彼此</td></tr>
+    <tr><td>孩子 × 大人</td><td>可以競爭(瑪利歐賽車、派對)——因為大人輸得起,也負責示範怎麼輸</td></tr>
+    <tr><td>孩子 × 遊戲</td><td>挑戰本身(皮克敏、關卡挑戰)——這是最健康的競爭對象</td></tr>
+  </table></div>
+  <div class="callout indoor">競爭不是不能有,是不要放在姊弟之間當預設值。</div>
+
+  <div class="section-title" style="font-size:18px">2. 難度設定不是作弊,是配速</div>
+  <div class="section-sub">難度略高於能力＝投入;遠高於能力＝焦慮崩潰;遠低於能力＝無聊。</div>
+  <div class="rule-card"><ul>
+    <li>弟弟固定用<b>耀西／奈比比</b>(碰到敵人不會受傷)</li>
+    <li>弟弟開<b>智慧轉向＋自動加速</b></li>
+    <li>耀西手工世界開<b>輕鬆模式</b></li>
+    <li>姊姊卡關太久 → 換一關再回來,不硬磕</li>
+  </ul></div>
+  <div class="callout sis"><b>話術</b>「這不是作弊,這是選你的裝備。每個人裝備不一樣。」</div>
+
+  <div class="section-title" style="font-size:18px">3. 賽前三十秒儀式</div>
+  <div class="section-sub">開機前固定講三句,講到孩子會接話為止</div>
+  <div class="ritual">
+    <div class="rit"><span class="rn">1</span><div><div class="rq">「今天玩幾局?」</div><div class="ra"><b>先講結束點</b>,結束才不是突襲</div></div></div>
+    <div class="rit"><span class="rn">2</span><div><div class="rq">「輸了要說什麼?」</div><div class="ra">→ <b>「再來一局!」</b>(全家一起喊)</div></div></div>
+    <div class="rit"><span class="rn">3</span><div><div class="rq">「生氣的時候可以做什麼?」</div><div class="ra">→ <b>「手把放下,去喝水。」</b></div></div></div>
+  </div>
+  <div class="section-sub" style="margin-top:8px">這三句是把「等一下會發生的事」先演練一遍。孩子的大腦在平靜時裝載的規則,才有機會在激動時被叫出來。</div>
+
+  <div class="section-title" style="font-size:18px">4. 時段設計</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li><b>睡前 30 分鐘不玩競爭性遊戲</b>——輸了帶著情緒上床,整晚都難收</li>
+    <li><b>餓了、累了不開機</b>——HALT 四查在遊戲場一樣適用</li>
+    <li><b>崩潰過的那一天,剩下時間不再開機</b>——不是懲罰,是系統已經沒有餘裕了</li>
+  </ul></div>
+</section>
+
+<!-- ===== 賽後複盤 ===== -->
+<section class="panel" id="panel-after">
+  <div class="section-title">賽後複盤:真正的教學時段</div>
+  <div class="section-sub">崩潰過的那一天,睡前(情緒完全平復後)花兩分鐘。三個問題,順序不能換。</div>
+  <div class="ritual">
+    <div class="rit"><span class="rn">1</span><div><div class="rq">「剛剛你很生氣,因為什麼?」</div><div class="ra"><b>讓她自己說</b>。誰敘述失敗,誰就擁有那次失敗</div></div></div>
+    <div class="rit"><span class="rn">2</span><div><div class="rq">「生氣的時候身體有什麼感覺?」</div><div class="ra">建立身體訊號辨識,這是自我調節的基礎</div></div></div>
+    <div class="rit"><span class="rn">3</span><div><div class="rq">「下次那樣的時候,可以先做什麼?」</div><div class="ra"><b>讓她自己想方法</b>,你只補一句</div></div></div>
+  </div>
+  <div class="callout sis"><b>收尾固定一句</b>「你剛剛自己冷靜下來了,那個很難,你做到了。」</div>
+  <div class="callout warn"><b>注意</b>複盤的目的<b>不是</b>讓她認錯。一旦變成認錯大會,她下次就會隱藏情緒——那才是真的失控。</div>
+</section>
+
+<!-- ===== 稱讚公式 ===== -->
+<section class="panel" id="panel-praise">
+  <div class="section-title">稱讚公式・遊戲版</div>
+  <div class="section-sub">遊戲提供大量可稱讚的素材,但讚錯地方會養出玻璃心。</div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>不要讚</th><th>改讚</th><th>例句</th></tr>
+    <tr><td>天分</td><td>過程</td><td>「你試了三次都沒放棄」</td></tr>
+    <tr><td>結果</td><td>策略</td><td>「你剛剛先解決小怪再打大的,這招聰明」</td></tr>
+    <tr><td>贏</td><td>情緒管理</td><td>「你剛剛輸了沒有生氣,很厲害」 ← <b>這是最該讚的一項</b></td></tr>
+    <tr><td>「你好棒」</td><td>具體描述</td><td>「你自己發現要跳兩次」</td></tr>
+    <tr><td>—</td><td>風度</td><td>「你贏了還跟弟弟說他跑得好,這叫風度」</td></tr>
+  </table></div>
+  <div class="callout indoor"><b>最高階的稱讚:讚她「停下來」的能力</b>「時間到你自己關機了,那個比破關還難。」</div>
+  <div class="section-sub" style="margin-top:10px">同一條原則在成長地圖也有官方依據(讚過程優於讚特質):<a class="linkcard" href="grow.html" style="color:var(--park-deep);font-weight:700;text-decoration:none;border-bottom:1.5px dotted var(--park)">→ 🌱 成長地圖・分齡情緒工具箱</a></div>
+</section>
+
+<!-- ===== 大人自己 ===== -->
+<section class="panel" id="panel-self">
+  <div class="section-title">父母自我管理(示範是最強的教材)</div>
+  <div class="callout warn"><b>你輸的樣子,就是她以後輸的樣子。</b></div>
+  <div class="section-title" style="font-size:18px">大人輸的時候,演出來</div>
+  <div class="callout sis" style="font-size:16px;font-family:'LXGW WenKai TC',serif">「啊——我輸了!(誇張)你剛剛那個彎道超車太厲害了。再來一局!」</div>
+  <div class="section-sub">刻意演,演到她覺得好笑。孩子學會的不是你講的話,是你的反應。</div>
+  <div class="section-title" style="font-size:18px">大人自己的四個提醒</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li><b>不放水放得太明顯</b>——5–6 歲看得出來,被讓的贏比輸還傷。要輸得像真的</li>
+    <li><b>不代打</b>——「我幫你過這關」教的是「難的事有別人做」。她真的想要你打,可以,但由她開口、由她決定</li>
+    <li><b>不當裁判</b>——「誰贏了?」這個問題一問出口,你就進入了衝突。改問:「剛剛最好玩的是哪一段?」</li>
+    <li><b>檢查自己的情緒</b>——你玩遊戲時也會急、也會罵。孩子在旁邊看,你就在示範。你自己的手把摔過一次,前面所有話術都作廢</li>
+  </ul></div>
+  <div class="callout fam"><b>你自己快爆炸的時候</b>換手:「換媽媽上場。」</div>
+</section>
+
+<!-- ===== 紅旗與 KPI ===== -->
+<section class="panel" id="panel-flag">
+  <div class="section-title">紅旗:什麼時候該把主機收起來</div>
+  <div class="section-sub">這不是懲罰,是保護。出現以下任一項,該款遊戲或整個時段暫停。</div>
+  <div class="rule-card"><ul class="warn-list">
+    <li><b>同一款遊戲連續三次玩到崩潰</b> → 這款暫時下架,過一兩個月再說(難度與年齡不匹配)</li>
+    <li><b>玩完後情緒低落或易怒超過 30 分鐘</b> → 時段太長,或難度太高</li>
+    <li><b>開始出現「我最爛」「我什麼都不會」的自我描述</b> → 立刻停止競爭性遊戲,全部改合作模式</li>
+    <li><b>睡眠受影響、夢到遊戲、睡前反覆講</b> → 時段往前挪,睡前 30 分改關機儀式</li>
+    <li><b>開始用遊戲逃避其他事</b>(不想出門、不想見人) → 這是訊號,不是壞習慣,要處理的是背後的事</li>
+  </ul></div>
+  <div class="callout indoor"><b>收起來的說法</b>「這個遊戲現在對你來說太難了,我們過一陣子再玩。」——<b>是遊戲太難,不是你不夠好。</b>這句話的方向很重要。</div>
+
+  <div class="section-title">怎麼知道有效:真正的 KPI</div>
+  <div class="section-sub">不要用「不再生氣」當標準——那不會發生,也不該發生。進步長這樣(依序出現):</div>
+  <ol class="kpi">
+    <li>生氣的<b>時間變短</b>(從 20 分鐘變 5 分鐘)</li>
+    <li>開始<b>說得出情緒的名字</b>(「我很氣」而不是只有尖叫)</li>
+    <li>開始<b>自己用策略</b>(「我不要玩這關了,換一個」——這是自我調節,不是逃避)</li>
+    <li>輸了<b>還願意再玩</b></li>
+    <li>有一天她會對弟弟說:「沒關係,再來一次。」</li>
+  </ol>
+  <div class="callout sis"><b>第 5 項出現的那天,這本手冊的任務就完成了。</b></div>
+</section>
+
+<!-- ===== 一句話速查 ===== -->
+<section class="panel" id="panel-quick">
+  <div class="section-title">一句話速查</div>
+  <div class="section-sub">現場來不及翻的時候</div>
+  <table class="quick">
+    <tr><td>弟弟崩潰</td><td>改遊戲,不改他</td></tr>
+    <tr><td>姊姊崩潰</td><td>「你好想贏。」</td></tr>
+    <tr><td>爆發中</td><td>少說話,陪著就好</td></tr>
+    <tr><td>要教學</td><td>等平靜,睡前再說</td></tr>
+    <tr><td>摔東西</td><td>情緒可以,行為不行</td></tr>
+    <tr><td>要停機</td><td>講回合,不講分鐘</td></tr>
+    <tr><td>該讚什麼</td><td>讚他沒生氣、讚他自己停</td></tr>
+    <tr><td>你自己快爆炸</td><td>換手:「換媽媽上場」</td></tr>
+  </table>
+  <div class="callout fam" style="margin-top:14px"><b>本頁文案</b>林家定稿 2026-07(遊戲情緒教練手冊主體);修改需再經林家。遊戲庫與非電玩的陪玩玩法在 <a href="time.html" style="color:inherit;font-weight:700">⏳ 時光手冊</a>;3C 家庭公約的時機在 <a href="grow.html" style="color:inherit;font-weight:700">🌱 成長地圖</a>。</div>
+</section>
+
+<footer>
+  <span class="fam-name">林家 Switch 手冊</span><br>
+  不當裁判,當教練・在客廳學,比在教室學便宜太多<br>
+  資料 __BUILD_DATE__
+</footer>
+
+</div>
+<button id="toTop" hidden aria-label="回到頂端">↑</button>
+
+<script>
+const TALK = __TALK__;
+const FAMILY = __FAMILY__;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- 年齡(唯一來源 family.json) ---------- */
+function monthsOf(b) { const [y, m] = b.split("-").map(Number); const n = new Date(); return (n.getFullYear() - y) * 12 + (n.getMonth() + 1 - m); }
+function ageText(mo) { return Math.floor(mo / 12) + " 歲 " + (mo % 12) + " 個月"; }
+FAMILY.children.forEach(c => {
+  const el = c.nickname === "姊姊" ? $("#ageSis") : $("#ageBro");
+  if (el) el.textContent = ageText(monthsOf(c.birth));
+});
+
+/* ---------- 情緒三階段 ---------- */
+const STAGES = {
+  y: { cls: "y", t: "🟡 升溫期", sig: "身體僵硬、按鍵變大力、開始碎念、嘆氣變多、不講話",
+    lead: "這是唯一能有效介入的窗口。",
+    do: ["降難度、換關卡", "提議休息", "加入陪玩:「我陪你打這關」"],
+    no: ["說「不要生氣」(等於在情緒上加壓)"] },
+  r: { cls: "r", t: "🔴 爆發期", sig: "大哭、吼叫、摔手把、罵人、關機走人",
+    lead: "只做三件事:確保安全 → 移除刺激(暫停或關螢幕)→ 陪著。低聲、少話、不講道理。",
+    do: ["確保安全", "移除刺激(暫停或關螢幕)", "陪著,低聲少話"],
+    no: ["講道理", "要求道歉", "追問原因", "威脅沒收", "跟著大聲"] },
+  g: { cls: "g", t: "🟢 修復期(通常 5–20 分鐘後)", sig: "呼吸平穩、願意講話、靠過來",
+    lead: "教學只發生在這裡。",
+    do: ["命名情緒", "一起看剛剛發生什麼", "想下次的做法"],
+    no: ["翻舊帳", "講「我早就跟你說」"] },
+};
+function renderStage(k) {
+  const s = STAGES[k];
+  $("#stageout").innerHTML = '<div class="stage ' + s.cls + '"><h3>' + s.t + "</h3>"
+    + '<div class="sig">看得到的訊號:' + esc(s.sig) + "</div>"
+    + '<div class="doblock do"><div class="dot">▲ 你要做的</div><ul>' + s.do.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>"
+    + '<div class="sig" style="margin-top:2px">' + esc(s.lead) + "</div></div>"
+    + '<div class="doblock no"><div class="dot">✕ 你不要做的</div><ul>' + s.no.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul></div>"
+    + (k === "r" ? '<div class="sig" style="margin-top:6px">判斷是否進入修復期:孩子願意回答一個無關的問題(「你要喝水嗎?」),就代表大腦回來了。</div>' : "")
+    + "</div>";
+}
+$$(".light").forEach(b => b.addEventListener("click", () => {
+  const on = b.getAttribute("aria-pressed") === "true";
+  $$(".light").forEach(x => x.setAttribute("aria-pressed", "false"));
+  if (on) { $("#stageout").innerHTML = ""; return; }
+  b.setAttribute("aria-pressed", "true");
+  renderStage(b.dataset.stage);
+}));
+
+/* ---------- 話術庫 ---------- */
+let curWho = "big";
+function talkCard(t) {
+  const wt = t.who === "big" ? "姊姊" : (t.who === "lil" ? "弟弟" : "兩人");
+  return '<div class="tcard"><div class="tscene"><span class="whotag ' + t.who + '">' + wt + "</span>" + esc(t.scene) + "</div>"
+    + (t.do ? '<div class="tdo">▲ 先做:' + esc(t.do) + "</div>" : "")
+    + '<div class="tsay">' + esc(t.say) + "</div>"
+    + (t.dont ? '<div class="tdont">✕ 別說:<b>' + esc(t.dont) + "</b></div>" : "")
+    + (t.why ? '<div class="twhy">' + esc(t.why) + "</div>" : "")
+    + "</div>";
+}
+function renderTalk() {
+  const q = ($("#tsearch").value || "").trim();
+  let list = q
+    ? TALK.filter(t => t.scene.includes(q) || t.say.includes(q) || (t.dont || "").includes(q) || (t.do || "").includes(q) || (t.why || "").includes(q))
+    : TALK.filter(t => t.who === curWho);
+  $("#talkout").innerHTML = (q ? '<div class="stagehead section-sub">🔍 「' + esc(q) + "」找到 " + list.length + " 則(跨兩個孩子)</div>" : "")
+    + (list.length ? list.map(talkCard).join("") : '<div class="draw-empty">沒有這個場景——換個關鍵字,或看下面的分頁</div>');
+}
+$$(".whorow .chip").forEach(ch => ch.addEventListener("click", () => {
+  curWho = ch.dataset.who;
+  $$(".whorow .chip").forEach(x => x.setAttribute("aria-pressed", String(x === ch)));
+  $("#tsearch").value = "";
+  renderTalk();
+}));
+let ttimer; $("#tsearch").addEventListener("input", () => { clearTimeout(ttimer); ttimer = setTimeout(renderTalk, 180); });
+
+/* ---------- 分頁 ---------- */
+$$(".tab-btn").forEach(b => b.addEventListener("click", () => {
+  $$(".tab-btn").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+  $$(".panel").forEach(p => p.classList.toggle("active", p.id === "panel-" + b.dataset.tab));
+  window.scrollTo({ top: $("nav.tabs").offsetTop - 8, behavior: "smooth" });
+}));
+
+/* ---------- 回頂 / SW ---------- */
+const toTop = $("#toTop");
+window.addEventListener("scroll", () => { toTop.hidden = window.scrollY < 600; }, { passive: true });
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("./sw.js").catch(() => {});
+
+renderTalk();
+</script>
+</body>
+</html>

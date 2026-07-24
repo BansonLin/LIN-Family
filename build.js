@@ -402,6 +402,15 @@ homeHtml = homeHtml.replace('__CHECKLIST__', () => JSON.stringify(checklist))
   .replaceAll('__NC__', String(checklist.length));
 fs.writeFileSync(path.join(DIST, 'home.html'), homeHtml);
 
+// Switch 手冊(switch-template.html + data/game_coach.json → dist/switch.html)
+const talk = readJson('data/game_coach.json', []);
+let swHtml = fs.readFileSync(path.join(R, 'switch-template.html'), 'utf8');
+swHtml = swHtml.replace('__TALK__', () => JSON.stringify(talk))
+  .replace('__FAMILY__', () => JSON.stringify(family))
+  .replaceAll('__BUILD_DATE__', TODAY)
+  .replaceAll('__NT__', String(talk.length));
+fs.writeFileSync(path.join(DIST, 'switch.html'), swHtml);
+
 let growHtml = fs.readFileSync(path.join(R, 'grow-template.html'), 'utf8');
 growHtml = growHtml.replace('__STAGES__', () => JSON.stringify(stages))
   .replace('__DECISIONS__', () => JSON.stringify(decisions))
@@ -425,7 +434,7 @@ const CACHE = 'lin-family-' + Date.now();
 // 絕不 respondWith(undefined)(修正快取未命中+網路瞬斷 → ERR_FAILED),離線回退到已快取頁或 503。
 fs.writeFileSync(path.join(DIST, 'sw.js'), [
   'const C = ' + JSON.stringify(CACHE) + ';',
-  "const ASSETS = ['./', './index.html', './time.html', './disney.html', './food.html', './grow.html', './home.html', './assets/tokens.css', './manifest.json', './icon-192.png', './icon-512.png'];",
+  "const ASSETS = ['./', './index.html', './time.html', './disney.html', './food.html', './grow.html', './home.html', './switch.html', './assets/tokens.css', './manifest.json', './icon-192.png', './icon-512.png'];",
   "async function clean(r) { const b = await r.blob(); return new Response(b, { status: 200, headers: { 'Content-Type': r.headers.get('Content-Type') || '' } }); }",
   "async function precache() { const c = await caches.open(C); await Promise.allSettled(ASSETS.map(async a => { try { const r = await fetch(a, { redirect: 'follow' }); if (r && r.ok) await c.put(a, await clean(r)); } catch (e) {} })); }",
   "self.addEventListener('install', e => { e.waitUntil(precache().then(() => self.skipWaiting())); });",
